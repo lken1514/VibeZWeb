@@ -21,14 +21,11 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Restore dependencies
-        run: dotnet restore VibeZMVC/VibeZMVC.csproj  # Specify your MVC project path
-
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish VibeZMVC/VibeZMVC.csproj -c Release --no-dependencies -o ${{env.DOTNET_ROOT}}/myapp  # Specify your MVC project path
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -54,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_55642292671A418798A11EF508422415 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C43847CBB75A4C48878614A3D18B537E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FB00DE405A744631925561059C5D79D9 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FDD4AF060A8143E4BDA45FD86D1D4F29 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3B383CB96357467082951AAA3F960EA1 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_20728298A40B4824A3FF3FDC655B4298 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
