@@ -20,7 +20,7 @@ namespace BusinessObjects
         public string premium { get; set; }
 
         public virtual ICollection<Follow> ? Follow { get; set; }
-        public virtual ICollection<Library>? Library { get; set; }
+        public virtual Library ? Library { get; set; }
         public virtual ICollection<BlockedArtist>? BlockedArtists { get; set; }
         public virtual ICollection<Payment>? Payment { get; set; }
         public virtual ICollection<User_package> ? User_package { get; set; }

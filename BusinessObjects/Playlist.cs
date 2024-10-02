@@ -16,6 +16,7 @@ namespace BusinessObjects
         public Guid UserId { get; set; }
 
         public virtual ICollection<TrackPlayList> TrackPlayLists{ get; set; }
+        public virtual Library ? Libraries { get; set; }
 
     }
 }

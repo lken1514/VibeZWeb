@@ -15,5 +15,6 @@ namespace BusinessObjects
         public string Image { get; set; }
         public string Nation { get; set; }
         public virtual ICollection<Track> Tracks { get; set; }
+        
     }
 }
