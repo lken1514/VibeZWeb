@@ -25,7 +25,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish VibeZMVC/VibeZMVC.csproj -c Release --no-dependencies -o ${{env.DOTNET_ROOT}}/myapp  # Specify your MVC project path
+        run: dotnet publish ./VibeZMVC/VibeZMVC.csproj -c Release --no-dependencies -o ${{env.DOTNET_ROOT}}/myapp  # Specify your MVC project path
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
