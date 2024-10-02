@@ -83,8 +83,6 @@ D:\VibeZ-Backend\VibeZ\VibeZOData\obj\Debug\net8.0\refint\VibeZOData.dll
 D:\VibeZ-Backend\VibeZ\VibeZOData\obj\Debug\net8.0\VibeZOData.pdb
 D:\VibeZ-Backend\VibeZ\VibeZOData\obj\Debug\net8.0\VibeZOData.genruntimeconfig.cache
 D:\VibeZ-Backend\VibeZ\VibeZOData\obj\Debug\net8.0\ref\VibeZOData.dll
-D:\VibeZWeb\VibeZOData\bin\Debug\net8.0\appsettings.Development.json
-D:\VibeZWeb\VibeZOData\bin\Debug\net8.0\appsettings.json
 D:\VibeZWeb\VibeZOData\bin\Debug\net8.0\VibeZOData.exe
 D:\VibeZWeb\VibeZOData\bin\Debug\net8.0\VibeZOData.deps.json
 D:\VibeZWeb\VibeZOData\bin\Debug\net8.0\VibeZOData.runtimeconfig.json
@@ -168,3 +166,4 @@ D:\VibeZWeb\VibeZOData\obj\Debug\net8.0\refint\VibeZOData.dll
 D:\VibeZWeb\VibeZOData\obj\Debug\net8.0\VibeZOData.pdb
 D:\VibeZWeb\VibeZOData\obj\Debug\net8.0\VibeZOData.genruntimeconfig.cache
 D:\VibeZWeb\VibeZOData\obj\Debug\net8.0\ref\VibeZOData.dll
+D:\VibeZWeb\VibeZOData\bin\Debug\net8.0\appsettings.json

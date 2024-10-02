@@ -1,7 +1,6 @@
 D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\VibeZOData.deps.json
 D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\VibeZOData.runtimeconfig.json
 D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\VibeZOData.exe
-D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\appsettings.Development.json
 D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\appsettings.json
 D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\VibeZMVC.staticwebassets.runtime.json
 D:\VibeZWeb\VibeZMVC\bin\Debug\net8.0\VibeZMVC.exe

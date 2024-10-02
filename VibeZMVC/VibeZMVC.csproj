@@ -15,12 +15,6 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-	  <None Update="appsettings.Development.json">
-		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </None>
-	  <None Update="appsettings.json">
-		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </None>
   </ItemGroup>
 
 </Project>

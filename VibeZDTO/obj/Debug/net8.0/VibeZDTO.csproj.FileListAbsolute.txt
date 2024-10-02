@@ -30,3 +30,4 @@ D:\VibeZWeb\VibeZDTO\obj\Debug\net8.0\VibeZDTO.dll
 D:\VibeZWeb\VibeZDTO\obj\Debug\net8.0\refint\VibeZDTO.dll
 D:\VibeZWeb\VibeZDTO\obj\Debug\net8.0\VibeZDTO.pdb
 D:\VibeZWeb\VibeZDTO\obj\Debug\net8.0\ref\VibeZDTO.dll
+D:\VibeZWeb\VibeZDTO\bin\Debug\net8.0\appsettings.json

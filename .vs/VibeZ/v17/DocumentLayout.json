@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\VibeZWeb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\followcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\followcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{92EFFE2F-B5B8-4A57-86D9-D641ADB7D8FE}|VibeZMVC\\VibeZMVC.csproj|d:\\vibezweb\\vibezmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92EFFE2F-B5B8-4A57-86D9-D641ADB7D8FE}|VibeZMVC\\VibeZMVC.csproj|solutionrelative:vibezmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,20 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FollowController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\FollowController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\FollowController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\FollowController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\FollowController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T16:11:57.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\appsettings.json",
+              "RelativeDocumentMoniker": "VibeZOData\\appsettings.json",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\appsettings.json",
+              "RelativeToolTip": "VibeZOData\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAUwAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-02T15:56:00.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\UserController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwDYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T10:54:12.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZMVC\\Program.cs",
               "RelativeDocumentMoniker": "VibeZMVC\\Program.cs",
               "ToolTip": "D:\\VibeZWeb\\VibeZMVC\\Program.cs",
               "RelativeToolTip": "VibeZMVC\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAowBYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowBMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T16:38:06.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T16:38:06.71Z"
             }
           ]
         }
