@@ -220,9 +220,6 @@ namespace BusinessObjects.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ArtistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PlaylistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AlbumId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -265,7 +262,7 @@ namespace BusinessObjects.Migrations
                 columns: table => new
                 {
                     PlaylistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -343,6 +340,58 @@ namespace BusinessObjects.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Library_Albums",
+                columns: table => new
+                {
+                    LibraryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AlbumId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Library_Albums", x => new { x.LibraryId, x.AlbumId });
+                    table.ForeignKey(
+                        name: "FK_Library_Albums_Albums_AlbumId",
+                        column: x => x.AlbumId,
+                        principalTable: "Albums",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Library_Albums_Libraries_LibraryId",
+                        column: x => x.LibraryId,
+                        principalTable: "Libraries",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Library_Artists",
+                columns: table => new
+                {
+                    LibraryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ArtistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Library_Artists", x => new { x.LibraryId, x.ArtistId });
+                    table.ForeignKey(
+                        name: "FK_Library_Artists_Artists_ArtistId",
+                        column: x => x.ArtistId,
+                        principalTable: "Artists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Library_Artists_Libraries_LibraryId",
+                        column: x => x.LibraryId,
+                        principalTable: "Libraries",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Likes",
                 columns: table => new
                 {
@@ -412,7 +461,18 @@ namespace BusinessObjects.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Libraries_UserId",
                 table: "Libraries",
-                column: "UserId");
+                column: "UserId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Library_Albums_AlbumId",
+                table: "Library_Albums",
+                column: "AlbumId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Library_Artists_ArtistId",
+                table: "Library_Artists",
+                column: "ArtistId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Likes_TrackId",
@@ -480,7 +540,10 @@ namespace BusinessObjects.Migrations
                 name: "Follows");
 
             migrationBuilder.DropTable(
-                name: "Libraries");
+                name: "Library_Albums");
+
+            migrationBuilder.DropTable(
+                name: "Library_Artists");
 
             migrationBuilder.DropTable(
                 name: "Likes");
@@ -499,6 +562,9 @@ namespace BusinessObjects.Migrations
 
             migrationBuilder.DropTable(
                 name: "U_packages");
+
+            migrationBuilder.DropTable(
+                name: "Libraries");
 
             migrationBuilder.DropTable(
                 name: "Features");

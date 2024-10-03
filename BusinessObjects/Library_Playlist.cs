@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    [PrimaryKey(nameof(LibraryId), nameof(PlaylistId))]
-    public class Library_Playlist : BaseEntity
-    {
-        public Guid LibraryId { get; set; }
-        public Guid PlaylistId { get; set; }
-    }
+    //[PrimaryKey(nameof(LibraryId), nameof(PlaylistId))]
+    //public class Library_Playlist : BaseEntity
+    //{
+    //    public Guid LibraryId { get; set; }
+    //    public Guid PlaylistId { get; set; }
+
+    //}
 }

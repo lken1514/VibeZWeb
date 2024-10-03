@@ -9,11 +9,11 @@ namespace BusinessObjects
 {
     public class Library : BaseEntity
     {
-        [Key]
         public Guid Id { get; set; }    
-        public Guid ArtistId { get; set; }
-        public Guid PlaylistId { get; set; }
-        public Guid AlbumId { get; set; }
         public Guid UserId { get; set; }
+        public virtual User ? User { get; set; }
+        public virtual ICollection<Library_Album> Library_Albums { get; set; }
+        public virtual ICollection<Library_Artist> Library_Artists { get; set; }
+        //public virtual ICollection<Library_Playlist> Library_Playlists { get; set; }
     }
 }

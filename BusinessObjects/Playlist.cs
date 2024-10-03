@@ -9,14 +9,15 @@ namespace BusinessObjects
     public class Playlist : BaseEntity
     {
         public Guid PlaylistId { get; set; }
-        public Guid Name  { get; set; }
+        public string Name  { get; set; }
 
         public string Description { get; set; }
         public string Image { get; set; }
         public Guid UserId { get; set; }
 
         public virtual ICollection<TrackPlayList> TrackPlayLists{ get; set; }
-        public virtual Library ? Libraries { get; set; }
+        //public virtual ICollection<Library_Playlist> Library_Playlists { get; set; }
+
 
     }
 }

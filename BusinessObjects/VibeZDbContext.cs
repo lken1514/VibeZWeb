@@ -22,6 +22,9 @@ namespace BusinessObjects
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<TrackPlayList> TrackPlayLists { get; set; }
         public virtual DbSet<Playlist> Playlists { get; set; }
+        public virtual DbSet<Library_Album> Library_Albums { get; set; }
+        public virtual DbSet<Library_Artist> Library_Artists { get; set; }
+        //public virtual DbSet<Library_Playlist> Library_Playlists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
