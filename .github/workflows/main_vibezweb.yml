@@ -11,6 +11,11 @@ on:
       - '**'     # Only trigger on changes to the MVC project
   workflow_dispatch:
 
+env:
+  AZURE_WEBAPP_NAME: 'VibeZWeb'  # Your application's name on Azure Web App
+  AZURE_WEBAPP_PACKAGE_PATH: './VibeZWeb/VibeZMVC'  # Path to your MVC project folder
+  Project: './VibeZWeb/VibeZMVC'  # Path to the folder containing the project.json (or .csproj)
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,10 +29,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build VibeZMVC --configuration Release
+        run: dotnet build ${{ env.Project }}/VibeZMVC.csproj --configuration Release  # Build the project
 
       - name: dotnet publish
-        run: dotnet publish VibeZMVC -c Release --no-dependencies -o ${{env.DOTNET_ROOT}}/myapp # Specify your MVC project path
+        run: dotnet publish ${{ env.Project }}/VibeZMVC.csproj -c Release --output '${{ env.Project }}/myapp'  # Publish to the output directory
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -63,5 +68,5 @@ jobs:
         with:
           app-name: 'VibeZWeb'
           slot-name: 'Production'
-          package: .
+          package: '${{ env.Project }}/myapp'
           
