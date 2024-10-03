@@ -14,6 +14,6 @@ namespace BusinessObjects
         public virtual User ? User { get; set; }
         public virtual ICollection<Library_Album> Library_Albums { get; set; }
         public virtual ICollection<Library_Artist> Library_Artists { get; set; }
-        //public virtual ICollection<Library_Playlist> Library_Playlists { get; set; }
+        public virtual ICollection<Library_Playlist> Library_Playlists { get; set; }
     }
 }

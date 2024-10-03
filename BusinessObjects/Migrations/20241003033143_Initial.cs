@@ -265,7 +265,7 @@ namespace BusinessObjects.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -276,8 +276,7 @@ namespace BusinessObjects.Migrations
                         name: "FK_Playlists_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -392,6 +391,32 @@ namespace BusinessObjects.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Library_Playlists",
+                columns: table => new
+                {
+                    LibraryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PlaylistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Library_Playlists", x => new { x.LibraryId, x.PlaylistId });
+                    table.ForeignKey(
+                        name: "FK_Library_Playlists_Libraries_LibraryId",
+                        column: x => x.LibraryId,
+                        principalTable: "Libraries",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Library_Playlists_Playlists_PlaylistId",
+                        column: x => x.PlaylistId,
+                        principalTable: "Playlists",
+                        principalColumn: "PlaylistId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Likes",
                 columns: table => new
                 {
@@ -475,6 +500,11 @@ namespace BusinessObjects.Migrations
                 column: "ArtistId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Library_Playlists_PlaylistId",
+                table: "Library_Playlists",
+                column: "PlaylistId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Likes_TrackId",
                 table: "Likes",
                 column: "TrackId");
@@ -544,6 +574,9 @@ namespace BusinessObjects.Migrations
 
             migrationBuilder.DropTable(
                 name: "Library_Artists");
+
+            migrationBuilder.DropTable(
+                name: "Library_Playlists");
 
             migrationBuilder.DropTable(
                 name: "Likes");
