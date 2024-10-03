@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'VibeZWeb'
           slot-name: 'Production'
-          package: 'VibeZMVC/myapp'
+          package: .
           
