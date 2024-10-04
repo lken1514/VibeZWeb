@@ -3156,11 +3156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VibeZWeb\\VibeZ-Backend\\Repository\\Repositories.csproj",
+      "projectUniqueName": "D:\\VibeZWeb\\Repository\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "D:\\VibeZWeb\\VibeZ-Backend\\Repository\\Repositories.csproj",
+      "projectPath": "D:\\VibeZWeb\\Repository\\Repositories.csproj",
       "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-      "outputPath": "D:\\VibeZWeb\\VibeZ-Backend\\Repository\\obj\\",
+      "outputPath": "D:\\VibeZWeb\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3178,11 +3178,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\VibeZWeb\\VibeZ-Backend\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "D:\\VibeZWeb\\VibeZ-Backend\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
             },
-            "D:\\VibeZWeb\\VibeZ-Backend\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\VibeZWeb\\VibeZ-Backend\\DataAccess\\DataAccess.csproj"
+            "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj"
             }
           }
         }

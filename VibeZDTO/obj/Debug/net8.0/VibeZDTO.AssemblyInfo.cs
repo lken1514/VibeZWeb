@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VibeZDTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfe3328b73a3c79077525ca27f97f600b2237ca8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e717a1d68e90e192680ad4cb3cbc28e5d7d7922")]
 [assembly: System.Reflection.AssemblyProductAttribute("VibeZDTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VibeZDTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

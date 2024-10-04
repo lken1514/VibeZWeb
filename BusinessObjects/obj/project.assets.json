@@ -4415,11 +4415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VibeZWeb\\VibeZ-Backend\\BusinessObjects\\BusinessObjects.csproj",
+      "projectUniqueName": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
       "projectName": "BusinessObjects",
-      "projectPath": "D:\\VibeZWeb\\VibeZ-Backend\\BusinessObjects\\BusinessObjects.csproj",
+      "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
       "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-      "outputPath": "D:\\VibeZWeb\\VibeZ-Backend\\BusinessObjects\\obj\\",
+      "outputPath": "D:\\VibeZWeb\\BusinessObjects\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VibeZWeb\\VibeZ-Backend\\VibeZMVC\\VibeZMVC.csproj",
+      "projectUniqueName": "D:\\VibeZWeb\\VibeZMVC\\VibeZMVC.csproj",
       "projectName": "VibeZMVC",
-      "projectPath": "D:\\VibeZWeb\\VibeZ-Backend\\VibeZMVC\\VibeZMVC.csproj",
+      "projectPath": "D:\\VibeZWeb\\VibeZMVC\\VibeZMVC.csproj",
       "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-      "outputPath": "D:\\VibeZWeb\\VibeZ-Backend\\VibeZMVC\\obj\\",
+      "outputPath": "D:\\VibeZWeb\\VibeZMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
