@@ -1,0 +1,1861 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\VibeZMVC.bundle.scp.css",
+      "PackagePath": "staticwebassets\\VibeZMVC.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\css\\app-saas.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\app-saas.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\css\\icons.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\icons.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Bold.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Bold.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Bold.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Bold.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Bold.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Bold.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Bold.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Bold.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Boldd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Boldd41d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Light.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Light.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Light.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Light.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Light.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Light.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Light.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Light.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Lightd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Lightd41d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Medium.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Medium.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Medium.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Medium.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Medium.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Medium.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Medium.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Medium.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Mediumd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Mediumd41d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Regular.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Regular.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Regular.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Regular.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Regular.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Regular.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Regular.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Regular.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-Regulard41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-Regulard41d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-SemiBold.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-SemiBold.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-SemiBold.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-SemiBold.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-SemiBold.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-SemiBold.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-SemiBold.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-SemiBold.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\Nunito-SemiBoldd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Nunito-SemiBoldd41d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\materialdesignicons-webfont1d2d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont1d2d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\materialdesignicons-webfont1d2d.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont1d2d.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\materialdesignicons-webfont1d2d.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont1d2d.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\materialdesignicons-webfont1d2d.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont1d2d.woff2"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\materialdesignicons-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfontd41d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\remixicondf6d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\remixicondf6d.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\remixicondf6d.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\remixicondf6d.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\remixicondf6d.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\remixicondf6d.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\remixicondf6d.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\remixicondf6d.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\remixicondf6d.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\remixicondf6d.woff2"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\uni030C.alt.html",
+      "PackagePath": "staticwebassets\\assets\\fonts\\uni030C.alt.html"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\uni0335.html",
+      "PackagePath": "staticwebassets\\assets\\fonts\\uni0335.html"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\unicons8adf.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\unicons8adf.eot"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\unicons8adf.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\unicons8adf.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\unicons8adf.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\unicons8adf.ttf"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\unicons8adf.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\unicons8adf.woff"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fonts\\unicons8adf.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\unicons8adf.woff2"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\fontsunicons8adf.html",
+      "PackagePath": "staticwebassets\\assets\\fontsunicons8adf.html"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\barcode.png",
+      "PackagePath": "staticwebassets\\assets\\images\\barcode.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\bg-auth.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg-auth.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\bg-pattern.png",
+      "PackagePath": "staticwebassets\\assets\\images\\bg-pattern.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\brands\\bitbucket.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\bitbucket.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\brands\\dribbble.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\dribbble.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\brands\\dropbox.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\dropbox.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\brands\\g-suite.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\g-suite.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\brands\\github.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\github.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\brands\\slack.png",
+      "PackagePath": "staticwebassets\\assets\\images\\brands\\slack.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon.ico"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\flags\\germany.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\flags\\germany.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\flags\\italy.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\flags\\italy.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\flags\\russia.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\flags\\russia.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\flags\\spain.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\flags\\spain.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\flags\\us.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\flags\\us.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\layouts\\layout-1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\layouts\\layout-1.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\layouts\\layout-2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\layouts\\layout-2.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\layouts\\layout-3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\layouts\\layout-3.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\layouts\\layout-4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\layouts\\layout-4.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\layouts\\layout-5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\layouts\\layout-5.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\layouts\\layout-6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\layouts\\layout-6.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\logo-dark-sm.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo-dark-sm.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\logo-dark.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo-dark.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\logo-sm.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo-sm.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\cod.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\cod.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\discover.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\discover.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\master.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\master.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\payoneer.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\payoneer.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\paypal.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\paypal.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\stripe.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\stripe.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\payments\\visa.png",
+      "PackagePath": "staticwebassets\\assets\\images\\payments\\visa.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\products\\product-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product-1.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\products\\product-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product-2.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\products\\product-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product-3.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\products\\product-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product-4.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\products\\product-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product-5.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\products\\product-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\product-6.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\projects\\project-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\projects\\project-1.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\projects\\project-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\projects\\project-2.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\projects\\project-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\projects\\project-3.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\projects\\project-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\projects\\project-4.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-1.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-2.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-3.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-4.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-5.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-6.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\small\\small-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\small\\small-7.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\email-campaign.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\email-campaign.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\features-1.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\features-1.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\features-2.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\features-2.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\file-searching.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\file-searching.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\help-icon.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\help-icon.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\mail_sent.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\mail_sent.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\maintenance.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\maintenance.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\report.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\report.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\startman.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\startman.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\svg\\startup.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\startup.svg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\treeview.png",
+      "PackagePath": "staticwebassets\\assets\\images\\treeview.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-1.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-10.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-2.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-3.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-4.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-5.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-6.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-7.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-8.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\users\\avatar-9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\users\\avatar-9.jpg"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\images\\waves.png",
+      "PackagePath": "staticwebassets\\assets\\images\\waves.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\app.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\app.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\hyper-config.js",
+      "PackagePath": "staticwebassets\\assets\\js\\hyper-config.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\hyper-syntax.js",
+      "PackagePath": "staticwebassets\\assets\\js\\hyper-syntax.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-area.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-area.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-bar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-bar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-boxplot.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-boxplot.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-bubble.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-bubble.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-candlestick.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-candlestick.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-column.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-column.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-heatmap.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-heatmap.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-line.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-line.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-mixed.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-mixed.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-pie.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-pie.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-polar-area.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-polar-area.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-radar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-radar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-radialbar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-radialbar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-scatter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-scatter.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-sparklines.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-sparklines.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-timeline.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-timeline.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.apex-treemap.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.apex-treemap.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.britechart.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.britechart.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.calendar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.calendar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.chartjs-area.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.chartjs-area.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.chartjs-bar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.chartjs-bar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.chartjs-line.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.chartjs-line.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.chartjs-other.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.chartjs-other.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.crm-dashboard.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.crm-dashboard.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.crm-management.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.crm-management.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.crm-project.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.crm-project.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.customers.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.customers.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.dashboard-analytics.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.dashboard-analytics.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.dashboard-projects.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.dashboard-projects.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.dashboard-wallet.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.dashboard-wallet.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.dashboard.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.dashboard.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.datatable-init.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.datatable-init.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.form-wizard.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.form-wizard.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.google-maps.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.google-maps.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.inbox.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.inbox.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.jstree.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.jstree.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.materialdesignicons.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.materialdesignicons.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.products.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.products.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.profile.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.profile.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.project-detail.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.project-detail.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.project-gantt.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.project-gantt.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.quilljs.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.quilljs.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.remixicons.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.remixicons.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.sellers.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.sellers.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.simplemde.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.simplemde.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.sparkline.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.sparkline.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.tasks.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.tasks.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.timepicker.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.timepicker.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.toastr.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.toastr.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.typehead.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.typehead.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.vector-maps.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.vector-maps.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\pages\\demo.widgets.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages\\demo.widgets.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\ui\\component.dragula.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui\\component.dragula.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\ui\\component.fileupload.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui\\component.fileupload.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\ui\\component.range-slider.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui\\component.range-slider.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\ui\\component.rating.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui\\component.rating.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\ui\\component.todo.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui\\component.todo.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\js\\vendor.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-au-mill-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-au-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-ca-lcc-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-ca-lcc-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-merc.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-merc.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-mill.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-mill.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-europe-mill-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-europe-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-fr-merc-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-fr-merc-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-in-mill-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-in-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-uk-mill-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-uk-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-il-chicago-mill-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-il-chicago-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-merc-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-merc-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-world-mill-en.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-world-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\apexcharts\\apexcharts.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\apexcharts\\apexcharts.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-maxlength\\bootstrap-maxlength.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-maxlength\\bootstrap-maxlength.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\britecharts\\bundled\\britecharts.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\britecharts\\bundled\\britecharts.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\britecharts\\css\\britecharts.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\britecharts\\css\\britecharts.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\chart.js\\chart.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\chart.js\\chart.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\clipboard\\clipboard.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\clipboard\\clipboard.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\d3\\d3.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\d3\\d3.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-bs5\\css\\dataTables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-bs5\\css\\dataTables.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-bs5\\js\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-bs5\\js\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-buttons-bs5\\css\\buttons.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-buttons-bs5\\css\\buttons.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-buttons-bs5\\js\\buttons.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-buttons-bs5\\js\\buttons.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-buttons\\js\\buttons.flash.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-buttons\\js\\buttons.flash.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-buttons\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-buttons\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-buttons\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-buttons\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-buttons\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-buttons\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-fixedcolumns-bs5\\css\\fixedColumns.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-fixedcolumns-bs5\\css\\fixedColumns.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-fixedcolumns-bs5\\js\\fixedColumns.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-fixedcolumns-bs5\\js\\fixedColumns.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-fixedheader-bs5\\css\\fixedHeader.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-fixedheader-bs5\\css\\fixedHeader.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-fixedheader\\js\\dataTables.fixedHeader.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-fixedheader\\js\\dataTables.fixedHeader.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-keytable\\js\\dataTables.keyTable.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-keytable\\js\\dataTables.keyTable.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-responsive-bs5\\css\\responsive.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-responsive-bs5\\css\\responsive.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-responsive-bs5\\js\\responsive.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-responsive-bs5\\js\\responsive.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-responsive\\js\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-responsive\\js\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-select-bs5\\css\\select.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-select-bs5\\css\\select.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net-select\\js\\dataTables.select.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net-select\\js\\dataTables.select.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\datatables.net\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\datatables.net\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\daterangepicker\\daterangepicker.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\daterangepicker\\daterangepicker.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\daterangepicker\\daterangepicker.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\daterangepicker\\daterangepicker.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\daterangepicker\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\daterangepicker\\moment.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\dragula\\dragula.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\dragula\\dragula.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\dropzone\\min\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\dropzone\\min\\dropzone.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\flatpickr\\flatpickr.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\flatpickr\\flatpickr.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\flatpickr\\flatpickr.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\flatpickr\\flatpickr.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\frappe-gantt\\frappe-gantt.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\frappe-gantt\\frappe-gantt.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\frappe-gantt\\frappe-gantt.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\frappe-gantt\\frappe-gantt.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\fullcalendar\\main.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fullcalendar\\main.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\fullcalendar\\main.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fullcalendar\\main.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\gmaps\\gmaps.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\gmaps\\gmaps.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\handlebars\\handlebars.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\handlebars\\handlebars.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\highlightjs\\highlight.pack.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\highlightjs\\highlight.pack.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\ion-rangeslider\\js\\ion.rangeSlider.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\ion-rangeslider\\js\\ion.rangeSlider.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jquery-datatables-checkboxes\\js\\dataTables.checkboxes.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jquery-datatables-checkboxes\\js\\dataTables.checkboxes.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jquery-mask-plugin\\jquery.mask.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jquery-mask-plugin\\jquery.mask.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jquery-sparkline\\jquery.sparkline.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jquery-sparkline\\jquery.sparkline.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jquery-toast-plugin\\jquery.toast.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jquery-toast-plugin\\jquery.toast.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jquery-toast-plugin\\jquery.toast.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jquery-toast-plugin\\jquery.toast.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jquery.rateit\\scripts\\jquery.rateit.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jquery.rateit\\scripts\\jquery.rateit.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jstree\\jstree.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jstree\\jstree.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jstree\\themes\\default\\32px.png",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jstree\\themes\\default\\32px.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jstree\\themes\\default\\40px.png",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jstree\\themes\\default\\40px.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jstree\\themes\\default\\style.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jstree\\themes\\default\\style.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\jstree\\themes\\default\\throbber.gif",
+      "PackagePath": "staticwebassets\\assets\\vendor\\jstree\\themes\\default\\throbber.gif"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\moment\\min\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\moment\\min\\moment.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\quill\\quill.bubble.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\quill\\quill.bubble.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\quill\\quill.core.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\quill\\quill.core.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\quill\\quill.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\quill\\quill.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\quill\\quill.snow.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\quill\\quill.snow.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\simplemde\\simplemde.min.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\simplemde\\simplemde.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\simplemde\\simplemde.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\simplemde\\simplemde.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\twitter-bootstrap-wizard\\jquery.bootstrap.wizard.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\twitter-bootstrap-wizard\\jquery.bootstrap.wizard.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\assets\\vendor\\typeahead.js\\typeahead.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\typeahead.js\\typeahead.bundle.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\app.min.js",
+      "PackagePath": "staticwebassets\\js\\app.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\hyper-config.js",
+      "PackagePath": "staticwebassets\\js\\hyper-config.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\hyper-syntax.js",
+      "PackagePath": "staticwebassets\\js\\hyper-syntax.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-area.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-area.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-bar.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-bar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-boxplot.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-boxplot.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-bubble.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-bubble.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-candlestick.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-candlestick.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-column.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-column.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-heatmap.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-heatmap.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-line.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-line.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-mixed.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-mixed.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-pie.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-pie.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-polar-area.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-polar-area.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-radar.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-radar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-radialbar.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-radialbar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-scatter.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-scatter.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-sparklines.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-sparklines.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-timeline.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-timeline.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.apex-treemap.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.apex-treemap.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.britechart.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.britechart.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.calendar.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.calendar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.chartjs-area.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.chartjs-area.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.chartjs-bar.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.chartjs-bar.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.chartjs-line.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.chartjs-line.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.chartjs-other.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.chartjs-other.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.crm-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.crm-dashboard.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.crm-management.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.crm-management.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.crm-project.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.crm-project.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.customers.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.customers.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.dashboard-analytics.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.dashboard-analytics.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.dashboard-projects.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.dashboard-projects.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.dashboard-wallet.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.dashboard-wallet.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.dashboard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.dashboard.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.datatable-init.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.datatable-init.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.form-wizard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.form-wizard.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.google-maps.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.google-maps.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.inbox.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.inbox.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.jstree.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.jstree.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.materialdesignicons.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.materialdesignicons.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.products.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.products.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.profile.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.profile.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.project-detail.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.project-detail.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.project-gantt.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.project-gantt.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.quilljs.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.quilljs.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.remixicons.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.remixicons.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.sellers.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.sellers.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.simplemde.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.simplemde.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.sparkline.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.sparkline.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.tasks.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.tasks.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.timepicker.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.timepicker.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.toastr.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.toastr.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.typehead.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.typehead.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.vector-maps.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.vector-maps.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\pages\\demo.widgets.js",
+      "PackagePath": "staticwebassets\\js\\pages\\demo.widgets.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\ui\\component.dragula.js",
+      "PackagePath": "staticwebassets\\js\\ui\\component.dragula.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\ui\\component.fileupload.js",
+      "PackagePath": "staticwebassets\\js\\ui\\component.fileupload.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\ui\\component.range-slider.js",
+      "PackagePath": "staticwebassets\\js\\ui\\component.range-slider.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\ui\\component.rating.js",
+      "PackagePath": "staticwebassets\\js\\ui\\component.rating.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\ui\\component.todo.js",
+      "PackagePath": "staticwebassets\\js\\ui\\component.todo.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\js\\vendor.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.css",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.min.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-au-mill-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-au-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-ca-lcc-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-ca-lcc-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-merc.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-merc.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-mill.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-es-mill.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-europe-mill-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-europe-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-fr-merc-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-fr-merc-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-in-mill-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-in-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-uk-mill-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-uk-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-il-chicago-mill-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-il-chicago-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-merc-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-merc-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-world-mill-en.js",
+      "PackagePath": "staticwebassets\\vendor\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-world-mill-en.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\apexcharts\\apexcharts.min.js",
+      "PackagePath": "staticwebassets\\vendor\\apexcharts\\apexcharts.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-maxlength\\bootstrap-maxlength.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-maxlength\\bootstrap-maxlength.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\britecharts\\bundled\\britecharts.min.js",
+      "PackagePath": "staticwebassets\\vendor\\britecharts\\bundled\\britecharts.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\britecharts\\css\\britecharts.min.css",
+      "PackagePath": "staticwebassets\\vendor\\britecharts\\css\\britecharts.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\chart.js\\chart.min.js",
+      "PackagePath": "staticwebassets\\vendor\\chart.js\\chart.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\clipboard\\clipboard.min.js",
+      "PackagePath": "staticwebassets\\vendor\\clipboard\\clipboard.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\d3\\d3.min.js",
+      "PackagePath": "staticwebassets\\vendor\\d3\\d3.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-bs5\\css\\dataTables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-bs5\\css\\dataTables.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-bs5\\js\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-bs5\\js\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-buttons-bs5\\css\\buttons.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-buttons-bs5\\css\\buttons.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-buttons-bs5\\js\\buttons.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-buttons-bs5\\js\\buttons.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-buttons\\js\\buttons.flash.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-buttons\\js\\buttons.flash.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-buttons\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-buttons\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-buttons\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-buttons\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-buttons\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-buttons\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-fixedcolumns-bs5\\css\\fixedColumns.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-fixedcolumns-bs5\\css\\fixedColumns.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-fixedcolumns-bs5\\js\\fixedColumns.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-fixedcolumns-bs5\\js\\fixedColumns.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-fixedheader-bs5\\css\\fixedHeader.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-fixedheader-bs5\\css\\fixedHeader.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-fixedheader\\js\\dataTables.fixedHeader.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-fixedheader\\js\\dataTables.fixedHeader.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-keytable\\js\\dataTables.keyTable.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-keytable\\js\\dataTables.keyTable.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-responsive-bs5\\css\\responsive.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-responsive-bs5\\css\\responsive.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-responsive-bs5\\js\\responsive.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-responsive-bs5\\js\\responsive.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-responsive\\js\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-responsive\\js\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-select-bs5\\css\\select.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-select-bs5\\css\\select.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net-select\\js\\dataTables.select.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net-select\\js\\dataTables.select.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\datatables.net\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\vendor\\datatables.net\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\daterangepicker\\daterangepicker.css",
+      "PackagePath": "staticwebassets\\vendor\\daterangepicker\\daterangepicker.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\daterangepicker\\daterangepicker.js",
+      "PackagePath": "staticwebassets\\vendor\\daterangepicker\\daterangepicker.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\daterangepicker\\moment.min.js",
+      "PackagePath": "staticwebassets\\vendor\\daterangepicker\\moment.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\dragula\\dragula.min.js",
+      "PackagePath": "staticwebassets\\vendor\\dragula\\dragula.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\dropzone\\min\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\vendor\\dropzone\\min\\dropzone.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\flatpickr\\flatpickr.min.css",
+      "PackagePath": "staticwebassets\\vendor\\flatpickr\\flatpickr.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\flatpickr\\flatpickr.min.js",
+      "PackagePath": "staticwebassets\\vendor\\flatpickr\\flatpickr.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\frappe-gantt\\frappe-gantt.min.css",
+      "PackagePath": "staticwebassets\\vendor\\frappe-gantt\\frappe-gantt.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\frappe-gantt\\frappe-gantt.min.js",
+      "PackagePath": "staticwebassets\\vendor\\frappe-gantt\\frappe-gantt.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\fullcalendar\\main.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fullcalendar\\main.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\fullcalendar\\main.min.js",
+      "PackagePath": "staticwebassets\\vendor\\fullcalendar\\main.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\gmaps\\gmaps.min.js",
+      "PackagePath": "staticwebassets\\vendor\\gmaps\\gmaps.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\handlebars\\handlebars.min.js",
+      "PackagePath": "staticwebassets\\vendor\\handlebars\\handlebars.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\highlightjs\\highlight.pack.min.js",
+      "PackagePath": "staticwebassets\\vendor\\highlightjs\\highlight.pack.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\ion-rangeslider\\js\\ion.rangeSlider.min.js",
+      "PackagePath": "staticwebassets\\vendor\\ion-rangeslider\\js\\ion.rangeSlider.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jquery-datatables-checkboxes\\js\\dataTables.checkboxes.min.js",
+      "PackagePath": "staticwebassets\\vendor\\jquery-datatables-checkboxes\\js\\dataTables.checkboxes.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jquery-mask-plugin\\jquery.mask.min.js",
+      "PackagePath": "staticwebassets\\vendor\\jquery-mask-plugin\\jquery.mask.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jquery-sparkline\\jquery.sparkline.min.js",
+      "PackagePath": "staticwebassets\\vendor\\jquery-sparkline\\jquery.sparkline.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jquery-toast-plugin\\jquery.toast.min.css",
+      "PackagePath": "staticwebassets\\vendor\\jquery-toast-plugin\\jquery.toast.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jquery-toast-plugin\\jquery.toast.min.js",
+      "PackagePath": "staticwebassets\\vendor\\jquery-toast-plugin\\jquery.toast.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jquery.rateit\\scripts\\jquery.rateit.min.js",
+      "PackagePath": "staticwebassets\\vendor\\jquery.rateit\\scripts\\jquery.rateit.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jstree\\jstree.min.js",
+      "PackagePath": "staticwebassets\\vendor\\jstree\\jstree.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jstree\\themes\\default\\32px.png",
+      "PackagePath": "staticwebassets\\vendor\\jstree\\themes\\default\\32px.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jstree\\themes\\default\\40px.png",
+      "PackagePath": "staticwebassets\\vendor\\jstree\\themes\\default\\40px.png"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jstree\\themes\\default\\style.min.css",
+      "PackagePath": "staticwebassets\\vendor\\jstree\\themes\\default\\style.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\jstree\\themes\\default\\throbber.gif",
+      "PackagePath": "staticwebassets\\vendor\\jstree\\themes\\default\\throbber.gif"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\moment\\min\\moment.min.js",
+      "PackagePath": "staticwebassets\\vendor\\moment\\min\\moment.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\quill\\quill.bubble.css",
+      "PackagePath": "staticwebassets\\vendor\\quill\\quill.bubble.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\quill\\quill.core.css",
+      "PackagePath": "staticwebassets\\vendor\\quill\\quill.core.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\quill\\quill.min.js",
+      "PackagePath": "staticwebassets\\vendor\\quill\\quill.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\quill\\quill.snow.css",
+      "PackagePath": "staticwebassets\\vendor\\quill\\quill.snow.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\vendor\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\vendor\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\simplemde\\simplemde.min.css",
+      "PackagePath": "staticwebassets\\vendor\\simplemde\\simplemde.min.css"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\simplemde\\simplemde.min.js",
+      "PackagePath": "staticwebassets\\vendor\\simplemde\\simplemde.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\twitter-bootstrap-wizard\\jquery.bootstrap.wizard.min.js",
+      "PackagePath": "staticwebassets\\vendor\\twitter-bootstrap-wizard\\jquery.bootstrap.wizard.min.js"
+    },
+    {
+      "Id": "D:\\VibeZWeb\\VibeZMVC\\wwwroot\\vendor\\typeahead.js\\typeahead.bundle.min.js",
+      "PackagePath": "staticwebassets\\vendor\\typeahead.js\\typeahead.bundle.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.VibeZMVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.VibeZMVC.props",
+      "PackagePath": "build\\VibeZMVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.VibeZMVC.props",
+      "PackagePath": "buildMultiTargeting\\VibeZMVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.VibeZMVC.props",
+      "PackagePath": "buildTransitive\\VibeZMVC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
