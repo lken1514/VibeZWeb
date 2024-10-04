@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VibeZMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89846547f76a1022817e6cc08550d9add69fb389")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc9732f44ee688c1dedd2d6236df375cb01f5b67")]
 [assembly: System.Reflection.AssemblyProductAttribute("VibeZMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VibeZMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
