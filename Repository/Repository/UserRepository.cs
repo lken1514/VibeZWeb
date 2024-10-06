@@ -15,6 +15,11 @@ namespace Repositories.Repository
         {
             return await UserDAO.Instance.GetAllUsers();
         }
+        public async Task<User> Authenticate(string username, string password)
+        {
+            return await UserDAO.Instance.Authenticate(username, password);
+        }
+
 
         public async Task<User> GetUserById(Guid userId)
         {

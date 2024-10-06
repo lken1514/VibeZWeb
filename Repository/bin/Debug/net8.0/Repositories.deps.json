@@ -641,10 +641,7 @@
           "Microsoft.Extensions.Configuration.Json": "8.0.0"
         },
         "runtime": {
-          "BusinessObjects.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "BusinessObjects.dll": {}
         }
       },
       "DataAccess/1.0.0": {
@@ -652,10 +649,7 @@
           "BusinessObjects": "1.0.0"
         },
         "runtime": {
-          "DataAccess.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DataAccess.dll": {}
         }
       }
     }

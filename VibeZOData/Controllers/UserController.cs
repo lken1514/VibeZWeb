@@ -1,7 +1,10 @@
 ﻿using BusinessObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using Repositories.IRepository;
 using Repositories.Repository;
+using System.Security.Claims;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -66,6 +69,16 @@ namespace VibeZOData.Controllers
             await _userRepository.DeleteUser(id);
             return Content("Deleted Successfully");
         }
-
+        [HttpGet("Admin")]
+        [Authorize(Roles = "admin")]
+        public async Task<ActionResult> GetAdminInfo()
+        {
+      
+                var userName = User.Identity.Name; // Lấy tên người dùng
+                var userRole = User.FindFirst(ClaimTypes.Role)?.Value; // Lấy vai trò
+            Console.WriteLine(userRole);
+                return Ok(new { UserName = userName, Role = userRole });
+            
+        }
     }
 }

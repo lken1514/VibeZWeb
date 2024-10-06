@@ -24,7 +24,7 @@ namespace BusinessObjects
         public virtual DbSet<Playlist> Playlists { get; set; }
         public virtual DbSet<Library_Album> Library_Albums { get; set; }
         public virtual DbSet<Library_Artist> Library_Artists { get; set; }
-        //public virtual DbSet<Library_Playlist> Library_Playlists { get; set; }
+        public virtual DbSet<Library_Playlist> Library_Playlists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,7 +39,12 @@ namespace BusinessObjects
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+           .HasOne(u => u.Library)                // Một User có một Library
+           .WithOne(l => l.User)                  // Một Library có một User
+           .HasForeignKey<Library>(l => l.UserId); // Chỉ định Library có khóa ngoại UserId
 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

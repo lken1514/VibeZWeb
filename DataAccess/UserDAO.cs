@@ -20,6 +20,12 @@ namespace DataAccess
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
             if (user == null) return null;
             return user;
+        }        
+        public async Task<User> Authenticate(string username, string password)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username && u.Password == password);
+            if (user == null) return null;
+            return user;
         }
 
         public async Task Add(User user)

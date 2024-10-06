@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessObjects.Migrations
 {
     [DbContext(typeof(VibeZDbContext))]
-    [Migration("20241003031344_Initial")]
+    [Migration("20241003132429_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -193,9 +193,6 @@ namespace BusinessObjects.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
                     b.ToTable("Libraries");
                 });
 
@@ -239,6 +236,27 @@ namespace BusinessObjects.Migrations
                     b.HasIndex("ArtistId");
 
                     b.ToTable("Library_Artists");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Playlist", b =>
+                {
+                    b.Property<Guid>("LibraryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PlaylistId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("LibraryId", "PlaylistId");
+
+                    b.HasIndex("PlaylistId");
+
+                    b.ToTable("Library_Playlists");
                 });
 
             modelBuilder.Entity("BusinessObjects.Like", b =>
@@ -357,6 +375,9 @@ namespace BusinessObjects.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("CreateUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -372,12 +393,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("PlaylistId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Playlists");
                 });
@@ -493,6 +509,9 @@ namespace BusinessObjects.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("LibraryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -517,6 +536,9 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LibraryId")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -586,17 +608,6 @@ namespace BusinessObjects.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BusinessObjects.Library", b =>
-                {
-                    b.HasOne("BusinessObjects.User", "User")
-                        .WithOne("Library")
-                        .HasForeignKey("BusinessObjects.Library", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("BusinessObjects.Library_Album", b =>
                 {
                     b.HasOne("BusinessObjects.Album", null)
@@ -623,6 +634,21 @@ namespace BusinessObjects.Migrations
                     b.HasOne("BusinessObjects.Library", null)
                         .WithMany("Library_Artists")
                         .HasForeignKey("LibraryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Playlist", b =>
+                {
+                    b.HasOne("BusinessObjects.Library", null)
+                        .WithMany("Library_Playlists")
+                        .HasForeignKey("LibraryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BusinessObjects.Playlist", null)
+                        .WithMany("Library_Playlists")
+                        .HasForeignKey("PlaylistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -659,15 +685,6 @@ namespace BusinessObjects.Migrations
                 {
                     b.HasOne("BusinessObjects.User", null)
                         .WithMany("Payment")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BusinessObjects.Playlist", b =>
-                {
-                    b.HasOne("BusinessObjects.User", null)
-                        .WithMany("Playlists")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -710,6 +727,17 @@ namespace BusinessObjects.Migrations
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BusinessObjects.User", b =>
+                {
+                    b.HasOne("BusinessObjects.Library", "Library")
+                        .WithOne("User")
+                        .HasForeignKey("BusinessObjects.User", "LibraryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Library");
                 });
 
             modelBuilder.Entity("BusinessObjects.User_package", b =>
@@ -760,6 +788,10 @@ namespace BusinessObjects.Migrations
                     b.Navigation("Library_Albums");
 
                     b.Navigation("Library_Artists");
+
+                    b.Navigation("Library_Playlists");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BusinessObjects.Package", b =>
@@ -771,6 +803,8 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Playlist", b =>
                 {
+                    b.Navigation("Library_Playlists");
+
                     b.Navigation("TrackPlayLists");
                 });
 
@@ -787,13 +821,9 @@ namespace BusinessObjects.Migrations
 
                     b.Navigation("Follow");
 
-                    b.Navigation("Library");
-
                     b.Navigation("Likes");
 
                     b.Navigation("Payment");
-
-                    b.Navigation("Playlists");
 
                     b.Navigation("User_package");
                 });

@@ -14,6 +14,8 @@ namespace Repositories.IRepository
         Task AddUser(User user);
         Task UpdateUser(User user);
         Task DeleteUser(Guid userId);
+        Task<User> Authenticate(string username, string password);
+
     }
 
 }

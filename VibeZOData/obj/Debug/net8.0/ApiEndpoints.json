@@ -57,8 +57,7 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "odata/"
+    ]
   },
   {
     "ContainingType": "Microsoft.AspNetCore.OData.Routing.Controllers.MetadataController",
@@ -118,8 +117,7 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "odata/$metadata"
+    ]
   },
   {
     "ContainingType": "VibeZOData.Controllers.FollowController",
@@ -316,6 +314,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VibeZOData.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "odata/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userLogin",
+        "Type": "JwtApp.Models.UserLogin",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VibeZOData.Controllers.UserController",
     "Method": "GetAll",
     "RelativePath": "odata/User",
@@ -495,6 +509,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VibeZOData.Controllers.UserController",
+    "Method": "GetAdminInfo",
+    "RelativePath": "odata/User/Admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VibeZOData.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
@@ -552,7 +576,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]
