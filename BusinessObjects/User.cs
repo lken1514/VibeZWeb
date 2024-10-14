@@ -9,17 +9,16 @@ namespace BusinessObjects
     public class User : BaseEntity
     {
         public Guid Id { get; set; }        
-        public Guid LibraryId { get; set; }        
         public virtual Library? Library { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Gender { get; set; }
-        public string Role { get; set; }
+        public string? Gender { get; set; }
+        public string Role { get; set; } = "User";
 
         public string UserName { get; set; }
-        public DateTime DOB { get; set; }
-        public string premium { get; set; }
+        public DateOnly? DOB { get; set; }
+        public string Premium { get; set; } = "Free";
 
         public virtual ICollection<Follow> ? Follow { get; set; }
         public virtual ICollection<BlockedArtist>? BlockedArtists { get; set; }

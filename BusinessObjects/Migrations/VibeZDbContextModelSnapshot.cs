@@ -176,7 +176,6 @@ namespace BusinessObjects.Migrations
             modelBuilder.Entity("BusinessObjects.Library", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreateDate")
@@ -189,9 +188,6 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("Libraries");
                 });
@@ -498,25 +494,24 @@ namespace BusinessObjects.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DOB")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly?>("DOB")
+                        .HasColumnType("date");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("LibraryId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Premium")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -528,10 +523,6 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("premium")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -609,7 +600,7 @@ namespace BusinessObjects.Migrations
                 {
                     b.HasOne("BusinessObjects.User", "User")
                         .WithOne("Library")
-                        .HasForeignKey("BusinessObjects.Library", "UserId")
+                        .HasForeignKey("BusinessObjects.Library", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

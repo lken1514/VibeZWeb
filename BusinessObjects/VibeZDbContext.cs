@@ -40,11 +40,10 @@ namespace BusinessObjects
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-           .HasOne(u => u.Library)                // Một User có một Library
-           .WithOne(l => l.User)                  // Một Library có một User
-           .HasForeignKey<Library>(l => l.UserId); // Chỉ định Library có khóa ngoại UserId
+                .HasOne(u => u.Library)
+                .WithOne(l => l.User)
+                .HasForeignKey<Library>(l => l.Id);
 
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

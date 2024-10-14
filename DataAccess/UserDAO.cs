@@ -27,12 +27,22 @@ namespace DataAccess
             if (user == null) return null;
             return user;
         }
-
+        public async Task<User> FindByNameAsync(string username)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username );
+            if (user == null) return null;
+            return user;
+        }
         public async Task Add(User user)
         {
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }
+        /*public async Task Add(string username, string password)
+        {
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+        }*/
 
         public async Task Update(User user)
         {

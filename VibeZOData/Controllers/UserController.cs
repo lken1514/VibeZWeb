@@ -12,19 +12,14 @@ namespace VibeZOData.Controllers
 {
     [Route("odata/User")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController(IUserRepository _userRepository, ILibraryRepository libraryRepository) : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
-        public UserController()
-        {
-            _userRepository = new UserRepository();
-        }
-
         // GET: api/<UserController>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAll()
         {
             var list = await _userRepository.GetAllUsers();
+            Console.Write("CONCACCCCCCCCCCCCCCCC");
             return Ok(list);
         }
 
@@ -73,12 +68,12 @@ namespace VibeZOData.Controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> GetAdminInfo()
         {
-      
-                var userName = User.Identity.Name; // Lấy tên người dùng
-                var userRole = User.FindFirst(ClaimTypes.Role)?.Value; // Lấy vai trò
+
+            var userName = User.Identity.Name; // Lấy tên người dùng
+            var userRole = User.FindFirst(ClaimTypes.Role)?.Value; // Lấy vai trò
             Console.WriteLine(userRole);
-                return Ok(new { UserName = userName, Role = userRole });
-            
+            return Ok(new { UserName = userName, Role = userRole });
+
         }
     }
 }

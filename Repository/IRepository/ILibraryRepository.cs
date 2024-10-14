@@ -14,5 +14,6 @@ namespace Repositories.IRepository
         Task AddLibrary(Library library);
         Task UpdateLibrary(Library library);
         Task DeleteLibrary(Guid libraryId);
+        //Task<Guid> GenerateUniqueLibraryIdAsync();
     }
 }

@@ -14,7 +14,6 @@ namespace DataAccess
         {
             return await _context.Libraries.ToListAsync();
         }
-
         public async Task<Library> GetLibraryById(Guid libraryId)
         {
             var library = await _context.Libraries.FirstOrDefaultAsync(l => l.Id == libraryId);

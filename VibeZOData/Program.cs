@@ -10,14 +10,15 @@ using Microsoft.IdentityModel.Tokens;
 namespace VibeZOData
 {
     public class Program
-    {
+    { 
         public static void Main(string[] args)
-        {
+        { 
             var builder = WebApplication.CreateBuilder(args);
             ConfigurationManager configuration = builder.Configuration;
 
             builder.Services.AddScoped(typeof(VibeZDbContext));
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<ILibraryRepository, LibraryRepository>();
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
             builder.Services.AddControllers().AddOData(
                 opt => opt.Select().Filter().Count().OrderBy().SetMaxTop(null).Expand().AddRouteComponents("odata", EdmModelBuilder.GetEdmModel()));
@@ -40,7 +41,7 @@ namespace VibeZOData
                      ValidateAudience = true,
                      ValidAudience = configuration["JWT:ValidAudience"],
                      ValidIssuer = configuration["JWT:ValidIssuer"],
-                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
+                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]!))
                  };
              });
             builder.Services.AddCors(options =>
@@ -50,7 +51,7 @@ namespace VibeZOData
                     {
                         policy.WithOrigins("http://localhost:5173", "https://localhost:7241")
                               .AllowAnyMethod()
-                              .AllowAnyHeader(); // Cho phép bất kỳ header nào
+                              .AllowAnyHeader(); 
                     });
             });
 
