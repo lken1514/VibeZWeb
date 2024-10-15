@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VibeZOData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45ec7c3daeac8d0f0bbe5e540ff90ea2bcea5c71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9deef9ab4810cf864a818d5a70d702ba2640a467")]
 [assembly: System.Reflection.AssemblyProductAttribute("VibeZOData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VibeZOData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
