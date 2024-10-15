@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "D:\\VibeZWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|d:\\vibezweb\\vibezmvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|solutionrelative:vibezmvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}|Repository\\Repositories.csproj|d:\\vibezweb\\repository\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}|Repository\\Repositories.csproj|solutionrelative:repository\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|d:\\vibezweb\\vibezmvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|solutionrelative:vibezmvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{39840720-07A6-4C71-ACD9-38473498915E}|DataAccess\\DataAccess.csproj|d:\\vibezweb\\dataaccess\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39840720-07A6-4C71-ACD9-38473498915E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\categorydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CFB12A6-394C-4D54-B1E5-752B70541A74}|BusinessObjects\\BusinessObjects.csproj|d:\\vibezweb\\businessobjects\\vibezdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CFB12A6-394C-4D54-B1E5-752B70541A74}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\vibezdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\followcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\followcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|d:\\vibezweb\\vibezmvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|solutionrelative:vibezmvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|d:\\vibezweb\\vibezmvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}|VibeZMVC\\VibeZMVC.csproj|solutionrelative:vibezmvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\models\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\followcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\followcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8CFB12A6-394C-4D54-B1E5-752B70541A74}|BusinessObjects\\BusinessObjects.csproj|d:\\vibezweb\\businessobjects\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -109,24 +117,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 253,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\VibeZWeb\\VibeZMVC\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "VibeZMVC\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\VibeZWeb\\VibeZMVC\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "VibeZMVC\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T10:51:04.226Z",
+              "Title": "CategoryDAO.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\DataAccess\\CategoryDAO.cs",
+              "RelativeDocumentMoniker": "DataAccess\\CategoryDAO.cs",
+              "ToolTip": "D:\\VibeZWeb\\DataAccess\\CategoryDAO.cs",
+              "RelativeToolTip": "DataAccess\\CategoryDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T04:28:57.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\UserController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T15:13:09.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AlbumController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\AlbumController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\AlbumController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\AlbumController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\AlbumController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T15:12:54.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VibeZDbContext.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\VibeZDbContext.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\VibeZDbContext.cs",
+              "ToolTip": "D:\\VibeZWeb\\BusinessObjects\\VibeZDbContext.cs",
+              "RelativeToolTip": "BusinessObjects\\VibeZDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwCwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T13:57:24.759Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\Repository\\Repository\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repository\\CategoryRepository.cs",
+              "ToolTip": "D:\\VibeZWeb\\Repository\\Repository\\CategoryRepository.cs",
+              "RelativeToolTip": "Repository\\Repository\\CategoryRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T13:50:02.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FollowController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\FollowController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\FollowController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\FollowController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\FollowController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T09:47:49.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZMVC\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "VibeZMVC\\Views\\Home\\Index.cshtml",
@@ -134,12 +203,23 @@
               "RelativeToolTip": "VibeZMVC\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAOMAAAAAAAAAAAAYwO8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T02:16:41.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T02:16:41.787Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZMVC\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "VibeZMVC\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\VibeZWeb\\VibeZMVC\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "VibeZMVC\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-04T10:51:04.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "EdmModelBuilder.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Models\\EdmModelBuilder.cs",
               "RelativeDocumentMoniker": "VibeZOData\\Models\\EdmModelBuilder.cs",
@@ -151,31 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AlbumController.cs",
-              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\AlbumController.cs",
-              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\AlbumController.cs",
-              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\AlbumController.cs",
-              "RelativeToolTip": "VibeZOData\\Controllers\\AlbumController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA1wBoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T01:43:15.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\UserController.cs",
-              "RelativeToolTip": "VibeZOData\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T00:52:22.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "AutoMapperProfile.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Models\\AutoMapperProfile.cs",
               "RelativeDocumentMoniker": "VibeZOData\\Models\\AutoMapperProfile.cs",
@@ -187,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\appsettings.json",
               "RelativeDocumentMoniker": "VibeZOData\\appsettings.json",
@@ -199,19 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlaylistController.cs",
-              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\PlaylistController.cs",
-              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\PlaylistController.cs",
-              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\PlaylistController.cs",
-              "RelativeToolTip": "VibeZOData\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T00:52:05.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "PlaylistDTO.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZDTO\\PlaylistDTO.cs",
               "RelativeDocumentMoniker": "VibeZDTO\\PlaylistDTO.cs",
@@ -223,19 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FollowController.cs",
-              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\FollowController.cs",
-              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\FollowController.cs",
-              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\FollowController.cs",
-              "RelativeToolTip": "VibeZOData\\Controllers\\FollowController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T09:47:49.625Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "AlbumConfiguration.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\Data\\Config\\AlbumConfiguration.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Data\\Config\\AlbumConfiguration.cs",
@@ -247,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Album.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\Album.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Album.cs",
@@ -259,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "TrackConfiguration.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\Data\\Config\\TrackConfiguration.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Data\\Config\\TrackConfiguration.cs",
@@ -271,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "20241002140541_UpdatePlaylist.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\Migrations\\20241002140541_UpdatePlaylist.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Migrations\\20241002140541_UpdatePlaylist.cs",
@@ -283,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "PlaylistConfiguration.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\Data\\Config\\PlaylistConfiguration.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Data\\Config\\PlaylistConfiguration.cs",
@@ -295,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "20241002140431_UpdatePlaylist3.cs",
               "DocumentMoniker": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\Migrations\\20241002140431_UpdatePlaylist3.cs",
               "RelativeDocumentMoniker": "..\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\Migrations\\20241002140431_UpdatePlaylist3.cs",
@@ -307,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "PlaylistRepository.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\Repository\\Repository\\PlaylistRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repository\\PlaylistRepository.cs",
@@ -319,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "IPlaylistRepository.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\Repository\\IRepository\\IPlaylistRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IRepository\\IPlaylistRepository.cs",
@@ -331,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Playlist.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\Playlist.cs",
               "RelativeDocumentMoniker": "BusinessObjects\\Playlist.cs",
@@ -343,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "PlaylistDAO.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\DataAccess\\PlaylistDAO.cs",
               "RelativeDocumentMoniker": "DataAccess\\PlaylistDAO.cs",
@@ -355,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "TrackDTO.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZDTO\\TrackDTO.cs",
               "RelativeDocumentMoniker": "VibeZDTO\\TrackDTO.cs",
@@ -367,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "TrackRepository.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\Repository\\Repository\\TrackRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repository\\TrackRepository.cs",
@@ -379,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "ITrackRepository.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\Repository\\IRepository\\ITrackRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IRepository\\ITrackRepository.cs",
@@ -391,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "TrackDAO.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\DataAccess\\TrackDAO.cs",
               "RelativeDocumentMoniker": "DataAccess\\TrackDAO.cs",
@@ -403,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "TrackController.cs",
               "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\TrackController.cs",
               "RelativeDocumentMoniker": "VibeZOData\\Controllers\\TrackController.cs",
