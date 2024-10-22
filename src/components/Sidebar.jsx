@@ -13,7 +13,8 @@ const Sidebar = () => {
   const [isArtist, setIsArtist] = useState(false);
   const [isPlaylist, setIsPlaylist] = useState(true); // Set mặc định là true khi component render
   const [isAlbum, setIsAlbum] = useState(false);
-  const { userId } = useContext(LoginContext); // Nếu không có `setUserId` trong context thì bỏ dòng `setUserId`.
+  const { userId, isLoggedIn} = useContext(LoginContext); // Nếu không có `setUserId` trong context thì bỏ dòng `setUserId`.
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
     const fetchId = async () => {
@@ -142,10 +143,11 @@ const Sidebar = () => {
           </svg>
         </form>
 
-        {isPlaylist && playlistData.length > 0 && playlistData.map((playlist, index) => (
+        {isLoggedIn && isPlaylist && playlistData.length > 0 && playlistData.map((playlist, index) => (
           <div
-            key={playlist.id || index} // Sử dụng id nếu có, hoặc index
-            className="relative flex w-[100%] h-[10%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded bg-[#3E3E3E]"
+            key={playlist.playlistId || index} // Sử dụng id nếu có, hoặc index
+            className="relative flex w-[100%] h-[11%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded"
+            onClick={() => navigate(`playlist/${playlist.playlistId}`)}
           >
             <div>
               <img
@@ -155,10 +157,28 @@ const Sidebar = () => {
               />
             </div>
             <div className="flex flex-col ml-5">
-              <p className="text-[18px] font-bold">{playlist.name || 'Không có tên'}</p>
+              <p className="text-[18px] font-semibold">{playlist.name || 'Không có tên'}</p>
               <a className="text-gray-400 text-[18px] hover:text-white hover:underline hover:decoration-1">
-                {playlist.artistName || 'Unknown Artist'}
+                {playlist.createBy}
               </a>
+            </div>
+          </div>
+        ))}
+         {isLoggedIn && isArtist && artistData.length > 0 && artistData.map((artist, index) => (
+          <div
+             // Sử dụng id nếu có, hoặc index
+            className="relative flex w-[100%] h-[11%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded"
+            onClick={() => navigate(`artist/${artist.id}`)}
+          >
+            <div>
+              <img
+                className="rounded-full h-full w-full"
+                src={artist.image || assets.img1}
+                alt={artist.name || 'Unknown'}
+              />
+            </div>
+            <div className="flex flex-col ml-5">
+              <p className="text-[18px] font-semibold flex m-auto">{artist.name || 'Không có tên'}</p>
             </div>
           </div>
         ))}

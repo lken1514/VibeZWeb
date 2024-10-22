@@ -7,7 +7,7 @@ const AlbumItem = ({image, name, release, id,artist}) => {
 
   return (
     <div>
-      <div onClick={() => navigate(`/album/${id}`)} className="w-[300px] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]">
+      <div onClick={() => navigate(`/album/${id}`)} className="w-[30%] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]">
         <img className="rounded" src={image} alt="" />
         <p className="font-bold mt-2 mb-1">{name}</p>
         <p className="font-bold mt-2 mb-1">{artist}</p>

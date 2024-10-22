@@ -7,6 +7,8 @@ const Display = () => {
   const displayRef = useRef();
   const location = useLocation();
   const isAlbum = location.pathname.includes('album');
+  const isArtist = location.pathname.includes('artist');
+  const isPlaylist = location.pathname.includes('playlist');
   const albumId = isAlbum ? location.pathname.split('/').pop() : '';
   const bgColor = isAlbum && albumsData[Number(albumId)] ? albumsData[Number(albumId)].bgColor : '#121212';
 

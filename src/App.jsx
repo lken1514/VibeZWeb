@@ -7,6 +7,7 @@ import Display from './components/Display';
 import LoginComponent from './components/LoginForm/LoginComponent'
 import DisplayHome from './components/DisplayHome'; // Imported to use inside nested routes
 import DisplayArtist from './components/DisplayArtist';
+import DisplayPlaylist from './components/DisplayPlaylist'
 import Queue from './components/Queue';
 import Plans from './components/Plans';
 
@@ -21,7 +22,8 @@ function App() {
           element: <Display />, // display 
           children: [
             { path: '/', element: <DisplayHome /> }, // home page
-            { path: 'album/:id', element: <DisplayAlbum /> }, // album page
+            { path: 'album/:id', element: <DisplayAlbum /> },
+            { path: 'playlist/:id', element: <DisplayPlaylist /> }, // album page
             {path: 'artist/:id', element: <DisplayArtist />}, // artist page
           ],
         }

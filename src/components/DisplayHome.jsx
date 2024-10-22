@@ -63,7 +63,7 @@ const DisplayHome = () => {
     <>
       {
         isLoggedIn && (<div className="mb-4">
-          <h1 className="my-5 font-bold text-2xl">Hot Album</h1>
+          <h1 className="my-5 font-bold text-2xl">Popular Album</h1>
           <div className="flex overflow-auto">
             {albums.map((item, index) => (
               <AlbumItem key={index} name={item.name} release={item.dateOfRelease} artist={artists[item.id]} image={item.image} id={item.id} />
@@ -72,8 +72,9 @@ const DisplayHome = () => {
         </div>)
       }
 
-
-      <div className="mb-4">
+    {
+      isLoggedIn && songsData.length > 0 && (
+        <div className="mb-4">
         <h1 className="my-5 font-bold text-2xl">Recently Played</h1>
         <div className="flex overflow-auto">
           {songsData.map((item, index) => (
@@ -81,6 +82,9 @@ const DisplayHome = () => {
           ))}
         </div>
       </div>
+      )
+    }
+
       <div className="mb-4">
         <h1 className="my-5 font-bold text-2xl">Your Favorite Artists</h1>
         <div className="flex overflow-auto">
@@ -89,14 +93,14 @@ const DisplayHome = () => {
           ))}
         </div>
       </div>
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <h1 className="my-5 font-bold text-2xl">Recently Played</h1>
         <div className="flex overflow-auto">
           {songsData.map((item, index) => (
             <SongItem key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

@@ -18,7 +18,7 @@ function RootLayout() {
         <Sidebar />
         <Outlet />
         {isListVisible &&
-          (<div className='w-[20%]'>
+          (<div className='w-[23%]'>
             <Queue />
           </div>)
         }

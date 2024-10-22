@@ -8,12 +8,13 @@ const LoginContextProvider = (props) => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState(null);
+    const [username, setusername] = useState(null);
     const [userId, setUserId] = useState(null);
     useEffect(() => {
         // Kiểm tra token trong localStorage khi ứng dụng khởi động
         const token = localStorage.getItem('jwtToken');
         const storedUser = localStorage.getItem('username');
-        const storeId = localStorage.getItem('userId').replace(/"/g, ''); // Loại bỏ dấu ngoặc kép nếu có
+        const storeId = JSON.parse(localStorage.getItem('userId')); // Loại bỏ dấu ngoặc kép nếu có
         setUserId(storeId);
 
 
@@ -28,6 +29,7 @@ const LoginContextProvider = (props) => {
         try {
             const response = await authService(username, password);
             setIsLoggedIn(true);
+            setusername(response.username);
             setUser(response.username.charAt(0).toUpperCase()); // Cập nhật thông tin người dùng chỉ với chữ cái đầu tiên
 
             // Cập nhật thông tin người dùng    
@@ -46,13 +48,15 @@ const LoginContextProvider = (props) => {
     const logout = () => {
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('username');
+        localStorage.removeItem('userId');
         setIsLoggedIn(false);
         setUser(null);
+        setUserId(null);
     };
 
     const contextValue = {
         login, logout,
-        isLoggedIn, user, userId
+        isLoggedIn, user, userId, username
     };
 
     return (

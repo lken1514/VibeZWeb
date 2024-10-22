@@ -46,7 +46,7 @@ const Queue = () => {
         {savedTracks.length > 0 && savedTracks[currentIndex] ? (
           <div
             key={currentIndex}
-            className={`relative flex w-[100%] h-[10%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded bg-[#3E3E3E]`}
+            className={`relative flex w-[100%] h-[12%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded bg-[#3E3E3E]`}
             onClick={() => playWithId(track.trackId)} // Phát bài hát khi click
           >
             <div>
@@ -57,7 +57,7 @@ const Queue = () => {
               />
             </div>
             <div className='flex flex-col ml-5'>
-              <p className='text-[18px] font-bold'>
+              <p className='text-[18px] font-semibold'>
                 {savedTracks[currentIndex].name || 'Không có tên'}
               </p>
               <a className='text-gray-400 text-[18px]  hover:text-white hover:underline hover:decoration-1'>
@@ -102,7 +102,7 @@ const Queue = () => {
           nextTracks.map((track, index) => (
             <div
               key={currentIndex + 1 + index} // Tạo key duy nhất cho mỗi phần tử
-              className='relative flex w-[100%] h-[10%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded'
+              className='relative flex w-[100%] h-[11%] cursor-pointer hover:bg-[#3E3E3E] p-2 hover:rounded'
               onClick={() => playWithId(track.trackId)} // Phát bài hát tiếp theo khi click
             >
               <div>
@@ -113,7 +113,7 @@ const Queue = () => {
                 />
               </div>
               <div className='flex flex-col ml-5'>
-                <p className='text-[18px] font-bold'>{track.name || 'Không có tên'}</p>
+                <p className='text-[18px] font-semibold'>{track.name || 'Không có tên'}</p>
                 <a className='text-gray-400 text-[18px] hover:text-white hover:underline hover:decoration-1'>
                   {track.artistName || 'Unknown Artist'}
                 </a>

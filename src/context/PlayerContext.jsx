@@ -15,7 +15,7 @@ const PlayerContextProvider = (props) => {
   const [playStatus, setPlayStatus] = useState(false); // Trạng thái phát nhạc
   const [repeat, setRepeat] = useState(false); // Trạng thái lặp lại bài hát
   const [volume, setVolume] = useState(1); // Giá trị mặc định âm lượng
-
+  const [currentAlbumId, setCurrentAlbumId] = useState(null);
 
   const [time, setTime] = useState({
     currentTime: { second: 0, minute: 0 },
@@ -243,7 +243,9 @@ const PlayerContextProvider = (props) => {
     toggleRepeat,
     handleVolumeChange,
     setVolume,
-    volume // Thêm hàm toggleRepeat vào context
+    volume,
+    currentAlbumId,
+    setCurrentAlbumId // Thêm hàm toggleRepeat vào context
   };
 
   return (
