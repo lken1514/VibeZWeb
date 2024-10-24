@@ -11,34 +11,35 @@ const LoginContextProvider = (props) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        // Kiểm tra token trong localStorage khi ứng dụng khởi động
+        const userObject = JSON.parse(localStorage.getItem('user'));
         const token = localStorage.getItem('jwtToken');
-        const storedUser = localStorage.getItem('username');
-
-        if (token && storedUser) {
+    
+        console.log('User object from localStorage:', userObject); 
+    
+        if (token && userObject) {
             setIsLoggedIn(true);
-            const userIcon = JSON.parse(storedUser);
-            setUser(userIcon.charAt(0).toUpperCase());
-            console.log('User logged in:', storedUser);
+            setUser(userObject);
         }
     }, []);
-
+    
     const googleLogin = async (res) => {
         try {
             const response = await responseGoogle(res);
             setIsLoggedIn(true);
-            setUser(response.username.charAt(0).toUpperCase());
+            setUser(response.user);
+            console.log('User Google login:', response.user);
         } catch (error) {
             console.error("Login failed:", error.message);
             alert(error.message);
         }
     }
-    
+
     const login = async (username, password) => {
         try {
             const response = await authService(username, password);
             setIsLoggedIn(true);
-            setUser(response.username);     
+            setUser(response.user);
+            console.log('User login:', response.user);
         } catch (error) {
             console.error("Login failed:", error.message);
             throw new Error("Login failed: " + error.message);
@@ -56,7 +57,7 @@ const LoginContextProvider = (props) => {
 
     const logout = () => {
         localStorage.removeItem('jwtToken');
-        localStorage.removeItem('username');
+        localStorage.removeItem('user');
         setIsLoggedIn(false);
         setUser(null);
     };

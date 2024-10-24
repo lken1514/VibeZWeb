@@ -26,7 +26,7 @@ const LoginComponent = () => {
 
   useEffect(() => {
     console.log('Logged in:', isLoggedIn, 'User:', user);
-    if (isLoggedIn && user) {
+    if (isLoggedIn && user !== null) {
       navigate('/');
     }
   }, [isLoggedIn, user, navigate]);
@@ -44,9 +44,9 @@ const LoginComponent = () => {
   return (
     <div className="login-page">
       <div>
-        {console.log(isLoggedIn)}
+        {/* {console.log(isLoggedIn)} */}
         {isLoggedIn ? (
-          <p>Welcome, {user}</p>
+          <p>Welcome, {user.name}</p>
         ) : (
           <div className="login-container">
             <div className="spotify-logo">
