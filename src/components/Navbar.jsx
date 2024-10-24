@@ -5,7 +5,7 @@ import { assets } from '../assets/assets';
 import './NavbarComponent.css';
 import { useState } from 'react';
 import { LoginContext } from '../context/LoginContext';
-import {faHouse} from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -22,29 +22,28 @@ const Navbar = () => {
     window.location.reload();
   };
   return (
-    <>
-      <div className='flex h-[8%]  relative' >
-        <div className='w-1/12 flex items-center justify-center cursor-pointer' >
-          <img className='rounded-full w-10 h-10 ml-[30%]' src={assets.logo} alt="" />
-          <a className='text-[30px] text-white font-semibold ml-4'>VibeZ</a>
-        </div>
-        <div className='absolute inset-0 flex justify-center items-center '>
-          <div className='w-[40%] h-[100%]  flex justify-center items-center'>
-            <form className='relative flex w-[100%] h-[100%] items-center justify-center' action="">
-              <div className='mr-[2%] text-white cursor-pointer text-[20px] hover:text-[25px]' onClick={() => navigate('/')}>
+    <div className='flex h-[8%]  relative' >
+      <div className='w-1/12 flex items-center justify-center cursor-pointer' >
+        <img className='rounded-full w-10 h-10 ml-[30%]' src={assets.logo} alt="" />
+        <a className='text-[30px] text-white font-semibold ml-4'>VibeZ</a>
+      </div>
+      <div className='absolute inset-0 flex justify-center items-center '>
+        <div className='w-[40%] h-[100%]  flex justify-center items-center'>
+          <form className='relative flex w-[100%] h-[100%] items-center justify-center' action="">
+            <div className='mr-[2%] text-white cursor-pointer text-[20px] hover:text-[25px]' onClick={() => navigate('/')}>
               <FontAwesomeIcon icon={faHouse} />
-              </div>
-              <div className='absolute left-[25%]'>
-                <img className='w-[50%]' src={assets.search_icon} alt="" />
-              </div>
-              <div className='w-7/12 h-[55%]'>
-                <input className='w-[100%] h-full rounded-[100px] bg-[#2A2A2A] text-[14px] text-white pl-[14%] py-[2%]' type="search" placeholder='What do you want to play?' autoComplete='on' />
-              </div>
-            </form>
-          </div>
+            </div>
+            <div className='absolute left-[25%]'>
+              <img className='w-[50%]' src={assets.search_icon} alt="" />
+            </div>
+            <div className='w-7/12 h-[55%]'>
+              <input className='w-[100%] h-full rounded-[100px] bg-[#2A2A2A] text-[14px] text-white pl-[14%] py-[2%]' type="search" placeholder='What do you want to play?' autoComplete='on' />
+            </div>
+          </form>
         </div>
+      </div>
 
-        {isLoggedIn ? (
+      {isLoggedIn ? (
         <div className='absolute right-0 inset-y-0 w-[15%] flex justify-around items-center' >
           <button className='h-[60%] w-[40%] rounded-[90px] text-black text-[18px] font-bold bg-white transition-all duration-200 hover:w-40'>
             <span>
@@ -72,7 +71,7 @@ const Navbar = () => {
           )
           }
         </div>
-        ) : (
+      ) : (
         <div className='absolute right-0 inset-y-0 w-[15%] flex justify-around items-center'>
           <button className='h-full w-[30%]  text-white text-[16px] font-bold duration-200 hover:text-[18px] transition-all' onClick={() => navigate('/signup')}>
             <span>Sign Up</span>
@@ -83,10 +82,9 @@ const Navbar = () => {
             </span>
           </button>
         </div>
-        ) }
+      )}
 
-      </div>
-    </>
+    </div>
   );
 }
 

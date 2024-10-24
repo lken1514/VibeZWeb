@@ -10,6 +10,7 @@ import DisplayArtist from './components/DisplayArtist';
 import DisplayPlaylist from './components/DisplayPlaylist'
 import Queue from './components/Queue';
 import Plans from './components/Plans';
+import SignUpForm from './components/SignUpForm/SignUpForm';
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +37,10 @@ function App() {
     {
       path: '/login',
       element: <LoginComponent />,
+    },
+    {
+      path: '/signup',
+      element: <SignUpForm />,
     },
     {
       path: '/plan',

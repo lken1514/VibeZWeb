@@ -6,12 +6,17 @@ import './index.css'
 import PlayerContextProvider from './context/PlayerContext.jsx'
 import LoginContextProvider from './context/LoginContext.jsx'
 import { ListVisibilityProvider } from './context/VisibleContext.jsx'
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <LoginContextProvider>
+  <GoogleOAuthProvider clientId='649232747819-r6j0qcug20bnct3qug8j9rch53osec5e.apps.googleusercontent.com'>
+    <LoginContextProvider>
       <PlayerContextProvider>
         <ListVisibilityProvider>
           <App />
         </ListVisibilityProvider>
       </PlayerContextProvider>
-  </LoginContextProvider>
+    </LoginContextProvider>
+  </GoogleOAuthProvider>
+
 )
