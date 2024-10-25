@@ -35,6 +35,7 @@ namespace VibeZOData.Controllers
             _logger.LogInformation($"Retrieved {listDTO.Count()} albums");
             return Ok(listDTO);
         }
+      
         // GET api/<ValuesController>/5
         // GET api/<albumController>/5
         [HttpGet("{id}", Name = "GetAlbumById")]
@@ -111,6 +112,7 @@ namespace VibeZOData.Controllers
             album.Name = name;
             album.DateOfRelease = dateRelease;
             album.Nation = nation;
+            album.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
 
             await _albumRepository.UpdateAlbum(album);
             _logger.LogInformation($"album with id {id} has been updated");

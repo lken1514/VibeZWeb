@@ -11,29 +11,29 @@ namespace Repositories.Repository
 {
     public class TrackPlaylistRepository : ITracksPlaylistRepository
     {
-        public async Task<IEnumerable<TrackPlayList>> GetAllTracksPlaylists()
+        public async Task<IEnumerable<Track_Playlist>> GetAllTracksPlaylists()
         {
             return await TracksPlaylistDAO.Instance.GetAllTracksPlaylist();
         }
 
-        public async Task<TrackPlayList> GetTracksPlaylistById(Guid trackPlaylistId, Guid playlistId)
+        public async Task<Track_Playlist> GetTracksPlaylistById(Guid trackPlaylistId, Guid playlistId)
         {
             return await TracksPlaylistDAO.Instance.GetTracksPlaylistById(trackPlaylistId, playlistId);
         }
 
-        public async Task AddTracksPlaylist(TrackPlayList TrackPlaylist)
+        public async Task AddTracksPlaylist(Track_Playlist TrackPlaylist)
         {
             await TracksPlaylistDAO.Instance.Add(TrackPlaylist);
         }
 
-        public async Task UpdateTracksPlaylist(TrackPlayList TrackPlaylist)
+        public async Task UpdateTracksPlaylist(Track_Playlist TrackPlaylist)
         {
             await TracksPlaylistDAO.Instance.Update(TrackPlaylist);
         }
 
-        public async Task DeleteTracksPlaylist(Guid TrackPlaylistId, Guid playlistId)
+        public async Task DeleteTracksPlaylist(Track_Playlist trackPlayList)
         {
-            await TracksPlaylistDAO.Instance.Delete(TrackPlaylistId, playlistId);
+            await TracksPlaylistDAO.Instance.Delete(trackPlayList);
         }
     }
 

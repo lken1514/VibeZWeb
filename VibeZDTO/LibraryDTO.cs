@@ -10,9 +10,6 @@ namespace VibeZDTO
     public class LibraryDTO : BaseEntity
     {
         public Guid Id { get; set; }
-        public Guid ArtistId { get; set; }
-        public Guid PlaylistId { get; set; }
-        public Guid AlbumId { get; set; }
         public Guid UserId { get; set; }
     }
 }

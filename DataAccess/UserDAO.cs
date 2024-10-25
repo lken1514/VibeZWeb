@@ -15,18 +15,40 @@ namespace DataAccess
             return await _context.Users.ToListAsync();
         }
 
+        public async Task<User> FindByEmailAsync(string email)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null) return null;
+            return user;
+        }
         public async Task<User> GetUserById(Guid userId)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
             if (user == null) return null;
             return user;
         }
-
+        public async Task<User> Authenticate(string username, string password)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username && u.Password == password);
+            if (user == null) return null;
+            return user;
+        }
+        public async Task<User> FindByNameAsync(string username)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+            if (user == null) return null;
+            return user;
+        }
         public async Task Add(User user)
         {
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }
+        /*public async Task Add(string username, string password)
+        {
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+        }*/
 
         public async Task Update(User user)
         {
@@ -50,6 +72,17 @@ namespace DataAccess
                 _context.Users.Remove(user);
                 await _context.SaveChangesAsync();
             }
+        }
+        public async Task UpdatePassword(Guid UserId, string newPassword)
+        {
+            var user = await GetUserById(UserId);
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+            user.Password = newPassword;
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
         }
     }
 

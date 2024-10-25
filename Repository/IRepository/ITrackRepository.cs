@@ -11,5 +11,7 @@ namespace Repositories.IRepository
         Task UpdateTrack(Track track);
         Task UpdateListener(Track track);
         Task DeleteTrack(Track track);
+        Task<IEnumerable<Track>> GetTrackByIds(List<Guid> trackIds);
+        Task<IEnumerable<Track>> GetSongRecommendations(List<Guid> recentlyPlayedIds, Guid clickedTrackId, int topN = 10);
     }
 }

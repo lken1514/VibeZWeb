@@ -14,5 +14,8 @@ namespace Repositories.IRepository
         Task AddLibrary(Library library);
         Task UpdateLibrary(Library library);
         Task DeleteLibrary(Guid libraryId);
+        Task<IEnumerable<Playlist>> GetPlaylistsByLibraryId(Guid libraryId);
+        Task<IEnumerable<Artist>> GetArtistByLibraryId(Guid libraryId);
+        Task<IEnumerable<Album>> GetAlbumsByLibraryId(Guid libraryId);
     }
 }

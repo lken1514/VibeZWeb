@@ -14,6 +14,6 @@ namespace Repositories.IRepository
         Task<Artist> GetArtistById(Guid artistId);
         Task AddArtist(Artist artist);
         Task UpdateArtist(Artist artist);
-        Task DeleteArtist(Guid artistId);
+        Task DeleteArtist(Artist artist);
     }
 }

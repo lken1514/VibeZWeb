@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BusinessObjects
@@ -11,7 +12,10 @@ namespace BusinessObjects
     public class Like : BaseEntity
     {
         public Guid UserId { get; set; }
-        public Track Track { get; set; } = null!;
+        [JsonIgnore]
+        public virtual Track Track { get; set; } = null!;
         public Guid TrackId { get; set; }
+        [JsonIgnore]
+        public virtual User User { get; set; } = null!;
     }
 }

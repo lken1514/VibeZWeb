@@ -14,9 +14,9 @@ namespace DataAccess
             return await _context.Library_Albums.ToListAsync();
         }
 
-        public async Task<Library_Album> GetLibraryAlbumById(Guid userId, Guid LibraryId)
+        public async Task<Library_Album> GetLibraryAlbumById(Guid albumId, Guid LibraryId)
         {
-            var lbA = await _context.Library_Albums.FirstOrDefaultAsync(f => f.UserId == userId && f.libraryID == LibraryId );
+            var lbA = await _context.Library_Albums.FirstOrDefaultAsync(f => f.AlbumId == albumId && f.LibraryId == LibraryId);
             if (lbA == null) return null;
             return lbA;
         }
@@ -29,7 +29,7 @@ namespace DataAccess
 
         public async Task Update(Library_Album library_Album)
         {
-            var existingItem = await GetLibraryAlbumById(library_Album.UserId, library_Album.libraryID);
+            var existingItem = await GetLibraryAlbumById(library_Album.AlbumId, library_Album.LibraryId);
             if (existingItem != null)
             {
                 _context.Entry(existingItem).CurrentValues.SetValues(library_Album);

@@ -17,7 +17,7 @@ namespace BusinessObjects.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -32,10 +32,10 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid?>("ArtistId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 2, 15, 4, 6, 276, DateTimeKind.Utc).AddTicks(4353));
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
 
                     b.Property<DateOnly>("DateOfRelease")
                         .HasColumnType("date");
@@ -54,8 +54,8 @@ namespace BusinessObjects.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -68,10 +68,13 @@ namespace BusinessObjects.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -79,18 +82,21 @@ namespace BusinessObjects.Migrations
 
                     b.Property<string>("Image")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Nation")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -105,11 +111,11 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid>("ArtistId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.Property<DateTime>("blocked_date")
                         .HasColumnType("datetime2");
@@ -127,15 +133,15 @@ namespace BusinessObjects.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("CategoryId");
 
@@ -148,15 +154,15 @@ namespace BusinessObjects.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -171,11 +177,11 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid>("ArtistId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("UserId", "ArtistId");
 
@@ -188,31 +194,95 @@ namespace BusinessObjects.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
-                    b.Property<Guid>("AlbumId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateOnly>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
 
-                    b.Property<Guid>("ArtistId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PlaylistId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Libraries");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Album", b =>
+                {
+                    b.Property<Guid>("LibraryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AlbumId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.HasKey("LibraryId", "AlbumId");
+
+                    b.HasIndex("AlbumId");
+
+                    b.ToTable("Library_Albums");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Artist", b =>
+                {
+                    b.Property<Guid>("LibraryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ArtistId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.HasKey("LibraryId", "ArtistId");
+
+                    b.HasIndex("ArtistId");
+
+                    b.ToTable("Library_Artists");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Playlist", b =>
+                {
+                    b.Property<Guid>("LibraryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PlaylistId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.HasKey("LibraryId", "PlaylistId");
+
+                    b.HasIndex("PlaylistId");
+
+                    b.ToTable("Library_Playlists");
                 });
 
             modelBuilder.Entity("BusinessObjects.Like", b =>
@@ -223,11 +293,11 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid>("TrackId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("UserId", "TrackId");
 
@@ -242,8 +312,8 @@ namespace BusinessObjects.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -256,8 +326,8 @@ namespace BusinessObjects.Migrations
                     b.Property<int>("Number_of_acc")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.Property<double>("price")
                         .HasColumnType("float");
@@ -275,14 +345,14 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid>("FeatureId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
                     b.Property<Guid?>("PackageId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("PackId", "FeatureId");
 
@@ -302,15 +372,15 @@ namespace BusinessObjects.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Payment_method")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -329,10 +399,10 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 2, 15, 4, 6, 275, DateTimeKind.Utc).AddTicks(6531));
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -348,8 +418,8 @@ namespace BusinessObjects.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -371,13 +441,16 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid?>("AlbumId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("ArtistId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 10, 2, 15, 4, 6, 275, DateTimeKind.Utc).AddTicks(9039));
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -409,19 +482,21 @@ namespace BusinessObjects.Migrations
                     b.Property<TimeOnly>("Time")
                         .HasColumnType("time");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("TrackId");
 
                     b.HasIndex("AlbumId");
+
+                    b.HasIndex("ArtistId");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Tracks");
                 });
 
-            modelBuilder.Entity("BusinessObjects.TrackPlayList", b =>
+            modelBuilder.Entity("BusinessObjects.Track_Playlist", b =>
                 {
                     b.Property<Guid>("TrackId")
                         .HasColumnType("uniqueidentifier");
@@ -429,11 +504,11 @@ namespace BusinessObjects.Migrations
                     b.Property<Guid>("PlaylistId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.HasKey("TrackId", "PlaylistId");
 
@@ -442,67 +517,66 @@ namespace BusinessObjects.Migrations
                     b.ToTable("TrackPlayLists");
                 });
 
-            modelBuilder.Entity("BusinessObjects.Tracks_artist", b =>
-                {
-                    b.Property<Guid>("TrackId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ArtistId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("TrackId", "ArtistId");
-
-                    b.HasIndex("ArtistId");
-
-                    b.ToTable("Tracks_Artists");
-                });
-
             modelBuilder.Entity("BusinessObjects.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("CreateDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 10, 25));
 
-                    b.Property<DateTime>("DOB")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly?>("DOB")
+                        .HasColumnType("date");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Premium")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)")
+                        .HasDefaultValue("Free");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasDefaultValue("User");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("premium")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -537,48 +611,116 @@ namespace BusinessObjects.Migrations
                 {
                     b.HasOne("BusinessObjects.Artist", "Artist")
                         .WithMany("Albums")
-                        .HasForeignKey("ArtistId");
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Artist");
                 });
 
             modelBuilder.Entity("BusinessObjects.BlockedArtist", b =>
                 {
-                    b.HasOne("BusinessObjects.Artist", null)
+                    b.HasOne("BusinessObjects.Artist", "Artist")
                         .WithMany("BlockedArtists")
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessObjects.User", null)
+                    b.HasOne("BusinessObjects.User", "User")
                         .WithMany("BlockedArtists")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Artist");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BusinessObjects.Follow", b =>
                 {
-                    b.HasOne("BusinessObjects.Artist", null)
+                    b.HasOne("BusinessObjects.Artist", "Artist")
                         .WithMany("Follow")
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessObjects.User", null)
+                    b.HasOne("BusinessObjects.User", "User")
                         .WithMany("Follow")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Artist");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BusinessObjects.Library", b =>
                 {
-                    b.HasOne("BusinessObjects.User", null)
-                        .WithMany("Library")
-                        .HasForeignKey("UserId")
+                    b.HasOne("BusinessObjects.User", "User")
+                        .WithOne("Library")
+                        .HasForeignKey("BusinessObjects.Library", "UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Album", b =>
+                {
+                    b.HasOne("BusinessObjects.Album", "Album")
+                        .WithMany("Library_Albums")
+                        .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BusinessObjects.Library", "Library")
+                        .WithMany("Library_Albums")
+                        .HasForeignKey("LibraryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Album");
+
+                    b.Navigation("Library");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Artist", b =>
+                {
+                    b.HasOne("BusinessObjects.Artist", "Artist")
+                        .WithMany("Library_Artist")
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BusinessObjects.Library", "Library")
+                        .WithMany("Library_Artist")
+                        .HasForeignKey("LibraryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+
+                    b.Navigation("Library");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Library_Playlist", b =>
+                {
+                    b.HasOne("BusinessObjects.Library", "Library")
+                        .WithMany("Library_Playlists")
+                        .HasForeignKey("LibraryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BusinessObjects.Playlist", "Playlist")
+                        .WithMany("Library_Playlists")
+                        .HasForeignKey("PlaylistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Library");
+
+                    b.Navigation("Playlist");
                 });
 
             modelBuilder.Entity("BusinessObjects.Like", b =>
@@ -589,13 +731,15 @@ namespace BusinessObjects.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BusinessObjects.User", null)
+                    b.HasOne("BusinessObjects.User", "User")
                         .WithMany("Likes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Track");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BusinessObjects.Package_features", b =>
@@ -613,18 +757,21 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Payment", b =>
                 {
-                    b.HasOne("BusinessObjects.User", null)
+                    b.HasOne("BusinessObjects.User", "User")
                         .WithMany("Payment")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BusinessObjects.Playlist", b =>
                 {
                     b.HasOne("BusinessObjects.User", "User")
                         .WithMany("Playlists")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("User");
                 });
@@ -635,18 +782,25 @@ namespace BusinessObjects.Migrations
                         .WithMany("Tracks")
                         .HasForeignKey("AlbumId");
 
+                    b.HasOne("BusinessObjects.Artist", "Artist")
+                        .WithMany("Tracks")
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("BusinessObjects.Category", "Category")
                         .WithMany("Tracks")
                         .HasForeignKey("CategoryId");
 
                     b.Navigation("Album");
 
+                    b.Navigation("Artist");
+
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("BusinessObjects.TrackPlayList", b =>
+            modelBuilder.Entity("BusinessObjects.Track_Playlist", b =>
                 {
-                    b.HasOne("BusinessObjects.Playlist", null)
+                    b.HasOne("BusinessObjects.Playlist", "Playlist")
                         .WithMany("TrackPlayLists")
                         .HasForeignKey("PlaylistId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -658,16 +812,9 @@ namespace BusinessObjects.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Track");
-                });
+                    b.Navigation("Playlist");
 
-            modelBuilder.Entity("BusinessObjects.Tracks_artist", b =>
-                {
-                    b.HasOne("BusinessObjects.Artist", null)
-                        .WithMany("Tracks_Artists")
-                        .HasForeignKey("ArtistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Track");
                 });
 
             modelBuilder.Entity("BusinessObjects.User_package", b =>
@@ -676,15 +823,19 @@ namespace BusinessObjects.Migrations
                         .WithMany("Packages")
                         .HasForeignKey("PackageId");
 
-                    b.HasOne("BusinessObjects.User", null)
+                    b.HasOne("BusinessObjects.User", "User")
                         .WithMany("User_package")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BusinessObjects.Album", b =>
                 {
+                    b.Navigation("Library_Albums");
+
                     b.Navigation("Tracks");
                 });
 
@@ -696,7 +847,9 @@ namespace BusinessObjects.Migrations
 
                     b.Navigation("Follow");
 
-                    b.Navigation("Tracks_Artists");
+                    b.Navigation("Library_Artist");
+
+                    b.Navigation("Tracks");
                 });
 
             modelBuilder.Entity("BusinessObjects.Category", b =>
@@ -709,6 +862,15 @@ namespace BusinessObjects.Migrations
                     b.Navigation("PackageFeatures");
                 });
 
+            modelBuilder.Entity("BusinessObjects.Library", b =>
+                {
+                    b.Navigation("Library_Albums");
+
+                    b.Navigation("Library_Artist");
+
+                    b.Navigation("Library_Playlists");
+                });
+
             modelBuilder.Entity("BusinessObjects.Package", b =>
                 {
                     b.Navigation("Features");
@@ -718,6 +880,8 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Playlist", b =>
                 {
+                    b.Navigation("Library_Playlists");
+
                     b.Navigation("TrackPlayLists");
                 });
 

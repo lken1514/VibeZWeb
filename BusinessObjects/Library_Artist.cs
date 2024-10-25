@@ -1,20 +1,23 @@
+﻿
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    [PrimaryKey(nameof(libraryID), nameof(artistID))]
+    [PrimaryKey(nameof(LibraryId), nameof(ArtistId))]
     public class Library_Artist : BaseEntity
     {
-        public Artist artist { get; set; } = null!;
-        public Library library { get; set; } = null!;
-        public Guid libraryID { get; set; }
-        public Guid artistID { get; set; }
-    }
+        public Guid LibraryId { get; set; }
+        [JsonIgnore]
+        public virtual Library Library { get; set; } = null!;
+        public Guid ArtistId { get; set; }
+        [JsonIgnore]
+        public virtual Artist Artist { get; set; } = null!;
 
-    
+    }
 }

@@ -12,12 +12,12 @@ namespace DataAccess
     {
         public async Task<IEnumerable<Artist>> GetAllArtists()
         {
-            return await _context.Artists.ToListAsync();
+            return await _context.Artists.AsNoTrackingWithIdentityResolution().ToListAsync();
         }
 
         public async Task<Artist> GetArtistById(Guid artistId)
         {
-            var artist = await _context.Artists.FirstOrDefaultAsync(u => u.Id == artistId);
+            var artist = await _context.Artists.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(u => u.Id == artistId);
             if (artist == null) return null;
             return artist;
         }
@@ -30,26 +30,15 @@ namespace DataAccess
 
         public async Task Update(Artist artist)
         {
-            var existingItem = await GetArtistById(artist.Id);
-            if (existingItem != null)
-            {
-                _context.Entry(existingItem).CurrentValues.SetValues(artist);
-            }
-            else
-            {
-                _context.Artists.Add(artist);
-            }
+            _context.Attach(artist);
+            _context.Entry(artist).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(Guid artistId)
+        public async Task Delete(Artist artist)
         {
-            var artist = await GetArtistById(artistId);
-            if (artist != null)
-            {
-                _context.Artists.Remove(artist);
-                await _context.SaveChangesAsync();
-            }
+            _context.Artists.Remove(artist);
+            await _context.SaveChangesAsync();
         }
     }
 

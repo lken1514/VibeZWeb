@@ -12,6 +12,8 @@ namespace VibeZDTO
         public Guid TrackId { get; set; }
         public Guid? AlbumId { get; set; }
         public Guid? CategoryId { get; set; }
+        public Guid? artistId { get; set; }
+        public string ArtistName { get; set; }
         public string Name { get; set; }
         public string Lyrics { get; set; }
         public string Genre {  get; set; }

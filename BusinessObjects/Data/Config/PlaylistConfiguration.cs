@@ -30,6 +30,14 @@ namespace BusinessObjects.Data.Config
             builder.HasOne(x => x.User)
                 .WithMany(x => x.Playlists)
                 .HasForeignKey(x => x.UserId);
+            builder.HasMany(x => x.TrackPlayLists)
+                .WithOne(x => x.Playlist)
+                .HasForeignKey(x => x.PlaylistId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(x => x.Library_Playlists)
+                .WithOne(x => x.Playlist)
+                .HasPrincipalKey(x => x.PlaylistId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

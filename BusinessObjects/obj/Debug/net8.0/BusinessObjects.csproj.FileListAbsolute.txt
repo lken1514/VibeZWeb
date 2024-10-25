@@ -1,90 +1,29 @@
-D:\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\FptUniversity\ChuyenNganh5\SWP\GitHubSwp\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\VibeZWeb\VibeZ-Backend\VibeZ\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\VibeZWeb\VibeZ-Backend\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
-D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
-D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
-D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
-D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
-D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll

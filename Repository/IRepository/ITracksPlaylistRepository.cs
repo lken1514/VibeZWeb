@@ -9,10 +9,10 @@ namespace Repositories.IRepository
 {
     public interface ITracksPlaylistRepository
     {
-        Task<IEnumerable<TrackPlayList>> GetAllTracksPlaylists();
-        Task<TrackPlayList> GetTracksPlaylistById(Guid trackPlaylistId, Guid playlistId);
-        Task AddTracksPlaylist(TrackPlayList TracksPlaylist);
-        Task UpdateTracksPlaylist(TrackPlayList TracksPlaylist);
-        Task DeleteTracksPlaylist(Guid trackPlaylistId, Guid playlistId);
+        Task<IEnumerable<Track_Playlist>> GetAllTracksPlaylists();
+        Task<Track_Playlist> GetTracksPlaylistById(Guid trackPlaylistId, Guid playlistId);
+        Task AddTracksPlaylist(Track_Playlist TracksPlaylist);
+        Task UpdateTracksPlaylist(Track_Playlist TracksPlaylist);
+        Task DeleteTracksPlaylist(Track_Playlist TracksPlaylist);
     }
 }

@@ -35,9 +35,9 @@ namespace Repositories.Repository
             await ArtistDAO.Instance.Update(artist);
         }
 
-        public async Task DeleteArtist(Guid artistId)
+        public async Task DeleteArtist(Artist artist)
         {
-            await ArtistDAO.Instance.Delete(artistId);
+            await ArtistDAO.Instance.Delete(artist);
         }
     }
 }

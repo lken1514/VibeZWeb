@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess;
+using VibeZOData.Models;
 
 namespace VibeZOData.Controllers
 {
@@ -32,6 +34,60 @@ namespace VibeZOData.Controllers
         }
 
         // GET api/<TrackController>/5
+        [HttpPost("Tracks", Name = "GetTrackByIds")]
+        public async Task<ActionResult<IEnumerable<TrackDTO>>> GetTrackByIds([FromBody]List<Guid> ids)
+        {
+            _logger.LogInformation($"Fetching tracks");
+            var track = await _trackRepository.GetTrackByIds(ids);
+            if (track == null || !track.Any())
+            {
+                _logger.LogWarning($"Track not found");
+                return NotFound("Track not found");
+            }
+
+            var listDTO = track.Select(
+                 track => _mapper.Map<Track, TrackDTO>(track));
+            return Ok(listDTO);
+        }
+
+        [HttpPost("GetRecommendations", Name = "GetTrackRecommendations")]
+        public async Task<ActionResult<IEnumerable<TrackDTO>>> GetTrackRecommendations([FromBody] TrackRecommendationRequest request)
+        {
+            if (request == null || request.RecentlyPlayedIds == null || !request.RecentlyPlayedIds.Any() || request.ClickedTrackId == Guid.Empty)
+            {
+                _logger.LogWarning("Invalid request data");
+                return BadRequest("Invalid data");
+            }
+
+            _logger.LogInformation("Fetching track recommendations");
+
+            // Gọi tới TrackDAO để lấy danh sách gợi ý
+            var recommendedTracks = await _trackRepository.GetSongRecommendations(request.RecentlyPlayedIds, request.ClickedTrackId, request.TopN);
+
+            if (recommendedTracks == null || !recommendedTracks.Any())
+            {
+                _logger.LogWarning("No tracks found for recommendation");
+                return NotFound("No tracks found");
+            }
+
+            // Chuyển đổi từ Track sang TrackDTO
+            var listDTO = recommendedTracks.Select(track => _mapper.Map<Track, TrackDTO>(track));
+
+            return Ok(listDTO);
+        }
+
+        [HttpGet("Album/{albumId}", Name = "GetTrackByAlbumId")]
+        public async Task<ActionResult<IEnumerable<TrackDTO>>> GetTrackByAlbumId(Guid albumId)
+        {
+            _logger.LogInformation($"Fetching tracks by albumId {albumId}");
+
+            var track = await _trackRepository.GetAllTrackByAlbumId(albumId);
+            var trackDTO = track.Select(
+                tck => _mapper.Map<Track, TrackDTO>(tck));
+
+            _logger.LogInformation($"Found {trackDTO.Count()} tracks for albumId {albumId}");
+            return Ok(trackDTO);
+        }
         [HttpGet("{id}", Name = "GetTrackById")]
         public async Task<ActionResult<TrackDTO>> GetTrackById(Guid id)
         {
@@ -47,25 +103,12 @@ namespace VibeZOData.Controllers
             return Ok(trackDTO);
         }
 
-        [HttpGet("Album/{albumId}/Tracks", Name = "GetTrackByAlbumId")]
-        public async Task<ActionResult<TrackDTO>> GetTrackByAlbumId(Guid albumId)
-        {
-            _logger.LogInformation($"Fetching tracks by albumId {albumId}");
-
-            var track = await _trackRepository.GetAllTrackByAlbumId(albumId);
-            var trackDTO = track.Select(
-                tck => _mapper.Map<Track, TrackDTO>(tck));
-
-            _logger.LogInformation($"Found {trackDTO.Count()} tracks for albumId {albumId}");
-            return Ok(trackDTO);
-        }
-
         // POST api/<TrackController>
         [HttpPost("upload", Name = "CreateTrack")]
         [Consumes("multipart/form-data")]
 
         public async Task<ActionResult> CreateTrack(Guid? AlbumId,
-            Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour, int minute,
+            Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour,[FromQuery] int minute, [FromQuery]int section, Guid artistId,
             IFormFile path, IFormFile image)
         {
             _logger.LogInformation("Creating new track");
@@ -81,11 +124,11 @@ namespace VibeZOData.Controllers
                 _logger.LogWarning("Path or image file is missing");
                 return BadRequest();
             }
-            if (hour < 0 || hour > 23 || minute < 0 || minute > 59)
+            if (minute < 0 || minute > 59 || section < 0 || section > 59)
             {
                 return BadRequest("Invalid time values.");
             }
-            var trackTime = new TimeOnly(hour, minute);
+            var trackTime = new TimeOnly(0, minute, section);
             var pathUrl = await _azure.UploadFileAsync(path);
             var imageUrl = await _azure.UploadFileAsync(image);
 
@@ -99,7 +142,8 @@ namespace VibeZOData.Controllers
                 Lyrics = Lyrics,
                 Path = pathUrl,
                 Image = imageUrl,
-                Time = trackTime
+                Time = trackTime,
+                ArtistId = artistId
             };
 
             await _trackRepository.AddTrack(track);
@@ -111,8 +155,8 @@ namespace VibeZOData.Controllers
         // PUT api/<TrackController>/5
         [HttpPut("{id}", Name = "UpdateTrack")]
         [Consumes("multipart/form-data")]
-        public async Task<ActionResult> UpdateTrack(Guid id, Guid? AlbumId,
-             Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour, int minute,
+        public async Task<ActionResult> UpdateTrack(Guid id, Guid? AlbumId, 
+             Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour, int minute, int section, Guid artistId,
             IFormFile? path, IFormFile? image)
         {
             _logger.LogInformation($"Updating track with id {id}");
@@ -132,17 +176,19 @@ namespace VibeZOData.Controllers
             {
                 track.Image = await _azure.UpdateFileAsync(image, track.Image);
             }
-            if (hour < 0 || hour > 23 || minute < 0 || minute > 59)
+            if (minute < 0 || minute > 59)
             {
                 return BadRequest("Invalid time values.");
             }
-            var trackTime = new TimeOnly(hour, minute);
+            var trackTime = new TimeOnly(0, minute, section);
             track.AlbumId = AlbumId;
             track.CategoryId = CategoryId;
             track.Name = TrackName;
             track.Lyrics = Lyrics;
             track.Genre = Genre;
             track.Time = trackTime;
+            track.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
+            track.ArtistId = artistId;
             await _trackRepository.UpdateTrack(track);
             _logger.LogInformation($"Track with id {id} has been updated");
 
@@ -171,7 +217,7 @@ namespace VibeZOData.Controllers
             return NoContent();
         }
 
-        [HttpPut("UpdateListener")]
+        [HttpPut("UpdateListener/{id}")]
         public async Task<ActionResult> UpdateListener(Guid id)
         {
             _logger.LogInformation($"Updating listener for track with id {id}");

@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObjects", "Business
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repository\Repositories.csproj", "{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VibeZOData", "VibeZOData\VibeZOData.csproj", "{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeZOData", "VibeZOData\VibeZOData.csproj", "{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VibeZDTO", "VibeZDTO\VibeZDTO.csproj", "{B9AB5A0F-A7C4-480C-A190-36548E289D4F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeZMVC", "VibeZMVC\VibeZMVC.csproj", "{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibeZDTO", "VibeZDTO\VibeZDTO.csproj", "{B9AB5A0F-A7C4-480C-A190-36548E289D4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{B9AB5A0F-A7C4-480C-A190-36548E289D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9AB5A0F-A7C4-480C-A190-36548E289D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9AB5A0F-A7C4-480C-A190-36548E289D4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13972919-DC55-4BFC-BE14-5AD5C9E3F68E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

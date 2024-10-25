@@ -22,12 +22,11 @@ namespace DataAccess
         public async Task<Album> GetAlbumById(Guid albumId)
         {
             var album = await _context.Albums.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(u => u.Id == albumId); ;
-            if (album == null) return null;
             return album;
         }
 
         public async Task Add(Album album)
-        {
+        {   
             await _context.Albums.AddAsync(album);
             await _context.SaveChangesAsync();
         }

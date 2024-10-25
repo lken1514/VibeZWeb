@@ -19,10 +19,12 @@ namespace BusinessObjects
         public virtual DbSet<Track> Tracks { get; set; }
         public virtual DbSet<Album> Albums { get; set; }
         public virtual DbSet<Artist> Artists { get; set; }
-        public virtual DbSet<Tracks_artist> Tracks_Artists { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<TrackPlayList> TrackPlayLists { get; set; }
+        public virtual DbSet<Track_Playlist> TrackPlayLists { get; set; }
         public virtual DbSet<Playlist> Playlists { get; set; }
+        public virtual DbSet<Library_Album> Library_Albums { get; set; }
+        public virtual DbSet<Library_Playlist> Library_Playlists { get; set; }
+        public virtual DbSet<Library_Artist> Library_Artists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,12 +36,17 @@ namespace BusinessObjects
             optionsBuilder.UseSqlServer(configuration.
                 GetConnectionString("VibeZDB"));
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PlaylistConfiguration());
             modelBuilder.ApplyConfiguration(new TrackConfiguration());
             modelBuilder.ApplyConfiguration(new AlbumConfiguration());
+            modelBuilder.ApplyConfiguration(new ArtistConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new LibraryConfiguration());
+            modelBuilder.ApplyConfiguration(new Library_AlbumConfiguration());
+            modelBuilder.ApplyConfiguration(new Library_PlaylistConfiguration());
+            modelBuilder.ApplyConfiguration(new Library_ArtistConfiguration());
 
         }
     }

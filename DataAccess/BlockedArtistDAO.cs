@@ -7,11 +7,15 @@ namespace DataAccess
     {
         public async Task<IEnumerable<BlockedArtist>> GetAllArtist()
         {
-            return await _context.BlockedArtists.ToListAsync();
+            return await _context.BlockedArtists.AsNoTrackingWithIdentityResolution().ToListAsync();
+        }
+        public async Task<IEnumerable<BlockedArtist>> GetAllBlockedArtistByUserId(Guid userId)
+        {
+            return await _context.BlockedArtists.Where(x => x.UserId == userId).AsNoTrackingWithIdentityResolution().ToListAsync();
         }
         public async Task<BlockedArtist> GetArtistById(Guid ArtistId, Guid UserId)
         {
-            var ba = await _context.BlockedArtists.FirstOrDefaultAsync(b => b.ArtistId == ArtistId && b.UserId == UserId);
+            var ba = await _context.BlockedArtists.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(b => b.ArtistId == ArtistId && b.UserId == UserId);
             if (ba == null) return null;
             return ba;
         }
@@ -22,18 +26,14 @@ namespace DataAccess
         }
         public async Task Update(BlockedArtist blockedArtist)
         {
-            var existingItem = await GetArtistById(blockedArtist.ArtistId, blockedArtist.UserId);
-            if (existingItem == null) return;
+            _context.Attach(blockedArtist);
+            _context.Entry(blockedArtist).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
-        public async Task Delete(Guid ArtistId, Guid UserId)
+        public async Task Delete(BlockedArtist blockedArtist)
         {
-            var blockedArtist = await GetArtistById(ArtistId, UserId);
-            if (blockedArtist != null)
-            {
-                _context.BlockedArtists.Remove(blockedArtist);
-                await _context.SaveChangesAsync();
-            }
+            _context.BlockedArtists.Remove(blockedArtist);
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BusinessObjects.Data.Config
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             builder.Property(e => e.CreateDate)
-                .HasDefaultValue(DateTime.UtcNow);
+                .HasDefaultValue(DateOnly.FromDateTime(DateTime.UtcNow));
         }
     }
 }

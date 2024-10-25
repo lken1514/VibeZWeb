@@ -6,6 +6,17 @@ namespace Repositories.Repository
 {
     public class LibraryRepository : ILibraryRepository
     {
+        //public async Task<Guid> GenerateUniqueLibraryIdAsync()
+        //{
+        //    Guid libraryId;
+        //    Library exists;
+        //    do
+        //    {
+        //        libraryId = Guid.NewGuid();
+        //        exists = await LibraryDAO.Instance.GetLibraryById(libraryId);
+        //    } while (exists != null);
+        //    return libraryId;
+        //}
         public async Task<IEnumerable<Library>> GetAllLibraries()
         {
             return await LibraryDAO.Instance.GetAllLibraries();
@@ -29,6 +40,18 @@ namespace Repositories.Repository
         public async Task DeleteLibrary(Guid libraryId)
         {
             await LibraryDAO.Instance.Delete(libraryId);
+        }
+        public async Task<IEnumerable<Playlist>> GetPlaylistsByLibraryId(Guid libraryId)
+        {
+             return await LibraryDAO.Instance.GetPlaylistsByLibraryId(libraryId);
+        }
+        public async Task<IEnumerable<Artist>> GetArtistByLibraryId(Guid libraryId)
+        {
+            return await LibraryDAO.Instance.GetArtistByLibraryId(libraryId);
+        }
+        public async Task<IEnumerable<Album>> GetAlbumsByLibraryId(Guid libraryId)
+        {
+            return await LibraryDAO.Instance.GetAlbumsByLibraryId(libraryId);
         }
     }
 }

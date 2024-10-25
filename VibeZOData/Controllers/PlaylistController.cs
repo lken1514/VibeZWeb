@@ -108,7 +108,7 @@ namespace VibeZOData.Controllers
 
             playlist.Name = name;
             playlist.Description = description;
-            playlist.UpdateDate = DateTime.UtcNow;
+            playlist.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
             await _playlistRepository.UpdatePlaylist(playlist);
             _logger.LogInformation($"playlist with id {id} has been updated");
 

@@ -1,19 +1,21 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    [PrimaryKey(nameof(UserId), nameof(libraryID))]
+    [PrimaryKey(nameof(LibraryId), nameof(AlbumId))]
     public class Library_Album : BaseEntity
     {
-        public Guid UserId { get; set; }
-        public Library library { get; set; } = null!;
-        public Guid libraryID { get; set; }
+        public Guid LibraryId { get; set; }
+        [JsonIgnore]
+        public virtual Library Library { get; set; } = null!;
+        public Guid AlbumId { get; set; }
+        [JsonIgnore]
+        public virtual Album Album { get; set; } = null!;
     }
-
-    
 }

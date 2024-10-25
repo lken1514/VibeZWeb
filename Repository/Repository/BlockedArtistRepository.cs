@@ -15,6 +15,11 @@ namespace Repositories.Repository
         {
             return await BlockedArtistDAO.Instance.GetAllArtist();
         }
+        public async Task<IEnumerable<BlockedArtist>> GetAllBlockedArtistsByUserId(Guid userId)
+        {
+            return await BlockedArtistDAO.Instance.GetAllBlockedArtistByUserId(userId);
+        }
+
 
         public async Task<BlockedArtist> GetBlockedArtistById(Guid userId, Guid artistId)
         {
@@ -31,9 +36,9 @@ namespace Repositories.Repository
             await BlockedArtistDAO.Instance.Update(blockedArtist);
         }
 
-        public async Task DeleteBlockedArtist(Guid userId, Guid artistId)
+        public async Task DeleteBlockedArtist(BlockedArtist blockedArtist)
         {
-            await BlockedArtistDAO.Instance.Delete(userId, artistId);
+            await BlockedArtistDAO.Instance.Delete(blockedArtist);
         }
     }
 

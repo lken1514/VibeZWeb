@@ -31,6 +31,10 @@ namespace BusinessObjects.Data.Config
             builder.HasOne(x => x.Artist)
                 .WithMany(x => x.Albums)
                 .HasForeignKey(x => x.ArtistId);
+            builder.HasMany(x => x.Library_Albums)
+                .WithOne(x => x.Album)
+                .HasForeignKey(x => x.AlbumId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

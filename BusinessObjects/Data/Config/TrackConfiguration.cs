@@ -40,9 +40,8 @@ namespace BusinessObjects.Data.Config
                 .WithOne(x => x.Track)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(x => x.TrackId);
-            builder.HasMany(x => x.TrackPlayLists)
-                .WithOne(x => x.Track)
-                .OnDelete(DeleteBehavior.Cascade)
+            builder.HasOne(x => x.Artist)
+                .WithMany(x => x.Tracks)
                 .HasForeignKey(x => x.TrackId);
         }
     }

@@ -43,5 +43,13 @@ namespace Repositories.Repository
         {
             await TrackDAO.Instance.Delete(track);
         }
+        public async Task<IEnumerable<Track>> GetTrackByIds(List<Guid> trackIds) => await TrackDAO.Instance.GetTrackByIds(trackIds);
+
+        public async Task<IEnumerable<Track>> GetSongRecommendations(List<Guid> recentlyPlayedIds, Guid clickedTrackId, int topN = 10)
+        {
+            return await TrackDAO.Instance.GetSongRecommendations(recentlyPlayedIds, clickedTrackId, topN);
+        }
+
+
     }
 }
