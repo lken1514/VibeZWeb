@@ -1,0 +1,35 @@
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\Repositories.deps.json
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\Repositories.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\Repositories.pdb
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\BusinessObjects.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\DataAccess.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\BusinessObjects.pdb
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\bin\Debug\net8.0\DataAccess.pdb
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.sourcelink.json
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Reposito.787EC4B2.Up2Date
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\refint\Repositories.dll
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\Repositories.pdb
+E:\SE18B04\sem5\PRN212\VibeZ-Final\vibez\Repository\obj\Debug\net8.0\ref\Repositories.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\Repositories.deps.json
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\Repositories.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\Repositories.pdb
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\BusinessObjects.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\DataAccess.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\BusinessObjects.pdb
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\bin\Debug\net8.0\DataAccess.pdb
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Reposito.787EC4B2.Up2Date
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\refint\Repositories.dll
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.pdb
+D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\ref\Repositories.dll
