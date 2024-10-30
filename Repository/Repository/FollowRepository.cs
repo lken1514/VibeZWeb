@@ -20,6 +20,10 @@ namespace Repositories.Repository
         {
             return await FollowDAO.Instance.GetFollowById(userId, artistId);
         }
+        public async Task<IEnumerable<Guid>> GetFollowById(Guid artistId)
+        {
+            return await FollowDAO.Instance.GetFollowById(artistId);
+        }
 
         public async Task AddFollows(Follow follow)
         {

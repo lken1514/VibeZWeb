@@ -33,3 +33,21 @@ D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositori
 D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\refint\Repositories.dll
 D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\Repositories.pdb
 D:\Kien\New folder\VibeZWeb-vibez-backend\Repository\obj\Debug\net8.0\ref\Repositories.dll
+D:\VibeZWeb\Repository\bin\Debug\net8.0\Repositories.deps.json
+D:\VibeZWeb\Repository\bin\Debug\net8.0\Repositories.dll
+D:\VibeZWeb\Repository\bin\Debug\net8.0\Repositories.pdb
+D:\VibeZWeb\Repository\bin\Debug\net8.0\BusinessObjects.dll
+D:\VibeZWeb\Repository\bin\Debug\net8.0\DataAccess.dll
+D:\VibeZWeb\Repository\bin\Debug\net8.0\BusinessObjects.pdb
+D:\VibeZWeb\Repository\bin\Debug\net8.0\DataAccess.pdb
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Reposito.787EC4B2.Up2Date
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.dll
+D:\VibeZWeb\Repository\obj\Debug\net8.0\refint\Repositories.dll
+D:\VibeZWeb\Repository\obj\Debug\net8.0\Repositories.pdb
+D:\VibeZWeb\Repository\obj\Debug\net8.0\ref\Repositories.dll

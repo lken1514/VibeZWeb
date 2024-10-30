@@ -16,6 +16,8 @@ namespace BusinessObjects
         public Guid? CategoryId { get; set; }
         [JsonIgnore]
         public virtual Category Category { get; set; } = null!;
+        //Trang thai cua track
+        public bool PendingApproval { get; set; } = true;
         public string Name { get; set; }
         public string Lyrics { get; set; }
         public string Genre { get; set; }  

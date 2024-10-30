@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CU2PRFC71AM=",
+  "dgSpecHash": "CpgDj6fLhaE=",
   "success": true,
-  "projectFilePath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MINH HUE\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\MINH HUE\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

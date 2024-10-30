@@ -35,7 +35,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<DateOnly>("DateOfRelease")
                         .HasColumnType("date");
@@ -53,6 +53,9 @@ namespace BusinessObjects.Migrations
                     b.Property<string>("Nation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PendingApproval")
+                        .HasColumnType("bit");
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -74,7 +77,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -95,8 +98,16 @@ namespace BusinessObjects.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
+
+                    b.Property<string>("imgBakground")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -200,7 +211,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -227,7 +238,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -250,7 +261,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -273,7 +284,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -402,7 +413,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -450,7 +461,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -478,6 +489,9 @@ namespace BusinessObjects.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("PendingApproval")
+                        .HasColumnType("bit");
 
                     b.Property<TimeOnly>("Time")
                         .HasColumnType("time");
@@ -527,7 +541,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 10, 30));
 
                     b.Property<DateOnly?>("DOB")
                         .HasColumnType("date");

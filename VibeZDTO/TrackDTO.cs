@@ -14,6 +14,7 @@ namespace VibeZDTO
         public Guid? CategoryId { get; set; }
         public Guid? artistId { get; set; }
         public string ArtistName { get; set; }
+        public bool PendingApproval { get; set; } = true;
         public string Name { get; set; }
         public string Lyrics { get; set; }
         public string Genre {  get; set; }

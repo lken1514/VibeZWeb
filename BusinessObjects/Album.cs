@@ -15,6 +15,8 @@ namespace BusinessObjects
         public virtual Artist Artist { get; set; } = null!;
         public string Name { get; set; }
         public DateOnly DateOfRelease { get; set; }
+        //them trang thai
+        public bool PendingApproval { get; set; } = true;
         public string Image { get; set; }
         public string Nation { get; set; }
         public virtual ICollection<Library_Album>? Library_Albums { get; set; }

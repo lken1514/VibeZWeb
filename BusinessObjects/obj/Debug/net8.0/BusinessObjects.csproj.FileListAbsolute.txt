@@ -27,3 +27,18 @@ D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\refin
 D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
 D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
 D:\Kien\New folder\VibeZWeb-vibez-backend\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
+D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
+D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
+D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
+D:\VibeZWeb\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
+D:\VibeZWeb\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll

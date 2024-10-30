@@ -21,6 +21,12 @@ namespace DataAccess
             if (follow == null) return null;
             return follow;
         }
+        public async Task<IEnumerable<Guid>> GetFollowById(Guid artistId)
+        {
+            var follow = await _context.Follows.FirstOrDefaultAsync(f => f.ArtistId == artistId);
+            if (follow == null) return null;
+            return await _context.Follows.Where(f => f.ArtistId == artistId).Select(f => f.UserId).ToListAsync();
+        }
 
         public async Task Add(Follow follow)
         {

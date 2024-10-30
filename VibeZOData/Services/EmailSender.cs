@@ -30,7 +30,23 @@ namespace VibeZOData.Services
             await smtp.DisconnectAsync(true);
         }
 
-        private string GenerateEmailTemplate(string email, string subject, string otpCode)
+        //Thong bao cho follower khi artist up nhac moi
+        public async Task SendNoticeEmail(string toEmail, string subject, string content)
+        {
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailConfig.FromName, _emailConfig.From));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = subject;
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Plain) { Text = content };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync(_emailConfig.SmtpServer, 587, MailKit.Security.SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailConfig.Username, _emailConfig.Password);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+
+            private string GenerateEmailTemplate(string email, string subject, string otpCode)
         {
             // Email template now includes the OTP code
             var result = string.Format(

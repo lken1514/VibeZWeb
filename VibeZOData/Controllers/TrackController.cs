@@ -13,12 +13,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataAccess;
 using VibeZOData.Models;
+using VibeZOData.Services;
 
 namespace VibeZOData.Controllers
 {
     [Route("odata/[controller]")]
     [ApiController]
-    public class TrackController(ITrackRepository _trackRepository, IMapper _mapper, IAzuriteService _azure, ILogger<TrackController> _logger) : ControllerBase
+    public class TrackController(ITrackRepository _trackRepository, IMapper _mapper, IAzuriteService _azure, ILogger<TrackController> _logger, IFollowRepository _followRepository, INotificationService _notificationService) : ControllerBase
     {
         // GET: api/<TrackController>
         [HttpGet("all", Name = "GetAllTracks")]
@@ -232,5 +233,31 @@ namespace VibeZOData.Controllers
 
             return NoContent();
         }
+
+        //[HttpPost("approve/{id}")]
+        //public async Task<ActionResult> ApproveTrack(Guid id)
+        //{
+        //    _logger.LogInformation($"Approving track with id {id}");
+        //    var track = await _trackRepository.GetTrackById(id);
+        //    if (track == null)
+        //    {
+        //        _logger.LogWarning($"Track with id {id} not found for approval");
+        //        return NotFound("Track not found");
+        //    }
+        //    if (!track.PendingApproval)
+        //    {
+        //        return BadRequest("Track is already approved");
+        //    }
+        //    track.PendingApproval = false;
+        //    await _trackRepository.UpdateTrack(track);
+        //    _logger.LogInformation($"Track with id {id} has been approved");
+
+        //    var followers = await _followRepository.GetFollowById(track.ArtistId);
+        //    foreach (var followeId in followers)
+        //    {
+        //        await _notificationService.SendNotificationAsync(followeId, "New Track Released", track.Name);
+        //    }
+        //    return NoContent();
+        //}
     }
 }

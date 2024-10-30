@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BusinessObjects.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Initials : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,9 +18,11 @@ namespace BusinessObjects.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Genre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    imgBakground = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Nation = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -86,7 +88,7 @@ namespace BusinessObjects.Migrations
                     UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     DOB = table.Column<DateOnly>(type: "date", nullable: true),
                     Premium = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false, defaultValue: "Free"),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -102,9 +104,10 @@ namespace BusinessObjects.Migrations
                     ArtistId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DateOfRelease = table.Column<DateOnly>(type: "date", nullable: false),
+                    PendingApproval = table.Column<bool>(type: "bit", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Nation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -203,7 +206,7 @@ namespace BusinessObjects.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -247,7 +250,7 @@ namespace BusinessObjects.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -294,6 +297,7 @@ namespace BusinessObjects.Migrations
                     TrackId = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValueSql: "NEWID()"),
                     AlbumId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    PendingApproval = table.Column<bool>(type: "bit", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Lyrics = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Genre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
@@ -302,7 +306,7 @@ namespace BusinessObjects.Migrations
                     Listener = table.Column<int>(type: "int", nullable: false),
                     Time = table.Column<TimeOnly>(type: "time", nullable: false),
                     ArtistId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -332,7 +336,7 @@ namespace BusinessObjects.Migrations
                 {
                     LibraryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AlbumId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -358,7 +362,7 @@ namespace BusinessObjects.Migrations
                 {
                     LibraryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ArtistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
@@ -384,7 +388,7 @@ namespace BusinessObjects.Migrations
                 {
                     LibraryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PlaylistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 25)),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: false, defaultValue: new DateOnly(2024, 10, 30)),
                     UpdateDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>

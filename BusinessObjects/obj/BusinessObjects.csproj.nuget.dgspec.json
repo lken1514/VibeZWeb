@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj": {}
+    "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {}
   },
   "projects": {
-    "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj",
+        "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\obj\\",
+        "outputPath": "D:\\VibeZWeb\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",

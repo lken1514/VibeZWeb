@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/08oeF6oY2k=",
+  "dgSpecHash": "JsQdLcaF3y0=",
   "success": true,
-  "projectFilePath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZOData\\VibeZOData.csproj",
+  "projectFilePath": "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MINH HUE\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\MINH HUE\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

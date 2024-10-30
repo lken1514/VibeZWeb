@@ -11,6 +11,7 @@ namespace Repositories.IRepository
     {
         Task<IEnumerable<Follow>> GetAllFollows();
         Task<Follow> GetFollowById(Guid userId, Guid artistId);
+        Task<IEnumerable<Guid>> GetFollowById(Guid artistId);
         Task AddFollows(Follow follow);
         Task UpdateFollows(Follow follow);
         Task DeleteFollows(Guid userId, Guid artistId);
