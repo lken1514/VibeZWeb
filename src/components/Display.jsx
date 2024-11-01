@@ -22,7 +22,7 @@ const Display = () => {
 
   return (
     <>
-      <div ref={displayRef} className='flex-1 m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto'>
+      <div ref={displayRef} className='h-full flex-1 m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto'>
         <Outlet />
       </div>
     </>

@@ -23,4 +23,37 @@ const authService = async (username, password) => {
     }
 };
 
-export default authService;
+const responseGoogle = async (response) => {
+    const token = response.credential;
+    try {
+      const res = await axios.post(`${API_URL}/google-login`, { token });
+
+      if (res.data?.token) {
+        localStorage.setItem('jwtToken', res.data.token);
+        localStorage.setItem('user', JSON.stringify(res.data.user));
+        return res.data;
+      }
+    } catch (error) {
+      console.error("Login failed:", error.message);
+      alert(error.message);
+    }
+};
+
+
+const registerService = async (name, username, email, password) => {
+    try {
+        const response = await axios.post(`${API_URL}/register`, { name, username, email, password });
+
+        if (response.status === 200) {
+            console.log('Registration successful. Proceeding to login...');
+        } else {
+            console.log("Registration failed.");
+            throw new Error("Registration failed.");
+        }
+    } catch (error) {
+        console.error("Registration error:", error.message || error);
+        throw new Error("Registration failed: " + (error.response?.data?.message || error.message));
+    }
+};
+
+export default { authService, registerService, responseGoogle };

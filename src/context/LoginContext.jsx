@@ -10,6 +10,8 @@ const LoginContextProvider = (props) => {
     const [user, setUser] = useState(null);
     const [username, setusername] = useState(null);
     const [userId, setUserId] = useState(null);
+    const [isChange, setChange] = useState(false);
+    const [Info, setInfo] = useState(false);
     useEffect(() => {
         // Kiểm tra token trong localStorage khi ứng dụng khởi động
         const token = localStorage.getItem('jwtToken');
@@ -56,7 +58,7 @@ const LoginContextProvider = (props) => {
 
     const contextValue = {
         login, logout,
-        isLoggedIn, user, userId, username
+        isLoggedIn, user, userId, username, isChange, setChange, setInfo, Info
     };
 
     return (

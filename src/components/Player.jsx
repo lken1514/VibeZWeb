@@ -6,6 +6,8 @@ import { PlayerContext } from '../context/PlayerContext';
 import { useListVisibility } from '../context/VisibleContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShuffle, faBackwardStep, faPlay, faPause, faForwardStep, faRepeat, faBars, faDisplay, faMicrophone, faVolumeHigh, faVolumeLow, faVolumeOff } from '@fortawesome/free-solid-svg-icons'; // Import thêm biểu tượng âm lượng
+import { LoginContext } from '../context/LoginContext';
+import { info } from 'autoprefixer';
 
 const Player = () => {
   const { track, seekBar, seekBg, playStatus, play, pause, time, previous, next, seekSong, songsData, setSongsData, currentIndex, seekTo, toggleRepeat, repeat, volume, setVolume } = useContext(PlayerContext); // Thêm setVolume từ PlayerContext
@@ -13,6 +15,7 @@ const Player = () => {
   const { isListVisible, setIsListVisible } = useListVisibility();
 
   const [originalSongsData, setOriginalSongsData] = useState([]);
+  const {Info,setInfo} = useContext(LoginContext);
   
 
   useEffect(() => {
@@ -107,7 +110,7 @@ const Player = () => {
             </div>
 
             <div className="hidden lg:flex items-center gap-2 opacity-75">
-              <div className={`text-[18px] cursor-pointer hover:text-green-500}`} >
+              <div className={`text-[18px] cursor-pointer hover:text-green-500}`} onClick={() => setInfo(!Info)}>
                 <FontAwesomeIcon className=' hover:text-green-500' icon={faDisplay} />
               </div>
               <div className={`text-[18px] cursor-pointer hover:text-green-500 `} >

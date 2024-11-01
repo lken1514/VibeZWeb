@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import googleIcon from "../../assets/google-icon.svg";
-import facebookIcon from "../../assets/facebook-icon.svg";
+import './LoginComponent.css'; // Corrected import
+import { GoogleLogin } from '@react-oauth/google'; // Corrected import
+
+// Importing images from the assets folder
+import vibezIcon from "../../assets/vibez_logo.svg";
 import showIcon from "../../assets/show-icon.svg";
 import { LoginContext } from "../../context/LoginContext";
 import { assets } from "../../assets/assets";
 
 const LoginComponent = () => {
-  const { login, isLoggedIn, user } = useContext(LoginContext);
+  const { login, isLoggedIn, user, googleLogin } = useContext(LoginContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -22,72 +25,76 @@ const LoginComponent = () => {
   };
 
   useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/");
+    console.log('Logged in:', isLoggedIn, 'User:', user);
+    if (isLoggedIn && user !== null) {
+      navigate('/');
     }
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedIn, user, navigate]);
 
+  const responseGoogle = async (response) => {
+    try {
+      console.log(response);
+      await googleLogin(response);
+    } catch (error) {
+      console.error("Login failed:", error.message);
+      alert(error.message);
+    }
+  };
+  
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      {isLoggedIn ? (
-        <p className="text-white">Welcome, {user}</p>
-      ) : (
-        <div className="bg-[#1A1A1A] p-10 rounded-xl text-center w-[550px]">
-          <div className="mb-8">
-            <img className="w-16 h-16 mx-auto rounded-full" src={assets.logo} alt="" />
+    <div className="login-page">
+      <div>
+        {/* {console.log(isLoggedIn)} */}
+        {isLoggedIn ? (
+          <p>Welcome, {user.name}</p>
+        ) : (
+          <div className="login-container">
+            <div className="spotify-logo">
+              <button>
+                <img src={vibezIcon} alt="VibeZ" />
+              </button>
+            </div>
+            <h1 className="login-title">Log in to VibeZ</h1>
+            <div className="input-group">
+              <input
+                type="text"
+                id="username"
+                placeholder="Email or username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div className="input-group password-input">
+              <input
+                id="password"
+                type="password"
+                value={password}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button className="password-toggle">
+                <img src={showIcon} alt="Show" />
+              </button>
+            </div>
+            <button className="login-button" onClick={handleLogin}>Login</button>
+            <div className="google-login">
+              <GoogleLogin
+                buttonText="Continue with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
+            </div>
+
+            <div className="forgot-password">
+              <a href="#">Forgot your password?</a>
+            </div>
+            <div className="signup-prompt">
+              Don't have an account? <a href="/signup">Sign up for VibeZ</a>
+            </div>
           </div>
-          <h1 className="text-[30px] text-white mb-6 font-bold ">Log in to VibeZ</h1>
-          <button className="w-full bg-[#2A2A2A] text-white py-3 rounded-full flex items-center justify-center mb-4">
-            <img src={googleIcon} alt="Google" className="w-5 h-5 mr-3" />
-            Continue with Google
-          </button>
-          <button className="w-full bg-[#2A2A2A] text-white py-3 rounded-full flex items-center justify-center mb-4">
-            <img src={facebookIcon} alt="Facebook" className="w-5 h-5 mr-3" />
-            Continue with Facebook
-          </button>
-          <button className="w-full bg-[#2A2A2A] text-white py-3 rounded-full mb-4">
-            Continue with phone number
-          </button>
-          <div className="w-full">
-            <input
-              type="text"
-              placeholder="Email or username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full bg-[#2A2A2A] text-white py-3 px-4 rounded-md mb-4 outline-none focus:ring-2 "
-            />
-          </div>
-          <div className="relative w-full">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-[#2A2A2A] text-white py-3 px-4 rounded-md mb-4 outline-none focus:ring-2 "
-            />
-            <button className="absolute right-4 top-1/2 transform -translate-y-1/2">
-              <img src={showIcon} alt="Show" className="w-5 h-5" />
-            </button>
-          </div>
-          <button
-            onClick={handleLogin}
-            className="w-full bg-green-500 text-black py-3 rounded-full font-bold text-lg hover:ring-2 hover:ring-white"
-          >
-            Login
-          </button>
-          <div className="mt-4">
-            <a href="#" className="text-white underline">
-              Forgot your password?
-            </a>
-          </div>
-          <div className="mt-4 text-gray-400">
-            Don't have an account?{" "}
-            <a href="/signup.html" className="text-white underline">
-              Sign up for VibeZ
-            </a>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
