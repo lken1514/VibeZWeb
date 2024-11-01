@@ -3,7 +3,7 @@ import { PlayerContext } from "../context/PlayerContext";
 import trackService from "../services/trackService";
 
 const SongItem = ({ name, image, artistName, id }) => {
-  const { playWithId, setSongsData, songsData, setCurrentIndex, currentIndex } = useContext(PlayerContext);
+  const { playWithId, setSongsData, songsData, setCurrentIndex, currentIndex, setPlayStatus } = useContext(PlayerContext);
   const [clickedTrackId, setClickedTrackId] = useState(null);
 
   // useEffect để phát nhạc sau khi songsData được cập nhật
@@ -20,7 +20,8 @@ const SongItem = ({ name, image, artistName, id }) => {
       const data = await trackService.fetchRecommendations(id);
       setSongsData(data); // Cập nhật danh sách bài hát
       setCurrentIndex(0);
-      setClickedTrackId(id);  // Đặt bài hát cần phát sau khi dữ liệu được cập nhật
+      setClickedTrackId(id);
+      setPlayStatus(true);  // Đặt bài hát cần phát sau khi dữ liệu được cập nhật
     } catch (error) {
       console.error("Error fetching song recommendations:", error.message);
     } 
@@ -29,7 +30,7 @@ const SongItem = ({ name, image, artistName, id }) => {
   return (
     <div
       onClick={handleClick}
-      className="w-[18%] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]"
+      className="max-w-[220px] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]"
     >
       {/* Hiển thị hình ảnh */}
       <img className="rounded" src={image} alt={name} />

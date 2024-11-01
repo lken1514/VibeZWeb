@@ -1,7 +1,9 @@
+// src/services/albumService.js
 import axios from "axios";
 
 const API_URL = "https://localhost:7241/odata/Track"; // Thay đổi theo địa chỉ backend
 
+// Hàm lấy tên nghệ sĩ theo ID
 const getAllTrackByAlbumId = async (id) => {
   try {
     const response = await axios.get(`${API_URL}/Album/${id}`);
@@ -102,6 +104,7 @@ const fetchRecommendations = async (clickedTrackId) => {
     return response.data || [];
   } catch (error) {
     console.error("Error fetching track recommendations:", error);
+    setError("Failed to fetch recommendations");
   }
 };
 // Xuất các service

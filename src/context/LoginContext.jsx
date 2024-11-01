@@ -1,7 +1,6 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import {authService,registerService,responseGoogle} from "../services/authService";
+import authService from "../services/authService";
 import { songsData } from "../assets/assets";
-import { json } from "react-router-dom";
 
 export const LoginContext = createContext();
 
@@ -9,63 +8,57 @@ const LoginContextProvider = (props) => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState(null);
-
+    const [username, setusername] = useState(null);
+    const [userId, setUserId] = useState(null);
+    const [isChange, setChange] = useState(false);
+    const [Info, setInfo] = useState(false);
     useEffect(() => {
-        const userObject = JSON.parse(localStorage.getItem('user'));
+        // Kiểm tra token trong localStorage khi ứng dụng khởi động
         const token = localStorage.getItem('jwtToken');
-    
-        console.log('User object from localStorage:', userObject); 
-    
-        if (token && userObject) {
+        const storedUser = localStorage.getItem('username');
+        const storeId = JSON.parse(localStorage.getItem('userId')); // Loại bỏ dấu ngoặc kép nếu có
+        setUserId(storeId);
+
+
+        if (token && storedUser && storeId) {
             setIsLoggedIn(true);
-            setUser(userObject);
+            setUser(JSON.parse(storedUser).charAt(0).toUpperCase());
+            console.log('User logged in:', storeId);
         }
     }, []);
-    
-    const googleLogin = async (res) => {
-        try {
-            const response = await responseGoogle(res);
-            setIsLoggedIn(true);
-            setUser(response.user);
-            console.log('User Google login:', response.user);
-        } catch (error) {
-            console.error("Login failed:", error.message);
-            alert(error.message);
-        }
-    }
 
     const login = async (username, password) => {
         try {
             const response = await authService(username, password);
             setIsLoggedIn(true);
-            setUser(response.user);
-            console.log('User login:', response.user);
+            setusername(response.username);
+            setUser(response.username.charAt(0).toUpperCase()); // Cập nhật thông tin người dùng chỉ với chữ cái đầu tiên
+
+            // Cập nhật thông tin người dùng    
         } catch (error) {
             console.error("Login failed:", error.message);
             throw new Error("Login failed: " + error.message);
         }
     };
 
-    const signUp = async (name,username,email,password) => {
-        try {
-            await registerService(name,username,email,password);
-        } catch (error) {
-            console.error("Registration failed:", error.message);
-            throw new Error("Registration failed: " + error.message);
-        }
-    }
+    // Theo dõi sự thay đổi của isLoggedIn
+    useEffect(() => {
+        console.log('Login status changed:', isLoggedIn, user, userId);
+    }, [isLoggedIn, user]); // Ghi log khi isLoggedIn hoặc user thay đổi
 
+    // Đăng xuất người dùng
     const logout = () => {
         localStorage.removeItem('jwtToken');
-        localStorage.removeItem('user');
+        localStorage.removeItem('username');
+        localStorage.removeItem('userId');
         setIsLoggedIn(false);
         setUser(null);
+        setUserId(null);
     };
 
     const contextValue = {
         login, logout,
-        isLoggedIn, user,
-        signUp, googleLogin
+        isLoggedIn, user, userId, username, isChange, setChange, setInfo, Info
     };
 
     return (

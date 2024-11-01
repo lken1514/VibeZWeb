@@ -10,7 +10,9 @@ import DisplayArtist from './components/DisplayArtist';
 import DisplayPlaylist from './components/DisplayPlaylist'
 import Queue from './components/Queue';
 import Plans from './components/Plans';
+import DisplaySearch from './components/DisplaySearch';
 import SignUpForm from './components/SignUpForm/SignUpForm';
+
 
 function App() {
   const router = createBrowserRouter([
@@ -25,7 +27,11 @@ function App() {
             { path: '/', element: <DisplayHome /> }, // home page
             { path: 'album/:id', element: <DisplayAlbum /> },
             { path: 'playlist/:id', element: <DisplayPlaylist /> }, // album page
-            {path: 'artist/:id', element: <DisplayArtist />}, // artist page
+            { path: 'artist/:id', element: <DisplayArtist /> }, // artist page
+            {
+              path: '/search',
+              element: <DisplaySearch />
+            }
           ],
         }
       ],

@@ -21,7 +21,8 @@ const DisplayHome = () => {
   // }
   const { isLoggedIn } = useContext(LoginContext); // Lấy isLoggedIn và user từ context
   const [albums, setAlbums] = useState([]);
-  const [artists, setArtists] = useState({}); // State lưu trữ tên nghệ sĩ
+  const [artists, setArtists] = useState({});
+  const [artistsData, setArtistData] = useState([]); // State lưu trữ tên nghệ sĩ
   const [songsData, setSongsData] = useState([]);
 
   useEffect(() => {
@@ -29,35 +30,49 @@ const DisplayHome = () => {
       try {
         const data = await albumService.getAllAlbums(); // Gọi API lấy dữ liệu album
         setAlbums(data); // Lưu dữ liệu vào state albums
-  
+
         // Lấy tên nghệ sĩ cho mỗi album
         const artistPromises = data.map(async (album) => {
           const artistName = await artistService.getNameArtistById(album.artistId);
           return { [album.id]: artistName };
         });
-  
+
         const artistResults = await Promise.all(artistPromises);
         const artistMap = Object.assign({}, ...artistResults); // Tạo object từ kết quả
+
         setArtists(artistMap);
       } catch (error) {
         console.error(error.message); // Lưu lỗi nếu xảy ra
       }
     };
-  
+
     const fetchRecentlySong = async () => {
       try {
-        const data = await trackService.getRecentlyPlayedTracks(); 
-        setSongsData(data); 
+        const data = await trackService.getRecentlyPlayedTracks();
+        setSongsData(data);
       } catch (error) {
         console.error(error.message); // Lưu lỗi nếu xảy ra
       }
     };
-  
+
     // Gọi cả hai hàm fetch song song
     fetchAlbums();
     fetchRecentlySong();
   }, []);
- 
+
+  useEffect(() => {
+    const fetchArtist = async () => {
+      try {
+        const artist = await artistService.suggestArtists();
+        console.log("abc" + artist);
+        setArtistData(artist);
+      } catch (error) {
+        console.error(error.message); // Lưu lỗi nếu xảy ra
+      }
+    }
+    fetchArtist();
+  }, []
+  )
 
   return (
     <>
@@ -72,25 +87,28 @@ const DisplayHome = () => {
         </div>)
       }
 
-    {
-      isLoggedIn && songsData.length > 0 && (
-        <div className="mb-4">
-        <h1 className="my-5 font-bold text-2xl">Recently Played</h1>
-        <div className="flex overflow-auto">
-          {songsData.map((item, index) => (
-            <SongItem key={index} name={item.name} artistName={item.artistName} id={item.trackId} image={item.image} />
-          ))}
-        </div>
-      </div>
-      )
-    }
+      {
+        isLoggedIn && songsData.length > 0 && (
+          <div className="mb-4">
+            <h1 className="my-5 font-bold text-2xl">Recently Played</h1>
+            <div className="flex overflow-auto">
+              {songsData.map((item, index) => (
+                <SongItem key={index} name={item.name} artistName={item.artistName} id={item.trackId} image={item.image} />
+              ))}
+            </div>
+          </div>
+        )
+      }
 
       <div className="mb-4">
         <h1 className="my-5 font-bold text-2xl">Your Favorite Artists</h1>
         <div className="flex overflow-auto">
-          {albumsData.map((item, index) => (
-            <ArtistItem key={index} name={item.name} desc={item.desc} id={item.id} image={item.image} />
-          ))}
+          {artistsData.length > 0 ? (artistsData.map((item, index) => (
+            <ArtistItem key={index} name={item.name} desc={item.genre} id={item.id} image={item.image} />
+          ))) :
+            (
+              <p>No artists available</p>
+            )}
         </div>
       </div>
       {/* <div className="mb-4">

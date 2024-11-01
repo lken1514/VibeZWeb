@@ -44,6 +44,8 @@ import song3 from  './song3.mp3'
 import logo from './vibeZlogo.jpg'
 import vnpay from './vnpay.jpg'
 import momo from './momo.jpg'
+import artistImg from './img.jpg'
+import artistBanner from './channels4_banner.jpg'
 
 export const assets = {
     bell_icon,
@@ -73,7 +75,9 @@ export const assets = {
     logo,
     img1,
     vnpay,
-    momo
+    momo,
+    artistImg,
+    artistBanner
 }
 
 export const albumsData = [
