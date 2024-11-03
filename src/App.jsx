@@ -11,6 +11,12 @@ import DisplayPlaylist from './components/DisplayPlaylist'
 import Queue from './components/Queue';
 import Plans from './components/Plans';
 import SignUpForm from './components/SignUpForm/SignUpForm';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminDisplayBan from './components/AdminDisplayBan';
+import AdminDisplayArtist from './components/AdminDisplayArtist';
+import AdminDisplayApproval from './components/AdminDisplayApproval';
+import AdminDisplayHome from './components/AdminDisplayHome';
+// const AdminDisplayHome  = React.lazy(() => import("./components/AdminDisplayHome"));
 
 function App() {
   const router = createBrowserRouter([
@@ -45,7 +51,29 @@ function App() {
     {
       path: '/plan',
       element: <Plans />,
-    }
+    },
+    {
+      path: '/admin',
+      element: <AdminDashboard />,
+      children: [
+          {
+              path: 'home',
+              element: <AdminDisplayHome />,
+          },
+          {
+              path: 'artist',
+              element: <AdminDisplayArtist />,
+          },
+          {
+              path: 'ban',
+              element: <AdminDisplayBan />,
+          },
+          {
+              path: 'approval',
+              element: <AdminDisplayApproval />, 
+          },
+      ],
+  }
   ]);
 
   return <RouterProvider router={router} />;

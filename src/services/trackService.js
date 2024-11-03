@@ -1,11 +1,25 @@
 import axios from "axios";
 
-const API_URL = "https://localhost:7241/odata/Track"; // Thay đổi theo địa chỉ backend
+const API_URL = "https://localhost:7241/odata/Track";
+
+export const changeStatus = async (id) => {
+  try {
+    const response = await axios.put(`$https://localhost:7241/api/Admin/approve-track/${id}`);
+    console.log(response.data);
+    return;
+  } catch (error) {
+    console.error("Error changing status:", error.message || error);
+    throw new Error(
+      "Failed to change status: " +
+        (error.response?.data?.message || error.message)
+    );
+  }
+};
 
 const getAllTrackByAlbumId = async (id) => {
   try {
     const response = await axios.get(`${API_URL}/Album/${id}`);
-    return response.data; // Trả về tên nghệ sĩ từ API
+    return response.data;
   } catch (error) {
     console.error("Error fetching track:", error.message || error);
     throw new Error(
@@ -104,6 +118,20 @@ const fetchRecommendations = async (clickedTrackId) => {
     console.error("Error fetching track recommendations:", error);
   }
 };
+
+export const deleteTrack = async (id) => {
+  try {
+    console.log(`Deleting track with id: ${id}`);
+    await axios.delete(`${API_URL}/${id}`);
+    return "Track deleted successfully";
+  } catch (error) {
+    console.error("Error deleting track:", error.message || error);
+    throw new Error(
+      "Failed to delete track: " +
+        (error.response?.data?.message || error.message)
+    );
+  }
+};
 // Xuất các service
 export default {
   getAllTrackByAlbumId,
@@ -111,5 +139,6 @@ export default {
   getAllTracks,
   getRecentlyPlayedTracks,
   fetchRecommendations,
-  UpdateListener
+  UpdateListener,
+  deleteTrack
 };
