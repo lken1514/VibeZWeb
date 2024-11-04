@@ -6,7 +6,7 @@ import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import eventBus from "../services/eventBus";
 const AlbumItem = ({ image, name, release, id, artist }) => {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [isMouseOver, setMouseOver] = useState(false);
   
 

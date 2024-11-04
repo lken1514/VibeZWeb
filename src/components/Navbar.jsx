@@ -16,7 +16,7 @@ import searchService from '../services/searchService';
 const Navbar = () => {
   const { isLoggedIn, user, userId, logout } = useContext(LoginContext); // Lấy isLoggedIn và user từ context
   const navigate = useNavigate();
-  const {result, setResult} = useContext(PlayerContext);
+  const { result, setResult } = useContext(PlayerContext);
   const [isListVisible, setIsListVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -24,16 +24,16 @@ const Navbar = () => {
 
   const debouncedSearch = useCallback(
     _.debounce(async (term) => {
-        if (!term) return;
-        try {
-            const data = await searchService.search(term);
-            setResult(data); // Gọi onSearch để cập nhật `results` trong RootLayout
-        } catch (error) {
-            console.error("Error during search:", error);
-        }
+      if (!term) return;
+      try {
+        const data = await searchService.search(term);
+        setResult(data); // Gọi onSearch để cập nhật `results` trong RootLayout
+      } catch (error) {
+        console.error("Error during search:", error);
+      }
     }, 300),
     [setResult]
-);
+  );
 
   const handleSearch = (e) => {
     const term = e.target.value;
@@ -79,7 +79,9 @@ const Navbar = () => {
 
         {isLoggedIn ? (
           <div className='absolute right-0 inset-y-0 w-[15%] flex justify-around items-center' >
-            <button className='h-[60%] w-[40%] rounded-[90px] text-black text-[18px] font-bold bg-white transition-all duration-200 hover:w-40'>
+            <button className='h-[60%] w-[40%] rounded-[90px] text-black text-[18px] font-bold bg-white transition-all duration-200 hover:w-40'
+              onClick={() => navigate('/plan')}
+            >
               <span>
                 Premium
               </span>
@@ -89,13 +91,16 @@ const Navbar = () => {
             </button>
             {isListVisible && (
               <ul className='absolute top-[100%] right-0 bg-[#2A2A2A] shadow-lg rounded-md p-2 w-[70%] text-[18px] text-white z-20'>
-                <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'>
-                  <a onClick={() => navigate('/profile')} >Account</a>
+                <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]' onClick={() => navigate('/profile')}>
+                  <a >Account</a>
                 </li>
-                <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'>
+                <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'
+                >
                   <a href="">Profile</a>
                 </li>
-                <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'>
+                <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'
+                  onClick={() => navigate('/plan')}
+                >
                   <a href="">Upgrade Premium</a>
                 </li>
                 <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]' onClick={() => handleLogOut()}>

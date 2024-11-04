@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, ChevronRight, CreditCard, Gift, Grid, Bell, Lock, Key, LogOut } from 'lucide-react';
 import Navbar from '../components/Navbar2';
+import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
+  const [premium, setPremium] = useState();
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fetchPremium = () => {
+      const premium = JSON.parse(localStorage.getItem('premium'));
+      setPremium(premium);
+    }
+    fetchPremium();
+  }, []);
   return (
     <div className="bg-black text-white min-h-screen p-6">
       <Navbar />
@@ -18,10 +28,17 @@ const ProfilePage = () => {
 
         <div className="bg-[#2A2A2A] rounded-lg px-4 py-8 mb-6 flex justify-between items-center">
           <div>
-            <h2 className="text-xl font-bold">Spotify Free</h2>
-            <button className="mt-2 px-4 py-1 bg-white text-black rounded-full text-sm transition-all duration-200 hover:bg-green-600 font-bold">Explore plans</button>
+            {premium != 'Free' ? (
+              <h2 className="text-xl font-bold">Premium {premium}</h2>
+
+            ) : (
+              <h2 className="text-xl font-bold">Free</h2>
+
+            )      
+            }
+            <button className="mt-2 px-4 py-1 bg-white text-black rounded-full text-sm transition-all duration-200 hover:bg-green-600 font-bold" onClick={() => navigate('/plan')}>Explore plans</button>
           </div>
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-full transition-all duration-200 hover:bg-black font-bold">Join Premium</button>
+          <button className="bg-purple-600 text-white px-4 py-2 rounded-full transition-all duration-200 hover:bg-black font-bold" onClick={() => navigate('/plan')}>Join Premium</button>
         </div>
 
         <div className="space-y-6">

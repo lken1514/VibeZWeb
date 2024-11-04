@@ -29,10 +29,10 @@ const LoginContextProvider = (props) => {
 
     const login = async (username, password) => {
         try {
-            const response = await authService(username, password);
+            const response = await authService.authServices(username, password);
             setIsLoggedIn(true);
-            setusername(response.username);
-            setUser(response.username.charAt(0).toUpperCase()); // Cập nhật thông tin người dùng chỉ với chữ cái đầu tiên
+            setusername(response.user.name);
+            setUser(response.user.name.charAt(0).toUpperCase()); // Cập nhật thông tin người dùng chỉ với chữ cái đầu tiên
 
             // Cập nhật thông tin người dùng    
         } catch (error) {

@@ -8,10 +8,10 @@ import LoginComponent from './components/LoginForm/LoginComponent'
 import DisplayHome from './components/DisplayHome'; // Imported to use inside nested routes
 import DisplayArtist from './components/DisplayArtist';
 import DisplayPlaylist from './components/DisplayPlaylist'
-import Queue from './components/Queue';
-import Plans from './components/Plans';
 import DisplaySearch from './components/DisplaySearch';
 import SignUpForm from './components/SignUpForm/SignUpForm';
+import PremiumPage from './components/PaymentForm/PremiumPage';
+import PurchasePage from './components/PaymentForm/PurchasePage';
 
 
 function App() {
@@ -50,7 +50,11 @@ function App() {
     },
     {
       path: '/plan',
-      element: <Plans />,
+      element: <PremiumPage />,
+    },
+    {
+      path: '/purchase',
+      element: <PurchasePage />
     }
   ]);
 

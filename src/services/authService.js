@@ -3,14 +3,15 @@ import axios from 'axios';
 
 const API_URL = 'https://localhost:7241/odata'; // Thay đổi theo địa chỉ backend
 
-const authService = async (username, password) => {
+const authServices = async (username, password) => {
     try {
         const response = await axios.post(`${API_URL}/login`, { username, password });
 
         if (response.data?.token) {
             localStorage.setItem('jwtToken', response.data.token);
-            localStorage.setItem('username', JSON.stringify(response.data.username));
-            localStorage.setItem('userId', JSON.stringify(response.data.id))
+            localStorage.setItem('username', JSON.stringify(response.data.user.name));
+            localStorage.setItem('userId', JSON.stringify(response.data.user.id))
+            localStorage.setItem('premium', JSON.stringify(response.data.user.premium))
             console.log('Login successful');
             return response.data; // Trả về thông tin người dùng
         } else {
@@ -23,6 +24,27 @@ const authService = async (username, password) => {
     }
 };
 
+const updatePremiumStatus = async (userId, premiumStatus) => {
+    try {
+      // Thực hiện lệnh PUT tới endpoint /premium{userId}
+      const response = await axios.put(`https://localhost:7241/premium/${userId}`, null, {
+        params: {
+          premium: premiumStatus,
+        },
+      });
+  
+      // Kiểm tra trạng thái của response
+      return response.status === 200 ? "Updated successfully." : null;
+    } catch (error) {
+      console.error("Error updating premium status:", error.message || error);
+      throw new Error(
+        "Failed to update premium status: " +
+        (error.response?.data || error.message)
+      );
+    }
+  };
+
+  
 const responseGoogle = async (response) => {
     const token = response.credential;
     try {
@@ -44,16 +66,11 @@ const registerService = async (name, username, email, password) => {
     try {
         const response = await axios.post(`${API_URL}/register`, { name, username, email, password });
 
-        if (response.status === 200) {
-            console.log('Registration successful. Proceeding to login...');
-        } else {
-            console.log("Registration failed.");
-            throw new Error("Registration failed.");
-        }
+        return response.status === 200 ? response.data.message : null;
     } catch (error) {
         console.error("Registration error:", error.message || error);
         throw new Error("Registration failed: " + (error.response?.data?.message || error.message));
     }
 };
 
-export default { authService, registerService, responseGoogle };
+export default { authServices, registerService, responseGoogle, updatePremiumStatus };

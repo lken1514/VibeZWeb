@@ -44,10 +44,6 @@ const LoginComponent = () => {
   return (
     <div className="login-page">
       <div>
-        {/* {console.log(isLoggedIn)} */}
-        {isLoggedIn ? (
-          <p>Welcome, {user.name}</p>
-        ) : (
           <div className="login-container">
             <div className="spotify-logo">
               <button>
@@ -93,7 +89,6 @@ const LoginComponent = () => {
               Don't have an account? <a href="/signup">Sign up for VibeZ</a>
             </div>
           </div>
-        )}
       </div>
     </div>
   );
