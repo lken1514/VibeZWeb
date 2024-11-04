@@ -9,7 +9,7 @@ using VibeZOData.Services.Blob;
 
 namespace VibeZOData.Controllers
 {
-    [Route("odata/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AlbumController(IAlbumRepository _albumRepository, ILogger<AlbumController> _logger, IMapper _mapper, IAzuriteService _azure) : ControllerBase
     {

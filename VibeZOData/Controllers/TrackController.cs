@@ -17,7 +17,7 @@ using VibeZOData.Services;
 
 namespace VibeZOData.Controllers
 {
-    [Route("odata/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class TrackController(ITrackRepository _trackRepository, IMapper _mapper, IAzuriteService _azure, ILogger<TrackController> _logger, IFollowRepository _followRepository, INotificationService _notificationService) : ControllerBase
     {

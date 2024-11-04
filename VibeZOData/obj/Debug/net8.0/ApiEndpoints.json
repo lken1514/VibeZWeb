@@ -1,5 +1,311 @@
 [
   {
+    "ContainingType": "VibeZOData.Controllers.AlbumController",
+    "Method": "GetAllAlbumByArtistId",
+    "RelativePath": "api/Album/{artistId}/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "artistId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.AlbumDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetAllAlbumByArtistId"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.AlbumController",
+    "Method": "GetAlbumById",
+    "RelativePath": "api/Album/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VibeZDTO.AlbumDTO",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetAlbumById"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.AlbumController",
+    "Method": "Updatealbum",
+    "RelativePath": "api/Album/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "yy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mm",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "dd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "nation",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateAlbum"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.AlbumController",
+    "Method": "DeleteAlbum",
+    "RelativePath": "api/Album/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "DeleteAlbum"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.AlbumController",
+    "Method": "GetAllalbums",
+    "RelativePath": "api/Album/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.AlbumDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetAllAlbums"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.AlbumController",
+    "Method": "CreateAlbum",
+    "RelativePath": "api/Album/CreateAlbum",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "artistId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "yy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "mm",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "dd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "nation",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateAlbum"
+  },
+  {
     "ContainingType": "VibeZOData.Controllers.BlockedBlockedArtistController",
     "Method": "GetBlockedArtistById",
     "RelativePath": "api/BlockedBlockedArtist/{artistId, userId}",
@@ -830,6 +1136,506 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "GetTrackById",
+    "RelativePath": "api/Track/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VibeZDTO.TrackDTO",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetTrackById"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "UpdateTrack",
+    "RelativePath": "api/Track/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "AlbumId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrackName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lyrics",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Genre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "hour",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "minute",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "section",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "artistId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "path",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateTrack"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "DeleteTracks",
+    "RelativePath": "api/Track/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "GetTrackByAlbumId",
+    "RelativePath": "api/Track/Album/{albumId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "albumId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetTrackByAlbumId"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "GetAllTracks",
+    "RelativePath": "api/Track/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetAllTracks"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "GetTrackRecommendations",
+    "RelativePath": "api/Track/GetRecommendations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "VibeZOData.Models.TrackRecommendationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetTrackRecommendations"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "GetTrackByIds",
+    "RelativePath": "api/Track/Tracks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.Collections.Generic.List\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json;odata.metadata=minimal;odata.streaming=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false",
+          "application/json;odata.metadata=minimal",
+          "application/json;odata.metadata=full;odata.streaming=true",
+          "application/json;odata.metadata=full;odata.streaming=false",
+          "application/json;odata.metadata=full",
+          "application/json;odata.metadata=none;odata.streaming=true",
+          "application/json;odata.metadata=none;odata.streaming=false",
+          "application/json;odata.metadata=none",
+          "application/json;odata.streaming=true",
+          "application/json;odata.streaming=false",
+          "application/json",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
+          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=full;IEEE754Compatible=false",
+          "application/json;odata.metadata=full;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=false",
+          "application/json;odata.metadata=none;IEEE754Compatible=true",
+          "application/json;odata.streaming=true;IEEE754Compatible=false",
+          "application/json;odata.streaming=true;IEEE754Compatible=true",
+          "application/json;odata.streaming=false;IEEE754Compatible=false",
+          "application/json;odata.streaming=false;IEEE754Compatible=true",
+          "application/json;IEEE754Compatible=false",
+          "application/json;IEEE754Compatible=true",
+          "application/xml",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetTrackByIds"
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "UpdateListener",
+    "RelativePath": "api/Track/UpdateListener/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.TrackController",
+    "Method": "CreateTrack",
+    "RelativePath": "api/Track/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AlbumId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrackName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Lyrics",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Genre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "hour",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "minute",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "section",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "artistId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "path",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateTrack"
+  },
+  {
     "ContainingType": "VibeZOData.Controllers.TrackPlaylistController",
     "Method": "Post",
     "RelativePath": "api/TrackPlaylist",
@@ -1159,312 +1965,6 @@
       }
     ],
     "EndpointName": "odata/$metadata"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.AlbumController",
-    "Method": "GetAllAlbumByArtistId",
-    "RelativePath": "odata/Album/{artistId}/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "artistId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.AlbumDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetAllAlbumByArtistId"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.AlbumController",
-    "Method": "GetAlbumById",
-    "RelativePath": "odata/Album/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "VibeZDTO.AlbumDTO",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetAlbumById"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.AlbumController",
-    "Method": "Updatealbum",
-    "RelativePath": "odata/Album/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "yy",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "mm",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "dd",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "image",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "nation",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [],
-    "EndpointName": "UpdateAlbum"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.AlbumController",
-    "Method": "DeleteAlbum",
-    "RelativePath": "odata/Album/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [],
-    "EndpointName": "DeleteAlbum"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.AlbumController",
-    "Method": "GetAllalbums",
-    "RelativePath": "odata/Album/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.AlbumDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetAllAlbums"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.AlbumController",
-    "Method": "CreateAlbum",
-    "RelativePath": "odata/Album/CreateAlbum",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "artistId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "yy",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "mm",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "dd",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "image",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "nation",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [],
-    "EndpointName": "CreateAlbum"
   },
   {
     "ContainingType": "VibeZOData.Controllers.ArtistController",
@@ -2229,506 +2729,6 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "GetTrackById",
-    "RelativePath": "odata/Track/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "VibeZDTO.TrackDTO",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetTrackById"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "UpdateTrack",
-    "RelativePath": "odata/Track/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "AlbumId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "CategoryId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "TrackName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Lyrics",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Genre",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "hour",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "minute",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "section",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "artistId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "path",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "image",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [],
-    "EndpointName": "UpdateTrack"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "DeleteTracks",
-    "RelativePath": "odata/Track/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "GetTrackByAlbumId",
-    "RelativePath": "odata/Track/Album/{albumId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "albumId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetTrackByAlbumId"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "GetAllTracks",
-    "RelativePath": "odata/Track/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetAllTracks"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "GetTrackRecommendations",
-    "RelativePath": "odata/Track/GetRecommendations",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "VibeZOData.Models.TrackRecommendationRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetTrackRecommendations"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "GetTrackByIds",
-    "RelativePath": "odata/Track/Tracks",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ids",
-        "Type": "System.Collections.Generic.List\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VibeZDTO.TrackDTO, VibeZDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "application/json;odata.metadata=minimal;odata.streaming=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false",
-          "application/json;odata.metadata=minimal",
-          "application/json;odata.metadata=full;odata.streaming=true",
-          "application/json;odata.metadata=full;odata.streaming=false",
-          "application/json;odata.metadata=full",
-          "application/json;odata.metadata=none;odata.streaming=true",
-          "application/json;odata.metadata=none;odata.streaming=false",
-          "application/json;odata.metadata=none",
-          "application/json;odata.streaming=true",
-          "application/json;odata.streaming=false",
-          "application/json",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=false",
-          "application/json;odata.metadata=minimal;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=full;IEEE754Compatible=false",
-          "application/json;odata.metadata=full;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=false",
-          "application/json;odata.metadata=none;IEEE754Compatible=true",
-          "application/json;odata.streaming=true;IEEE754Compatible=false",
-          "application/json;odata.streaming=true;IEEE754Compatible=true",
-          "application/json;odata.streaming=false;IEEE754Compatible=false",
-          "application/json;odata.streaming=false;IEEE754Compatible=true",
-          "application/json;IEEE754Compatible=false",
-          "application/json;IEEE754Compatible=true",
-          "application/xml",
-          "application/json",
-          "text/plain",
-          "application/octet-stream",
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetTrackByIds"
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "UpdateListener",
-    "RelativePath": "odata/Track/UpdateListener/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "VibeZOData.Controllers.TrackController",
-    "Method": "CreateTrack",
-    "RelativePath": "odata/Track/upload",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "AlbumId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "CategoryId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "TrackName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Lyrics",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Genre",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "hour",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "minute",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "section",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "artistId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "path",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "image",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [],
-    "EndpointName": "CreateTrack"
   },
   {
     "ContainingType": "VibeZOData.Controllers.UserController",

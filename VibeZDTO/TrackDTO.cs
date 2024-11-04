@@ -22,6 +22,7 @@ namespace VibeZDTO
         public string Image { get; set; }
         public int Listener { get; set; }
         public TimeOnly Time { get; set; }
+        public DateOnly CreateDate { get; set; }
 
 
     }

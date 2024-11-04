@@ -33,6 +33,8 @@ namespace VibeZOData
             builder.Services.AddScoped<ILibrary_PlaylistRepository, Library_PlaylistRepository>();
             builder.Services.AddScoped<ILibrary_AlbumRepository, Library_AlbumRepository>();
             builder.Services.AddScoped<ILibrary_ArtistRepository, Library_ArtistRepository>();
+            builder.Services.AddScoped<IFollowRepository, FollowRepository>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
