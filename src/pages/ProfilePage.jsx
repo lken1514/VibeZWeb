@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Spin } from 'antd'; // Import Spin from Ant Design
-import { Search, ChevronRight, CreditCard, Gift, Grid, Bell, Lock, Key, LogOut } from 'lucide-react';
+import { ChevronRight, CreditCard, Gift, Grid, Bell, Lock, Key, LogOut } from 'lucide-react';
 import Navbar from '../components/Navbar2';
-import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Loading state
   const [percent, setPercent] = useState(0);
+  const [premium, setPremium] = useState();
 
   const handleEditProfile = () => {
     setLoading(true);
@@ -27,30 +27,31 @@ const ProfilePage = () => {
     }, 100);
   };
 
-  const [premium, setPremium] = useState();
-  const navigate = useNavigate();
   useEffect(() => {
     const fetchPremium = () => {
-      const premium = JSON.parse(localStorage.getItem('premium'));
-      setPremium(premium);
-    }
+      const premiumData = JSON.parse(localStorage.getItem('premium'));
+      setPremium(premiumData);
+    };
     fetchPremium();
   }, []);
+
   return (
     <div className="bg-black text-white min-h-screen p-6">
       <Navbar />
       {loading ? (
         <div className="flex justify-center items-center h-screen">
-          <Spin spinning={loading} percent={percent} fullscreen />
+          <Spin spinning={loading} percent={percent} />
         </div>
       ) : (
         <div className="max-w-3xl mx-auto">
           <div className="bg-[#2A2A2A] rounded-lg px-4 py-8 mb-6 flex justify-between items-center">
             <div>
-              <h2 className="text-xl font-bold">Spotify Free</h2>
+              <h2 className="text-xl font-bold">{premium ? "Spotify Premium" : "Spotify Free"}</h2>
               <button className="mt-2 px-4 py-1 bg-white text-black rounded-full text-sm transition-all duration-200 hover:bg-green-600 font-bold">Explore plans</button>
             </div>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-full transition-all duration-200 hover:bg-black font-bold">Join Premium</button>
+            {!premium && (
+              <button className="bg-purple-600 text-white px-4 py-2 rounded-full transition-all duration-200 hover:bg-black font-bold">Join Premium</button>
+            )}
           </div>
 
           <div className="space-y-6">
@@ -83,8 +84,8 @@ const ProfilePage = () => {
 
 const Section = ({ title, children }) => (
   <div>
-    <h3 className="text-[20] font-bold mb-2">{title}</h3>
-    <div className="bg-[#2A2A2A] rounded-lg overflow-hidden ">{children}</div>
+    <h3 className="text-[20px] font-bold mb-2">{title}</h3>
+    <div className="bg-[#2A2A2A] rounded-lg overflow-hidden">{children}</div>
   </div>
 );
 

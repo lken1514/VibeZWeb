@@ -4,10 +4,10 @@ import RootLayout from './pages/RootLayout';
 import ProfilePage from './pages/ProfilePage';
 import DisplayAlbum from './components/DisplayAlbum';
 import Display from './components/Display';
-import LoginComponent from './components/LoginForm/LoginComponent'
-import DisplayHome from './components/DisplayHome'; // Imported to use inside nested routes
+import LoginComponent from './components/LoginForm/LoginComponent';
+import DisplayHome from './components/DisplayHome';
 import DisplayArtist from './components/DisplayArtist';
-import DisplayPlaylist from './components/DisplayPlaylist'
+import DisplayPlaylist from './components/DisplayPlaylist';
 import DisplaySearch from './components/DisplaySearch';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import PremiumPage from './components/PaymentForm/PremiumPage';
@@ -19,7 +19,6 @@ import AdminDisplayArtist from './components/AdminDisplayArtist';
 import AdminDisplayApproval from './components/AdminDisplayApproval';
 import AdminDisplayHome from './components/AdminDisplayHome';
 import ProfileEdit from './components/ProfileEdit';
-// const AdminDisplayHome  = React.lazy(() => import("./components/AdminDisplayHome"));
 
 function App() {
   const router = createBrowserRouter([
@@ -29,18 +28,15 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Display />, // display 
+          element: <Display />,
           children: [
-            { path: '/', element: <DisplayHome /> }, // home page
+            { path: '/', element: <DisplayHome /> },
             { path: 'album/:id', element: <DisplayAlbum /> },
-            { path: 'playlist/:id', element: <DisplayPlaylist /> }, // album page
-            { path: 'artist/:id', element: <DisplayArtist /> }, // artist page
-            {
-              path: '/search',
-              element: <DisplaySearch />
-            }
+            { path: 'playlist/:id', element: <DisplayPlaylist /> },
+            { path: 'artist/:id', element: <DisplayArtist /> },
+            { path: 'search', element: <DisplaySearch /> }
           ],
-        }
+        },
       ],
     },
     {
@@ -65,32 +61,30 @@ function App() {
     },
     {
       path: '/purchase',
-      element: <PurchasePage />
-    }
-      element: <Plans />,
+      element: <PurchasePage />,
     },
     {
       path: '/admin',
       element: <AdminDashboard />,
       children: [
-          {
-              path: 'home',
-              element: <AdminDisplayHome />,
-          },
-          {
-              path: 'artist',
-              element: <AdminDisplayArtist />,
-          },
-          {
-              path: 'ban',
-              element: <AdminDisplayBan />,
-          },
-          {
-              path: 'approval',
-              element: <AdminDisplayApproval />, 
-          },
+        {
+          path: 'home',
+          element: <AdminDisplayHome />,
+        },
+        {
+          path: 'artist',
+          element: <AdminDisplayArtist />,
+        },
+        {
+          path: 'ban',
+          element: <AdminDisplayBan />,
+        },
+        {
+          path: 'approval',
+          element: <AdminDisplayApproval />,
+        },
       ],
-  }
+    }
   ]);
 
   return <RouterProvider router={router} />;
