@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://localhost:7241/odata'; // Thay đổi theo địa chỉ backend
+const API_URL = 'https://localhost:7241/odata'; 
 
 const authService = async (username, password) => {
     try {

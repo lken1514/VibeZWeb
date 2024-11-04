@@ -4,7 +4,7 @@ const API_URL = "https://localhost:7241/odata/Track";
 
 export const changeStatus = async (id) => {
   try {
-    const response = await axios.put(`$https://localhost:7241/api/Admin/approve-track/${id}`);
+    const response = await axios.put(`https://localhost:7241/api/Admin/approve-track/${id}`);
     console.log(response.data);
     return;
   } catch (error) {

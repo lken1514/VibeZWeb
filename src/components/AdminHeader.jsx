@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DownOutlined, SettingOutlined } from '@ant-design/icons';
-import { Dropdown, Space } from 'antd';
+import { Dropdown } from 'antd';
 import noti_icon from '../assets/bell.png';
+import { LoginContext } from '../context/LoginContext';
 
 const items = [
     {
@@ -35,6 +37,18 @@ const items = [
 ];
 
 function AdminHeader() {
+    const { user, isLoggedIn, loading } = useContext(LoginContext);
+    const navigate = useNavigate();
+    const userIcon = user && user.name ? user.name.charAt(0).toUpperCase() : '';
+
+    useEffect(() => {
+        if (!loading && !isLoggedIn) {
+            navigate('/');
+        }
+    }, [isLoggedIn, loading, navigate]);
+
+    if (loading) return null;
+
     return (
         <div className="flex justify-end items-center bg-black text-white p-2 ">
             <div className="relative mr-4">
@@ -54,11 +68,10 @@ function AdminHeader() {
                     <div className="flex items-center">
                         <button
                             className="bg-white text-customGreen rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">
-                            P
+                            {userIcon}
                         </button>
                         <DownOutlined className="ml-2" />
                     </div>
-
                 </Dropdown>
             </div>
         </div>

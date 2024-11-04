@@ -16,6 +16,7 @@ import AdminDisplayBan from './components/AdminDisplayBan';
 import AdminDisplayArtist from './components/AdminDisplayArtist';
 import AdminDisplayApproval from './components/AdminDisplayApproval';
 import AdminDisplayHome from './components/AdminDisplayHome';
+import ProfileEdit from './components/ProfileEdit';
 // const AdminDisplayHome  = React.lazy(() => import("./components/AdminDisplayHome"));
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
           ],
         }
       ],
+    },
+    {
+      path: '/profileedit',
+      element: <ProfileEdit />,
     },
     {
       path: '/profile',

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { InputNumber, Table, Modal, Spin, Input } from 'antd';
 import { getAdminApproval } from '../services/adminService';
 import { deleteTrack, changeStatus } from '../services/trackService';
+import { data } from 'autoprefixer';
 
 const { Search } = Input;
 
@@ -23,27 +24,27 @@ function AdminDisplayApproval() {
       render: (image) => (
         <img src={image} alt="Profile" className="w-8 h-8 rounded-full" />
       ),
-      width: '10%',
+      width: '5%',
     },
     {
       title: 'Writer Name',
       dataIndex: 'writerName',
       sorter: (a, b) => a.writerName.localeCompare(b.writerName),
-      width: '20%',
+      width: '15%',
     },
     {
       title: 'Album Name',
       dataIndex: 'albumName',
-      width: '25%',
-    },
-    {
-      title: 'Date Created',
-      dataIndex: 'dateCreated',
       width: '15%',
     },
     {
       title: 'Song Name',
       dataIndex: 'songName',
+      width: '15%',
+    },
+    {
+      title: 'Date Created',
+      dataIndex: 'dateCreated',
       width: '15%',
     },
     {
@@ -55,7 +56,7 @@ function AdminDisplayApproval() {
           Your browser does not support the audio element.
         </audio>
       ),
-      width: '15%',
+      width: '25%',
     },
     {
       title: 'Action',
