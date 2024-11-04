@@ -3267,11 +3267,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZDTO\\VibeZDTO.csproj",
+      "projectUniqueName": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj",
       "projectName": "VibeZDTO",
-      "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZDTO\\VibeZDTO.csproj",
+      "projectPath": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj",
       "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-      "outputPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZDTO\\obj\\",
+      "outputPath": "D:\\VibeZWeb\\VibeZDTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3289,8 +3289,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
             }
           }
         }

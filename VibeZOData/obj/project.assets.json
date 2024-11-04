@@ -9523,11 +9523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZOData\\VibeZOData.csproj",
+      "projectUniqueName": "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj",
       "projectName": "VibeZOData",
-      "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZOData\\VibeZOData.csproj",
+      "projectPath": "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj",
       "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-      "outputPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZOData\\obj\\",
+      "outputPath": "D:\\VibeZWeb\\VibeZOData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9545,14 +9545,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
             },
-            "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\Repository\\Repositories.csproj": {
-              "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\Repository\\Repositories.csproj"
+            "D:\\VibeZWeb\\Repository\\Repositories.csproj": {
+              "projectPath": "D:\\VibeZWeb\\Repository\\Repositories.csproj"
             },
-            "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZDTO\\VibeZDTO.csproj": {
-              "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\VibeZDTO\\VibeZDTO.csproj"
+            "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj": {
+              "projectPath": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj"
             }
           }
         }
