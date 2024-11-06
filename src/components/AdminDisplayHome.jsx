@@ -29,11 +29,12 @@ function AdminDisplayHome() {
       title: 'Joining Date',
       dataIndex: 'dob',
       sorter: (a, b) => new Date(a.dob) - new Date(b.dob),
+      width: '20%',
     },
     {
       title: 'Total Songs',
       dataIndex: 'totalSong',
-      width: '40%',
+      width: '20%',
     },
   ];
 
