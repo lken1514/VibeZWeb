@@ -697,7 +697,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "BusinessObjects.dll": {}
+          "BusinessObjects.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DataAccess/1.0.0": {
@@ -705,7 +708,10 @@
           "BusinessObjects": "1.0.0"
         },
         "runtime": {
-          "DataAccess.dll": {}
+          "DataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "VibeZDTO/1.0.0": {
@@ -713,7 +719,10 @@
           "BusinessObjects": "1.0.0"
         },
         "runtime": {
-          "VibeZDTO.dll": {}
+          "VibeZDTO.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

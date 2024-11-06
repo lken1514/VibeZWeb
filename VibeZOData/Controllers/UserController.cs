@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Repositories.IRepository;
 using System.Security.Claims;
+using VibeZOData.Models;
 using static System.Collections.Specialized.BitVector32;
 
 namespace VibeZOData.Controllers
@@ -170,6 +171,31 @@ namespace VibeZOData.Controllers
             }
 
             return Ok(new { UserName = userName, Role = userRole });
+        }
+        [HttpPut("editprofile")]
+        public async Task<ActionResult> UpdateProfile([FromBody] UserProfileUpdateModel userProfile)
+        {
+            try
+            {
+                var user = await _userRepository.FindByEmailAsync(userProfile.Email);
+                if (user == null)
+                {
+                    return NotFound("User not found.");
+                }
+
+                user.Gender = userProfile.Gender;
+                user.Email = userProfile.Email;
+                user.DOB = new DateOnly(userProfile.Year,userProfile.Month,userProfile.Day);
+
+                await _userRepository.UpdateUser(user);
+                return Ok("Successfully Update Profile !");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Failed Update Profile !");
+                return BadRequest(ex);
+            }
         }
     }
 }

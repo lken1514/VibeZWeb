@@ -16,7 +16,7 @@ namespace Repositories.IRepository
         Task<int> CountTrack(Guid artistId);
         Task<IEnumerable<AdminApprovalDTO>> GetPendingTracks();
         Task ChangeStatusApproval(Guid trackId);
-        Task<int> CountTotalListenerByArtist(Guid artistId, DateOnly startDate, DateOnly endDate)
+        Task<int> CountTotalListenerByArtist(Guid artistId, DateOnly startDate, DateOnly endDate);
 
         Task<IEnumerable<Track>> GetTrackByIds(List<Guid> trackIds);
         Task<IEnumerable<Track>> GetSongRecommendations(List<Guid> recentlyPlayedIds, Guid clickedTrackId, int topN = 10);

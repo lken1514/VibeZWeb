@@ -43,12 +43,6 @@ namespace VibeZOData
             builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
             builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 
-
-
-
-
-
-
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
             builder.Services.AddControllers().AddOData(
                 opt => opt.Select().Filter().Count().OrderBy().SetMaxTop(null).Expand().AddRouteComponents("odata", EdmModelBuilder.GetEdmModel()));
