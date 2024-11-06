@@ -13,8 +13,7 @@ import { LoginContext } from '../context/LoginContext';
 function RootLayout() {
   const { isListVisible } = useListVisibility();
   const { audioRef, track, isLoading } = useContext(PlayerContext);
-  const { Info} = useContext(LoginContext);
-
+  const { Info } = useContext(LoginContext);
 
   const [queueWidth, setQueueWidth] = useState(300); // Đặt độ rộng ban đầu cho Queue
   const [isResizing, setIsResizing] = useState(false); // Để kiểm soát khi người dùng đang kéo
@@ -23,8 +22,6 @@ function RootLayout() {
   const handleMouseDown = () => {
     setIsResizing(true);
   };
-
-
 
   // Hàm xử lý khi kéo (thay đổi độ rộng)
   const handleMouseMove = (e) => {
@@ -58,15 +55,15 @@ function RootLayout() {
   }, [isResizing]);
 
   return (
-    <div className='h-screen bg-black select-none'>
+    <div className='h-screen bg-black select-none overflow-scroll'>
       <Navbar />
-      <div className="h-[83%] flex gap-1">
+      <div className={`flex gap-1 ${track ? 'h-[83%]' : 'h-full'}`}>
         <Sidebar />
         <Outlet />
         {isListVisible && (
           <div className='relative flex-shrink-0 h-full' style={{ width: `${queueWidth}px`, maxWidth: '25%', minWidth: '20%' }}>
             <div
-              className={`absolute top-0 left-0 w-1 h-full bg-gray-950 ${isResizing ? 'cursor-grabbing' : '!cursor-grab'}`}  // Sử dụng ! để tăng độ ưu tiên
+              className={`absolute top-0 left-0 w-1 h-full bg-gray-950 ${isResizing ? 'cursor-grabbing' : '!cursor-grab'}`}
               onMouseDown={handleMouseDown}
             ></div>
             <Queue queueWidth={queueWidth} />
@@ -76,13 +73,13 @@ function RootLayout() {
           <div className='w-[20%] bg-[#121212] '>
             <SongInfo />
           </div>
-        )
-        }
-
+        )}
       </div>
-      <Player />
       {track && (
-        <audio ref={audioRef} src={track.path} preload='auto' autoPlay></audio>
+        <>
+          <Player />
+          <audio ref={audioRef} src={track.path} preload='auto' autoPlay></audio>
+        </>
       )}
       {isLoading && (
         <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import RootLayout from './pages/RootLayout';
 import ProfilePage from './pages/ProfilePage';
 import DisplayAlbum from './components/DisplayAlbum';
@@ -19,6 +19,11 @@ import AdminDisplayArtist from './components/AdminDisplayArtist';
 import AdminDisplayApproval from './components/AdminDisplayApproval';
 import AdminDisplayHome from './components/AdminDisplayHome';
 import ProfileEdit from './components/ProfileEdit';
+
+import ArtistDashboard from './components/ArtistDashboard/ArtistDashboard'; 
+import ArtistHome from './components/ArtistDashboard/ArtistHome'; 
+import ArtistMusicTab from './components/ArtistDashboard/ArtistMusicTab'; 
+import ArtistProfile from './components/ArtistDashboard/ArtistProfile'; 
 
 function App() {
   const router = createBrowserRouter([
@@ -68,6 +73,10 @@ function App() {
       element: <AdminDashboard />,
       children: [
         {
+          index: true, // Tự động điều hướng khi truy cập vào /admin
+          element: <Navigate to="home" replace />,
+        },
+        {
           path: 'home',
           element: <AdminDisplayHome />,
         },
@@ -84,6 +93,16 @@ function App() {
           element: <AdminDisplayApproval />,
         },
       ],
+    },
+    {
+      path: '/artistdashboard',
+          element: <ArtistDashboard />, // New artist dashboard
+          children: [
+            { index: true, element: <ArtistHome /> }, // Default to ArtistHome
+            { path: 'home', element: <ArtistHome /> },
+            { path: 'music', element: <ArtistMusicTab /> },
+            { path: 'profile', element: <ArtistProfile /> },
+          ],
     }
   ]);
 

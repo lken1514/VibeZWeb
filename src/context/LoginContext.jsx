@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import { songsData } from "../assets/assets";
-import { authService, registerService, responseGoogle } from "../services/authService";
-
+import authService from "../services/authService";
 export const LoginContext = createContext();
 
 const LoginContextProvider = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState(null);
+    const [userInfo, setUserInfo] = useState();
     const [username, setusername] = useState(null);
     const [userId, setUserId] = useState(null);
     const [isChange, setChange] = useState(false);
@@ -34,9 +34,11 @@ const LoginContextProvider = (props) => {
     
     const googleLogin = async (res) => {
         try {
-            const response = await responseGoogle(res);
+            const response = await authService.responseGoogle(res);
             setIsLoggedIn(true);
-            setUser(response.user);
+            console.log(response.user);
+            setUserInfo(response.user);
+            setUser(response.user.userName.charAt(0).toUpperCase());
             localStorage.setItem('user', JSON.stringify(response.user));
             localStorage.setItem('jwtToken', response.token);
         } catch (error) {
@@ -49,11 +51,13 @@ const LoginContextProvider = (props) => {
         try {
             const response = await authService.authServices(username, password);
             setIsLoggedIn(true);
+            console.log(response.user);
             setusername(response.user.name);
             setUser(response.user.name.charAt(0).toUpperCase());
+            setUserInfo(response.user);
 
             // Cập nhật thông tin người dùng    
-            setUser(response.user);
+            setUser(response.user.userName.charAt(0).toUpperCase());
             localStorage.setItem('user', JSON.stringify(response.user));
             localStorage.setItem('jwtToken', response.token);
         } catch (error) {
@@ -70,7 +74,7 @@ const LoginContextProvider = (props) => {
     // Đăng xuất người dùng
     const signUp = async (name, username, email, password) => {
         try {
-            await registerService(name, username, email, password);
+            await authService.registerService(name, username, email, password);
         } catch (error) {
             console.error("Registration failed:", error.message);
             throw new Error("Registration failed: " + error.message);
@@ -99,7 +103,8 @@ const LoginContextProvider = (props) => {
         Info,
         signUp,
         googleLogin,
-        loading
+        loading,
+        userInfo
     };
 
     return (

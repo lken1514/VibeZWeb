@@ -30,7 +30,7 @@ const SongItem = ({ name, image, artistName, id }) => {
   return (
     <div
       onClick={handleClick}
-      className="max-w-[220px] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]"
+      className="max-w-[180px] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]"
     >
       {/* Hiển thị hình ảnh */}
       <img className="rounded" src={image} alt={name} />

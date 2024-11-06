@@ -73,6 +73,49 @@ const UpdateListener = async (id) => {
     );
   }
 };
+const createTrack = async (trackData) => {
+  try {
+    const formData = new FormData();
+    Object.keys(trackData).forEach(key => {
+      formData.append(key, trackData[key]);
+    });
+
+    const response = await axios.post(`${API_URL}/upload`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error("Error creating track:", error.message || error);
+    throw new Error(
+      "Failed to create track: " + (error.response?.data?.message || error.message)
+    );
+  }
+};
+const updateTrack = async (id, trackData) => {
+  try {
+    const formData = new FormData();
+    Object.keys(trackData).forEach(key => {
+      formData.append(key, trackData[key]);
+    });
+
+    const response = await axios.put(`${API_URL}/${id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error("Error updating track:", error.message || error);
+    throw new Error(
+      "Failed to update track: " + (error.response?.data?.message || error.message)
+    );
+  }
+};
+
 
 const getRecentlyPlayedTracks = async () => {
   try {
@@ -143,5 +186,7 @@ export default {
   getRecentlyPlayedTracks,
   fetchRecommendations,
   UpdateListener,
-  deleteTrack
+  deleteTrack,
+  createTrack,
+  updateTrack
 };

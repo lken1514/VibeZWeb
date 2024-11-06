@@ -236,7 +236,7 @@ const Sidebar = () => {
           >
             <div>
               <img
-                className="rounded h-full"
+                className="rounded  max-w-[80px] "
                 src={playlist.image || assets.img1}
                 alt={playlist.name || 'Unknown'}
               />

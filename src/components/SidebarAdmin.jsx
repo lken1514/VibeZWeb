@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/vibez_logo.svg';
 import home_admin from '../assets/home-admin.svg';
 import home_admin1 from '../assets/home-admin1.svg';
@@ -7,6 +7,7 @@ import { LoginContext } from '../context/LoginContext';
 
 function SidebarAdmin() {
     const [hoveredItem, setHoveredItem] = useState(null);
+    const navigate = useNavigate();
 
     const menuItems = [
         { name: 'Home', path: '/admin/home', icon: [home_admin, home_admin1] },
@@ -19,7 +20,7 @@ function SidebarAdmin() {
         <div className="w-64 h-screen bg-black text-white flex flex-col items-center p-4 shadow-lg">
             <div className="flex items-center h-16 mb-4">
                 <img src={logo} alt="logo" className="mr-2" />
-                <h2 className="text-xl font-bold">For Admin</h2>
+                <h2 className="text-xl font-bold cursor-pointer" onClick={() => navigate('/')}>For Admin </h2>
             </div>
             {menuItems.map((item, index) => (
                 <Link

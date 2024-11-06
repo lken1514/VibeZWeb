@@ -12,7 +12,7 @@ const Popup = ({ show, onClose }) => {
     const popupRef = useRef(null);
     const [userId, setUserId] = useState();
     const [username, setUserName] = useState();
-    const {isChange, setChange} = useContext(LoginContext);
+    const { isChange, setChange } = useContext(LoginContext);
     const [isNameFocused, setIsNameFocused] = useState(false);
     const [isDescriptionFocused, setIsDescriptionFocused] = useState(false);
     const [isPen, setIsPen] = useState(false);
@@ -32,7 +32,7 @@ const Popup = ({ show, onClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         // Lấy giá trị từ các thẻ input qua ref
         const name = nameInputRef.current.value;
         const description = descriptionInputRef.current.value;
@@ -42,13 +42,16 @@ const Popup = ({ show, onClose }) => {
             setLoading(true); // Hiển thị loading spinner
             const libId = JSON.parse(localStorage.getItem('libId'));
             const response = await playlistService.createPlaylist(name, description, username, selectedFile, userId);
-            const responseLib = await playlistService.createLibrary_playlist(libId, response.playlistId);
-            if (response && responseLib) {
-                setTimeout(() => {
-                    setChange(!isChange); // Thay đổi trạng thái
-                    onClose(); // Đóng popup sau khi chờ 1-2 giây để đảm bảo API có thời gian cập nhật
-                }, 1000); // Chờ 2 giây để đảm bảo dữ liệu đã được cập nhật trong cơ sở dữ liệu
+            if (response) {
+                const responseLib = await playlistService.createLibrary_playlist(libId, response.playlistId);
+                if (responseLib) {
+                    setTimeout(() => {
+                        setChange(!isChange); // Thay đổi trạng thái
+                        onClose(); // Đóng popup sau khi chờ 1-2 giây để đảm bảo API có thời gian cập nhật
+                    }, 1000); // Chờ 2 giây để đảm bảo dữ liệu đã được cập nhật trong cơ sở dữ liệu
+                }
             }
+
 
         } catch (error) {
             setLoading(false); // Ẩn loading nếu có lỗi

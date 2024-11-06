@@ -87,7 +87,7 @@ const Navbar = () => {
               </span>
             </button>
             <button className='h-12 w-12 rounded-full text-black text-[18px] font-bold bg-white transition-all duration-200 hover:w-16 hover:h-16' onClick={handleToggleList}>
-              <span>{user}</span>
+              <span> {user}</span>
             </button>
             {isListVisible && (
               <ul className='absolute top-[100%] right-0 bg-[#2A2A2A] shadow-lg rounded-md p-2 w-[70%] text-[18px] text-white z-20'>

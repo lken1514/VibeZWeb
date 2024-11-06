@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Spin } from 'antd'; // Import Spin from Ant Design
 import { ChevronRight, CreditCard, Gift, Grid, Bell, Lock, Key, LogOut } from 'lucide-react';
 import Navbar from '../components/Navbar2';
+import { LoginContext } from '../context/LoginContext';
 
 const ProfilePage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Loading state
   const [percent, setPercent] = useState(0);
   const [premium, setPremium] = useState();
+  const { userInfo } = useContext(LoginContext);
 
   const handleEditProfile = () => {
     setLoading(true);
     let ptg = -10;
-    
+
     const interval = setInterval(() => {
       ptg += 5;
       setPercent(ptg);
@@ -22,7 +24,7 @@ const ProfilePage = () => {
         clearInterval(interval);
         setLoading(false);
         setPercent(0);
-        navigate('/profileedit'); 
+        navigate('/profileedit');
       }
     }, 100);
   };
@@ -46,12 +48,10 @@ const ProfilePage = () => {
         <div className="max-w-3xl mx-auto">
           <div className="bg-[#2A2A2A] rounded-lg px-4 py-8 mb-6 flex justify-between items-center">
             <div>
-              <h2 className="text-xl font-bold">{premium ? "Spotify Premium" : "Spotify Free"}</h2>
+              <h2 className="text-xl font-bold">{premium ? "VibeZ Premium" : "VibeZ Free"}</h2>
               <button className="mt-2 px-4 py-1 bg-white text-black rounded-full text-sm transition-all duration-200 hover:bg-green-600 font-bold">Explore plans</button>
             </div>
-            {!premium && (
-              <button className="bg-purple-600 text-white px-4 py-2 rounded-full transition-all duration-200 hover:bg-black font-bold">Join Premium</button>
-            )}
+
           </div>
 
           <div className="space-y-6">
@@ -59,6 +59,10 @@ const ProfilePage = () => {
               <MenuItem icon={<CreditCard size={20} />} text="Manage your subscription" />
               <MenuItem icon={<Grid size={20} />} text="Edit profile" onClick={handleEditProfile} />
               <MenuItem icon={<Gift size={20} />} text="Recover playlists" />
+              {userInfo && userInfo.role === 'Admin' && (
+                <MenuItem icon={<Gift size={20} />} text="Admin Management" onClick={() => navigate('/admin')} />
+              )
+              }
             </Section>
 
             <Section title="Payment">

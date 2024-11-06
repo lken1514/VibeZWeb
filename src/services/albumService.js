@@ -32,6 +32,58 @@ const getAlbumsById = async (id) => {
   }
 };
 
+const createAlbum = async (formData) => {
+  try {
+      const response = await axios.post(`${API_URL}/CreateAlbum`, formData, {
+          headers: {
+              'Content-Type': 'multipart/form-data',
+          },
+      });
+      return response.data;
+  } catch (error) {
+      console.error("Error creating album:", error.message || error);
+      throw new Error(
+          "Failed to create album: " + 
+          (error.response?.data?.message || error.message)
+      );
+  }
+};
+const updateAlbum = async (id, name, yy, mm, dd, image, nation) => {
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('yy', yy);
+  formData.append('mm', mm);
+  formData.append('dd', dd);
+  formData.append('image', image);
+  formData.append('nation', nation);
+
+  try {
+    const response = await axios.put(`${API_URL}/${id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data; 
+  } catch (error) {
+    console.error("Error updating album:", error.message || error);
+    throw new Error(
+      "Failed to update album: " + 
+      (error.response?.data?.message || error.message)
+    );
+  }
+};
+const deleteAlbum = async (id) => {
+  try {
+    await axios.delete(`${API_URL}/${id}`);
+    return; // Return nothing if the deletion is successful
+  } catch (error) {
+    console.error("Error deleting album:", error.message || error);
+    throw new Error(
+      "Failed to delete album: " + 
+      (error.response?.data?.message || error.message)
+    );
+  }
+};
 // Xuất các service
 
-export default { getAllAlbums, getAlbumsById };
+export default { getAllAlbums, getAlbumsById, createAlbum, updateAlbum, deleteAlbum, };

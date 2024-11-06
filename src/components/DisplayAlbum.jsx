@@ -249,96 +249,91 @@ const DisplayAlbum = () => {
       <hr />
 
       {
-        tracks.map((item, index) => (
-          <div onClick={() => handleClickId(item.trackId)} key={index} className="grid grid-cols-3 sm:grid-cols-[2fr_1fr_1fr_0.5fr_0.2fr] gap-2 p-2 items-center text-[#a7a7a7] hover:bg-[#ffffff2b] cursor-pointer"
-            onMouseOver={() => hoverMenu(index)} // Đặt index hiện tại khi hover
-            onMouseOut={handleMouseOut} // Đặt menu về null khi rời chuột
-          >
-            <p className="text-white flex">
-              <b className="mr-4 text-[#a7a7a7]">{index + 1}</b>
-              <div>
-                <img className="inline max-w-10 mr-5 " src={item.image} alt="" />
+        tracks
+          .filter(item => item.pendingApproval === false) // Lọc item có pendingApproval bằng false
+          .map((item, index) => (
+            <div onClick={() => handleClickId(item.trackId)} key={index} className="grid grid-cols-3 sm:grid-cols-[2fr_1fr_1fr_0.5fr_0.2fr] gap-2 p-2 items-center text-[#a7a7a7] hover:bg-[#ffffff2b] cursor-pointer"
+              onMouseOver={() => hoverMenu(index)} // Đặt index hiện tại khi hover
+              onMouseOut={handleMouseOut} // Đặt menu về null khi rời chuột
+            >
+              <p className="text-white flex">
+                <b className="mr-4 text-[#a7a7a7]">{index + 1}</b>
+                <div>
+                  <img className="inline max-w-10 mr-5" src={item.image} alt="" />
+                </div>
+                <span className="ml-1 truncate">{item.name}</span>
+              </p>
+              <p className="text-[15px] truncate">{item.albumName}</p>
+              <p className="text-[15px] hidden sm:block">{item.createDate}</p>
+              <div className="flex justify-center ml-10">
+                <p className="text-[15px] text-center">{item.time}</p>
               </div>
-              <span className="ml-1 truncate">{item.name}</span>
-            </p>
-            <p className="text-[15px] truncate">{item.albumName}</p>
-            <p className="text-[15px] hidden sm:block">{item.createDate}</p>
-            <div className="flex justify-center ml-10 ">
-              <p className="text-[15px] text-center">{item.time}</p>
-            </div>
-            {menu === index && (
-              <button className="ml-5">
-                <Dropdown
-                  overlay={
-                    <Menu className="!bg-[#2A2A2A] text-white !rounded-md">
-                      <Menu.Item key="1" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]">
-                        <Dropdown
-                          overlay={
-                            <Menu className="!bg-[#2A2A2A] text-white !rounded-md">
-                              <Menu.Item key="1-1" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]" onClick={(e) =>
-                                togglePopup(e)
-                              } >
-                                <div className='flex gap-2 items-center'>
-                                  <FontAwesomeIcon className='text-white' icon={faPlus} />
-                                  <p className="!text-white">New playlist</p>
-                                </div>
-                              </Menu.Item>
-                              <hr />
-                              {
-                                playlist.length > 0 &&
-                                playlist.map((playlist, index) => (
-                                  <Menu.Item key={`${index}`} className="!p-3 hover:!bg-[#3E3E3E] text-[14px]" onClick={(e) => {
-                                    e.domEvent.stopPropagation();
-                                    AddTrack(playlist.playlistId, item.trackId, playlist.name)
-                                  }
-                                  }>
-                                    <label className="!text-white">{playlist.name}</label> {/* Sử dụng thuộc tính name của track */}
-                                  </Menu.Item>
-                                ))
-                              }
-
-                            </Menu>
-                          }
-                          trigger={['hover']}
-                          placement="left"
-                          visible={visibleSubMenu}
-                          onVisibleChange={(flag) => {
-                            setVisibleSubMenu(flag); // Điều khiển hiển thị dropdown phụ
-                          }}
-                        >
-                          <label
-                            className="!text-white"
-                            onClick={(e) => e.stopPropagation()} // Ngăn chặn hành vi mặc định khi click vào "Add to playlist"
+              {menu === index && (
+                <button className="ml-5">
+                  <Dropdown
+                    overlay={
+                      <Menu className="!bg-[#2A2A2A] text-white !rounded-md">
+                        <Menu.Item key="1" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]">
+                          <Dropdown
+                            overlay={
+                              <Menu className="!bg-[#2A2A2A] text-white !rounded-md">
+                                <Menu.Item key="1-1" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]" onClick={(e) => togglePopup(e)}>
+                                  <div className='flex gap-2 items-center'>
+                                    <FontAwesomeIcon className='text-white' icon={faPlus} />
+                                    <p className="!text-white">New playlist</p>
+                                  </div>
+                                </Menu.Item>
+                                <hr />
+                                {
+                                  playlist.length > 0 &&
+                                  playlist.map((playlist, index) => (
+                                    <Menu.Item key={`${index}`} className="!p-3 hover:!bg-[#3E3E3E] text-[14px]" onClick={(e) => {
+                                      e.domEvent.stopPropagation();
+                                      AddTrack(playlist.playlistId, item.trackId, playlist.name);
+                                    }}>
+                                      <label className="!text-white">{playlist.name}</label>
+                                    </Menu.Item>
+                                  ))
+                                }
+                              </Menu>
+                            }
+                            trigger={['hover']}
+                            placement="left"
+                            visible={visibleSubMenu}
+                            onVisibleChange={(flag) => setVisibleSubMenu(flag)}
                           >
-                            Add to playlist
-                          </label>
-                        </Dropdown>
-                      </Menu.Item>
-                      <Menu.Item key="2" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]">
-                        <a href="#" className="!text-white">Save to your Liked Songs</a>
-                      </Menu.Item>
-                      <Menu.Item key="3" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]" onClick={(e) => {
-                        e.domEvent.stopPropagation();
-                        AddTrackToQueue(item);
-                      }}>
-                        <a href="#" className="!text-white !hover:!bg-white">Add to queue</a>
-                      </Menu.Item>
-                    </Menu>
-                  }
-                  trigger={['click']}
-                  placement="bottomRight"
-                >
-                  <div onClick={(e) => e.stopPropagation()} className="transition-transform  hover:scale-110 hover:opacity-80">
-                    <FontAwesomeIcon icon={faEllipsis} />
-                  </div>
-                </Dropdown>
-              </button>
-            )
-            }
-
-          </div>
-        ))
+                            <label
+                              className="!text-white"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              Add to playlist
+                            </label>
+                          </Dropdown>
+                        </Menu.Item>
+                        <Menu.Item key="2" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]">
+                          <a href="#" className="!text-white">Save to your Liked Songs</a>
+                        </Menu.Item>
+                        <Menu.Item key="3" className="!p-3 hover:!bg-[#3E3E3E] text-[14px]" onClick={(e) => {
+                          e.domEvent.stopPropagation();
+                          AddTrackToQueue(item);
+                        }}>
+                          <a href="#" className="!text-white !hover:!bg-white">Add to queue</a>
+                        </Menu.Item>
+                      </Menu>
+                    }
+                    trigger={['click']}
+                    placement="bottomRight"
+                  >
+                    <div onClick={(e) => e.stopPropagation()} className="transition-transform hover:scale-110 hover:opacity-80">
+                      <FontAwesomeIcon icon={faEllipsis} />
+                    </div>
+                  </Dropdown>
+                </button>
+              )}
+            </div>
+          ))
       }
+
       <Popup show={showPopup} onClose={togglePopup} />
 
     </>

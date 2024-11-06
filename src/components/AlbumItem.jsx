@@ -14,7 +14,7 @@ const AlbumItem = ({ image, name, release, id, artist }) => {
 
   return (
     <div>
-      <div onClick={() => navigate(`/album/${id}`)} className="max-w-[220px] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]" onMouseOver={() => setMouseOver(true)} onMouseOut={() => setMouseOver(false)}>
+      <div onClick={() => navigate(`/album/${id}`)} className="max-w-[180px] p-2 px-3 rounded cursor-pointer hover:bg-[#ffffff26]" onMouseOver={() => setMouseOver(true)} onMouseOut={() => setMouseOver(false)}>
         <div className="relative">
           <img className="rounded" src={image} alt="" />
           {isMouseOver && (

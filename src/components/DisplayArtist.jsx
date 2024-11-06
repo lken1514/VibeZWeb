@@ -102,7 +102,7 @@ const DisplayArtist = () => {
     try {
       setLoading(true);
       const libId = JSON.parse(localStorage.getItem('libId'));
-      const respone = await artistService.FollowArtist(libId, id);
+      const respone = await artistService.followArtist(libId, id);
       if (respone) {
         setLoading(false);
         setChange(!isChange);

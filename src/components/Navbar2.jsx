@@ -30,7 +30,7 @@ const Navbar = () => {
         {isLoggedIn ? (
           <div className='absolute right-0 inset-y-0 w-[15%] flex justify-around items-center' >
             <button className='h-[60%] w-[40%] rounded-[90px] text-black text-[18px] font-bold bg-white transition-all duration-200 hover:w-40'>
-              <span>
+              <span onClick={() => navigate('/plan')}>
                 Premium
               </span>
             </button>
