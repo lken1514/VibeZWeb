@@ -46,7 +46,7 @@ namespace VibeZOData.Models
             //tartist.HasKey(t => new { t.ArtistId, t.TrackId });
 
             var u_package = modelBuilder.EntityType<User_package>();
-            u_package.HasKey(t => new { t.UserId, t.PackId });
+            u_package.HasKey(t => new { t.UserId, t.PackageId });
 
             return modelBuilder.GetEdmModel();
         }

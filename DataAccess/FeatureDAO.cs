@@ -10,6 +10,7 @@ namespace DataAccess
 {
     public class FeatureDAO : SingletonBase<FeatureDAO>
     {
+
         public async Task<ICollection<Feature>> GetAllFeatures()
         {
             return await _context.Features.ToListAsync();

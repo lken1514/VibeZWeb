@@ -35,7 +35,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly>("DateOfRelease")
                         .HasColumnType("date");
@@ -74,13 +74,18 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<string>("Genre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("ImgBackground")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -200,7 +205,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -227,7 +232,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -250,7 +255,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -273,7 +278,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -402,11 +407,12 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -423,6 +429,11 @@ namespace BusinessObjects.Migrations
 
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("createBy")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("PlaylistId");
 
@@ -450,7 +461,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -479,8 +490,14 @@ namespace BusinessObjects.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("PendingApproval")
+                        .HasColumnType("bit");
+
                     b.Property<TimeOnly>("Time")
                         .HasColumnType("time");
+
+                    b.Property<string>("TrackLRC")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -505,7 +522,9 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateOnly>("CreateDate")
-                        .HasColumnType("date");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("date")
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -527,7 +546,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 10, 25));
+                        .HasDefaultValue(new DateOnly(2024, 11, 5));
 
                     b.Property<DateOnly?>("DOB")
                         .HasColumnType("date");
@@ -540,6 +559,9 @@ namespace BusinessObjects.Migrations
                     b.Property<string>("Gender")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<bool?>("IsBanned")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -554,8 +576,8 @@ namespace BusinessObjects.Migrations
                     b.Property<string>("Premium")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
                         .HasDefaultValue("Free");
 
                     b.Property<string>("Role")
@@ -583,22 +605,36 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.User_package", b =>
                 {
-                    b.Property<Guid>("PackId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("End_Day")
+                        .HasColumnType("date");
+
+                    b.Property<Guid>("PackageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateOnly>("Started_Day")
+                        .HasColumnType("date");
+
+                    b.Property<string>("TypeOfPremium")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("End_Day")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("total")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("PackageId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("Started_Day")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("PackId", "UserId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PackageId");
 
@@ -819,15 +855,19 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.User_package", b =>
                 {
-                    b.HasOne("BusinessObjects.Package", null)
+                    b.HasOne("BusinessObjects.Package", "Package")
                         .WithMany("Packages")
-                        .HasForeignKey("PackageId");
+                        .HasForeignKey("PackageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("BusinessObjects.User", "User")
                         .WithMany("User_package")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Package");
 
                     b.Navigation("User");
                 });

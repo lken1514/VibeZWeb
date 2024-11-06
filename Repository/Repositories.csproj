@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj" />
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\VibeZDTO\VibeZDTO.csproj" />
   </ItemGroup>
 
 </Project>

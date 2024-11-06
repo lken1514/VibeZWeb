@@ -68,9 +68,9 @@ namespace VibeZOData.Controllers
                     Password = "GoogleLogin"
                 };
                 Console.WriteLine($"User Info: Id = {user.Id}, Email = {user.Email}, Name = {user.Name}, UserName = {user.UserName}, Password = {user.Password}");
-                await _userRepository.AddUser(user); 
+                await _userRepository.AddUser(user);
             }
-            
+
             var claims = new[]
               {
                     new Claim(ClaimTypes.Name, user.UserName),
@@ -177,4 +177,3 @@ namespace VibeZOData.Controllers
         }
     }
 }
-

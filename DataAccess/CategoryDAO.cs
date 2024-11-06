@@ -10,6 +10,7 @@ namespace DataAccess
 {
     public class CategoryDAO : SingletonBase<CategoryDAO>
     {
+
         public async Task<IEnumerable<Category>> GetAllCategories()
         {
             return await _context.Categories.ToListAsync();

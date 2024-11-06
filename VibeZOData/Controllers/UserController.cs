@@ -90,7 +90,7 @@ namespace VibeZOData.Controllers
         // PUT odata/User/{id}
         [HttpPut("{id:guid}")]
         public async Task<ActionResult> Put(Guid id, string? name, string email, string password, string gender, string username, int yy, int mm, int dd)
-        { 
+        {
 
             var existingUser = await _userRepository.GetUserById(id);
             if (existingUser == null)
@@ -118,7 +118,22 @@ namespace VibeZOData.Controllers
             _logger.LogInformation($"User with ID {id} updated successfully.");
             return Ok("Updated successfully.");
         }
+        // PUT odata/User/{id}
+        [HttpPut("/premium/{id:guid}")]
+        public async Task<ActionResult> UdPremium(Guid id, string premium)
+        {
 
+            var existingUser = await _userRepository.GetUserById(id);
+
+
+            existingUser.Premium = premium;
+           
+            existingUser.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
+            await _userRepository.UpdateUser(existingUser);
+
+            _logger.LogInformation($"User with ID {id} updated successfully.");
+            return Ok("Updated successfully.");
+        }
         // DELETE odata/User/{id}
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult> Delete(Guid id)

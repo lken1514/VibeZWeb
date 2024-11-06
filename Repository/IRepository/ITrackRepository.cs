@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using VibeZDTO;
 
 namespace Repositories.IRepository
 {
@@ -11,6 +12,12 @@ namespace Repositories.IRepository
         Task UpdateTrack(Track track);
         Task UpdateListener(Track track);
         Task DeleteTrack(Track track);
+        Task<int> TotalTrack();
+        Task<int> CountTrack(Guid artistId);
+        Task<IEnumerable<AdminApprovalDTO>> GetPendingTracks();
+        Task ChangeStatusApproval(Guid trackId);
+        Task<int> CountTotalListenerByArtist(Guid artistId, DateOnly startDate, DateOnly endDate)
+
         Task<IEnumerable<Track>> GetTrackByIds(List<Guid> trackIds);
         Task<IEnumerable<Track>> GetSongRecommendations(List<Guid> recentlyPlayedIds, Guid clickedTrackId, int topN = 10);
     }

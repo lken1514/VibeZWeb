@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataAccess;
 using VibeZOData.Models;
+using NuGet.DependencyResolver;
 
 namespace VibeZOData.Controllers
 {
@@ -109,8 +110,9 @@ namespace VibeZOData.Controllers
 
         public async Task<ActionResult> CreateTrack(Guid? AlbumId,
             Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour,[FromQuery] int minute, [FromQuery]int section, Guid artistId,
-            IFormFile path, IFormFile image)
+            IFormFile path, IFormFile image, IFormFile? trackLRC)
         {
+            var trackUrl = "";
             _logger.LogInformation("Creating new track");
 
             if (!ModelState.IsValid)
@@ -128,6 +130,10 @@ namespace VibeZOData.Controllers
             {
                 return BadRequest("Invalid time values.");
             }
+            if (trackLRC != null)
+            {
+                trackUrl = await _azure.UploadFileAsync(trackLRC);
+            }
             var trackTime = new TimeOnly(0, minute, section);
             var pathUrl = await _azure.UploadFileAsync(path);
             var imageUrl = await _azure.UploadFileAsync(image);
@@ -143,7 +149,8 @@ namespace VibeZOData.Controllers
                 Path = pathUrl,
                 Image = imageUrl,
                 Time = trackTime,
-                ArtistId = artistId
+                ArtistId = artistId,
+                TrackLRC = trackUrl
             };
 
             await _trackRepository.AddTrack(track);
@@ -157,8 +164,9 @@ namespace VibeZOData.Controllers
         [Consumes("multipart/form-data")]
         public async Task<ActionResult> UpdateTrack(Guid id, Guid? AlbumId, 
              Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour, int minute, int section, Guid artistId,
-            IFormFile? path, IFormFile? image)
+            IFormFile? path, IFormFile? image, IFormFile? trackLRC)
         {
+            var trackUrl = "";
             _logger.LogInformation($"Updating track with id {id}");
 
             var track = await _trackRepository.GetTrackById(id);
@@ -180,6 +188,10 @@ namespace VibeZOData.Controllers
             {
                 return BadRequest("Invalid time values.");
             }
+            if (trackLRC != null || trackLRC.Length > 0)
+            {
+                trackUrl = await _azure.UploadFileAsync(trackLRC);
+            }
             var trackTime = new TimeOnly(0, minute, section);
             track.AlbumId = AlbumId;
             track.CategoryId = CategoryId;
@@ -189,6 +201,7 @@ namespace VibeZOData.Controllers
             track.Time = trackTime;
             track.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
             track.ArtistId = artistId;
+            track.TrackLRC = trackUrl;
             await _trackRepository.UpdateTrack(track);
             _logger.LogInformation($"Track with id {id} has been updated");
 

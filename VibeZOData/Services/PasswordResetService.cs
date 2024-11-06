@@ -18,7 +18,7 @@ namespace VibeZOData.Services
         public async Task ResetPasswordAsync(string userEmail)
         {
             var user = await _userRepository.FindByEmailAsync(userEmail);
-            if(user == null)
+            if (user == null)
             {
                 throw new Exception("User not found");
             }
@@ -39,14 +39,14 @@ namespace VibeZOData.Services
         }
         public void StoreOtp(string userEmail, string otpCode)
         {
-            var otpData = (Otp : otpCode, Expiry: DateTime.UtcNow.AddMinutes(10));
+            var otpData = (Otp: otpCode, Expiry: DateTime.UtcNow.AddMinutes(10));
             var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(10));
             _cache.Set(userEmail, otpData, cacheEntryOptions);
         }
 
         public bool ValidateOtp(string userEmail, string otpCode)
         {
-            if (_cache.TryGetValue(userEmail,out( string Otp, DateTime Expiry) otpData))
+            if (_cache.TryGetValue(userEmail, out (string Otp, DateTime Expiry) otpData))
             {
                 return otpData.Otp == otpCode && DateTime.UtcNow <= otpData.Expiry;
             }

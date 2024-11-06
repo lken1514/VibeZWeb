@@ -13,6 +13,7 @@ public sealed class AzuriteService(ResiliencePipelineProvider<string> pipeline, 
     private readonly BlobContainerClient _container = new(configuration.GetConnectionString("AzureLink"),
         configuration.GetConnectionString("ContainerName"));
 
+   
     private readonly ResiliencePipeline _policy = pipeline.GetPipeline(nameof(Blob));
 
     public async Task<string> UploadFileAsync(IFormFile file, CancellationToken cancellationToken = default)
@@ -46,7 +47,11 @@ public sealed class AzuriteService(ResiliencePipelineProvider<string> pipeline, 
         return blobClient.Uri.ToString();
     }
     public async Task<string> UpdateFileAsync(IFormFile file, string uri, CancellationToken cancellationToken = default)
-    {
+    {   
+        if (String.IsNullOrEmpty(uri))
+        {
+          return await UploadFileAsync(file, cancellationToken);
+        }
         Uri url = new Uri(uri);
         string fileName = Path.GetFileName(url.LocalPath);
         var blobClient = _container.GetBlobClient(fileName);

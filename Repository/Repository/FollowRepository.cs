@@ -11,29 +11,47 @@ namespace Repositories.Repository
 {
     public class FollowRepository : IFollowRepository
     {
+        private readonly VibeZDbContext _context;
+        public FollowRepository()
+        {
+            _context = new VibeZDbContext();
+        }
         public async Task<IEnumerable<Follow>> GetAllFollows()
         {
             return await FollowDAO.Instance.GetAllFollows();
         }
 
-        public async Task<Follow> GetFollowById(Guid userId, Guid artistId)
+        public async Task<int> GetAllFollowById(Guid artistId, DateOnly startDate, DateOnly endDate)
         {
-            return await FollowDAO.Instance.GetFollowById(userId, artistId);
+            var result = _context.Follows.
+                Where(x => x.ArtistId == artistId && x.CreateDate >= startDate && x.CreateDate <= endDate && x.IsFollow == true)
+                .Count();
+            return result;
+        }
+        public async Task<int> GetAllUnFollowById(Guid artistId, DateOnly startDate, DateOnly endDate)
+        {
+            var result = _context.Follows.
+                Where(x => x.ArtistId == artistId && x.CreateDate >= startDate && x.CreateDate <= endDate && x.IsFollow == false)
+                .Count();
+            return result;
         }
 
-        public async Task AddFollows(Follow follow)
+        public async Task Add(Follow follow)
         {
-            await FollowDAO.Instance.Add(follow);
+            _context.Follows.Add(follow);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateFollows(Follow follow)
+        public async Task Update(Follow follow)
         {
-            await FollowDAO.Instance.Update(follow);
+            _context.Follows.Update(follow);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteFollows(Guid userId, Guid artistId)
+        public async Task Delete(Follow follow)
         {
-            await FollowDAO.Instance.Delete(userId, artistId);
+            _context.Follows.Remove(follow);
+            await _context.SaveChangesAsync();
         }
     }
 

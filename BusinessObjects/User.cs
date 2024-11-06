@@ -15,6 +15,7 @@ namespace BusinessObjects
         public string Password { get; set; }
         public string? Gender { get; set; }
         public string Role { get; set; } = "User";
+        public bool? IsBanned { get; set; } 
 
         public string UserName { get; set; }
         public DateOnly? DOB { get; set; }

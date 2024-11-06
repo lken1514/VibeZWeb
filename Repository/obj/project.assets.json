@@ -717,6 +717,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1178,7 +1191,8 @@
           "Microsoft.EntityFrameworkCore.Proxies": "8.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.Extensions.Configuration": "8.0.0",
-          "Microsoft.Extensions.Configuration.Json": "8.0.0"
+          "Microsoft.Extensions.Configuration.Json": "8.0.0",
+          "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
           "bin/placeholder/BusinessObjects.dll": {}
@@ -1198,6 +1212,19 @@
         },
         "runtime": {
           "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "VibeZDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BusinessObjects": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VibeZDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VibeZDTO.dll": {}
         }
       }
     }
@@ -2310,6 +2337,36 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "sha512": "jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
       "type": "package",
@@ -3272,28 +3329,39 @@
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
       "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "VibeZDTO/1.0.0": {
+      "type": "project",
+      "path": "../VibeZDTO/VibeZDTO.csproj",
+      "msbuildProject": "../VibeZDTO/VibeZDTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "BusinessObjects >= 1.0.0",
-      "DataAccess >= 1.0.0"
+      "DataAccess >= 1.0.0",
+      "VibeZDTO >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MINH HUE\\.nuget\\packages\\": {}
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\Repository\\Repositories.csproj",
+      "projectUniqueName": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\Repository\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\Repository\\Repositories.csproj",
-      "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-      "outputPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\Repository\\obj\\",
+      "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\Repository\\Repositories.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\Repository\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3308,11 +3376,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj"
             },
-            "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Kien\\New folder\\VibeZWeb-vibez-backend\\DataAccess\\DataAccess.csproj"
+            "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\DataAccess\\DataAccess.csproj"
+            },
+            "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\VibeZDTO.csproj": {
+              "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\VibeZDTO.csproj"
             }
           }
         }
@@ -3347,7 +3418,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

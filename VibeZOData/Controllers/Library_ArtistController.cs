@@ -10,9 +10,25 @@ namespace VibeZOData.Controllers
     [ApiController]
     public class Library_ArtistController(ILibrary_ArtistRepository _library_ArtistRepository, ILogger<Library_ArtistController> _logger) : ControllerBase
     {
+
+        [HttpGet("{libId}/{artistId}")]
+        public async Task<ActionResult> Get(Guid libId, Guid artistId)
+        {
+            _logger.LogInformation($"Fetching Library_Artist relationship for LibraryId: {libId} and ArtistId: {artistId}");
+
+            var existingLibArtist = await _library_ArtistRepository.GetArtistById(artistId, libId);
+            if (existingLibArtist == null)
+            {
+                _logger.LogWarning($"Library_Artist relationship for LibraryId {libId} and ArtistId {artistId} not found");
+                return NotFound();
+            }
+
+            return Ok();
+        }
+
         // POST api/Library_Artist/Create
-        [HttpPost]
-        public async Task<ActionResult> Create(Guid libId, Guid artistId)
+        [HttpPost("Follow")]
+        public async Task<ActionResult> Create([FromForm]Guid libId, [FromForm]Guid artistId)
         {
             _logger.LogInformation("Creating new Library_Artist relationship");
             if (!ModelState.IsValid)
@@ -67,7 +83,7 @@ namespace VibeZOData.Controllers
                 return NotFound();
             }
 
-            await _library_ArtistRepository.Delete(libId, artistId);
+            await _library_ArtistRepository.Delete(artistId, libId);
             _logger.LogInformation($"Library_Artist relationship for LibraryId {libId} and ArtistId {artistId} deleted");
 
             return Ok();
