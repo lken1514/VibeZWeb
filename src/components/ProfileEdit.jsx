@@ -1,18 +1,39 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { editProfile } from '../services/profileService';
 import Navbar from './Navbar2';
+import { LoginContext } from '../context/LoginContext';
 
 function ProfileEdit() {
+  const [email, setEmail] = useState('');
   const [gender, setGender] = useState('male');
   const [day, setDay] = useState(7);
   const [month, setMonth] = useState(6);
   const [year, setYear] = useState(2004);
   const [country, setCountry] = useState('vietnam');
-  const [marketingConsent, setMarketingConsent] = useState(true);
 
-  const handleSubmit = (e) => {
+  const { userInfo, loading } = useContext(LoginContext);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Profile has been saved!');
+
+    try {
+      if (!email || !gender || !day || !month || !year) {
+        console.error("All fields are required.");
+        return;
+      }
+      await editProfile(email, gender, year, month, day);
+      console.log("Profile updated successfully.");
+    } catch (error) {
+      console.error("Error updating profile:", error.message);
+    }
   };
+
+  useEffect(() => {
+    if (!loading && userInfo?.email) {
+      setEmail(userInfo.email);
+      console.log(userInfo);
+    }
+  }, [loading]);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -21,13 +42,30 @@ function ProfileEdit() {
         <h1 className="text-6xl font-bold mb-6 ml-80 ">Edit Profile</h1>
         <form onSubmit={handleSubmit} className="w-3/6 mx-auto bg-black p-6 rounded shadow-lg">
           <label htmlFor="username" className="block mb-1">Username</label>
-          <input type="text" id="username" readOnly className="block w-full mb-4 p-2 border border-gray-300 rounded text-black" value='phong' />
+          <input
+            type="text"
+            id="username"
+            readOnly
+            className="block w-full mb-4 p-2 border border-gray-300 rounded text-black"
+            value={userInfo?.name || 'Unknown'}
+          />
 
           <label htmlFor="email" className="block mb-1">Email</label>
-          <input type="email" id="email" className="block w-full mb-4 p-2 border border-gray-300 rounded" />
+          <input
+            type="email"
+            id="email"
+            className="block w-full mb-4 p-2 border border-gray-300 rounded text-black"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} 
+          />
 
           <label htmlFor="gender" className="block mb-1">Gender</label>
-          <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)} className="block w-full mb-4 p-2 border border-gray-300 rounded text-black">
+          <select
+            id="gender"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            className="block w-full mb-4 p-2 border border-gray-300 rounded text-black"
+          >
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
@@ -77,22 +115,14 @@ function ProfileEdit() {
           </div>
 
           <label htmlFor="country" className="block mb-1">Country or Region</label>
-          <select id="country" value={country} onChange={(e) => setCountry(e.target.value)} className="block w-full mb-4 p-2 border border-gray-300 rounded text-black">
+          <select
+            id="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            className="block w-full mb-4 p-2 border border-gray-300 rounded text-black"
+          >
             <option value="vietnam">Vietnam</option>
           </select>
-
-          <div className="flex items-start mb-4">
-            <input
-              type="checkbox"
-              id="marketing"
-              checked={marketingConsent}
-              onChange={(e) => setMarketingConsent(e.target.checked)}
-              className="mr-2"
-            />
-            <label htmlFor="marketing" className="text-sm">
-              Share registration data with content providers for marketing purposes.
-            </label>
-          </div>
 
           <div className="flex justify-end space-x-4">
             <button
