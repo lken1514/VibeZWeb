@@ -7,7 +7,6 @@ import { useListVisibility } from '../context/VisibleContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShuffle, faBackwardStep, faPlay, faPause, faForwardStep, faRepeat, faBars, faDisplay, faMicrophone, faVolumeHigh, faVolumeLow, faVolumeOff } from '@fortawesome/free-solid-svg-icons'; // Import thêm biểu tượng âm lượng
 import { LoginContext } from '../context/LoginContext';
-import { info } from 'autoprefixer';
 
 const Player = () => {
   const { track, seekBar, seekBg, playStatus, play, pause, time, previous, next, seekSong, songsData, setSongsData, currentIndex, seekTo, toggleRepeat, repeat, volume, setVolume } = useContext(PlayerContext); // Thêm setVolume từ PlayerContext
