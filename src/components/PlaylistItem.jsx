@@ -4,13 +4,10 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import eventBus from "../services/eventBus";
-const AlbumItem = ({ image, name, createBy ,id}) => {
+const AlbumItem = ({ image, name, createBy, id }) => {
 
     const navigate = useNavigate()
     const [isMouseOver, setMouseOver] = useState(false);
-
-
-
 
     return (
         <div>
@@ -20,10 +17,8 @@ const AlbumItem = ({ image, name, createBy ,id}) => {
                     {isMouseOver && (
                         <div className="bg-green-600 w-14 h-14 rounded-full flex justify-center absolute items-center bottom-1 right-1 hover:bg-[#3BE477]"  >
                             <FontAwesomeIcon className="text-black text-[20px]" icon={faPlay} />
-                        </div>
-                    )
+                        </div>)
                     }
-
                 </div>
                 <p className="font-bold mt-2 mb-1">{name}</p>
                 <p className="text-gray-400 text-[14px] hover:text-white hover:underline hover:decoration-1">{createBy}</p>
