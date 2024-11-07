@@ -24,6 +24,7 @@ import ArtistDashboard from './components/ArtistDashboard/ArtistDashboard';
 import ArtistHome from './components/ArtistDashboard/ArtistHome'; 
 import ArtistMusicTab from './components/ArtistDashboard/ArtistMusicTab'; 
 import ArtistProfile from './components/ArtistDashboard/ArtistProfile'; 
+import DisplayProfile from './components/DisplayProfile';
 
 function App() {
   const router = createBrowserRouter([
@@ -39,7 +40,8 @@ function App() {
             { path: 'album/:id', element: <DisplayAlbum /> },
             { path: 'playlist/:id', element: <DisplayPlaylist /> },
             { path: 'artist/:id', element: <DisplayArtist /> },
-            { path: 'search', element: <DisplaySearch /> }
+            { path: 'search', element: <DisplaySearch /> },
+            { path: 'user/:id', element: <DisplayProfile /> },
           ],
         },
       ],
