@@ -13,13 +13,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataAccess;
 using VibeZOData.Models;
-using VibeZOData.Services;
+using NuGet.DependencyResolver;
 
 namespace VibeZOData.Controllers
 {
-    [Route("api/Track")]
+    [Route("odata/[controller]")]
     [ApiController]
-    public class TrackController(ITrackRepository _trackRepository, IMapper _mapper, IAzuriteService _azure, ILogger<TrackController> _logger, IFollowRepository _followRepository, INotificationService _notificationService) : ControllerBase
+    public class TrackController(ITrackRepository _trackRepository, IMapper _mapper, IAzuriteService _azure, ILogger<TrackController> _logger) : ControllerBase
     {
         // GET: api/<TrackController>
         [HttpGet("all", Name = "GetAllTracks")]
@@ -103,6 +103,8 @@ namespace VibeZOData.Controllers
             var trackDTO = _mapper.Map<Track, TrackDTO>(track);
             return Ok(trackDTO);
         }
+
+        //New
         [HttpGet("Artist/{artistId}", Name = "GetTrackByArtistId")]
         public async Task<ActionResult<IEnumerable<TrackDTO>>> GetAllTrackByArtistId(Guid artistId)
         {
@@ -129,8 +131,9 @@ namespace VibeZOData.Controllers
     [FromForm] int second,
     [FromForm] Guid artistId,
     [FromForm] IFormFile path,
-    [FromForm] IFormFile image)
+    [FromForm] IFormFile image, IFormFile? trackLRC)
         {
+            var trackUrl = "";
             _logger.LogInformation("Creating new track");
 
             if (!ModelState.IsValid)
@@ -148,6 +151,10 @@ namespace VibeZOData.Controllers
             {
                 return BadRequest("Invalid time values.");
             }
+            if (trackLRC != null)
+            {
+                trackUrl = await _azure.UploadFileAsync(trackLRC);
+            }
             var trackTime = new TimeOnly(0, minute, second);
             var pathUrl = await _azure.UploadFileAsync(path);
             var imageUrl = await _azure.UploadFileAsync(image);
@@ -163,7 +170,8 @@ namespace VibeZOData.Controllers
                 Path = pathUrl,
                 Image = imageUrl,
                 Time = trackTime,
-                ArtistId = artistId
+                ArtistId = artistId,
+                TrackLRC = trackUrl
             };
 
             await _trackRepository.AddTrack(track);
@@ -186,8 +194,9 @@ namespace VibeZOData.Controllers
     [FromForm] int second,
     //[FromForm] Guid artistId,
     [FromForm] IFormFile? path,
-    [FromForm] IFormFile? image)
+    [FromForm] IFormFile? image, IFormFile? trackLRC)
         {
+            var trackUrl = "";
             _logger.LogInformation($"Updating track with id {id}");
 
             var track = await _trackRepository.GetTrackById(id);
@@ -209,6 +218,10 @@ namespace VibeZOData.Controllers
             {
                 return BadRequest("Invalid time values.");
             }
+            if (trackLRC != null || trackLRC.Length > 0)
+            {
+                trackUrl = await _azure.UploadFileAsync(trackLRC);
+            }
             var trackTime = new TimeOnly(0, minute, second);
             track.AlbumId = AlbumId;
             track.CategoryId = CategoryId;
@@ -217,7 +230,7 @@ namespace VibeZOData.Controllers
             track.Genre = Genre;
             track.Time = trackTime;
             track.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
-            //track.ArtistId = artistId;
+            track.TrackLRC = trackUrl;
             await _trackRepository.UpdateTrack(track);
             _logger.LogInformation($"Track with id {id} has been updated");
 
@@ -246,16 +259,19 @@ namespace VibeZOData.Controllers
             return NoContent();
         }
 
+        //Del album contain track
         [HttpDelete("Album/{albumId}")]
         public async Task<ActionResult> DeleteTracksByAlbumId(Guid albumId)
         {
-            try { 
-            _logger.LogInformation($"Deleting tracks by albumId {albumId}");
+            try
+            {
+                _logger.LogInformation($"Deleting tracks by albumId {albumId}");
 
-            await _trackRepository.DeleteTrackByAlbumId(albumId);
+                await _trackRepository.DeleteTrackByAlbumId(albumId);
 
-            _logger.LogInformation($"Tracks by albumId {albumId} have been deleted");
-            }catch (Exception ex)
+                _logger.LogInformation($"Tracks by albumId {albumId} have been deleted");
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex, $"An error occurred while deleting tracks for albumId {albumId}");
                 // Trả về lỗi thích hợp cho client
@@ -280,6 +296,5 @@ namespace VibeZOData.Controllers
 
             return NoContent();
         }
-
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +9,7 @@ namespace DataAccess
 {
     public class Library_AlbumDAO : SingletonBase<Library_AlbumDAO>
     {
+
         public async Task<IEnumerable<Library_Album>> GetAllLibrarieAlbums()
         {
             return await _context.Library_Albums.ToListAsync();
@@ -41,10 +42,10 @@ namespace DataAccess
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(Guid userId, Guid libraryId)
+        public async Task Delete(Guid albumId, Guid libraryId)
         {
-            var library_Album = await GetLibraryAlbumById(userId, libraryId);
-            if ( library_Album != null)
+            var library_Album = await GetLibraryAlbumById(albumId, libraryId);
+            if (library_Album != null)
             {
                 _context.Library_Albums.Remove(library_Album);
                 await _context.SaveChangesAsync();

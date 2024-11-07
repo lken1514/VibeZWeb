@@ -22,7 +22,11 @@ namespace BusinessObjects.Data.Config
             builder.Property(p => p.Name)
                 .HasMaxLength(DataSchemaLength.Medium)
                 .IsRequired();
-            builder.Property(p => p.Description)
+             builder.Property(p => p.Description)
+                .HasMaxLength(DataSchemaLength.Large)
+                .IsRequired();
+            builder.Property(p => p.createBy)
+                .HasMaxLength(DataSchemaLength.Medium)
                 .IsRequired();
             builder.Property(p => p.Image)
                 .HasMaxLength(DataSchemaLength.SuperLarge)
@@ -36,7 +40,7 @@ namespace BusinessObjects.Data.Config
                 .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(x => x.Library_Playlists)
                 .WithOne(x => x.Playlist)
-                .HasPrincipalKey(x => x.PlaylistId)
+                .HasForeignKey(x => x.PlaylistId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

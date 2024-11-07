@@ -12,11 +12,14 @@ namespace DataAccess
     {
         public async Task<ICollection<Package>> GetAllPackages()
         {
+            using var _context = new VibeZDbContext();
             return await _context.Packages.ToListAsync();
         }
 
         public async Task<Package> GetPackageById(Guid id)
         {
+            using var _context = new VibeZDbContext();
+
             var package = await _context.Packages.FirstOrDefaultAsync(p => p.Id == id);
             if (package == null)
             {
@@ -27,12 +30,16 @@ namespace DataAccess
 
         public async Task Add(Package package)
         {
+            using var _context = new VibeZDbContext();
+
             await _context.Packages.AddAsync(package);
             await _context.SaveChangesAsync();
         }
 
         public async Task Update(Package package)
         {
+            using var _context = new VibeZDbContext();
+
             var existingItem = await GetPackageById(package.Id);
             if (existingItem != null)
             {
@@ -47,6 +54,8 @@ namespace DataAccess
 
         public async Task Delete(Guid id)
         {
+            using var _context = new VibeZDbContext();
+
             var package = await GetPackageById(id);
             if (package != null)
             {

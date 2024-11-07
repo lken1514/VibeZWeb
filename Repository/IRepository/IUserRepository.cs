@@ -21,6 +21,8 @@ namespace Repositories.IRepository
         Task<User> FindByEmailAsync(string email);
         Task AddUserGoogle(User user);
         Task UpdatePassword(Guid UserId, string newPassword);
+        Task<int> TotalUser();
+
     }
 
 }

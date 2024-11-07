@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,12 +16,13 @@ namespace BusinessObjects
         public string Password { get; set; }
         public string? Gender { get; set; }
         public string Role { get; set; } = "User";
+        public bool? IsBanned { get; set; } 
 
         public string UserName { get; set; }
         public DateOnly? DOB { get; set; }
         public string Premium { get; set; } = "Free";
         public virtual Library? Library { get; set; }
-
+        public Artist Artist { get; set; }  
         [JsonIgnore]  // Bỏ qua khi serializing/
         public virtual ICollection<Playlist>? Playlists  { get; set; }
         [JsonIgnore]

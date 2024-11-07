@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess
@@ -12,24 +11,27 @@ namespace DataAccess
     {
         public async Task<IEnumerable<Track>> GetAllTracks()
         {
-            var list= await _context.Tracks.AsNoTracking().ToListAsync();
-            if (list == null || !list.Any()) return null;
+            using var context = new VibeZDbContext();
 
-            // Thực hiện explicit loading cho mỗi Track trong danh sách
-            foreach (var track in list)
-            {
-                await _context.Entry(track)
-                    .Reference(t => t.Artist)  // Tải thông tin Artist của mỗi Track
-                    .LoadAsync();
+            // Sử dụng Include để tải thông tin Artist và Album cho mỗi Track
+            var list = await _context.Tracks
+                .AsNoTracking()
+                .Include(x => x.Album) // Tải Album cho mỗi Track
+                .Include(t => t.Artist) // Tải Artist cho mỗi Track
+                .ToListAsync();
 
-                // Nếu có các dữ liệu liên quan khác (ví dụ Album), bạn cũng có thể tải tương tự
-                // await _context.Entry(track)
-                //     .Reference(t => t.Album)
-                //     .LoadAsync();
-            }
             return list;
         }
+        public async Task<int> CountTrack(Guid artistId)
+        {
+            using var context = new VibeZDbContext();
 
+            return await _context.Albums
+                .Where(album => album.ArtistId == artistId)
+                .SelectMany(album => _context.Tracks.Where(track => track.AlbumId == album.Id))
+                .CountAsync();
+        }
+        //New method
         public async Task<IEnumerable<Track>> GetAllTrackByArtistId(Guid artistId)
         {
             var list = await _context.Tracks
@@ -38,7 +40,7 @@ namespace DataAccess
                 .OrderBy(track => track.CreateDate)
                 .ToListAsync();
             if (list == null) return null;
-            foreach(var track in list)
+            foreach (var track in list)
             {
                 await _context.Entry(track)
                     .Reference(t => t.Artist)
@@ -46,78 +48,64 @@ namespace DataAccess
             }
             return list;
         }
-        
 
         public async Task<Track> GetTrackById(Guid trackId)
         {
-            var track = await _context.Tracks.
-                AsNoTracking().
-                FirstOrDefaultAsync(u => u.TrackId == trackId);
-            if (track != null)
-            {
-                await _context.Entry(track)
-           .Reference(t => t.Artist) // Chỉ định Reference (1-1 hoặc N-1)
-           .LoadAsync();
-            }
+            using var context = new VibeZDbContext();
+
+            // Sử dụng Include để tải thông tin Artist và Album cho Track theo Id
+            var track = await _context.Tracks
+                .AsNoTracking()
+                .Include(t => t.Artist)
+                .Include(t => t.Album) // Tải Album cho Track
+                .FirstOrDefaultAsync(u => u.TrackId == trackId);
+
             return track;
         }
+
         public async Task<IEnumerable<Track>> GetAllTrackByAlbumId(Guid albumId)
         {
-            // Lấy danh sách các Track theo AlbumId
+            using var context = new VibeZDbContext();
+
+            // Sử dụng Include để tải thông tin Artist và Album cho mỗi Track
             var list = await _context.Tracks
                 .Where(u => u.AlbumId == albumId)
                 .AsNoTracking()
+                .Include(t => t.Artist)
+                .Include(t => t.Album) // Tải Album cho mỗi Track
                 .OrderBy(u => u.CreateDate)
                 .ToListAsync();
 
-            // Nếu danh sách rỗng, trả về null
-            if (list == null || !list.Any()) return null;
-
-            // Thực hiện explicit loading cho mỗi Track trong danh sách
-            foreach (var track in list)
-            {
-                await _context.Entry(track)
-                    .Reference(t => t.Artist)  // Tải thông tin Artist của mỗi Track
-                    .LoadAsync();
-
-                // Nếu có các dữ liệu liên quan khác (ví dụ Album), bạn cũng có thể tải tương tự
-                // await _context.Entry(track)
-                //     .Reference(t => t.Album)
-                //     .LoadAsync();
-            }
-
             return list;
         }
+
         public async Task<IEnumerable<Track>> GetTrackByIds(List<Guid> trackIds)
         {
-            var list= await _context.Tracks
+            using var context = new VibeZDbContext();
+
+            // Sử dụng Include để tải thông tin Artist và Album cho mỗi Track theo danh sách Id
+            var list = await _context.Tracks
                 .Where(track => trackIds.Contains(track.TrackId))
-                .ToListAsync();  // Truy vấn một lần duy nhất với tất cả trackId
+                .AsNoTracking()
+                .Include(t => t.Artist)
+                .Include(t => t.Album) // Tải Album cho mỗi Track
+                .ToListAsync();
 
-            if (list == null || !list.Any()) return null;
-
-            // Thực hiện explicit loading cho mỗi Track trong danh sách
-            foreach (var track in list)
-            {
-                await _context.Entry(track)
-                    .Reference(t => t.Artist)  // Tải thông tin Artist của mỗi Track
-                    .LoadAsync();
-
-                // Nếu có các dữ liệu liên quan khác (ví dụ Album), bạn cũng có thể tải tương tự
-                // await _context.Entry(track)
-                //     .Reference(t => t.Album)
-                //     .LoadAsync();
-            }
             return list;
-
         }
+
         public async Task Add(Track track)
         {
+            using var context = new VibeZDbContext();
+
             await _context.Tracks.AddAsync(track);
             await _context.SaveChangesAsync();
         }
+
         public async Task UpdateListener(Track track)
         {
+            using var context = new VibeZDbContext();
+
             // Kiểm tra xem thực thể có đang được theo dõi hay không
             var existingTrack = await _context.Tracks.FindAsync(track.TrackId);
 
@@ -125,6 +113,7 @@ namespace DataAccess
             {
                 // Nếu thực thể đã tồn tại trong DbContext, cập nhật giá trị Listener
                 existingTrack.Listener += 1;
+                existingTrack.UpdateDate = DateOnly.FromDateTime(DateTime.Now);
             }
             else
             {
@@ -136,7 +125,7 @@ namespace DataAccess
 
             await _context.SaveChangesAsync();
         }
-
+        //Sua update
         public async Task Update(Track updatedTrack)
         {
             try
@@ -169,11 +158,9 @@ namespace DataAccess
                 {
                     Console.Error.WriteLine($"Inner Exception: {ex.InnerException.Message}");
                 }
-                throw; 
+                throw;
             }
         }
-
-
 
         public async Task Delete(Track track)
         {
@@ -195,7 +182,7 @@ namespace DataAccess
             _context.Tracks.Remove(track);
             await _context.SaveChangesAsync();
         }
-
+        //New method
         public async Task DeleteTrackByAlbumId(Guid albumId)
         {
             var tracks = await _context.Tracks
@@ -212,9 +199,14 @@ namespace DataAccess
         // Gợi ý dựa trên thể loại và nghệ sĩ của các bài hát đã nghe gần đây
         public async Task<IEnumerable<Track>> RecommendSongsBasedOnRecentTracks(List<Guid> recentlyPlayedIds)
         {
-            // Lấy các bài hát đã nghe gần đây
+            using var context = new VibeZDbContext();
+
+            // Lấy các bài hát đã nghe gần đây và tải thông tin liên quan (Artist, Album)
             var recentlyPlayedTracks = await _context.Tracks
                 .Where(track => recentlyPlayedIds.Contains(track.TrackId))
+                .AsNoTracking()
+                .Include(t => t.Artist) // Tải thông tin Artist cho mỗi Track đã nghe gần đây
+                .Include(t => t.Album)  // Tải thông tin Album cho mỗi Track đã nghe gần đây
                 .ToListAsync();
 
             if (!recentlyPlayedTracks.Any())
@@ -227,7 +219,10 @@ namespace DataAccess
             // Gợi ý các bài hát khác thuộc cùng thể loại hoặc nghệ sĩ
             var recommendedTracks = await _context.Tracks
                 .Where(track => genres.Contains(track.Genre) || artists.Contains(track.ArtistId))
-                .Where(track => !recentlyPlayedIds.Contains(track.TrackId)) // Loại bỏ bài hát đã nghe
+                .Where(track => !recentlyPlayedIds.Contains(track.TrackId))
+                .AsNoTracking()// Loại bỏ bài hát đã nghe
+                .Include(t => t.Artist) // Tải thông tin Artist cho các bài hát gợi ý
+                .Include(t => t.Album)  // Tải thông tin Album cho các bài hát gợi ý
                 .ToListAsync();
 
             return recommendedTracks;
@@ -236,10 +231,15 @@ namespace DataAccess
         // Gợi ý bài hát dựa trên số lượng lượt nghe (Popular-based Recommendations)
         public async Task<IEnumerable<Track>> RecommendPopularSongs(int topN = 10)
         {
+            using var context = new VibeZDbContext();
+
             // Lấy các bài hát phổ biến nhất dựa trên số lượt nghe (listener count)
             var popularTracks = await _context.Tracks
                 .OrderByDescending(track => track.Listener) // Sắp xếp theo số lượt nghe
-                .Take(topN)  // Lấy top N bài hát phổ biến nhất
+                .Take(topN)
+                .AsNoTracking()// Lấy top N bài hát phổ biến nhất
+                .Include(t => t.Artist) // Tải thông tin Artist cho mỗi Track
+                .Include(t => t.Album)  // Tải thông tin Album cho mỗi Track
                 .ToListAsync();
 
             return popularTracks;
@@ -248,12 +248,17 @@ namespace DataAccess
         // Gợi ý ngẫu nhiên bài hát (Random-based Recommendations)
         public async Task<IEnumerable<Track>> RecommendRandomSongs(int topN = 10)
         {
+            using var context = new VibeZDbContext();
+
             var random = new Random();
 
             // Lấy ngẫu nhiên top N bài hát từ cơ sở dữ liệu
             var randomTracks = await _context.Tracks
                 .OrderBy(x => random.Next())  // Random gợi ý
                 .Take(topN)
+                .AsNoTracking()
+                .Include(t => t.Artist) // Tải thông tin Artist cho mỗi Track
+                .Include(t => t.Album)  // Tải thông tin Album cho mỗi Track
                 .ToListAsync();
 
             return randomTracks;
@@ -262,8 +267,13 @@ namespace DataAccess
         // Kết hợp tất cả các gợi ý và đưa bài nhạc vừa click lên đầu danh sách
         public async Task<IEnumerable<Track>> GetSongRecommendations(List<Guid> recentlyPlayedIds, Guid clickedTrackId, int topN = 10)
         {
-            // Lấy bài hát vừa được click
+            using var context = new VibeZDbContext();
+
+            // Lấy bài hát vừa được click và tải thông tin liên quan (Artist, Album)
             var clickedTrack = await _context.Tracks
+                .AsNoTracking()
+                .Include(t => t.Artist)
+                .Include(t => t.Album)
                 .FirstOrDefaultAsync(t => t.TrackId == clickedTrackId);
 
             if (clickedTrack == null)
@@ -291,5 +301,4 @@ namespace DataAccess
             return recommendationQueue;
         }
     }
-
 }

@@ -9,9 +9,7 @@ namespace BusinessObjects
 {
     public abstract class BaseEntity
     {
-        [JsonIgnore]
-        public DateOnly CreateDate { get; set; }
-        [JsonIgnore]
-        public DateOnly UpdateDate { get; set; }
+        public DateOnly CreateDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+        public DateOnly UpdateDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
     }
 }

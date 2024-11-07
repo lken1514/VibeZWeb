@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace VibeZDTO
 {
-    [PrimaryKey(nameof(TrackId), nameof(PlaylistId))]
-    public class TrackPlayListDTO : BaseEntity
+    public class TrackPlayListDTO 
     {
         public Guid TrackId { get; set; }
         public Guid PlaylistId { get; set; }
+        public DateOnly CreateDate { get; set; }
+        public DateOnly UpdateDate {  get; set; }
     }
 }

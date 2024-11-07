@@ -25,6 +25,9 @@ namespace BusinessObjects.Data.Config
             builder.Property(p => p.Image)
                 .HasMaxLength(DataSchemaLength.SuperLarge)
                 .IsRequired();
+            builder.Property(p => p.ImgBackground)
+               .HasMaxLength(DataSchemaLength.SuperLarge)
+               .IsRequired();
             builder.Property(p => p.Nation)
                .HasMaxLength(DataSchemaLength.Medium)
                .IsRequired();

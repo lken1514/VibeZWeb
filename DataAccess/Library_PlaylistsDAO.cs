@@ -9,6 +9,7 @@ namespace DataAccess
 {
     public class Library_PlaylistsDAO : SingletonBase<Library_PlaylistsDAO>
     {
+
         public async Task<IEnumerable<Library_Playlist>> GetAllLibrariePlaylists()
         {
             return await _context.Library_Playlists.AsNoTracking().ToListAsync();
@@ -83,6 +84,11 @@ namespace DataAccess
             {
                 _context.Library_Playlists.Remove(library_Playlists);
                 await _context.SaveChangesAsync();
+            }
+            else
+            {
+                // Nếu không tìm thấy, ném ngoại lệ
+                throw new InvalidOperationException("Failed");
             }
         }
     }

@@ -16,7 +16,7 @@ namespace VibeZOData.Controllers
 
         // POST api/Library_Playlist/Create
         [HttpPost("Create")]
-        public async Task<ActionResult> Create(Guid libId, Guid playId)
+        public async Task<ActionResult> Create([FromForm]Guid libId, [FromForm]Guid playId)
         {
             _logger.LogInformation("Creating new Library_Playlist relationship");
             if (!ModelState.IsValid)

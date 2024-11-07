@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj": {}
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZOData\\VibeZOData.csproj": {}
   },
   "projects": {
-    "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\BusinessObjects\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -73,6 +73,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -95,14 +99,14 @@
         }
       }
     },
-    "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -120,8 +124,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -160,14 +164,14 @@
         }
       }
     },
-    "D:\\VibeZWeb\\Repository\\Repositories.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\Repository\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\Repository\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\Repository\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "D:\\VibeZWeb\\Repository\\Repositories.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\Repository\\Repositories.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -185,11 +189,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj"
               },
-              "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj"
               }
             }
           }
@@ -228,14 +235,14 @@
         }
       }
     },
-    "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj",
         "projectName": "VibeZDTO",
-        "projectPath": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\VibeZDTO\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -253,8 +260,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -293,14 +300,14 @@
         }
       }
     },
-    "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZOData\\VibeZOData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZOData\\VibeZOData.csproj",
         "projectName": "VibeZOData",
-        "projectPath": "D:\\VibeZWeb\\VibeZOData\\VibeZOData.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZOData\\VibeZOData.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\VibeZOData\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZOData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -318,14 +325,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj"
               },
-              "D:\\VibeZWeb\\Repository\\Repositories.csproj": {
-                "projectPath": "D:\\VibeZWeb\\Repository\\Repositories.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj"
               },
-              "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj": {
-                "projectPath": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\Repository\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\Repository\\Repositories.csproj"
+              },
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\VibeZDTO\\VibeZDTO.csproj"
               }
             }
           }
@@ -353,6 +363,10 @@
               "target": "Package",
               "version": "[12.22.1, )"
             },
+            "Elasticsearch.Net": {
+              "target": "Package",
+              "version": "[7.17.5, )"
+            },
             "Google.Apis.Auth": {
               "target": "Package",
               "version": "[1.68.0, )"
@@ -366,6 +380,14 @@
               "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[8.0.10, )"
             },
@@ -387,10 +409,6 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
-            "Microsoft.Extensions.Caching.Memory": {
-              "target": "Package",
-              "version": "[8.0.1, )"
-            },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[8.1.2, )"
@@ -399,9 +417,9 @@
               "target": "Package",
               "version": "[8.0.5, )"
             },
-            "MimeKit": {
+            "NEST": {
               "target": "Package",
-              "version": "[4.8.0, )"
+              "version": "[7.17.5, )"
             },
             "Polly": {
               "target": "Package",

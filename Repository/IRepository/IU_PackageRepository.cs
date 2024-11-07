@@ -12,10 +12,12 @@ namespace Repositories.Repository
     public interface IU_PackageRepository
     {
         Task<IEnumerable<User_package>> GetAllUserPackages();
-        Task<User_package> GetUserPackageById(Guid userId, Guid packId);
+        Task<User_package> GetUserPackageById(Guid id);
         Task AddUserPackage(User_package userPackage);
         Task UpdateUserPackage(User_package userPackage);
-        Task DeleteUserPackage(Guid userId, Guid packId);
+        Task DeleteUserPackage(Guid id);
+        Task<IEnumerable<User_package>> GetPackageByUserId(Guid userId);
+        Task<IEnumerable<User_package>> GetPackageByPackageId(Guid packId);
     }
 
 }

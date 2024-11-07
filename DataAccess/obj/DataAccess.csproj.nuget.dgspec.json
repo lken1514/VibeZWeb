@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\BusinessObjects\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -73,6 +73,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -95,14 +99,14 @@
         }
       }
     },
-    "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\VibeZWeb\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
-        "outputPath": "D:\\VibeZWeb\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -120,8 +124,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\MINH HUE\\Downloads\\VibeZWeb-phucBe\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }

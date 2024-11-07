@@ -10,23 +10,42 @@ namespace DataAccess
 {
     public class AlbumDAO : SingletonBase<AlbumDAO>
     {
+
         public async Task<IEnumerable<Album>> GetAllAlbums()
         {
-            return await _context.Albums.AsNoTrackingWithIdentityResolution().ToListAsync();
+            using var context = new VibeZDbContext();
+            return await _context.Albums.AsNoTrackingWithIdentityResolution()
+                .Include(x => x.Artist)
+                .ToListAsync();
+        }
+        public async Task<int> CountAlbum(Guid artistId)
+        {
+            using var context = new VibeZDbContext();
+            return await _context.Albums.CountAsync(album => album.ArtistId == artistId);
+        }
+        public async Task<int> TotalAlbum()
+        {
+            using var context = new VibeZDbContext();
+
+            return await Task.FromResult(_context.Albums.Count());
         }
         public async Task<IEnumerable<Album>> GetAllAlbumsByArtistId(Guid artistId)
         {
-            return await _context.Albums.Where(x => x.ArtistId == artistId).AsNoTrackingWithIdentityResolution().ToListAsync();
+            using var context = new VibeZDbContext();
+
+            return await _context.Albums.Where(x => x.ArtistId == artistId).AsNoTrackingWithIdentityResolution().Include(x => x.Artist).ToListAsync();
         }
 
         public async Task<Album> GetAlbumById(Guid albumId)
         {
-            var album = await _context.Albums.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(u => u.Id == albumId); ;
+            using var context = new VibeZDbContext();
+
+            var album = await _context.Albums.AsNoTrackingWithIdentityResolution().Include(x => x.Artist).FirstOrDefaultAsync(u => u.Id == albumId); ;
             return album;
         }
 
         public async Task Add(Album album)
-        {   
+        {
             await _context.Albums.AddAsync(album);
             await _context.SaveChangesAsync();
         }

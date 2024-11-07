@@ -18,9 +18,18 @@ namespace Repositories.IRepository
             return await UserPackageDAO.Instance.GetAllUserPackages();
         }
 
-        public async Task<User_package> GetUserPackageById(Guid userId, Guid packId)
+        public async Task<User_package> GetUserPackageById(Guid id)
         {
-            return await UserPackageDAO.Instance.GetUserPackageById(userId, packId);
+            return await UserPackageDAO.Instance.GetUserPackageById(id);
+        }
+        public async Task<IEnumerable<User_package>> GetPackageByUserId(Guid userId)
+        {
+            return await UserPackageDAO.Instance.GetPackageByUserId(userId);
+        }
+        public async Task<IEnumerable<User_package>> GetPackageByPackageId(Guid packId)
+        {
+            return await UserPackageDAO.Instance.GetPackageByPackageId(packId);
+
         }
 
         public async Task AddUserPackage(User_package userPackage)
@@ -33,9 +42,9 @@ namespace Repositories.IRepository
             await UserPackageDAO.Instance.Update(userPackage);
         }
 
-        public async Task DeleteUserPackage(Guid userId, Guid packId)
+        public async Task DeleteUserPackage(Guid id)
         {
-            await UserPackageDAO.Instance.Delete(userId, packId);
+            await UserPackageDAO.Instance.Delete(id);
         }
     }
 

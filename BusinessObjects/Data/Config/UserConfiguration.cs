@@ -53,7 +53,7 @@ namespace BusinessObjects.Data.Config
 
             // Cấu hình Premium với giá trị mặc định là "Free"
             builder.Property(u => u.Premium)
-                  .HasMaxLength(10)
+                  .HasMaxLength(50)
                   .HasDefaultValue("Free")
                   .IsRequired();
 

@@ -13,8 +13,11 @@ namespace Repositories.IRepository
         Task<IEnumerable<Playlist>> GetAllPlaylists();
 
         Task<Playlist> GetPlaylistById(Guid playlistId);
+        Task<IEnumerable<Track>> GetTracksByPlaylistId(Guid playlistId);
         Task AddPlaylist(Playlist Playlist);
         Task UpdatePlaylist(Playlist Playlist);
         Task DeletePlaylist(Playlist playlist);
+        Task<int> TotalPlaylist();
+
     }
 }

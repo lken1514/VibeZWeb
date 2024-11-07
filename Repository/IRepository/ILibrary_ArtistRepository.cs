@@ -13,6 +13,6 @@ namespace Repositories.IRepository
         Task<Library_Artist> GetArtistById(Guid artistId, Guid LibraryId);
         Task Add(Library_Artist library_Artist);
         Task Update(Library_Artist library_Artist);
-        Task Delete(Guid artist, Guid libraryId);
+        Task Delete(Guid artistId, Guid libraryId);
     }
 }

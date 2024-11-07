@@ -1,28 +1,33 @@
 ﻿using BusinessObjects;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Repositories.IRepository;
 using Repositories.Repository;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace VibeZOData.Controllers
 {
-    [Route("odata/Follow")]
+    [Route("api/[controller]")]
     [ApiController]
     public class FollowController : ControllerBase
     {
         private readonly IFollowRepository _followRepository;
-            
-        public FollowController()
+        private readonly ILogger<FollowController> _logger;
+
+        public FollowController(IFollowRepository followRepository, ILogger<FollowController> logger)
         {
-            _followRepository = new FollowRepository();
+            _followRepository = followRepository;
+            _logger = logger;
         }
 
         // GET: odata/Follow
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Follow>>> GetAll()
         {
+            _logger.LogInformation("GetAll called to retrieve all follow relationships.");
             var list = await _followRepository.GetAllFollows();
+            _logger.LogInformation("Retrieved {Count} follow relationships.", list.Count());
             return Ok(list);
         }
 
@@ -30,34 +35,47 @@ namespace VibeZOData.Controllers
         [HttpGet("{userId}/{artistId}")]
         public async Task<ActionResult<Follow>> GetFollowByIDs(Guid userId, Guid artistId)
         {
+            _logger.LogInformation("GetFollowByIDs called with UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
             var follow = await _followRepository.GetFollowById(userId, artistId);
             if (follow == null)
             {
+                _logger.LogWarning("Follow relationship not found for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
                 return NotFound("Follow relationship not found");
             }
+            _logger.LogInformation("Follow relationship found for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
             return Ok(follow);
         }
 
         // POST odata/Follow
-        [HttpPost]
-        public async Task<ActionResult> Post(Follow follow)
+        [HttpPost("/Follow")]
+        public async Task<ActionResult> Follow([FromForm]Guid userId, [FromForm]Guid artistId)
         {
-            await _followRepository.AddFollows(follow);
-            return CreatedAtAction(nameof(GetFollowByIDs), new { follow.UserId, follow.ArtistId }, follow);
+            _logger.LogInformation("Follow called to create follow relationship for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
+            var fl = new Follow
+            {
+                UserId = userId,
+                ArtistId = artistId,
+                CreateDate = DateOnly.FromDateTime(DateTime.Now)
+            };
+            await _followRepository.Add(fl);
+            _logger.LogInformation("Follow relationship created for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
+            return CreatedAtAction(nameof(GetFollowByIDs), new { fl.UserId, fl.ArtistId }, fl);
         }
 
         // PUT odata/Follow/User/{userId}/Artist/{artistId}
-        [HttpPut("{userId}/{artistId}")]
-        public async Task<ActionResult> Put(Guid userId, Guid artistId, Follow follow)
+        [HttpPut("/Unfollow/{userId}/{artistId}")]
+        public async Task<ActionResult> Put(Guid userId, Guid artistId)
         {
+            _logger.LogInformation("Unfollow called to update follow status for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
             var existingFollow = await _followRepository.GetFollowById(userId, artistId);
             if (existingFollow == null)
             {
+                _logger.LogWarning("Follow relationship not found for Unfollow with UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
                 return NotFound("Follow relationship not found");
             }
-            follow.UserId = userId;
-            follow.ArtistId = artistId;
-            await _followRepository.UpdateFollows(follow);
+            existingFollow.IsFollow = false;
+            await _followRepository.Update(existingFollow);
+            _logger.LogInformation("Follow relationship updated to unfollow for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
             return NoContent();
         }
 
@@ -65,12 +83,15 @@ namespace VibeZOData.Controllers
         [HttpDelete("{userId}/{artistId}")]
         public async Task<ActionResult> Delete(Guid userId, Guid artistId)
         {
+            _logger.LogInformation("Delete called to remove follow relationship for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
             var follow = await _followRepository.GetFollowById(userId, artistId);
             if (follow == null)
             {
+                _logger.LogWarning("Follow relationship not found for Delete with UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
                 return NotFound("Follow relationship not found");
             }
-            await _followRepository.DeleteFollows(userId, artistId);
+            await _followRepository.Delete(follow);
+            _logger.LogInformation("Follow relationship deleted for UserId: {UserId} and ArtistId: {ArtistId}.", userId, artistId);
             return NoContent();
         }
     }

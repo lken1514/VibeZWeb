@@ -5,6 +5,7 @@ namespace DataAccess
 {
     public class BlockedArtistDAO : SingletonBase<BlockedArtistDAO>
     {
+
         public async Task<IEnumerable<BlockedArtist>> GetAllArtist()
         {
             return await _context.BlockedArtists.AsNoTrackingWithIdentityResolution().ToListAsync();
