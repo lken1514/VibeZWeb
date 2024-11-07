@@ -1,59 +1,75 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import trackService from '../../services/trackService';
 import albumService from '../../services/albumService';
+import { FiEdit, FiTrash } from 'react-icons/fi';
 import './music.css';
 
 const MusicTab = () => {
+  const { albumId } = useParams();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('songs');
   const [tracks, setTracks] = useState([]);
-  const [albums, setAlbums] = useState([]); // State for albums
+  const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [loadingAlbums, setLoadingAlbums] = useState(false); // State for loading albums
-  const [error, setError] = useState(null);
-  const [isPlaying, setIsPlaying] = useState(null); // Track currently playing
+  const [loadingAlbums, setLoadingAlbums] = useState(false);
+  const [errorTracks, setErrorTracks] = useState(null); // Separate error state for tracks
+  const [errorAlbums, setErrorAlbums] = useState(null); // Separate error state for albums
+  const [isPlaying, setIsPlaying] = useState(null);
   const [currentTrack, setCurrentTrack] = useState(null);
   const audioRef = useRef(new Audio());
+  const a = '70507740-ce24-460e-8053-1bacb2b184f1';
 
   const showTab = (tab) => {
     setActiveTab(tab);
   };
 
-  useEffect(() => {
-    const fetchTracks = async () => {
-      setLoading(true);
-      try {
-        const data = await trackService.getAllTracks();
-        console.log("Fetched data:", data);
-        setTracks(data);
-      } catch (error) {
-        setError("Error fetching tracks");
-        console.error("Error fetching tracks:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
 
+  useEffect(() => {
     const fetchAlbums = async () => {
       setLoadingAlbums(true);
       try {
-        const data = await albumService.getAllAlbums(); // Fetch albums
+        const data = await albumService.getAllAlbums();
         console.log("Fetched albums:", data);
         setAlbums(data);
       } catch (error) {
-        setError("Error fetching albums");
+        setErrorAlbums("Error fetching albums");
         console.error("Error fetching albums:", error);
       } finally {
         setLoadingAlbums(false);
       }
     };
 
-    fetchAlbums(); // Fetch albums when component mounts
+    const fetchTracks = async () => {
+      //if (albumId) {
+      setLoading(true);
+      try {
+        const data = await trackService.getAllTracks();
+        console.log("Fetched tracks:", data);
+        setTracks(data);
+      } catch (error) {
+        setErrorTracks("Error fetching tracks");
+        console.error("Error fetching tracks:", error);
+      } finally {
+        setLoading(false);
+      }
+      //}
+    };
+
+    fetchAlbums();
     fetchTracks();
-  }, []);
+  }, [albumId]); // Fetch tracks when albumId changes
 
   const handlePlay = (track) => {
     if (currentTrack?.trackId !== track.trackId) {
-      audioRef.current.src = track.path; // Set the audio source to the track path
+      audioRef.current.src = track.path;
       audioRef.current.play();
       setCurrentTrack(track);
       setIsPlaying(true);
@@ -68,15 +84,29 @@ const MusicTab = () => {
   };
 
   useEffect(() => {
-    // Cleanup on component unmount
     return () => {
       audioRef.current.pause();
       audioRef.current.src = "";
     };
   }, []);
 
+  const handleEditAlbum = (albumId) => {
+    navigate(`/artistdashboard/music/album/${albumId}/edit`);
+  };
+  const handleDeleteAlbum = async (albumId) => {
+    try{
+      await trackService.deleteTracksByAlbumId(albumId);
+      await albumService.deleteAlbum(albumId);
+      setAlbums(albums.filter(album => album.id !== albumId));
+      alert("Album deleted successfully!");
+    }catch(error){
+      console.error("Error deleting album", error);
+      alert("Failed to delete album.");
+  };
+};
+
   return (
-    <div className="app-container"> {/* Thay body bằng div */}
+    <div className="app-container">
       <main id="music-section">
         <h2>Music</h2>
         <div className="tabs">
@@ -99,7 +129,7 @@ const MusicTab = () => {
             </div>
             <div className="table-container">
               {loading && <p>Loading songs...</p>}
-              {error && <p>Error: {error}</p>}
+              {errorTracks && <p>Error: {errorTracks}</p>}
               <table>
                 <thead>
                   <tr>
@@ -113,7 +143,11 @@ const MusicTab = () => {
                 </thead>
                 <tbody id="songs-data">
                   {tracks.map((track, index) => (
-                    <tr key={track.trackId}>
+                    <tr
+                      key={track.trackId}
+                      className={currentTrack?.trackId === track.trackId ? 'playing' : ''}
+                      onClick={() => handlePlay(track)}
+                    >
                       <td>{index + 1}</td>
                       <td>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -123,21 +157,9 @@ const MusicTab = () => {
                       </td>
                       <td>{track.genre || 'Unknown Genre'}</td>
                       <td>{track.listener || 0}</td>
+                      <td>{track.createDate ? formatDate(track.createDate) : 'N/A'}</td>
                       <td>
-                          {track.createDate ? 
-                            (() => {
-                              const date = new Date(track.createDate);
-                              const day = String(date.getDate()).padStart(2, '0'); // Ensure day is two digits
-                              const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-                              const year = date.getFullYear();
-                              return `${day}-${month}-${year}`; // Format as dd-mm-yyyy
-                            })() : 'N/A'}
-                        </td>
-                      <td>
-                        <audio className="audio-player"
-                          controls
-                          style={{ width: "100%" }}
-                        >
+                        <audio className="audio-player" controls style={{ width: "100%" }}>
                           <source src={track.path} type="audio/mpeg" />
                           Your browser does not support the audio element.
                         </audio>
@@ -162,8 +184,8 @@ const MusicTab = () => {
               </select>
             </div>
             <div className="table-container">
-            {loadingAlbums && <p>Loading albums...</p>}
-            {error && <p>Error: {error}</p>}
+              {loadingAlbums && <p>Loading albums...</p>}
+              {errorAlbums && <p>Error: {errorAlbums}</p>}
               <table>
                 <thead>
                   <tr>
@@ -171,20 +193,49 @@ const MusicTab = () => {
                     <th>Title</th>
                     <th>Release Date</th>
                     <th>Nation</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="albums-data">
-                  {/* Data will be populated here */}
                   {albums.map((album, index) => (
-                    <tr key={album.id}>
+                    <tr
+                      key={album.id}
+                      onClick={() => navigate(`/artistdashboard/music/album/${album.id}`)}
+                      style={{ cursor: 'pointer' }}
+                    >
                       <td>{index + 1}</td>
-                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <td>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
                           <img src={album.image} alt={album.name} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
                           <span>{album.name || 'Unknown Title'}</span>
                         </div>
-                      <td>{album.dateOfRelease ? 
-                        new Date(album.dateOfRelease).toLocaleDateString() : 'N/A'}</td>
+                      </td>
+                      <td>{album.dateOfRelease ? formatDate(album.dateOfRelease) : 'N/A'}</td>
                       <td>{album.nation || 'Unknown Nation'}</td>
+                      <td>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                          <FiEdit
+                            className="icon edit-icon"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleEditAlbum(album.id);
+                            }}
+                            style={{
+                              cursor: 'pointer',
+                            }}
+                          />
+                          <FiTrash
+                            className="icon delete-icon"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDeleteAlbum(album.id);
+                            }}
+                            style={{
+                              cursor: 'pointer',
+                            }}
+                          />
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

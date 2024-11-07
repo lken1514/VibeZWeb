@@ -26,12 +26,18 @@
     color: #b3b3b3;
 }
 
-.header-controls .time-frame{
+.header-controls {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between controls */
+}
+
+.header-controls .time-frame, .header-controls button {
     margin-right: 10px;
 }
 
 .header-controls select,
-.header-controls button {
+.header-controls button{
     background-color: #1db954;
     color: #ffffff;
     padding: 8px 12px;
@@ -41,8 +47,24 @@
 }
 
 .header-controls button:hover,
-.header-controls select:hover {
+.header-controls select:hover{
     background-color: #1ed760;
+}
+
+.common-button {
+    background-color: #1db954; /* Spotify green */
+    color: #ffffff; /* White text */
+    padding: 8px 12px; /* Consistent padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Same font size */
+
+    text-align: center; /* Center text */
+}
+
+.common-button:hover {
+    background-color: #1ed760; /* Lighter green on hover */
 }
 
 /* Stats grid styling */
@@ -105,7 +127,7 @@
 }
 
 /* Top songs and Upload section styling */
-.top-songs, .upload-songs {
+.top-songs{
     background-color: #282828;
     padding: 20px;
     border-radius: 8px;

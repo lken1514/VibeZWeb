@@ -33,49 +33,34 @@ const getAlbumsById = async (id) => {
 };
 
 // Function to create a new album
-const createAlbum = async (artistId, name, yy, mm, dd, image, nation) => {
-  const formData = new FormData();
-  formData.append('artistId', artistId);
-  formData.append('name', name);
-  formData.append('yy', yy);
-  formData.append('mm', mm);
-  formData.append('dd', dd);
-  formData.append('image', image);
-  formData.append('nation', nation);
-
-  try {
-    const response = await axios.post(`${API_URL}/CreateAlbum`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-    return response.data; // Return the created album data
-  } catch (error) {
-    console.error("Error creating album:", error.message || error);
-    throw new Error(
-      "Failed to create album: " + 
-      (error.response?.data?.message || error.message)
-    );
-  }
+const createAlbum = async (formData) => {
+    try {
+        const response = await axios.post(`${API_URL}/CreateAlbum`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error creating album:", error.message || error);
+        throw new Error(
+            "Failed to create album: " + 
+            (error.response?.data?.message || error.message)
+        );
+    }
 };
 
-// Function to update an existing album
-const updateAlbum = async (id, name, yy, mm, dd, image, nation) => {
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('yy', yy);
-  formData.append('mm', mm);
-  formData.append('dd', dd);
-  formData.append('image', image);
-  formData.append('nation', nation);
 
+
+// Function to update an existing album
+const updateAlbum = async (id, formData) => {
   try {
     const response = await axios.put(`${API_URL}/${id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     });
-    return response.data; // Return the updated album data
+    return response.data; 
   } catch (error) {
     console.error("Error updating album:", error.message || error);
     throw new Error(

@@ -29,6 +29,7 @@ const ProfilePage = () => {
             <MenuItem icon={<CreditCard size={20} />} text="Manage your subscription" />
             <MenuItem icon={<Grid size={20} />} text="Edit profile" />
             <MenuItem icon={<Gift size={20} />} text="Recover playlists" />
+            <MenuItem icon={<Grid size={20} />} text="Get Access Artist" />
           </Section>
 
           <Section title="Payment">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import StatsGrid from './SubComponent/StatsGrid';
 import ChartComponent from './SubComponent/ChartComponent';
 import TopSongs from './SubComponent/TopSongs';
-import UploadSongs from './SubComponent/UploadSongs';
+import CreateAlbum from './CreateAlbum';
 import './styles.css'
 
 const Dashboard = () => {
@@ -12,7 +12,7 @@ const Dashboard = () => {
         newFollowers: 23,
         unfollows: 3,
         newStreams: 83,
-        savedPlaylists: 25,
+        savedPlaylists: 25, 
         streamHours: 1396,
         topSongs: [
             { title: 'Song A', listeners: 25 },
@@ -41,15 +41,15 @@ const Dashboard = () => {
                         <option>Last 7 days</option>
                         <option>Last 28 days</option>
                     </select>
-                    <button>Download as CSV</button>
+                    <button className='button'>Download as CSV</button>
                     {/* <button>New dashboard</button> */}
+                    <CreateAlbum />
                 </div>
             </div>
             <StatsGrid data={data} />
             <div className="charts">
                 <ChartComponent chartData={data.chartData} />
                 <TopSongs songs={data.topSongs} />
-                <UploadSongs />
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ const API_URL = "https://localhost:7241/api/Track"; // Thay đổi theo địa c
 const getAllTrackByAlbumId = async (id) => {
   try {
     const response = await axios.get(`${API_URL}/Album/${id}`);
-    return response.data; // Trả về tên nghệ sĩ từ API
+    return response.data; 
   } catch (error) {
     console.error("Error fetching track:", error.message || error);
     throw new Error(
@@ -17,7 +17,7 @@ const getAllTrackByAlbumId = async (id) => {
 const getTrackById = async (id) => {
   try {
     const response = await axios.get(`${API_URL}/${id}`);
-    return response.data; // Trả về tên nghệ sĩ từ API
+    return response.data; 
   } catch (error) {
     console.error("Error fetching track:", error.message || error);
     throw new Error(
@@ -26,6 +26,20 @@ const getTrackById = async (id) => {
     );
   }
 };
+
+const getTrackByArtistId = async (id) => {
+  try {
+    const response = await anxious.get(`${API_URL}/Artist/${id}`);
+    return response.data;  // Trả về tên nghệ sĩ từ API
+  } catch (error) {
+    console.error("Error fetching track:", error.message || error);
+    throw new Error(
+      "Failed to fetch artist: " +
+        (error.response?.data?.message || error.message)
+    );
+  }
+};
+
 const getAllTracks = async () => {
   try {
     const response = await axios.get(`${API_URL}/all`);
@@ -39,35 +53,30 @@ const getAllTracks = async () => {
   }
 };
 
-//Add them CRUD ---------------------------------------------------------
-const createTrack = async (trackData) => {
+//---------------------------------------------------------------------------------------------------
+const createTrack = async (formData) => {
   try {
-    const formData = new FormData();
-    Object.keys(trackData).forEach(key => {
-      formData.append(key, trackData[key]);
-    });
-
+    // Make the POST request to the API to create the track
     const response = await axios.post(`${API_URL}/upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
-      }
+      },
     });
-    
+
+    // Return the response data (e.g., track information)
     return response.data;
   } catch (error) {
     console.error("Error creating track:", error.message || error);
     throw new Error(
-      "Failed to create track: " + (error.response?.data?.message || error.message)
+      "Failed to create track: " + 
+      (error.response?.data?.message || error.message)
     );
   }
 };
 
-const updateTrack = async (id, trackData) => {
+
+const updateTrack = async (id, formData) => {
   try {
-    const formData = new FormData();
-    Object.keys(trackData).forEach(key => {
-      formData.append(key, trackData[key]);
-    });
 
     const response = await axios.put(`${API_URL}/${id}`, formData, {
       headers: {
@@ -89,6 +98,18 @@ const deleteTrack = async (id) => {
     await axios.delete(`${API_URL}/${id}`);
     return "Track deleted successfully";
   } catch (error) {
+    console.error("Error deleting track:", error.message || error);
+    throw new Error(
+      "Failed to delete track: " + (error.response?.data?.message || error.message)
+    );
+  }
+};
+
+const deleteTracksByAlbumId = async (id) => {
+  try{
+    await axios.delete(`${API_URL}/Album/${id}`);
+    return "Track deleted successfully";
+  }catch (error) {
     console.error("Error deleting track:", error.message || error);
     throw new Error(
       "Failed to delete track: " + (error.response?.data?.message || error.message)
@@ -166,9 +187,14 @@ const fetchRecommendations = async (clickedTrackId) => {
 // Xuất các service
 export default {
   getAllTrackByAlbumId,
+  getTrackByArtistId,
   getTrackById,
   getAllTracks,
   getRecentlyPlayedTracks,
   fetchRecommendations,
-  UpdateListener
+  UpdateListener,
+  createTrack,
+  updateTrack,
+  deleteTrack,
+  deleteTracksByAlbumId,
 };
