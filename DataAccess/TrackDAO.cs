@@ -29,6 +29,23 @@ namespace DataAccess
             }
             return list;
         }
+
+        public async Task<IEnumerable<Track>> GetAllTrackByArtistId(Guid artistId)
+        {
+            var list = await _context.Tracks
+                .Where(u => u.ArtistId == artistId)
+                .AsNoTracking()
+                .OrderBy(track => track.CreateDate)
+                .ToListAsync();
+            if (list == null) return null;
+            foreach(var track in list)
+            {
+                await _context.Entry(track)
+                    .Reference(t => t.Artist)
+                    .LoadAsync();
+            }
+            return list;
+        }
         
 
         public async Task<Track> GetTrackById(Guid trackId)
@@ -119,19 +136,79 @@ namespace DataAccess
 
             await _context.SaveChangesAsync();
         }
-        public async Task Update(Track track)
+
+        public async Task Update(Track updatedTrack)
         {
-            _context.Entry(track).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            try
+            {
+                var track = await _context.Tracks.FindAsync(updatedTrack.TrackId);
+
+                if (track == null)
+                {
+                    throw new KeyNotFoundException($"Track with ID {updatedTrack.TrackId} not found.");
+                }
+
+                track.AlbumId = updatedTrack.AlbumId;
+                track.CategoryId = updatedTrack.CategoryId;
+                track.Name = updatedTrack.Name;
+                track.Lyrics = updatedTrack.Lyrics;
+                track.Genre = updatedTrack.Genre;
+                track.Time = updatedTrack.Time;
+                track.Path = updatedTrack.Path;
+                track.Image = updatedTrack.Image;
+                track.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
+
+                _context.Entry(track).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error updating track: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.Error.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                throw; 
+            }
         }
+
+
 
         public async Task Delete(Track track)
         {
+            // Detach the track entity if it's being tracked
+            if (_context.Entry(track).State != EntityState.Detached)
+            {
+                _context.Entry(track).State = EntityState.Detached;
+            }
+
+            // Detach related entities (e.g., Artist)
+            if (track.Artist != null && _context.Entry(track.Artist).State != EntityState.Detached)
+            {
+                _context.Entry(track.Artist).State = EntityState.Detached;
+            }
+
+            // Clear the change tracker to ensure no entities are tracked after deletion
+            _context.ChangeTracker.Clear();
 
             _context.Tracks.Remove(track);
             await _context.SaveChangesAsync();
-
         }
+
+        public async Task DeleteTrackByAlbumId(Guid albumId)
+        {
+            var tracks = await _context.Tracks
+                                        .Where(t => t.AlbumId == albumId)
+                                        .AsNoTracking()
+                                        .ToListAsync();
+
+            if (!tracks.Any()) return;
+
+            _context.Tracks.RemoveRange(tracks);
+            await _context.SaveChangesAsync();
+        }
+
         // Gợi ý dựa trên thể loại và nghệ sĩ của các bài hát đã nghe gần đây
         public async Task<IEnumerable<Track>> RecommendSongsBasedOnRecentTracks(List<Guid> recentlyPlayedIds)
         {

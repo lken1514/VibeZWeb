@@ -17,7 +17,7 @@ using VibeZOData.Services;
 
 namespace VibeZOData.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Track")]
     [ApiController]
     public class TrackController(ITrackRepository _trackRepository, IMapper _mapper, IAzuriteService _azure, ILogger<TrackController> _logger, IFollowRepository _followRepository, INotificationService _notificationService) : ControllerBase
     {
@@ -103,14 +103,33 @@ namespace VibeZOData.Controllers
             var trackDTO = _mapper.Map<Track, TrackDTO>(track);
             return Ok(trackDTO);
         }
+        [HttpGet("Artist/{artistId}", Name = "GetTrackByArtistId")]
+        public async Task<ActionResult<IEnumerable<TrackDTO>>> GetAllTrackByArtistId(Guid artistId)
+        {
+            _logger.LogInformation($"Fetching tracks by artistId {artistId}");
+
+            var track = await _trackRepository.GetAllTrackByArtistId(artistId);
+            var trackDTO = track.Select(
+                tck => _mapper.Map<Track, TrackDTO>(tck));
+            _logger.LogInformation($"Found {trackDTO.Count()} tracks for artistId {artistId}");
+            return Ok(trackDTO);
+        }
 
         // POST api/<TrackController>
         [HttpPost("upload", Name = "CreateTrack")]
         [Consumes("multipart/form-data")]
 
-        public async Task<ActionResult> CreateTrack(Guid? AlbumId,
-            Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour,[FromQuery] int minute, [FromQuery]int section, Guid artistId,
-            IFormFile path, IFormFile image)
+        public async Task<ActionResult> CreateTrack([FromForm] Guid? AlbumId,
+    [FromForm] Guid? CategoryId,
+    [FromForm] string TrackName,
+    [FromForm] string Lyrics,
+    [FromForm] string Genre,
+    [FromForm] int hour,
+    [FromForm] int minute,
+    [FromForm] int second,
+    [FromForm] Guid artistId,
+    [FromForm] IFormFile path,
+    [FromForm] IFormFile image)
         {
             _logger.LogInformation("Creating new track");
 
@@ -125,11 +144,11 @@ namespace VibeZOData.Controllers
                 _logger.LogWarning("Path or image file is missing");
                 return BadRequest();
             }
-            if (minute < 0 || minute > 59 || section < 0 || section > 59)
+            if (minute < 0 || minute > 59 || second < 0 || second > 59)
             {
                 return BadRequest("Invalid time values.");
             }
-            var trackTime = new TimeOnly(0, minute, section);
+            var trackTime = new TimeOnly(0, minute, second);
             var pathUrl = await _azure.UploadFileAsync(path);
             var imageUrl = await _azure.UploadFileAsync(image);
 
@@ -156,9 +175,18 @@ namespace VibeZOData.Controllers
         // PUT api/<TrackController>/5
         [HttpPut("{id}", Name = "UpdateTrack")]
         [Consumes("multipart/form-data")]
-        public async Task<ActionResult> UpdateTrack(Guid id, Guid? AlbumId, 
-             Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour, int minute, int section, Guid artistId,
-            IFormFile? path, IFormFile? image)
+        public async Task<ActionResult> UpdateTrack(Guid id,
+    [FromForm] Guid? AlbumId,
+    [FromForm] Guid? CategoryId,
+    [FromForm] string TrackName,
+    [FromForm] string Lyrics,
+    [FromForm] string Genre,
+    [FromForm] int hour,
+    [FromForm] int minute,
+    [FromForm] int second,
+    //[FromForm] Guid artistId,
+    [FromForm] IFormFile? path,
+    [FromForm] IFormFile? image)
         {
             _logger.LogInformation($"Updating track with id {id}");
 
@@ -181,7 +209,7 @@ namespace VibeZOData.Controllers
             {
                 return BadRequest("Invalid time values.");
             }
-            var trackTime = new TimeOnly(0, minute, section);
+            var trackTime = new TimeOnly(0, minute, second);
             track.AlbumId = AlbumId;
             track.CategoryId = CategoryId;
             track.Name = TrackName;
@@ -189,7 +217,7 @@ namespace VibeZOData.Controllers
             track.Genre = Genre;
             track.Time = trackTime;
             track.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
-            track.ArtistId = artistId;
+            //track.ArtistId = artistId;
             await _trackRepository.UpdateTrack(track);
             _logger.LogInformation($"Track with id {id} has been updated");
 
@@ -218,6 +246,25 @@ namespace VibeZOData.Controllers
             return NoContent();
         }
 
+        [HttpDelete("Album/{albumId}")]
+        public async Task<ActionResult> DeleteTracksByAlbumId(Guid albumId)
+        {
+            try { 
+            _logger.LogInformation($"Deleting tracks by albumId {albumId}");
+
+            await _trackRepository.DeleteTrackByAlbumId(albumId);
+
+            _logger.LogInformation($"Tracks by albumId {albumId} have been deleted");
+            }catch (Exception ex)
+            {
+                _logger.LogError(ex, $"An error occurred while deleting tracks for albumId {albumId}");
+                // Trả về lỗi thích hợp cho client
+                return StatusCode(500, "An error occurred while deleting tracks.");
+            }
+
+            return NoContent();
+        }
+
         [HttpPut("UpdateListener/{id}")]
         public async Task<ActionResult> UpdateListener(Guid id)
         {
@@ -234,30 +281,5 @@ namespace VibeZOData.Controllers
             return NoContent();
         }
 
-        //[HttpPost("approve/{id}")]
-        //public async Task<ActionResult> ApproveTrack(Guid id)
-        //{
-        //    _logger.LogInformation($"Approving track with id {id}");
-        //    var track = await _trackRepository.GetTrackById(id);
-        //    if (track == null)
-        //    {
-        //        _logger.LogWarning($"Track with id {id} not found for approval");
-        //        return NotFound("Track not found");
-        //    }
-        //    if (!track.PendingApproval)
-        //    {
-        //        return BadRequest("Track is already approved");
-        //    }
-        //    track.PendingApproval = false;
-        //    await _trackRepository.UpdateTrack(track);
-        //    _logger.LogInformation($"Track with id {id} has been approved");
-
-        //    var followers = await _followRepository.GetFollowById(track.ArtistId);
-        //    foreach (var followeId in followers)
-        //    {
-        //        await _notificationService.SendNotificationAsync(followeId, "New Track Released", track.Name);
-        //    }
-        //    return NoContent();
-        //}
     }
 }

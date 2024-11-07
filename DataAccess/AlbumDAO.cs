@@ -33,15 +33,36 @@ namespace DataAccess
 
         public async Task Update(Album album)
         {
-            _context.Attach(album);
-            _context.Entry(album).State = EntityState.Modified;
+            var existingAlbum = await _context.Albums.FirstOrDefaultAsync(a => a.Id == album.Id);
+            if (existingAlbum == null)
+            {
+                throw new InvalidOperationException("Album không tồn tại.");
+            }
+
+            existingAlbum.Name = album.Name;
+            existingAlbum.DateOfRelease = album.DateOfRelease;
+            existingAlbum.Nation = album.Nation;
+            if (album.Image != null)
+            {
+                existingAlbum.Image = album.Image;
+            }
+
             await _context.SaveChangesAsync();
         }
 
+
         public async Task Delete(Album album)
         {
-            _context.Albums.Remove(album);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Albums.Remove(album);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.InnerException?.Message ?? ex.Message);
+                throw;
+            }
         }
     }
 

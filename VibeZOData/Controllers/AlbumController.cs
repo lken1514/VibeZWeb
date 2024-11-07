@@ -55,7 +55,7 @@ namespace VibeZOData.Controllers
 
         // POST api/<ValuesController>
         [HttpPost("CreateAlbum", Name = "CreateAlbum")]
-        public async Task<ActionResult> CreateAlbum(Guid? artistId, string name, int yy, int mm, int dd, IFormFile? image, string nation)
+        public async Task<ActionResult> CreateAlbum([FromForm] Guid? artistId, [FromForm] string name, [FromForm] int yy, [FromForm] int mm, [FromForm] int dd, [FromForm] IFormFile? image, [FromForm] string nation)
         {
             _logger.LogInformation("Creating new album");
             if (!ModelState.IsValid)
@@ -90,7 +90,13 @@ namespace VibeZOData.Controllers
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}", Name = "UpdateAlbum")]
-        public async Task<ActionResult> Updatealbum(Guid id,string name, int yy, int mm, int dd,  IFormFile? image, string nation)
+        public async Task<ActionResult> Updatealbum(Guid id,
+        [FromForm] string name,
+        [FromForm] int yy,
+        [FromForm] int mm,
+        [FromForm] int dd,
+        [FromForm] IFormFile? image,
+        [FromForm] string nation)
         {
             _logger.LogInformation($"Updating album with id {id}");
 

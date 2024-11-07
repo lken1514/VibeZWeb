@@ -54,7 +54,7 @@ public sealed class AzuriteService(ResiliencePipelineProvider<string> pipeline, 
         await _policy.ExecuteAsync(
            async token => await blobClient.UploadAsync(
                file.OpenReadStream(),
-               new BlobHttpHeaders { ContentType = file.ContentType },
+               new BlobHttpHeaders { ContentType = file.ContentType, CacheControl = "no-cache" },
                cancellationToken: token),
            cancellationToken);
         return blobClient.Uri.ToString();
