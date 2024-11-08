@@ -59,7 +59,7 @@ const ProfilePage = () => {
               <MenuItem icon={<CreditCard size={20} />} text="Manage your subscription" />
               <MenuItem icon={<Grid size={20} />} text="Edit profile" onClick={handleEditProfile} />
               <MenuItem icon={<Gift size={20} />} text="Recover playlists" />
-              {userInfo?.role == 'Admin' && (
+              {userInfo && userInfo.role === 'Admin' && (
                 <MenuItem icon={<Gift size={20} />} text="Admin Management" onClick={() => navigate('/admin')} />
               )}
             </Section>

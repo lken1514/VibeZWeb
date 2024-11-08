@@ -73,4 +73,34 @@ const registerService = async (name, username, email, password) => {
     }
 };
 
-export default { authServices, registerService, responseGoogle, updatePremiumStatus };
+const forgotPassword = async (email) => {
+  try {
+      const response = await axios.post(`${API_URL}/forgot-password`, { email });
+      return response.status === 200 ? response.data : null;
+  } catch (error) {
+      console.error("Forgot Password error:", error.message || error);
+      throw new Error("Failed to send password reset email: " + (error.response?.data || error.message));
+  }
+};
+
+const verifyOtp = async (email, otp) => {
+  try {
+      const response = await axios.post(`${API_URL}/verify-otp`, { email, otp });
+      return response.status === 200 ? response.data : null;
+  } catch (error) {
+      console.error("OTP Verification error:", error.message || error);
+      throw new Error("OTP verification failed: " + (error.response?.data || error.message));
+  }
+};
+
+const resetPassword = async (email, otp, newPassword) => {
+  try {
+      const response = await axios.post(`${API_URL}/reset-password`, { email, otp, newPassword });
+      return response.status === 200 ? response.data : null;
+  } catch (error) {
+      console.error("Password Reset error:", error.message || error);
+      throw new Error("Password reset failed: " + (error.response?.data || error.message));
+  }
+};
+
+export default { authServices, registerService, responseGoogle, updatePremiumStatus, forgotPassword, verifyOtp, resetPassword };

@@ -14,18 +14,22 @@ import PremiumPage from './components/PaymentForm/PremiumPage';
 import PurchasePage from './components/PaymentForm/PurchasePage';
 
 import AdminDashboard from './pages/AdminDashboard';
-import AdminDisplayBan from './components/AdminDisplayBan';
-import AdminDisplayArtist from './components/AdminDisplayArtist';
-import AdminDisplayApproval from './components/AdminDisplayApproval';
-import AdminDisplayHome from './components/AdminDisplayHome';
+import AdminDisplayBan from './components/AdminDashboard/AdminDisplayBan';
+import AdminDisplayArtist from './components/AdminDashboard/AdminDisplayArtist';
+import AdminDisplayApproval from './components/AdminDashboard/AdminDisplayApproval';
+import AdminDisplayHome from './components/AdminDashboard/AdminDisplayHome';
 import ProfileEdit from './components/ProfileEdit';
 
-import ArtistDashboard from './components/ArtistDashboard/ArtistDashboard'; 
-import ArtistHome from './components/ArtistDashboard/ArtistHome'; 
-import ArtistMusicTab from './components/ArtistDashboard/ArtistMusicTab'; 
-import ArtistProfile from './components/ArtistDashboard/ArtistProfile'; 
-import DisplayProfile from './components/DisplayProfile';
+import ArtistDashboard from './components/ArtistDashboard/ArtistDashboard';
+import ArtistHome from './components/ArtistDashboard/ArtistHome';
+import ArtistMusicTab from './components/ArtistDashboard/ArtistMusicTab';
+import ArtistProfile from './components/ArtistDashboard/ArtistProfile';
 
+import ForgotPass from './components/ForgotPassword/ForgotPass';
+import NewPassword from './components/ForgotPassword/NewPass';
+import Verification from './components/ForgotPassword/Verification';
+import SyncSong from './components/SyncSong';
+import IdentitySong from './components/IdentitySong'
 function App() {
   const router = createBrowserRouter([
     {
@@ -42,6 +46,10 @@ function App() {
             { path: 'artist/:id', element: <DisplayArtist /> },
             { path: 'search', element: <DisplaySearch /> },
             { path: 'user/:id', element: <DisplayProfile /> },
+            {
+              path: '/lyrics',
+              element: <SyncSong />,
+            }
           ],
         },
       ],
@@ -71,6 +79,10 @@ function App() {
       element: <PurchasePage />,
     },
     {
+      path: '/identity',
+      element: <IdentitySong />,
+    },
+    {
       path: '/admin',
       element: <AdminDashboard />,
       children: [
@@ -98,13 +110,28 @@ function App() {
     },
     {
       path: '/artistdashboard',
-          element: <ArtistDashboard />, // New artist dashboard
-          children: [
-            { index: true, element: <ArtistHome /> }, // Default to ArtistHome
-            { path: 'home', element: <ArtistHome /> },
-            { path: 'music', element: <ArtistMusicTab /> },
-            { path: 'profile', element: <ArtistProfile /> },
-          ],
+      element: <ArtistDashboard />, // New artist dashboard
+      children: [
+        { index: true, element: <ArtistHome /> }, // Default to ArtistHome
+        { path: 'home', element: <ArtistHome /> },
+        { path: 'music', element: <ArtistMusicTab /> },
+        { path: 'profile', element: <ArtistProfile /> },
+      ],
+    },
+    {
+      path: '/Forgot',
+      element: <ForgotPass />,
+    },
+    {
+      path: '/NewPass',
+      element: <NewPassword />,
+    },
+    {
+      path: '/verify',
+      element: <Verification />,
+    },
+    {
+
     }
   ]);
 

@@ -6,7 +6,7 @@ const TopSongs = ({ songs }) => (
         <div id="song-list" className="song-list" role="list">
             {songs.map((song, index) => (
                 <div key={index} className="song-item" role="listitem">
-                    <strong>{song.title}</strong> - {song.listeners} listeners
+                    <strong>{song.name}</strong> - {song.listener} listeners
                 </div>
             ))}
         </div>

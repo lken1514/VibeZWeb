@@ -1,29 +1,30 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
-
 Chart.register(...registerables);
 
 const ChartComponent = ({ chartData }) => {
     const chartRef = useRef(null);
+    const chartInstance = useRef(null); // Dùng để lưu trữ instance của biểu đồ
 
     useEffect(() => {
         const ctx = chartRef.current.getContext('2d');
-        new Chart(ctx, {
+
+        // Kiểm tra và hủy instance cũ trước khi tạo instance mới
+        if (chartInstance.current) {
+            chartInstance.current.destroy();
+        }
+
+        // Tạo một instance mới của Chart và lưu vào chartInstance.current
+        chartInstance.current = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: chartData.labels,
                 datasets: [
                     {
-                        label: 'Men',
+                        label: 'User',
                         data: chartData.men,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
-                    },
-                    {
-                        label: 'Women',
-                        data: chartData.women,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
                     },
                 ],
             },
@@ -35,6 +36,13 @@ const ChartComponent = ({ chartData }) => {
                 },
             },
         });
+
+        // Hủy instance khi component bị unmount
+        return () => {
+            if (chartInstance.current) {
+                chartInstance.current.destroy();
+            }
+        };
     }, [chartData]);
 
     return (

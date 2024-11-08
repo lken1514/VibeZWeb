@@ -68,9 +68,6 @@ const LoginComponent = () => {
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="password-toggle">
-                <img src={showIcon} alt="Show" />
-              </button>
             </div>
             <button className="login-button" onClick={handleLogin}>Login</button>
             <div className="google-login">
