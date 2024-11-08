@@ -10,6 +10,7 @@ import { LoginContext } from '../context/LoginContext';
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import searchService from '../services/searchService';
+import IdentitySong from './IdentitySong';
 
 
 
@@ -56,7 +57,7 @@ const Navbar = () => {
           <a className='text-[30px] text-white font-semibold ml-4'>VibeZ</a>
         </div>
         <div className='absolute inset-0 flex justify-center items-center '>
-          <div className='w-[40%] h-[100%]  flex justify-center items-center'>
+          <div className='w-[45%] h-[100%]  flex justify-center items-center'>
             <form className='relative flex w-[100%] h-[100%] items-center justify-center' action="">
               <div className='mr-[2%] text-white cursor-pointer text-[20px] hover:text-[25px]' onClick={() => navigate('/')}>
                 <FontAwesomeIcon icon={faHouse} />
@@ -65,13 +66,17 @@ const Navbar = () => {
                 <img className='w-[50%]' src={assets.search_icon} alt="" />
               </div>
               <div className='w-7/12 h-[55%]'>
-                <input className='w-[100%] h-full rounded-[100px] bg-[#2A2A2A] text-[14px] text-white pl-[14%] py-[2%]'
+                <input className='w-[95%] h-full rounded-[100px] bg-[#2A2A2A] text-[14px] text-white pl-[14%] py-[2%]'
                   type="search"
                   placeholder='What do you want to play?'
                   autoComplete='on'
                   value={searchTerm}
                   onFocus={() => navigate('search')}
                   onChange={handleSearch} />
+              </div>
+              <div >
+                <IdentitySong />
+
               </div>
             </form>
           </div>

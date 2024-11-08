@@ -29,6 +29,7 @@ import ForgotPass from './components/ForgotPassword/ForgotPass';
 import NewPassword from './components/ForgotPassword/NewPass';
 import Verification from './components/ForgotPassword/Verification';
 import SyncSong from './components/SyncSong';
+import IdentitySong from './components/IdentitySong'
 function App() {
   const router = createBrowserRouter([
     {
@@ -75,6 +76,10 @@ function App() {
     {
       path: '/purchase',
       element: <PurchasePage />,
+    },
+    {
+      path: '/identity',
+      element: <IdentitySong />,
     },
     {
       path: '/admin',
