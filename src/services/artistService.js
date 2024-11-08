@@ -111,13 +111,9 @@ const unfollow = async (userId, artistId) => {
 };
 
 const getFollowArtist = async (libId, artistId) => {
-  try {
     const response = await axios.get(`https://localhost:7241/api/Library_Artist/${libId}/${artistId}`);
     return response.status === 200 ? "Ok" : null;
-  } catch (error) {
-    console.error("Error fetching follow status for artist:", error.message || error);
-    throw new Error("Failed to fetch follow status: " + (error.response?.data?.message || error.message));
-  }
+  
 };
 
 export default {
