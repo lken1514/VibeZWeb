@@ -15,6 +15,6 @@ namespace Repositories.Repository
         public async Task<Library_Artist> GetArtistById(Guid artistId, Guid LibraryId) => await Library_ArtistDAO.Instance.GetArtistById(artistId, LibraryId);
         public async Task Add(Library_Artist library_Artist) => await Library_ArtistDAO.Instance.Add(library_Artist);
         public async Task Update(Library_Artist library_Artist) => await Library_ArtistDAO.Instance.Update(library_Artist);
-        public async Task Delete(Guid artist, Guid libraryId) => await Library_ArtistDAO.Instance.Delete(artist, libraryId);
+        public async Task Delete(Guid artistId, Guid libraryId) => await Library_ArtistDAO.Instance.Delete(artistId, libraryId);
     }
 }

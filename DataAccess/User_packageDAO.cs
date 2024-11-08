@@ -10,27 +10,50 @@ namespace DataAccess
 {
     public class UserPackageDAO : SingletonBase<UserPackageDAO>
     {
+
         public async Task<IEnumerable<User_package>> GetAllUserPackages()
         {
+            using var _context = new VibeZDbContext();
             return await _context.U_packages.ToListAsync();
         }
 
-        public async Task<User_package> GetUserPackageById(Guid userId, Guid packId)
+        public async Task<User_package> GetUserPackageById(Guid id)
         {
-            var userPackage = await _context.U_packages.FirstOrDefaultAsync(up => up.UserId == userId && up.PackId == packId);
+            using var _context = new VibeZDbContext();
+            var userPackage = await _context.U_packages.FirstOrDefaultAsync(x => x.Id == id);
+            if (userPackage == null) return null;
+            return userPackage;
+        }
+        public async Task<IEnumerable<User_package>> GetPackageByUserId(Guid userId)
+        {
+            using var _context = new VibeZDbContext();
+
+            var userPackage = await _context.U_packages.Where(x => x.UserId == userId).AsNoTracking().ToListAsync();
+            if (userPackage == null) return null;
+            return userPackage;
+        }
+        public async Task<IEnumerable<User_package>> GetPackageByPackageId(Guid packId)
+        {
+            using var _context = new VibeZDbContext();
+
+            var userPackage = await _context.U_packages.Where(x => x.PackageId == packId).AsNoTracking().ToListAsync();
             if (userPackage == null) return null;
             return userPackage;
         }
 
         public async Task Add(User_package userPackage)
         {
+            using var _context = new VibeZDbContext();
+
             await _context.U_packages.AddAsync(userPackage);
             await _context.SaveChangesAsync();
         }
 
         public async Task Update(User_package userPackage)
         {
-            var existingItem = await GetUserPackageById(userPackage.UserId, userPackage.PackId);
+            using var _context = new VibeZDbContext();
+
+            var existingItem = await GetUserPackageById(userPackage.Id);
             if (existingItem != null)
             {
                 _context.Entry(existingItem).CurrentValues.SetValues(userPackage);
@@ -42,9 +65,11 @@ namespace DataAccess
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(Guid userId, Guid packId)
+        public async Task Delete(Guid id)
         {
-            var userPackage = await GetUserPackageById(userId, packId);
+            using var _context = new VibeZDbContext();
+
+            var userPackage = await GetUserPackageById(id);
             if (userPackage != null)
             {
                 _context.U_packages.Remove(userPackage);

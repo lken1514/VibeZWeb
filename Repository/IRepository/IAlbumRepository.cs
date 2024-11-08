@@ -15,5 +15,7 @@ namespace Repositories.IRepository
         Task AddAlbum(Album album);
         Task UpdateAlbum(Album album);
         Task DeleteAlbum(Album album);
+        Task<int> TotalAlbum();
+        Task<int> CountAlbum(Guid artistId);
     }
 }

@@ -10,6 +10,7 @@ namespace DataAccess
 {
     public class FollowDAO : SingletonBase<FollowDAO>
     {
+
         public async Task<IEnumerable<Follow>> GetAllFollows()
         {
             return await _context.Follows.ToListAsync();

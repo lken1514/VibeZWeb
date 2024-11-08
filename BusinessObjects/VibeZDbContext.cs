@@ -1,11 +1,13 @@
 ﻿using BusinessObjects.Data.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace BusinessObjects
 {
     public class VibeZDbContext : DbContext
     {
+
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Follow> Follows { get; set; }
         public virtual DbSet<BlockedArtist> BlockedArtists { get; set; }
@@ -25,17 +27,31 @@ namespace BusinessObjects
         public virtual DbSet<Library_Album> Library_Albums { get; set; }
         public virtual DbSet<Library_Playlist> Library_Playlists { get; set; }
         public virtual DbSet<Library_Artist> Library_Artists { get; set; }
+        public virtual DbSet<TrackListener> TrackListeners { get; set; }
+        public virtual DbSet<ArtistFollow> ArtistFollows { get; set; }
 
+
+        public VibeZDbContext(DbContextOptions options) : base(options)
+        {
+
+        }
+        public VibeZDbContext()
+        {
+
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
             var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true);
+               .SetBasePath(Directory.GetCurrentDirectory())
+              .AddJsonFile("appsettings.json", true, true);
             IConfigurationRoot configuration = builder.Build();
             optionsBuilder.UseSqlServer(configuration.
                 GetConnectionString("VibeZDB"));
+            optionsBuilder.EnableSensitiveDataLogging();
+
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PlaylistConfiguration());
@@ -47,6 +63,7 @@ namespace BusinessObjects
             modelBuilder.ApplyConfiguration(new Library_AlbumConfiguration());
             modelBuilder.ApplyConfiguration(new Library_PlaylistConfiguration());
             modelBuilder.ApplyConfiguration(new Library_ArtistConfiguration());
+            modelBuilder.ApplyConfiguration(new TrackPlaylistConfiguration());
 
         }
     }

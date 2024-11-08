@@ -11,7 +11,7 @@ namespace VibeZOData.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TrackPlaylistController(ITracksPlaylistRepository _trackPlaylistRepository, ILogger _logger, IMapper _mapper) : ControllerBase
+    public class TrackPlaylistController(ITracksPlaylistRepository _trackPlaylistRepository, ILogger<TrackPlaylistController> _logger, IMapper _mapper) : ControllerBase
     {
         [HttpGet("all", Name = "GetAllTrackPlayList")]
         public async Task<ActionResult<IEnumerable<TrackPlayListDTO>>> GetAllTrackPlayLists()
@@ -41,23 +41,66 @@ namespace VibeZOData.Controllers
             return Ok(trackPlaylistDto);
         }
 
-
-        // POST api/<TrackPlaylistController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Create(Guid playlistId, Guid trackId)
         {
+            _logger.LogInformation("Creating new playlist_track relationship");
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid model state for new playlist_track relationship creation");
+                return BadRequest(ModelState);
+            }
+
+            var playlist_track = new Track_Playlist
+            {
+                PlaylistId = playlistId,
+                TrackId = trackId,
+            };
+
+            await _trackPlaylistRepository.AddTracksPlaylist(playlist_track);
+            _logger.LogInformation($"playlist_track relationship created between playlistId {playlistId} and trackId {trackId}");
+            return Ok();
         }
 
-        // PUT api/<TrackPlaylistController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT api/Library_Artist/{libId}/{artistId}
+        //[HttpPut("{playlistId}/{trackId}")]
+        //public async Task<ActionResult> Put(Guid playlistId, Guid trackId, [FromBody] Track_Playlist track_Playlist)
+        //{
+        //    _logger.LogInformation($"Updating Library_Artist relationship for LibraryId: {libId} and ArtistId: {artistId}");
 
-        // DELETE api/<TrackPlaylistController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        //    var existingLibArtist = await _library_ArtistRepository.GetArtistById(artistId, libId);
+        //    if (existingLibArtist == null)
+        //    {
+        //        _logger.LogWarning($"Library_Artist relationship for LibraryId {libId} and ArtistId {artistId} not found");
+        //        return NotFound();
+        //    }
+
+        //    existingLibArtist.LibraryId = updatedLibArtist.LibraryId;
+        //    existingLibArtist.ArtistId = updatedLibArtist.ArtistId;
+
+        //    await _library_ArtistRepository.Update(existingLibArtist);
+        //    _logger.LogInformation($"Library_Artist relationship for LibraryId {libId} and ArtistId {artistId} updated");
+
+        //    return Ok(existingLibArtist);
+        //}
+
+        // DELETE api/Library_Artist/{libId}/{artistId}
+        [HttpDelete("{playlistId}/{trackId}")]
+        public async Task<ActionResult> Delete(Guid playlistId, Guid trackId)
         {
+            _logger.LogInformation($"Deleting track_playlist relationship for trackId: {trackId} and playlistId: {playlistId}");
+
+            var track_Playlist = await _trackPlaylistRepository.GetTracksPlaylistById(trackId, playlistId);
+            if (track_Playlist == null)
+            {
+                _logger.LogWarning($"track_playlist relationship for playlistId {playlistId} and trackId {trackId} not found");
+                return NotFound();
+            }
+
+            await _trackPlaylistRepository.DeleteTracksPlaylist(track_Playlist);
+            _logger.LogInformation($"track_playlist relationship for playlistId {playlistId} and trackId {trackId} deleted");
+
+            return Ok();
         }
     }
 }

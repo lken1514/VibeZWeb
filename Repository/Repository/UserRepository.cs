@@ -14,12 +14,17 @@ namespace Repositories.Repository
     public class UserRepository : IUserRepository
     {
         private readonly ILibraryRepository _libraryRepository;
-
+        private readonly VibeZDbContext _context;
         public UserRepository(ILibraryRepository libraryRepository)
         {
-            _libraryRepository = libraryRepository;
+            _context = new VibeZDbContext();
+            _libraryRepository = libraryRepository ?? throw new ArgumentNullException(nameof(libraryRepository));
         }
 
+        public async Task<int> TotalUser()
+        {
+            return await Task.FromResult(_context.Users.Count());
+        }
         public async Task<IEnumerable<User>> GetAllUsers()
         {
             return await UserDAO.Instance.GetAllUsers();

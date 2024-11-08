@@ -17,6 +17,8 @@ namespace BusinessObjects
         public virtual Guid ArtistId { get; set; }
         [JsonIgnore]
         public virtual Artist Artist { get; set; } = null!;
+        public bool IsFollow { get; set; } = true;
+
 
     }
 }
