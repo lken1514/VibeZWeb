@@ -8,6 +8,7 @@ import { extractColors } from 'extract-colors';
 import img1 from '../assets/img1.jpg';
 import img2 from '../assets/img2.jpg';
 import img3 from '../assets/img3.jpg';
+import img4 from '../assets/img4.jpg';
 function DisplayProfile() {
     const { userId } = useParams();
     const [firstHex, setFirstHex] = useState('#000000');
@@ -20,7 +21,7 @@ function DisplayProfile() {
             name: 'PhongNguyen',
             playlistCount: 2,
             followingCount: 11,
-            img: img3
+            img: img2
         };
         const fetchedPageData = {
             topArtists: [
@@ -62,7 +63,7 @@ function DisplayProfile() {
             <div
                 className="flex space-x-4 items-center w-full h-72 rounded-lg p-8"
                 style={{
-                    backgroundImage: `linear-gradient(to top, ${firstHex} 10%, #000000 90%)`
+                    backgroundImage: `linear-gradient(to top, ${firstHex} 10%, #000000 120%)`
                 }}
             >
                 <img src={profileData.img} alt="Profile" className="rounded-full w-56 h-56" />
