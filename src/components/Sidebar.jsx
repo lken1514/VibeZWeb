@@ -20,7 +20,7 @@ const Sidebar = () => {
   const [isArtist, setIsArtist] = useState(false);
   const [isPlaylist, setIsPlaylist] = useState(true); // Set mặc định là true khi component render
   const [isAlbum, setIsAlbum] = useState(false);
-  const { userId, isLoggedIn, isChange, setChange } = useContext(LoginContext); // Nếu không có `setUserId` trong context thì bỏ dòng `setUserId`.
+  const { userId, isLoggedIn, isChange, setChange, userInfo } = useContext(LoginContext); // Nếu không có `setUserId` trong context thì bỏ dòng `setUserId`.
   const { setLoading, isFollowing, setFollow } = useContext(PlayerContext)
   const [username, setUsername] = useState(null);
   const [showmenu, setShowMenu] = useState(false);

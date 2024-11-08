@@ -82,14 +82,7 @@ const LoginContextProvider = (props) => {
     };
 
     const logout = () => {
-        localStorage.removeItem('jwtToken');
-        localStorage.removeItem('username');
-        localStorage.removeItem('userId');
-        localStorage.removeItem('premium');
-        localStorage.removeItem('libId');
-        localStorage.removeItem('user');
-
-
+        localStorage.clear();
         setIsLoggedIn(false);
         setUser(null);
         setUserId(null);

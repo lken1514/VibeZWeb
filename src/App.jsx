@@ -45,6 +45,7 @@ function App() {
             { path: 'playlist/:id', element: <DisplayPlaylist /> },
             { path: 'artist/:id', element: <DisplayArtist /> },
             { path: 'search', element: <DisplaySearch /> },
+            { path: 'user/:id', element: <DisplayProfile /> },
             {
               path: '/lyrics',
               element: <SyncSong />,

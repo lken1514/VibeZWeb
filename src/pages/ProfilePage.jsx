@@ -61,8 +61,7 @@ const ProfilePage = () => {
               <MenuItem icon={<Gift size={20} />} text="Recover playlists" />
               {userInfo && userInfo.role === 'Admin' && (
                 <MenuItem icon={<Gift size={20} />} text="Admin Management" onClick={() => navigate('/admin')} />
-              )
-              }
+              )}
             </Section>
 
             <Section title="Payment">
