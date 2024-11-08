@@ -31,7 +31,6 @@ function RootLayout() {
     <div className="h-screen bg-black select-none overflow-scroll">
       <Navbar />
       <div className={`flex gap-1 ${track ? 'h-[83%]' : 'h-full'}`}>
-        {/* Conditionally render Sidebar based on premium status */}
         {(premium !== 'Free' && premium !== 'Mini') && <Sidebar />}
         <Outlet />
         {isListVisible && (

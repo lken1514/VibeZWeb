@@ -9,10 +9,10 @@ import DisplayHome from './components/DisplayHome';
 import DisplayArtist from './components/DisplayArtist';
 import DisplayPlaylist from './components/DisplayPlaylist';
 import DisplaySearch from './components/DisplaySearch';
+import DisplayProfile from './components/DisplayProfile';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import PremiumPage from './components/PaymentForm/PremiumPage';
 import PurchasePage from './components/PaymentForm/PurchasePage';
-
 import AdminDashboard from './pages/AdminDashboard';
 import AdminDisplayBan from './components/AdminDisplayBan';
 import AdminDisplayArtist from './components/AdminDisplayArtist';
@@ -39,6 +39,7 @@ function App() {
             { path: 'album/:id', element: <DisplayAlbum /> },
             { path: 'playlist/:id', element: <DisplayPlaylist /> },
             { path: 'artist/:id', element: <DisplayArtist /> },
+            { path: 'user/:id', element: <DisplayProfile /> },
             { path: 'search', element: <DisplaySearch /> }
           ],
         },
