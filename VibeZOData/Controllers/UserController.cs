@@ -134,6 +134,21 @@ namespace VibeZOData.Controllers
             _logger.LogInformation($"User with ID {id} updated successfully.");
             return Ok("Updated successfully.");
         }
+        [HttpPut("role/{id:guid}")]
+        public async Task<ActionResult> UdRoleArtist(Guid id)
+        {
+
+            var existingUser = await _userRepository.GetUserById(id);
+
+
+            existingUser.Role = "Artist";
+
+            existingUser.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
+            await _userRepository.UpdateUser(existingUser);
+
+            _logger.LogInformation($"User with ID {id} updated successfully.");
+            return Ok("Updated successfully.");
+        }
         // DELETE odata/User/{id}
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult> Delete(Guid id)

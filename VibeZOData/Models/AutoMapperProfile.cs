@@ -28,6 +28,8 @@ namespace VibeZOData.Models
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<User_package, User_packageDTO>().ReverseMap();
             CreateMap<Package, PackageDTO>().ReverseMap();
+            CreateMap<ArtistPending, ArtistPendingDTO>().ReverseMap();
+
 
 
         }

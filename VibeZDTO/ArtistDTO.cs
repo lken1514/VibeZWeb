@@ -13,6 +13,9 @@ namespace VibeZDTO
         public string Name { get; set; }
         public string Genre { get; set; }
         public string Image { get; set; }
+        public string Email { get; set; }
+        public string UserId { get; set; }
+
         public string ImgBackground { get; set; }
         public string Nation { get; set; }
 

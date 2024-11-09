@@ -23,6 +23,7 @@ namespace BusinessObjects
         public string Premium { get; set; } = "Free";
         public virtual Library? Library { get; set; }
         public Artist Artist { get; set; }  
+        public ArtistPending ArtistPending { get; set; }
         [JsonIgnore]  // Bỏ qua khi serializing/
         public virtual ICollection<Playlist>? Playlists  { get; set; }
         [JsonIgnore]

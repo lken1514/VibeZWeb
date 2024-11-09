@@ -29,6 +29,7 @@ namespace BusinessObjects
         public virtual DbSet<Library_Artist> Library_Artists { get; set; }
         public virtual DbSet<TrackListener> TrackListeners { get; set; }
         public virtual DbSet<ArtistFollow> ArtistFollows { get; set; }
+        public virtual DbSet<ArtistPending> ArtistPendings{ get; set; }
 
 
         public VibeZDbContext(DbContextOptions options) : base(options)

@@ -52,7 +52,7 @@ namespace Repositories.Repository
         }
         public async Task<Artist> GetArtistByUserId(Guid userId)
         {
-            return await _context.Artists.FirstOrDefaultAsync(x => x.userId == userId);
+            return await _context.Artists.FirstOrDefaultAsync(x => x.UserId == userId);
         }
         public async Task<IEnumerable<Artist>> GetAllArtists()
         {

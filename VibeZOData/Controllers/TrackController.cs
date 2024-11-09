@@ -109,7 +109,7 @@ namespace VibeZOData.Controllers
         [Consumes("multipart/form-data")]
 
         public async Task<ActionResult> CreateTrack(Guid? AlbumId,
-            Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour,[FromQuery] int minute, [FromQuery]int section, Guid artistId,
+            Guid? CategoryId, string TrackName, string Lyrics, string Genre, int hour,  int minute, int section, Guid artistId,
             IFormFile path, IFormFile image, IFormFile? trackLRC, IFormFile? songInfoImg)
         {
             var trackUrl = "";
@@ -158,6 +158,46 @@ namespace VibeZOData.Controllers
                 ArtistId = artistId,
                 TrackLRC = trackUrl,
                 SongInfoImg = songInfo,
+            };
+
+            await _trackRepository.AddTrack(track);
+            _logger.LogInformation($"Track created with id {track.TrackId}");
+
+            return CreatedAtRoute("GetTrackById", new { id = track.TrackId }, track);
+        }
+
+        [HttpPost("updateSong")]
+        [Consumes("multipart/form-data")]
+
+        public async Task<ActionResult> UpdateTrackToVerify([FromForm]string TrackName, [FromForm]string Lyrics, [FromForm] string Genre, [FromForm] int hour, [FromForm] int minute,
+            [FromForm] int section, [FromForm] Guid artistId,
+          [FromForm] string path, [FromForm] string image, [FromForm]string  trackLRC)
+        {
+
+            _logger.LogInformation("Creating new track");
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid model state for new track creation");
+                return BadRequest();
+            }
+
+          
+            var trackTime = new TimeOnly(0, minute, section);
+        
+
+
+            var track = new Track
+            {
+                TrackId = Guid.NewGuid(),
+                Name = TrackName,
+                Genre = Genre,
+                Lyrics = Lyrics,
+                Path = path,
+                Image = image,
+                Time = trackTime,
+                ArtistId = artistId,
+                TrackLRC = trackLRC,
             };
 
             await _trackRepository.AddTrack(track);

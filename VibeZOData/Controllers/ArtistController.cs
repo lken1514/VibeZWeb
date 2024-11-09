@@ -69,7 +69,7 @@ namespace VibeZOData.Controllers
         }
         // POST api/<ArtistController>
         [HttpPost("CreateArtist", Name = "CreateArtist")]
-        public async Task<ActionResult> CreateArtist(string name, string genre,  IFormFile? image, IFormFile imgBackground, string nation)
+        public async Task<ActionResult> CreateArtist(string name, string genre,  [FromForm]IFormFile? image, [FromForm]IFormFile imgBackground, string nation, string email, Guid userId)
         {
             _logger.LogInformation("Creating new Artist");
             if (!ModelState.IsValid)
@@ -92,12 +92,37 @@ namespace VibeZOData.Controllers
                 Image = img,
                 ImgBackground = imgbg,
                 Nation = nation,
+                Email = email,
+                UserId = userId
             };
             await _artistRepository.AddArtist(Artist);
             _logger.LogInformation($"Artist created with id {Artist.Id}");
             return CreatedAtRoute("GetArtistById", new { id = Artist.Id }, Artist);
         }
-
+        [HttpPost("VerifyArtist")]
+        public async Task<ActionResult> VerifyArtist([FromForm] string name, [FromForm] string genre, [FromForm] string? image, [FromForm] string? imgBackground, [FromForm] string nation, [FromForm] string email, [FromForm] Guid userId)
+        {
+            _logger.LogInformation("Creating new Artist");
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid model state for new Artist creation");
+                return BadRequest();
+            }
+            var Artist = new Artist
+            {
+                Id = Guid.NewGuid(),
+                Name = name,
+                Genre = genre,
+                Image = image,
+                ImgBackground = imgBackground,
+                Nation = nation,
+                Email = email,
+                UserId = userId
+            };
+            await _artistRepository.AddArtist(Artist);
+            _logger.LogInformation($"Artist created with id {Artist.Id}");
+            return CreatedAtRoute("GetArtistById", new { id = Artist.Id }, Artist);
+        }
         [HttpPost("SuggestArtist", Name = "SuggestArtist")]
         public async Task<ActionResult<IEnumerable<ArtistDTO>>> SuggestArtist([FromForm]List<Guid> userHistory)
         {
@@ -118,7 +143,7 @@ namespace VibeZOData.Controllers
 
         // PUT api/<ArtistController>/5
         [HttpPut("{id}", Name = "UpdateArtist")]
-        public async Task<ActionResult> UpdateArtist(Guid id,string name, string genre, IFormFile? image, IFormFile? imgBackground , string nation)
+        public async Task<ActionResult> UpdateArtist(Guid id,string name, string genre, IFormFile? image, IFormFile? imgBackground , string nation, string email, Guid userId)
         {
             _logger.LogInformation($"Updating Artist with id {id}");
 
@@ -141,6 +166,8 @@ namespace VibeZOData.Controllers
             artist.ImgBackground = imgbg;
             artist.Nation = nation;
             artist.UpdateDate  = DateOnly.FromDateTime(DateTime.UtcNow);
+            artist.Email = email;
+            artist.UserId = userId;
 
             await _artistRepository.UpdateArtist(artist);
             _logger.LogInformation($"Artist with id {id} has been updated");

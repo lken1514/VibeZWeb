@@ -129,17 +129,20 @@ namespace Repositories.Repository
 
         public async Task AddTrack(Track track)
         {
-            await TrackDAO.Instance.Add(track);
+            _context.Tracks.Add(track);
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateTrack(Track track)
         {
-            await TrackDAO.Instance.Update(track);
+            _context.Tracks.Update(track);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteTrack(Track track)
         {
-            await TrackDAO.Instance.Delete(track);
+            _context.Tracks.Remove(track);
+            await _context.SaveChangesAsync();
         }
         public async Task<IEnumerable<Track>> GetTrackByIds(List<Guid> trackIds) => await TrackDAO.Instance.GetTrackByIds(trackIds);
 

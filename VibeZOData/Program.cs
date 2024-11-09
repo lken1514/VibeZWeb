@@ -47,6 +47,7 @@ namespace VibeZOData
             builder.Services.AddHostedService<DailyService>(); // Đăng ký Background Service
             builder.Services.AddScoped<IArtistDashboarRepository,ArtistDashboardRepository>();
             builder.Services.AddScoped<IFollowRepository, FollowRepository>();
+            builder.Services.AddScoped<IArtistPendingRepository, ArtistPendingRepository>();
 
 
 

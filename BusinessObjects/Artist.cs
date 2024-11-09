@@ -14,8 +14,9 @@ namespace BusinessObjects
         public string Image { get; set; }
         public string ImgBackground { get; set; }
         public string Nation { get; set; }
+        public string? Email {  get; set; }
         //public virtual ICollection<TrackArtist> TrackArtists {  get; set; }
-        public Guid? userId { get; set; }
+        public Guid? UserId { get; set; }
         public User? User { get; set; }
         public virtual ICollection<Follow>? Follow { get; set; }
         public virtual ICollection<BlockedArtist>? BlockedArtists { get; set; }
