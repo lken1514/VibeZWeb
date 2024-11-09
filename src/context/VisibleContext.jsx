@@ -10,8 +10,9 @@ export function ListVisibilityProvider({ children }) {
   const [isListVisible, setIsListVisible] = useState(false);
 
   return (
-    <ListVisibilityContext.Provider value={{ isListVisible, setIsListVisible }}>
+    <ListVisibilityContext.Provider value={{ isListVisible, setIsListVisible}}>
       {children}
     </ListVisibilityContext.Provider>
   );
 }
+

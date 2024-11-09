@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button, Form, Input, InputNumber, message } from 'antd';
 import trackService from '../../services/trackService';
 import UploadSong from './SubComponent/UploadSong';
+import ArtistDashboardService from "../../services/artistDashboardService";
 
 const CreateTrack = () => {
   const { id: albumId } = useParams();
@@ -15,7 +16,21 @@ const CreateTrack = () => {
   const [second, setSecond] = useState(0);
   const [path, setPath] = useState(null);
   const [image, setImage] = useState(null);
-  const artistId = '3dae27c5-9209-4d9d-aea6-a72dfd69a7fc';
+  const [artist, setArtist] = useState();
+  const [trackLRC, setTrackLRC] = useState(null);
+  const [songInfoImg, setSongInfoImg] = useState(null);
+
+  useEffect(() => {
+    const userId = JSON.parse(localStorage.getItem('userId'));
+    const getArtist = async () => {
+    try {
+      const artistData = await ArtistDashboardService.getArtistByUserId(userId);
+      setArtist(artistData);
+  } catch (error) {
+      console.error('Error fetching artist:', error);
+  }
+}; getArtist();
+}, []);
 
   // Submit handler for creating track
   const handleSubmit = async (values) => {
@@ -37,9 +52,15 @@ const CreateTrack = () => {
       formData.append('hour', hour);
       formData.append('minute', minute);
       formData.append('second', second);
-      formData.append('artistId', artistId);
+      formData.append('artistId', artist.id);
       formData.append('path', path);
       formData.append('image', image);
+      if (trackLRC) {
+        formData.append('trackLRC', trackLRC);
+      }
+      if (songInfoImg) {
+        formData.append('songInfoImg', songInfoImg);
+      }
 
       await trackService.createTrack(formData);
 
@@ -61,6 +82,8 @@ const CreateTrack = () => {
     setSecond(0);
     setPath(null);
     setImage(null);
+    setTrackLRC(null);
+    setSongInfoImg(null);
   };
 
   return (
@@ -121,7 +144,7 @@ const CreateTrack = () => {
           </div>
         </Form.Item>
 
-        <UploadSong setPath={setPath} setImage={setImage} />
+        <UploadSong setPath={setPath} setImage={setImage} setTrackLRC={setTrackLRC} setSongInfoImg={setSongInfoImg} />
 
         <Form.Item>
           <Button type="primary" htmlType="submit" className="submit-button">

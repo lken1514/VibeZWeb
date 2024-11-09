@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
+import { useParams, useNavigate } from "react-router-dom"; 
 import { assets } from "../../assets/assets";
 import albumService from "../../services/albumService";
 import trackService from "../../services/trackService";
 import artistService from "../../services/artistService";
-import { FiEdit, FiTrash, FiPlusCircle } from "react-icons/fi"; // Using react-icons for edit, delete, and add icons
+import { FiEdit, FiTrash, FiPlusCircle } from "react-icons/fi"; 
 
 const AlbumDetail = () => {
   const { id } = useParams();
@@ -43,13 +43,13 @@ const AlbumDetail = () => {
   };
 
   const handleEditTrackClick = (trackId) => {
-    navigate(`/artistdashboard/music/album/${id}/edit-track/${trackId}`); // Navigate with trackId
+    navigate(`/artistdashboard/music/album/${id}/edit-track/${trackId}`); 
   };
 
   const handleDeleteTrack = async (trackId) => {
     try {
       await trackService.deleteTrack(trackId); 
-      setTracks(tracks.filter(track => track.trackId !== trackId)); // Update UI by removing the deleted track
+      setTracks(tracks.filter(track => track.trackId !== trackId)); 
       alert("Track deleted successfully!");
     } catch (error) {
       console.error("Error deleting track", error);
@@ -100,7 +100,7 @@ const AlbumDetail = () => {
         <hr className="border-gray-300" />
 
         {/* Tracks */}
-        {tracks.map((item, index) => (
+        {tracks.filter(track => !track.pendingApproval).map((item, index) => (
           <div
             key={index}
             className="grid grid-cols-4 gap-4 p-4 items-center text-black hover:bg-gray-100 cursor-pointer transition-all"

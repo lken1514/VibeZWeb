@@ -1,16 +1,24 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import RootLayout from './pages/RootLayout';
 import ProfilePage from './pages/ProfilePage';
 import DisplayAlbum from './components/DisplayAlbum';
 import Display from './components/Display';
-import LoginComponent from './components/LoginForm/LoginComponent'
-import DisplayHome from './components/DisplayHome'; 
+import LoginComponent from './components/LoginForm/LoginComponent';
+import DisplayHome from './components/DisplayHome';
 import DisplayArtist from './components/DisplayArtist';
-import DisplayPlaylist from './components/DisplayPlaylist'
-import Queue from './components/Queue';
-import Plans from './components/Plans';
+import DisplayPlaylist from './components/DisplayPlaylist';
+import DisplaySearch from './components/DisplaySearch';
 import SignUpForm from './components/SignUpForm/SignUpForm';
+import PremiumPage from './components/PaymentForm/PremiumPage';
+import PurchasePage from './components/PaymentForm/PurchasePage';
+
+import AdminDashboard from './pages/AdminDashboard';
+import AdminDisplayBan from './components/AdminDashboard/AdminDisplayBan';
+import AdminDisplayArtist from './components/AdminDashboard/AdminDisplayArtist';
+import AdminDisplayApproval from './components/AdminDashboard/AdminDisplayApproval';
+import AdminDisplayHome from './components/AdminDashboard/AdminDisplayHome';
+import ProfileEdit from './components/ProfileEdit';
 
 import ArtistDashboard from './components/Artist/ArtistDashboard'; 
 import ArtistHome from './components/Artist/ArtistHome'; 
@@ -18,8 +26,11 @@ import ArtistMusicTab from './components/Artist/ArtistMusicTab';
 import ArtistProfile from './components/Artist/ArtistProfile'; 
 import AlbumDetail from './components/Artist/AlbumDetail';
 import CreateTrack from './components/Artist/CreateTrack';
+import CreateAlbum from './components/Artist/CreateAlbum';
 import EditTrack from './components/Artist/EditTrack';
 import EditAlbum from './components/Artist/EditAlbum';
+import ArtistProfileClaim from './components/Artist/ArtistProfileClaim';
+import ArtistVerificationRequestForm from './components/Artist/ArtistVerificationRequestForm'; 
 
 function App() {
   const router = createBrowserRouter([
@@ -29,19 +40,32 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Display />, // display 
+          element: <Display />,
           children: [
-            { path: '/', element: <DisplayHome /> }, // home page
+            { path: '/', element: <DisplayHome /> },
             { path: 'album/:id', element: <DisplayAlbum /> },
-            { path: 'playlist/:id', element: <DisplayPlaylist /> }, // album page
-            {path: 'artist/:id', element: <DisplayArtist />}, // artist page
+            { path: 'playlist/:id', element: <DisplayPlaylist /> },
+            { path: 'artist/:id', element: <DisplayArtist /> },
+            { path: 'search', element: <DisplaySearch /> }
           ],
         },
       ],
     },
     {
+      path: '/profileedit',
+      element: <ProfileEdit />,
+    },
+    {
       path: '/profile',
       element: <ProfilePage />,
+    },
+    {
+      path: '/profile/artist-profile-claim', 
+      element: <ArtistProfileClaim />, 
+    },
+    {
+      path: '/profile/artist-profile-claim/verify',
+      element: <ArtistVerificationRequestForm />,
     },
     {
       path: '/login',
@@ -53,7 +77,37 @@ function App() {
     },
     {
       path: '/plan',
-      element: <Plans />,
+      element: <PremiumPage />,
+    },
+    {
+      path: '/purchase',
+      element: <PurchasePage />,
+    },
+    {
+      path: '/admin',
+      element: <AdminDashboard />,
+      children: [
+        {
+          index: true, // Tự động điều hướng khi truy cập vào /admin
+          element: <Navigate to="home" replace />,
+        },
+        {
+          path: 'home',
+          element: <AdminDisplayHome />,
+        },
+        {
+          path: 'artist',
+          element: <AdminDisplayArtist />,
+        },
+        {
+          path: 'ban',
+          element: <AdminDisplayBan />,
+        },
+        {
+          path: 'approval',
+          element: <AdminDisplayApproval />,
+        },
+      ],
     },
     {
       path: '/artistdashboard',
@@ -66,6 +120,10 @@ function App() {
             {
               path: 'music/album/:id',
               element: <AlbumDetail />, 
+            },
+            {
+              path: 'music/album/create',
+              element: <CreateAlbum />,
             },
             {
               path: 'music/album/:id/edit', 
@@ -82,6 +140,7 @@ function App() {
           ],
     }
   ]);
+
   return <RouterProvider router={router} />;
 }
 

@@ -18,5 +18,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </PlayerContextProvider>
     </LoginContextProvider>
   </GoogleOAuthProvider>
-
 )

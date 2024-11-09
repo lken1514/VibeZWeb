@@ -86,3 +86,10 @@ table th:nth-child(7), table td:nth-child(7) { width: 30%; } /* Track column */
     padding: 0.5rem;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+

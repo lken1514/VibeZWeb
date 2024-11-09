@@ -16,6 +16,11 @@ const PlayerContextProvider = (props) => {
   const [repeat, setRepeat] = useState(false); // Trạng thái lặp lại bài hát
   const [volume, setVolume] = useState(1); // Giá trị mặc định âm lượng
   const [currentAlbumId, setCurrentAlbumId] = useState(null);
+  const [status, setStatus] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [isFollowing, setFollow] = useState(false);
+  const [QueueTrack, setQueue] = useState([]);
+  const [result, setResult] = useState({});
 
   const [time, setTime] = useState({
     currentTime: { second: 0, minute: 0 },
@@ -32,6 +37,7 @@ const PlayerContextProvider = (props) => {
         if (songsData.length > 0) {
           setTrack(songsData[currentIndex]);
         }
+        console.log(songsData);
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu:", error.message);
       }
@@ -39,6 +45,8 @@ const PlayerContextProvider = (props) => {
 
     fetchSongs();
   }, [songsData]);
+
+
 
   // Cập nhật trạng thái thanh thời gian
   useEffect(() => {
@@ -81,7 +89,7 @@ const PlayerContextProvider = (props) => {
     }
   }, [track, currentIndex, songsData, repeat]);
 
-  const updateRecentlyPlayedQueue = (trackId) => { //Dùng để lưu những bài đã nghe gần đây vào localstorage. Thuật toán là sẽ dùng queue để lưu bài gần nhất
+  const updateRecentlyPlayedQueue = (trackId) => {
     const recentlyPlayedArray = queueToArray(recentlyPlayedQueue);
     if (!recentlyPlayedArray.includes(trackId)) {
       recentlyPlayedQueue.enqueue(trackId);
@@ -93,7 +101,7 @@ const PlayerContextProvider = (props) => {
     }
   };
 
-  const queueToArray = (queue) => { //Dùng để lưu những bài đã nghe gần đây vào localstorage. Thuật toán là sẽ dùng queue để lưu bài gần nhất
+  const queueToArray = (queue) => {
     const array = [];
     const tempQueue = new Queue();
     while (!queue.isEmpty()) {
@@ -109,6 +117,13 @@ const PlayerContextProvider = (props) => {
 
   const play = () => {
     if (track && audioRef.current) {
+      audioRef.current.onended = async () => {
+        if (repeat) {
+          await audioRef.current.play();
+        } else {
+          await next();
+        }
+      };
       audioRef.current.play();
       setPlayStatus(true);
     }
@@ -121,19 +136,49 @@ const PlayerContextProvider = (props) => {
     }
   };
 
-  const playWithId = async (id) => {
-    const trackToPlay = songsData.find((t) => t.trackId === id);
-  
+  const playQueue = async (id) => {
+    let trackToPlay = null;
+    let index = 0;
+    if (QueueTrack.length > 0) {
+      trackToPlay = QueueTrack.find((t) => t.trackId === id);
+      index = QueueTrack.indexOf(trackToPlay);
+      QueueTrack.splice(index, 1);
+      setQueue(QueueTrack);
+    }
+
     if (trackToPlay && audioRef.current) {
       updateRecentlyPlayedQueue(id);
-      const index = songsData.indexOf(trackToPlay);
-      setCurrentIndex(index);
-      
-      // Gọi UpdateListener mà không cần đợi API hoàn thành
+
       trackService.UpdateListener(id).catch((error) => {
         console.error("Error updating listener:", error);
       });
-  
+
+      await setTrack(trackToPlay);
+      await audioRef.current.play().then(() => {
+        setPlayStatus(true);
+      }).catch((error) => {
+        console.error("Error playing the track:", error);
+        setPlayStatus(false);
+      });
+    } else {
+      console.error("Bài hát không tồn tại hoặc audioRef chưa được khởi tạo!");
+    }
+  }
+  const playWithId = async (id) => {
+    let trackToPlay = null;
+    let index = 0;
+    trackToPlay = songsData.find((t) => t.trackId === id);
+    index = songsData.indexOf(trackToPlay);
+    setCurrentIndex(index);
+
+
+    if (trackToPlay && audioRef.current) {
+      updateRecentlyPlayedQueue(id);
+
+      trackService.UpdateListener(id).catch((error) => {
+        console.error("Error updating listener:", error);
+      });
+
       await setTrack(trackToPlay);
       await audioRef.current.play().then(() => {
         setPlayStatus(true);
@@ -145,46 +190,52 @@ const PlayerContextProvider = (props) => {
       console.error("Bài hát không tồn tại hoặc audioRef chưa được khởi tạo!");
     }
   };
-  
 
   const previous = async () => {
+    let previousTrack = null;
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
-      const previousTrack = songsData[newIndex];
-      
-      // Gọi UpdateListener mà không cần đợi API hoàn thành
+      previousTrack = songsData[newIndex];
+      setCurrentIndex(newIndex);
+    }
+
+    if (previousTrack) {
       trackService.UpdateListener(previousTrack.trackId).catch((error) => {
         console.error("Error updating listener for previous track:", error);
       });
-  
-      setCurrentIndex(newIndex);
-      await setTrack(previousTrack);
+
+      setTrack(previousTrack);
       updateRecentlyPlayedQueue(previousTrack.trackId);
       audioRef.current.src = previousTrack.path;
       await audioRef.current.play();
       setPlayStatus(true);
     }
   };
-  
+
   const next = async () => {
-    if (currentIndex < songsData.length - 1) {
+    let nextTrack = null;
+    if (QueueTrack.length > 0) {
+      nextTrack = QueueTrack[0];
+      QueueTrack.shift();
+    } else {
       const newIndex = currentIndex + 1;
-      const nextTrack = songsData[newIndex];
-      
-      // Gọi UpdateListener mà không cần đợi API hoàn thành
+      nextTrack = songsData[newIndex];
+      setCurrentIndex(newIndex);
+    }
+
+    if (nextTrack) {
       trackService.UpdateListener(nextTrack.trackId).catch((error) => {
         console.error("Error updating listener for next track:", error);
       });
-  
-      setCurrentIndex(newIndex);
-      await setTrack(nextTrack);
+
+      setTrack(nextTrack);
       updateRecentlyPlayedQueue(nextTrack.trackId);
       audioRef.current.src = nextTrack.path;
+      audioRef.current.load(); // Tải lại bài hát mới
       await audioRef.current.play();
       setPlayStatus(true);
     }
   };
-  
 
   const seekSong = async (e) => {
     if (audioRef.current && audioRef.current.duration) {
@@ -198,26 +249,23 @@ const PlayerContextProvider = (props) => {
     }
   };
 
-  // Hàm để bật/tắt chế độ lặp lại
   const toggleRepeat = () => {
     setRepeat(!repeat);
   };
 
-    // Hàm thay đổi âm lượng từ thanh trượt
-    const handleVolumeChange = (event) => {
-      const newVolume = event.target.value / 100; // Chuyển giá trị từ 0-100 về 0-1
-      console.log(newVolume);
-      setVolume(newVolume);
-      if (audioRef.current) {
-        audioRef.current.volume = newVolume; // Cập nhật âm lượng của audio
-      }
-    };
+  const handleVolumeChange = (event) => {
+    const newVolume = event.target.value / 100;
+    setVolume(newVolume);
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
+  };
 
-    useEffect(() => {
-      if (audioRef.current) {
-        audioRef.current.volume = volume; // Đảm bảo audio cập nhật volume đúng
-      }
-    }, [volume]);
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
 
   const contextValue = {
     audioRef,
@@ -245,7 +293,18 @@ const PlayerContextProvider = (props) => {
     setVolume,
     volume,
     currentAlbumId,
-    setCurrentAlbumId // Thêm hàm toggleRepeat vào context
+    setCurrentAlbumId,
+    status,
+    setStatus,
+    isLoading,
+    setLoading,
+    isFollowing,
+    setFollow,
+    setQueue,
+    QueueTrack,
+    result,
+    setResult,
+    playQueue
   };
 
   return (

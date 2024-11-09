@@ -1,6 +1,20 @@
 import axios from "axios";
 
-const API_URL = "https://localhost:7241/api/Track"; // Thay đổi theo địa chỉ backend
+const API_URL = "https://localhost:7241/odata/Track"; // Thay đổi theo địa chỉ backend
+
+const changeStatus = async (id) => {
+  try {
+    const response = await axios.put(`https://localhost:7241/api/Admin/approve-track/${id}`);
+    console.log(response.data);
+    return;
+  } catch (error) {
+    console.error("Error changing status:", error.message || error);
+    throw new Error(
+      "Failed to change status: " +
+        (error.response?.data?.message || error.message)
+    );
+  }
+};
 
 const getAllTrackByAlbumId = async (id) => {
   try {
@@ -29,7 +43,7 @@ const getTrackById = async (id) => {
 
 const getTrackByArtistId = async (id) => {
   try {
-    const response = await anxious.get(`${API_URL}/Artist/${id}`);
+    const response = await axios.get(`${API_URL}/Artist/${id}`);
     return response.data;  // Trả về tên nghệ sĩ từ API
   } catch (error) {
     console.error("Error fetching track:", error.message || error);
@@ -186,6 +200,7 @@ const fetchRecommendations = async (clickedTrackId) => {
 };
 // Xuất các service
 export default {
+  changeStatus,
   getAllTrackByAlbumId,
   getTrackByArtistId,
   getTrackById,

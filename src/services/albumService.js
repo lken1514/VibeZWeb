@@ -18,6 +18,18 @@ const getAllAlbums = async () => {
 };
 
 // Xuất các service
+const getAlbumsByArtistId = async (artistId) => {
+  try {
+    const response = await axios.get(`${API_URL}/${artistId}/all`);
+    return response.data;
+  }catch (error) {
+    console.error("Error fetching albums:", error.message || error);
+    throw new Error(
+      "Failed to fetch albums: " + 
+      (error.response?.data?.message || error.message)
+    );
+  }
+};
 
 const getAlbumsById = async (id) => {
   try {
@@ -32,7 +44,7 @@ const getAlbumsById = async (id) => {
   }
 };
 
-// Function to create a new album
+// Function to create a new album -----------------------------
 const createAlbum = async (formData) => {
     try {
         const response = await axios.post(`${API_URL}/CreateAlbum`, formData, {
@@ -86,4 +98,4 @@ const deleteAlbum = async (id) => {
 
 // Xuất các service
 
-export default { getAllAlbums, getAlbumsById, createAlbum, updateAlbum, deleteAlbum, };
+export default { getAlbumsByArtistId, getAllAlbums, getAlbumsById, createAlbum, updateAlbum, deleteAlbum, };

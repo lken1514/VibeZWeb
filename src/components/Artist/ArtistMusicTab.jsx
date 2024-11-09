@@ -2,26 +2,32 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import trackService from '../../services/trackService';
 import albumService from '../../services/albumService';
+import ArtistDashboardService from '../../services/artistDashboardService';
 import { FiEdit, FiTrash } from 'react-icons/fi';
+import CreateAlbum from './CreateAlbum';
 import './music.css';
 
 const MusicTab = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('songs');
+  const [activeTab, setActiveTab] = useState(() => {
+    const savedTab = localStorage.getItem('activeTab');
+    return savedTab ? savedTab : 'songs';
+  });
   const [tracks, setTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingAlbums, setLoadingAlbums] = useState(false);
-  const [errorTracks, setErrorTracks] = useState(null); // Separate error state for tracks
-  const [errorAlbums, setErrorAlbums] = useState(null); // Separate error state for albums
+  const [errorTracks, setErrorTracks] = useState(null);
+  const [errorAlbums, setErrorAlbums] = useState(null);
   const [isPlaying, setIsPlaying] = useState(null);
   const [currentTrack, setCurrentTrack] = useState(null);
   const audioRef = useRef(new Audio());
-  const a = '70507740-ce24-460e-8053-1bacb2b184f1';
+  const [artist, setArtist] = useState();
 
   const showTab = (tab) => {
     setActiveTab(tab);
+    localStorage.setItem('activeTab', tab);
   };
 
   const formatDate = (dateString) => {
@@ -33,10 +39,25 @@ const MusicTab = () => {
   };
 
   useEffect(() => {
+    const userId = JSON.parse(localStorage.getItem('userId'));
+    const getArtist = async () => {
+      try {
+        const artistData = await ArtistDashboardService.getArtistByUserId(userId);
+        console.log("Fetched artist:", artistData);
+        setArtist(artistData);
+      } catch (error) {
+        console.error('Error fetching artist:', error);
+      }
+    };
+    getArtist();
+  }, []);
+
+  useEffect(() => {
+    if (!artist?.id) return;
     const fetchAlbums = async () => {
       setLoadingAlbums(true);
       try {
-        const data = await albumService.getAllAlbums();
+        const data = await albumService.getAlbumsByArtistId(artist.id);
         console.log("Fetched albums:", data);
         setAlbums(data);
       } catch (error) {
@@ -48,10 +69,9 @@ const MusicTab = () => {
     };
 
     const fetchTracks = async () => {
-      //if (albumId) {
       setLoading(true);
       try {
-        const data = await trackService.getAllTracks();
+        const data = await trackService.getTrackByArtistId(artist.id);
         console.log("Fetched tracks:", data);
         setTracks(data);
       } catch (error) {
@@ -65,7 +85,7 @@ const MusicTab = () => {
 
     fetchAlbums();
     fetchTracks();
-  }, [albumId]); // Fetch tracks when albumId changes
+  }, [artist]);
 
   const handlePlay = (track) => {
     if (currentTrack?.trackId !== track.trackId) {
@@ -90,20 +110,24 @@ const MusicTab = () => {
     };
   }, []);
 
+  const handleCreateAlbum = () => {
+    navigate('/artistdashboard/music/album/create');
+  };
+
   const handleEditAlbum = (albumId) => {
     navigate(`/artistdashboard/music/album/${albumId}/edit`);
   };
   const handleDeleteAlbum = async (albumId) => {
-    try{
+    try {
       await trackService.deleteTracksByAlbumId(albumId);
       await albumService.deleteAlbum(albumId);
       setAlbums(albums.filter(album => album.id !== albumId));
       alert("Album deleted successfully!");
-    }catch(error){
+    } catch (error) {
       console.error("Error deleting album", error);
       alert("Failed to delete album.");
+    };
   };
-};
 
   return (
     <div className="app-container">
@@ -118,10 +142,19 @@ const MusicTab = () => {
 
         {/* Songs Tab */}
         {activeTab === 'songs' && (
-          <div id="songs" className="tab-content">
-            <div className="search-bar">
-              <input type="text" placeholder="Search" />
-              <select>
+          <div id="songs" className="tab-content p-6 bg-gray-100 rounded-lg shadow-md">
+            <div className="search-bar flex items-center gap-4 mb-4">
+              {/* Search Input */}
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              {/* Filter Select */}
+              <select
+                className="py-2 px-4 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
                 <option>Last 24 hours</option>
                 <option>Last 7 days</option>
                 <option>Last 28 days</option>
@@ -142,7 +175,7 @@ const MusicTab = () => {
                   </tr>
                 </thead>
                 <tbody id="songs-data">
-                  {tracks.map((track, index) => (
+                  {tracks.filter(track => !track.pendingApproval).map((track, index) => (
                     <tr
                       key={track.trackId}
                       className={currentTrack?.trackId === track.trackId ? 'playing' : ''}
@@ -174,15 +207,30 @@ const MusicTab = () => {
 
         {/* Albums Tab */}
         {activeTab === 'albums' && (
-          <div id="albums" className="tab-content">
-            <div className="search-bar">
-              <input type="text" placeholder="Search" />
-              <select>
+          <div id="albums" className="tab-content p-6 bg-gray-100 rounded-lg shadow-md">
+            <div className="search-bar flex items-center gap-4 mb-4">
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full py-2 px-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+
+              <select
+                className="py-2 px-4 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
                 <option>Last 24 hours</option>
                 <option>Last 7 days</option>
                 <option>Last 28 days</option>
               </select>
+
+              <button
+                onClick={handleCreateAlbum}
+                className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 flex items-center shadow-md transition-colors duration-200"
+              >
+                Create Album
+              </button>
             </div>
+
             <div className="table-container">
               {loadingAlbums && <p>Loading albums...</p>}
               {errorAlbums && <p>Error: {errorAlbums}</p>}
@@ -247,19 +295,19 @@ const MusicTab = () => {
         {/* Playlists Tab */}
         {activeTab === 'playlists' && (
           <div id="playlists" className="tab-content">
-            <div className="search-bar">
+            {/* <div className="search-bar">
               <input type="text" placeholder="Search" />
               <select>
                 <option>Last 24 hours</option>
                 <option>Last 7 days</option>
                 <option>Last 28 days</option>
               </select>
-            </div>
+            </div> */}
             <h3>Algorithmic</h3>
             <p>Playlists created for a listener based on their taste using crowdsourcing and data.</p>
             <div className="table-container">
               <table>
-                <thead>
+                {/* <thead>
                   <tr>
                     <th>#</th>
                     <th>Title</th>
@@ -267,7 +315,7 @@ const MusicTab = () => {
                     <th>Listeners</th>
                     <th>Streams</th>
                   </tr>
-                </thead>
+                </thead> */}
                 <tbody id="playlists-data">
                   {/* Data will be populated here */}
                 </tbody>

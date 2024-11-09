@@ -68,9 +68,9 @@ const EditAlbum = () => {
       console.log("Sending form data:", formData);
 
       // Use the id from useParams and send it along with the form data
-      await albumService.updateAlbum(id, formData);  // Call the API to update the album, passing `id`
+      await albumService.updateAlbum(id, formData);  
       alert("Album updated successfully!");
-      navigate(`/artistdashboard/music/album/${id}`);  // Navigate back to the album page using `id`
+      navigate(`/artistdashboard/music/album/${id}`);  
     } catch (error) {
       console.error("Error updating album", error);
       alert("Failed to update album.");

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import trackService from "../../services/trackService"; 
 
 const EditTrack = () => {
-  const { albumId, trackId } = useParams(); // Retrieve albumId and trackId from params
+  const { albumId, trackId } = useParams(); 
   const navigate = useNavigate();
   
   const [trackData, setTrackData] = useState({
@@ -15,10 +15,11 @@ const EditTrack = () => {
     second: 0,
     image: null,
     path: null,
+    trackLRC: null, 
+    songInfoImg: null 
   });
 
   useEffect(() => {
-      // Log the trackId and albumId to ensure they are correct
     console.log('Album ID:', albumId);
     console.log('Track ID:', trackId);
 
@@ -38,6 +39,8 @@ const EditTrack = () => {
           second: second || 0,
           image: data.image,
           path: data.path,
+          trackLRC: data.trackLRC || null,
+          songInfoImg: data.songInfoImg || null,
         });
       } catch (error) {
         console.error("Error fetching track data", error);
@@ -68,6 +71,8 @@ const EditTrack = () => {
       if (trackData.path) {
         formData.append('path', trackData.path);
       }
+      if (trackData.trackLRC) formData.append('trackLRC', trackData.trackLRC);
+      if (trackData.songInfoImg) formData.append('songInfoImg', trackData.songInfoImg);
 
       console.log("Sending form data:", formData);
       

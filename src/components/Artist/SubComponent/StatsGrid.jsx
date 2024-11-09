@@ -2,15 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faUserPlus, faUserSlash, faPlayCircle, faSave, faHourglassHalf } from '@fortawesome/free-solid-svg-icons';
 
-const StatsGrid = ({ data }) => (
+const StatsGrid = ({ listener, follower, unfollower, savedPlaylists }) => (
     <div className="stats-grid">
         {[
-            { label: 'Listeners', value: data.listeners, icon: faUsers },
-            { label: 'New followers', value: data.newFollowers, icon: faUserPlus },
-            { label: 'Unfollows', value: data.unfollows, icon: faUserSlash },
-            { label: 'New streams', value: data.newStreams, icon: faPlayCircle },
-            { label: 'Saved as playlist', value: data.savedPlaylists, icon: faSave },
-            { label: 'Streams total hours', value: data.streamHours, icon: faHourglassHalf },
+            { label: 'Listeners', value: listener, icon: faUsers },
+            { label: 'New followers', value: follower, icon: faUserPlus },
+            { label: 'Unfollows', value: unfollower, icon: faUserSlash },
+            { label: 'Saved as playlist', value: savedPlaylists, icon: faSave },
         ].map((stat, index) => (
             <div key={index} className="stat-card" role="region" aria-label={stat.label}>
                 <FontAwesomeIcon icon={stat.icon} className="stat-icon" />

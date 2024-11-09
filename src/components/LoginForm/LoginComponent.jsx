@@ -44,10 +44,6 @@ const LoginComponent = () => {
   return (
     <div className="login-page">
       <div>
-        {/* {console.log(isLoggedIn)} */}
-        {isLoggedIn ? (
-          <p>Welcome, {user.name}</p>
-        ) : (
           <div className="login-container">
             <div className="spotify-logo">
               <button>
@@ -72,9 +68,6 @@ const LoginComponent = () => {
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="password-toggle">
-                <img src={showIcon} alt="Show" />
-              </button>
             </div>
             <button className="login-button" onClick={handleLogin}>Login</button>
             <div className="google-login">
@@ -93,7 +86,6 @@ const LoginComponent = () => {
               Don't have an account? <a href="/signup">Sign up for VibeZ</a>
             </div>
           </div>
-        )}
       </div>
     </div>
   );
