@@ -63,7 +63,6 @@ const UpdateListener = async (id) => {
     if (response.status === 204) {
       return "Update successful, no content returned"; // Có thể trả về một thông điệp
     }
-
     return response.data; // Trả về dữ liệu nếu có
   } catch (error) {
     console.error("Error fetching track:", error.message || error);
@@ -73,6 +72,8 @@ const UpdateListener = async (id) => {
     );
   }
 };
+
+
 const createTrack = async (trackData) => {
   try {
     const formData = new FormData();

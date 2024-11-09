@@ -21,6 +21,8 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const userid = JSON.parse(localStorage.getItem('userId'));
+  console.log('userid:' + userid);
 
   const debouncedSearch = useCallback(
     _.debounce(async (term) => {
@@ -95,6 +97,7 @@ const Navbar = () => {
                   <a >Account</a>
                 </li>
                 <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'
+                  onClick={() => navigate(`/user/${userid}`)}
                 >
                   <a href="">Profile</a>
                 </li>

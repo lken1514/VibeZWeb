@@ -5,53 +5,41 @@ import PlaylistItem from './PlaylistItem';
 import { useParams } from 'react-router-dom';
 import ArtistItem from './ArtistItem';
 import { extractColors } from 'extract-colors';
-import img1 from '../assets/img1.jpg';
-import img2 from '../assets/img2.jpg';
-import img3 from '../assets/img3.jpg';
+import { getUserProfile } from '../services/profileService'; 
+
 function DisplayProfile() {
     const { userId } = useParams();
+
     const [firstHex, setFirstHex] = useState('#000000');
     const [profileData, setProfileData] = useState(null);
     const [pageData, setPageData] = useState(null);
     const [showMenu, setShowMenu] = useState(false);
 
+    console.log("User ID from URL:", userId); 
+
     useEffect(() => {
-        const fetchedProfileData = {
-            name: 'PhongNguyen',
-            playlistCount: 2,
-            followingCount: 11,
-            img: img3
-        };
-        const fetchedPageData = {
-            topArtists: [
-                { id: 1, name: 'LowG', img: img1 },
-                { id: 2, name: 'Vu.', img: img1 },
-                { id: 3, name: 'Wren Evans', img: img1 }
-            ],
-            topTracks: [
-                { id: 1, name: 'Anh muon nhin thay em', album: 'Anh muon nhin thay em', duration: '3:51', img: img1 }
-            ],
-            playlists: [
-                { id: 1, name: 'Playlist 1', img: img1 },
-                { id: 1, name: 'Playlist 1', img: img1 },
-                { id: 1, name: 'Playlist 1', img: img1 }
+        const fetchData = async () => {
+            try {
+                const { fetchedProfileData, fetchedPageData } = await getUserProfile(userId);
+                setProfileData(fetchedProfileData);
+                setPageData(fetchedPageData);
 
-            ]
+                extractColors(fetchedProfileData.image)
+                    .then(colors => {
+                        if (colors.length > 0) {
+                            setFirstHex(colors[2].hex);
+                        }
+                    })
+                    .catch(() => {
+                        setFirstHex('#000000');
+                    });
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+            }
         };
 
-        setProfileData(fetchedProfileData);
-        setPageData(fetchedPageData);
-
-        extractColors(fetchedProfileData.img)
-            .then(colors => {
-                if (colors.length > 0) {
-                    setFirstHex(colors[2].hex);
-                }
-            })
-            .catch(() => {
-                setFirstHex('#000000');
-            });
-    }, [userId]);
+        fetchData();
+    }, []);
 
     if (!profileData || !pageData) {
         return <div>Loading...</div>;
@@ -61,9 +49,7 @@ function DisplayProfile() {
         <div className="text-white p-6 font-sans w-full p-0">
             <div
                 className="flex space-x-4 items-center w-full h-72 rounded-lg p-8"
-                style={{
-                    backgroundImage: `linear-gradient(to top, ${firstHex} 10%, #000000 90%)`
-                }}
+                style={{ backgroundImage: `linear-gradient(to top, ${firstHex} 10%, #000000 90%)` }}
             >
                 <img src={profileData.img} alt="Profile" className="rounded-full w-56 h-56" />
                 <div className='ml-8'>
@@ -72,29 +58,25 @@ function DisplayProfile() {
                     <p className="text-base">{profileData.playlistCount} Public Playlists • {profileData.followingCount} Following</p>
                 </div>
             </div>
-            <div className="relative flex h-16 items-center" >
+
+            <div className="relative flex h-16 items-center">
                 <button
-                    className="transition-transform hover:scale-110 hover:opacity-80 px-4 rounded-full text-4xl	 font-semibold h-10"
+                    className="transition-transform hover:scale-110 hover:opacity-80 px-4 rounded-full text-4xl font-semibold h-10"
                     onClick={() => setShowMenu(!showMenu)}
                 >
                     <FontAwesomeIcon icon={faEllipsis} />
                 </button>
 
                 {showMenu && (
-                    <div
-                        className="absolute top-[100%] left-[16%] bg-[#2A2A2A] shadow-lg rounded-md p-2 text-white z-50"
-                    >
+                    <div className="absolute top-[100%] left-[16%] bg-[#2A2A2A] shadow-lg rounded-md p-2 text-white z-50">
                         <ul>
-                            <li className="p-3 hover:bg-[#3E3E3E] text-[14px]">
-                                Edit Profile
-                            </li>
-                            <li className="p-3 hover:bg-[#3E3E3E] text-[14px]">
-                                Copy link to profile
-                            </li>
+                            <li className="p-3 hover:bg-[#3E3E3E] text-[14px]">Edit Profile</li>
+                            <li className="p-3 hover:bg-[#3E3E3E] text-[14px]">Copy link to profile</li>
                         </ul>
                     </div>
                 )}
             </div>
+
             <section className="mb-8 my-8">
                 <div className="mb-2">
                     <h2 className="text-xl font-semibold">Top Artists This Month</h2>
@@ -126,7 +108,8 @@ function DisplayProfile() {
                     ))}
                 </div>
             </section>
-            <section >
+
+            <section>
                 <div className="mb-2">
                     <h2 className="text-xl font-semibold">Public Playlists</h2>
                 </div>

@@ -21,6 +21,11 @@ const PlayerContextProvider = (props) => {
   const [isFollowing, setFollow] = useState(false);
   const [QueueTrack, setQueue] = useState([]);
   const [result, setResult] = useState({});
+  const [trackCount, setTrackCount] = useState({});  
+
+  const incrementTrackCount = (trackId) => {
+    
+  };
 
   const [time, setTime] = useState({
     currentTime: { second: 0, minute: 0 },
