@@ -13,7 +13,6 @@ namespace BusinessObjects
         public int SavedTrack {  get; set; }
         public DateOnly Date { get; set; } // Đổi từ DateTime sang DateOnly
         public Guid TrackId { get; set; }
-
         public Track Track { get; set; }
     }
 

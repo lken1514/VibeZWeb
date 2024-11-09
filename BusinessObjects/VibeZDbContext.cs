@@ -29,7 +29,7 @@ namespace BusinessObjects
         public virtual DbSet<Library_Artist> Library_Artists { get; set; }
         public virtual DbSet<TrackListener> TrackListeners { get; set; }
         public virtual DbSet<ArtistFollow> ArtistFollows { get; set; }
-
+        public virtual DbSet<UserTrackListener> UserTrackListeners { get; set; }
 
         public VibeZDbContext(DbContextOptions options) : base(options)
         {
@@ -64,7 +64,7 @@ namespace BusinessObjects
             modelBuilder.ApplyConfiguration(new Library_PlaylistConfiguration());
             modelBuilder.ApplyConfiguration(new Library_ArtistConfiguration());
             modelBuilder.ApplyConfiguration(new TrackPlaylistConfiguration());
-
+            modelBuilder.ApplyConfiguration(new UserTrackListenerConfiguration());
         }
     }
 }

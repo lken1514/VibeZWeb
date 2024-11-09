@@ -36,7 +36,6 @@ namespace BusinessObjects
 
         public virtual ICollection<Like>? Likes { get; set; }
         public virtual ICollection<Track_Playlist>? TrackPlayLists { get; set; }
-
-
+        public virtual ICollection<UserTrackListener>? UserTrackListeners { get; set; }
     }
 }

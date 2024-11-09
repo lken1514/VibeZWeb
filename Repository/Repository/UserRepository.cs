@@ -20,7 +20,6 @@ namespace Repositories.Repository
             _context = new VibeZDbContext();
             _libraryRepository = libraryRepository ?? throw new ArgumentNullException(nameof(libraryRepository));
         }
-
         public async Task<int> TotalUser()
         {
             return await Task.FromResult(_context.Users.Count());

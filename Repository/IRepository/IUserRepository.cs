@@ -22,7 +22,5 @@ namespace Repositories.IRepository
         Task AddUserGoogle(User user);
         Task UpdatePassword(Guid UserId, string newPassword);
         Task<int> TotalUser();
-
     }
-
 }

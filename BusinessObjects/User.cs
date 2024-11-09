@@ -16,16 +16,16 @@ namespace BusinessObjects
         public string Password { get; set; }
         public string? Gender { get; set; }
         public string Role { get; set; } = "User";
-        public bool? IsBanned { get; set; } 
-
+        public bool? IsBanned { get; set; }
+        public string Image { get; set; }
         public string UserName { get; set; }
         public DateOnly? DOB { get; set; }
         public string Premium { get; set; } = "Free";
         public virtual Library? Library { get; set; }
         public Artist Artist { get; set; }  
-        [JsonIgnore]  // Bỏ qua khi serializing/
+        //[JsonIgnore]  // Bỏ qua khi serializing/
         public virtual ICollection<Playlist>? Playlists  { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<Follow>? Follow { get; set; }
         [JsonIgnore]
         public virtual ICollection<BlockedArtist>? BlockedArtists { get; set; }
@@ -35,5 +35,6 @@ namespace BusinessObjects
         public virtual ICollection<User_package>? User_package { get; set; }
         [JsonIgnore]
         public virtual ICollection<Like>? Likes { get; set; }
+        public virtual ICollection<UserTrackListener>? UserTrackListeners { get; set; }
     }
 }

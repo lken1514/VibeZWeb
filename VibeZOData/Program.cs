@@ -15,6 +15,7 @@ using VibeZOData.Services.ElasticSearch;
 using Microsoft.AspNetCore.Authentication.Google;
 using VibeZOData.Services.Email;
 using VibeZOData.Services.DailyTrackListenerService;
+using StackExchange.Redis;
 namespace VibeZOData
 {
     public class Program
@@ -47,12 +48,10 @@ namespace VibeZOData
             builder.Services.AddHostedService<DailyService>(); // Đăng ký Background Service
             builder.Services.AddScoped<IArtistDashboarRepository,ArtistDashboardRepository>();
             builder.Services.AddScoped<IFollowRepository, FollowRepository>();
+            builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 
-
-
-
-
-
+            Console.WriteLine(builder.Configuration.GetConnectionString("Redis"));
+            builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")));
 
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
@@ -110,6 +109,7 @@ namespace VibeZOData
             });
             builder.Services.AddMemoryCache();
 
+            builder.Services.AddHostedService<RedisToDbSyncService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
