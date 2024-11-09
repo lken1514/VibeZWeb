@@ -14,6 +14,8 @@ namespace VibeZDTO
         public string Email { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        // Added IsVerified field
+        public bool IsVerified { get; set; } = false;
         public string Gender { get; set; }
         public string UserName { get; set; }
         public DateTime DOB { get; set; }

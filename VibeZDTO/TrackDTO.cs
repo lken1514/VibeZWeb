@@ -21,6 +21,7 @@ namespace VibeZDTO
         public string Path { get; set; }
         public string TrackLRC {  get; set; }
         public string Image { get; set; }
+        public string SongInfoImg { get; set; }
         public bool PendingApproval { get; set; }
         public int Listener { get; set; }
         public TimeOnly Time { get; set; }

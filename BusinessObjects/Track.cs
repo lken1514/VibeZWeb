@@ -23,6 +23,7 @@ namespace BusinessObjects
         public string Genre { get; set; }  
         public string Path { get; set; }
         public string Image { get; set; }
+        public string SongInfoImg { get; set; }
         public string? TrackLRC {  get; set; }
         public int Listener { get; set; }
         public bool PendingApproval { get; set; } = true;

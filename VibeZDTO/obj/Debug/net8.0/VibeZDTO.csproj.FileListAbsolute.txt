@@ -45,18 +45,3 @@ D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\VibeZDTO\obj\Debug\net8.0\
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\VibeZDTO\obj\Debug\net8.0\refint\VibeZDTO.dll
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\VibeZDTO\obj\Debug\net8.0\VibeZDTO.pdb
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\VibeZDTO\obj\Debug\net8.0\ref\VibeZDTO.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\bin\Debug\net8.0\VibeZDTO.deps.json
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\bin\Debug\net8.0\VibeZDTO.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\bin\Debug\net8.0\VibeZDTO.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\bin\Debug\net8.0\BusinessObjects.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\bin\Debug\net8.0\BusinessObjects.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.csproj.AssemblyReference.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.AssemblyInfoInputs.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.AssemblyInfo.cs
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.csproj.CoreCompileInputs.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.csproj.Up2Date
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\refint\VibeZDTO.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\VibeZDTO.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\VibeZDTO\obj\Debug\net8.0\ref\VibeZDTO.dll

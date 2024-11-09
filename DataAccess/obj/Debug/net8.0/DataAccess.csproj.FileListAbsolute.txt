@@ -76,18 +76,3 @@ D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\DataAccess\obj\Debug\net8.
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\bin\Debug\net8.0\DataAccess.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\bin\Debug\net8.0\DataAccess.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\bin\Debug\net8.0\BusinessObjects.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\bin\Debug\net8.0\BusinessObjects.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\DataAccess.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll

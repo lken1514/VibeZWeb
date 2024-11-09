@@ -70,22 +70,3 @@ D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\Repository\obj\Debug\net8.
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\Repository\obj\Debug\net8.0\ref\Repositories.dll
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\Repository\bin\Debug\net8.0\VibeZDTO.dll
 D:\FptUniversity\ChuyenNganh5\SWP\VibeZ-Backend\VibeZ\Repository\bin\Debug\net8.0\VibeZDTO.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\Repositories.deps.json
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\Repositories.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\Repositories.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\BusinessObjects.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\DataAccess.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\VibeZDTO.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\BusinessObjects.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\DataAccess.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\bin\Debug\net8.0\VibeZDTO.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Reposito.787EC4B2.Up2Date
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\refint\Repositories.dll
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\Repositories.pdb
-C:\Users\MINH HUE\Downloads\VibeZWeb-phucBe\Repository\obj\Debug\net8.0\ref\Repositories.dll

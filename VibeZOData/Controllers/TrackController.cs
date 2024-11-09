@@ -131,9 +131,10 @@ namespace VibeZOData.Controllers
     [FromForm] int second,
     [FromForm] Guid artistId,
     [FromForm] IFormFile path,
-    [FromForm] IFormFile image, IFormFile? trackLRC)
+    [FromForm] IFormFile image,[FromForm] IFormFile? trackLRC,[FromForm] IFormFile? songInfoImg)
         {
             var trackUrl = "";
+            var songInfo = "";
             _logger.LogInformation("Creating new track");
 
             if (!ModelState.IsValid)
@@ -155,6 +156,10 @@ namespace VibeZOData.Controllers
             {
                 trackUrl = await _azure.UploadFileAsync(trackLRC);
             }
+            if (songInfoImg != null)
+            {
+                songInfo = await _azure.UploadFileAsync(songInfoImg);
+            }
             var trackTime = new TimeOnly(0, minute, second);
             var pathUrl = await _azure.UploadFileAsync(path);
             var imageUrl = await _azure.UploadFileAsync(image);
@@ -171,7 +176,8 @@ namespace VibeZOData.Controllers
                 Image = imageUrl,
                 Time = trackTime,
                 ArtistId = artistId,
-                TrackLRC = trackUrl
+                TrackLRC = trackUrl,
+                SongInfoImg = songInfo,
             };
 
             await _trackRepository.AddTrack(track);
@@ -194,9 +200,10 @@ namespace VibeZOData.Controllers
     [FromForm] int second,
     //[FromForm] Guid artistId,
     [FromForm] IFormFile? path,
-    [FromForm] IFormFile? image, IFormFile? trackLRC)
+    [FromForm] IFormFile? image, [FromForm] IFormFile? trackLRC, [FromForm] IFormFile? songInfoImg)
         {
             var trackUrl = "";
+            var songInfo = "";
             _logger.LogInformation($"Updating track with id {id}");
 
             var track = await _trackRepository.GetTrackById(id);
@@ -222,6 +229,10 @@ namespace VibeZOData.Controllers
             {
                 trackUrl = await _azure.UploadFileAsync(trackLRC);
             }
+            if (songInfoImg != null)
+            {
+                songInfo = await _azure.UploadFileAsync(songInfoImg);
+            }
             var trackTime = new TimeOnly(0, minute, second);
             track.AlbumId = AlbumId;
             track.CategoryId = CategoryId;
@@ -231,6 +242,7 @@ namespace VibeZOData.Controllers
             track.Time = trackTime;
             track.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
             track.TrackLRC = trackUrl;
+            track.SongInfoImg = songInfo;
             await _trackRepository.UpdateTrack(track);
             _logger.LogInformation($"Track with id {id} has been updated");
 

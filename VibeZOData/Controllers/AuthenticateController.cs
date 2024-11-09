@@ -36,7 +36,8 @@ namespace VibeZOData.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.UserName),
                     new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.Role, user.Role)
+                    new Claim(ClaimTypes.Role, user.Role),
+                    //new Claim("IsVerified", user.IsVerified.ToString())
                 };
                 var token = GenerateJwtToken(claims);
 
@@ -75,7 +76,8 @@ namespace VibeZOData.Controllers
               {
                     new Claim(ClaimTypes.Name, user.UserName),
                     new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.Role, "User")
+                    new Claim(ClaimTypes.Role, "User"),
+                    //new Claim("IsVerified", user.IsVerified.ToString())  
                 };
 
             var token = GenerateJwtToken(claims);
