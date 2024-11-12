@@ -25,22 +25,18 @@ const UploadSong = ({ setImage, setPath }) => {
   };
 
   const audioUploadProps = {
-    name: 'audio',
+    name: 'file', // Change 'audio' to 'file' to generalize
     beforeUpload: (file) => {
-      console.log('Audio file selected:', file); // Log audio file details
-      if (!file.type.startsWith('audio/mpeg')) {
-        message.error('You can only upload MP3 files!');
-        return false;
-      }
-      setPath(file);  // Set audio file (MP3) in parent component state
+      console.log('File selected:', file); // Log file details
+      setPath(file);  // Set file in parent component state
       return false; // Prevent automatic upload
     },
     onChange(info) {
-      console.log('Audio upload status:', info.file.status); // Log upload status
+      console.log('File upload status:', info.file.status); // Log upload status
       if (info.file.status === 'done') {
-        message.success(`${info.file.name} audio uploaded successfully`);
+        message.success(`${info.file.name} uploaded successfully`);
       } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} audio upload failed.`);
+        message.error(`${info.file.name} upload failed.`);
       }
     },
   };
