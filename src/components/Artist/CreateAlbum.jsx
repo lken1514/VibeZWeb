@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import UploadSong from './SubComponent/UploadSong';
 import albumService from '../../services/albumService';
 import ArtistDashboardService from '../../services/artistDashboardService';
+import ImageUpload from './SubComponent/ImageUpload';
 
 const CreateAlbum = () => {
     const [name, setName] = useState('');
@@ -84,7 +85,7 @@ const CreateAlbum = () => {
                             className="w-full border border-gray-300 rounded-lg px-4 py-2"
                         />
                     </Form.Item>
-                    <UploadSong setImage={setImage} />
+                    <ImageUpload setImage={setImage} />
                     <Form.Item label="Nation" required>
                         <Input
                             placeholder="Enter nation"

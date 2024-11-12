@@ -2,58 +2,74 @@ import React from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, message, Upload } from 'antd';
 
-const UploadSong = ({ setImage, setPath }) => {
+const UploadSong = ({ setImage, setPath, setTrackLRC, setSongInfoImg }) => {
   const imageUploadProps = {
     name: 'image',
     beforeUpload: (file) => {
-      console.log('Image file selected:', file); // Log image file details
+      console.log('Image file selected:', file);
       if (!file.type.startsWith('image/')) {
         message.error('You can only upload image files!');
         return false;
       }
-      setImage(file);  // Set image in parent component state
-      return false; // Prevent automatic upload by antd
-    },
-    onChange(info) {
-      console.log('Image upload status:', info.file.status); // Log upload status
-      if (info.file.status === 'done') {
-        message.success(`${info.file.name} image uploaded successfully`);
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} image upload failed.`);
-      }
+      setImage(file);
+      return false;
     },
   };
 
   const audioUploadProps = {
-    name: 'file', // Change 'audio' to 'file' to generalize
+    name: 'file',
     beforeUpload: (file) => {
-      console.log('File selected:', file); // Log file details
-      setPath(file);  // Set file in parent component state
-      return false; // Prevent automatic upload
+      console.log('Audio file selected:', file);
+      setPath(file);
+      return false;
     },
-    onChange(info) {
-      console.log('File upload status:', info.file.status); // Log upload status
-      if (info.file.status === 'done') {
-        message.success(`${info.file.name} uploaded successfully`);
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} upload failed.`);
-      }
+  };
+
+  const trackLRCUploadProps = {
+    name: 'trackLRC',
+    beforeUpload: (file) => {
+      console.log('Track LRC file selected:', file);
+      setTrackLRC(file);
+      return false;
+    },
+  };
+
+  const songInfoImgUploadProps = {
+    name: 'songInfoImg',
+    beforeUpload: (file) => {
+      console.log('Song Info Image file selected:', file);
+      setSongInfoImg(file);
+      return false;
     },
   };
 
   return (
     <div className="upload-songs">
-      <h3>Upload Image</h3>
+      <h3>Upload Album Cover Image</h3>
       <Upload {...imageUploadProps}>
         <Button icon={<UploadOutlined />} className="upload-button">
-          Click to Upload Image
+          Upload Image
         </Button>
       </Upload>
 
-      <h3>Upload Audio (MP3)</h3>
+      <h3>Upload MP3 File</h3>
       <Upload {...audioUploadProps}>
         <Button icon={<UploadOutlined />} className="upload-button">
-          Click to Upload MP3 File
+          Upload MP3
+        </Button>
+      </Upload>
+
+      <h3>Upload Track LRC</h3>
+      <Upload {...trackLRCUploadProps}>
+        <Button icon={<UploadOutlined />} className="upload-button">
+          Upload LRC
+        </Button>
+      </Upload>
+
+      <h3>Upload Additional Song Info Image</h3>
+      <Upload {...songInfoImgUploadProps}>
+        <Button icon={<UploadOutlined />} className="upload-button">
+          Upload Info Image
         </Button>
       </Upload>
     </div>
