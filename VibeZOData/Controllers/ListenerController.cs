@@ -31,7 +31,7 @@ namespace VibeZOData.Controllers
         {
             Console.WriteLine($"Listener: {listener.UserId}");
             Console.WriteLine($"Listener: {listener.TrackId}");
-
+            
             var user = await _userRepository.GetUserById(listener.UserId);
             var track = await _trackRepository.GetTrackById(listener.TrackId);
 

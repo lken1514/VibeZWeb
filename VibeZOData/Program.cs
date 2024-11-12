@@ -50,6 +50,7 @@ namespace VibeZOData
             builder.Services.AddScoped<IFollowRepository, FollowRepository>();
             builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 
+            //docker run -d --name redis-server -p 6379:6379 redis
             Console.WriteLine(builder.Configuration.GetConnectionString("Redis"));
             builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")));
 

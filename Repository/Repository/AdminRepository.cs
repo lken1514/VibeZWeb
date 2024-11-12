@@ -130,5 +130,51 @@ namespace Repositories.Repository
                 throw;
             }
         }
+        public async Task<AdminStatisticsDTO> GetAdminStatistics()
+        {
+            try
+            {
+                using (var context = new VibeZDbContext())
+                {
+                    var miniPremiumTotal = await context.U_packages
+                        .Where(up => up.TypeOfPremium == "Mini")
+                        .SumAsync(up => up.total);
+
+                    var standardPremiumTotal = await context.U_packages
+                        .Where(up => up.TypeOfPremium == "Individual")
+                        .SumAsync(up => up.total);
+
+                    var studentPremiumTotal = await context.U_packages
+                        .Where(up => up.TypeOfPremium == "Student")
+                        .SumAsync(up => up.total);
+
+                    var userStatistics = await context.U_packages
+                        .Select(up => new AdminStatisticsRowDTO
+                        {
+                            Id = up.User.Id,
+                            Email = up.User.Email,
+                            Name = up.User.Name,
+                            Amount = up.total,
+                            TypeOfPremium = up.TypeOfPremium
+                        })
+                        .ToListAsync();
+
+                    var result = new AdminStatisticsDTO
+                    {
+                        Mini = miniPremiumTotal,
+                        Standard = standardPremiumTotal,
+                        Student = studentPremiumTotal,
+                        Table = userStatistics
+                    };
+
+                    return result;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message, ex); throw;
+            }
+        }
     }
 }

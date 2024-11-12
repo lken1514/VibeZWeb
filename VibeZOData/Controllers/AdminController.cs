@@ -96,5 +96,17 @@ namespace VibeZOData.Controllers
                 return StatusCode(500, $"Error changing track status: {ex.Message}");
             }
         }
+        [HttpGet("admin-statistics")]
+        public async Task<ActionResult> GetAdminStatistics()
+        {
+            try
+            {
+                var result = await adminRepository.GetAdminStatistics();
+                return Ok(result);
+            } catch (Exception ex) {
+                return StatusCode(500, $"Error changing track status: {ex.Message}");
+
+            }
+        }
     }
 }

@@ -81,6 +81,16 @@
   },
   {
     "ContainingType": "VibeZOData.Controllers.AdminController",
+    "Method": "GetAdminStatistics",
+    "RelativePath": "api/Admin/admin-statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VibeZOData.Controllers.AdminController",
     "Method": "ChangeStatusApproval",
     "RelativePath": "api/Admin/approve-track/{trackId}",
     "HttpMethod": "PUT",

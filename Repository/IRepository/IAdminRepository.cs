@@ -17,6 +17,7 @@ namespace Repositories.IRepository
         Task<IEnumerable<User>> GetAdminBan();
         Task<IEnumerable<AdminApprovalDTO>> GetAdminApporval();
         Task ChangeStatusApporval(Guid trackId);
+        Task<AdminStatisticsDTO> GetAdminStatistics();
 
     }
 }
