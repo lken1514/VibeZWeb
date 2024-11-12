@@ -7,15 +7,17 @@ import { useListVisibility } from '../context/VisibleContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShuffle, faBackwardStep, faPlay, faPause, faForwardStep, faRepeat, faBars, faDisplay, faMicrophone, faVolumeHigh, faVolumeLow, faVolumeOff } from '@fortawesome/free-solid-svg-icons'; // Import thêm biểu tượng âm lượng
 import { LoginContext } from '../context/LoginContext';
+import { info } from 'autoprefixer';
+import { useNavigate } from 'react-router-dom';
 
 const Player = () => {
-  const { track, seekBar, seekBg, playStatus, play, pause, time, previous, next, seekSong, songsData, setSongsData, currentIndex, seekTo, toggleRepeat, repeat, volume, setVolume } = useContext(PlayerContext); // Thêm setVolume từ PlayerContext
+  const { track, seekBar, seekBg, playStatus, play, pause, time, previous, next, seekSong, songsData, setSongsData, currentIndex, isLyrics, setLyrics, toggleRepeat, repeat, volume, setVolume } = useContext(PlayerContext); // Thêm setVolume từ PlayerContext
   const [IsShuffle, SetIsShuffle] = useState(false); // Correctly initializing state here
   const { isListVisible, setIsListVisible } = useListVisibility();
 
   const [originalSongsData, setOriginalSongsData] = useState([]);
-  const {Info,setInfo} = useContext(LoginContext);
-  
+  const { Info, setInfo } = useContext(LoginContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!originalSongsData.length) {
@@ -24,7 +26,7 @@ const Player = () => {
   }, [songsData, originalSongsData]);
 
   //hàm để trộn
-  const handleShuffleClick = () => { 
+  const handleShuffleClick = () => {
     const newShuffleState = !IsShuffle; // Toggle shuffle state
     SetIsShuffle(newShuffleState);
 
@@ -112,7 +114,10 @@ const Player = () => {
               <div className={`text-[18px] cursor-pointer hover:text-green-500}`} onClick={() => setInfo(!Info)}>
                 <FontAwesomeIcon className=' hover:text-green-500' icon={faDisplay} />
               </div>
-              <div className={`text-[18px] cursor-pointer hover:text-green-500 `} >
+              <div className={`text-[18px] cursor-pointer hover:text-green-500 ${isLyrics ? 'text-green-500' : 'text-white'} `} onClick={() => {
+                setLyrics(!isLyrics),
+                  navigate(isLyrics ? '/' : `/lyrics`);
+              }}>
                 <FontAwesomeIcon className=' hover:text-green-500' icon={faMicrophone} />
               </div>
               <div className={`text-[18px] cursor-pointer hover:text-green-500 ${isListVisible ? 'text-green-500' : 'text-white'}`} >
@@ -122,22 +127,22 @@ const Player = () => {
               {/* Biểu tượng âm lượng dựa vào mức volume */}
               <div className='text-[18px] cursor-pointer hover:text-green-500'>
                 {volume === 0 ? (
-                  <FontAwesomeIcon  onClick={() => setVolume(1)} icon={faVolumeOff} />
+                  <FontAwesomeIcon onClick={() => setVolume(1)} icon={faVolumeOff} />
                 ) : volume <= 0.5 ? (
                   <FontAwesomeIcon onClick={() => setVolume(0)} icon={faVolumeLow} />
                 ) : (
-                  <FontAwesomeIcon  onClick={() => setVolume(0)} icon={faVolumeHigh} />
+                  <FontAwesomeIcon onClick={() => setVolume(0)} icon={faVolumeHigh} />
                 )}
               </div>
 
               {/* Thanh trượt âm lượng */}
-              <input 
-                type="range" 
-                min="0" 
-                max="100" 
+              <input
+                type="range"
+                min="0"
+                max="100"
                 value={volume * 100} // Giá trị âm lượng từ 0-100
-                onChange={handleVolumeChange} 
-                className="w-20 bg-green-600" 
+                onChange={handleVolumeChange}
+                className="w-20 bg-green-600"
               />
             </div>
           </div>

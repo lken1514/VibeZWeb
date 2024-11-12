@@ -63,7 +63,7 @@ const CreateAlbum = () => {
 
     return (
         <>
-            <Button onClick={showModal} className="common-button">Create Album</Button>
+            <Button onClick={showModal} className="common-button !px-[8px] !w-[138px] !h-[40px] !py-[12px]">Create Album</Button>
             <Modal
                 title="Create Album"
                 open={isModalOpen}

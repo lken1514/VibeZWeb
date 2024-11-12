@@ -87,15 +87,33 @@ const followArtist = async (libId, artistId) => {
     throw new Error("Failed to create Library_Artist relationship: " + (error.response?.data?.message || error.message));
   }
 };
+const follow = async (userId, artistId) => {
+  try {
+    const formData = new FormData();
+    formData.append('userId', userId);
+    formData.append('artistId', artistId);
+
+    const response = await axios.post(`https://localhost:7241/Follow`, formData);
+    return response.status === 201 ? "Created" : null;
+  } catch (error) {
+    console.error("Error following artist:", error.message || error);
+    throw new Error("Failed to create Follow relationship: " + (error.response?.data?.message || error.message));
+  }
+};
+const unfollow = async (userId, artistId) => {
+  try {
+    const response = await axios.put(`https://localhost:7241/Unfollow/${userId}/${artistId}`);
+    return response.status === 204 ? "Unfollowed" : null;
+  } catch (error) {
+    console.error("Error unfollowing artist:", error.message || error);
+    throw new Error("Failed to update Follow relationship to unfollow: " + (error.response?.data || error.message));
+  }
+};
 
 const getFollowArtist = async (libId, artistId) => {
-  try {
     const response = await axios.get(`https://localhost:7241/api/Library_Artist/${libId}/${artistId}`);
     return response.status === 200 ? "Ok" : null;
-  } catch (error) {
-    console.error("Error fetching follow status for artist:", error.message || error);
-    throw new Error("Failed to fetch follow status: " + (error.response?.data?.message || error.message));
-  }
+  
 };
 
 export default {
@@ -106,5 +124,7 @@ export default {
   unfollowArtist,
   suggestArtists,
   followArtist,
-  getFollowArtist
+  getFollowArtist,
+  follow,
+  unfollow
 };

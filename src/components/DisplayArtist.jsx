@@ -17,10 +17,10 @@ const DisplayArtist = () => {
   const {
     playWithId, setSongsData, setCurrentIndex, setPlayStatus,
     playStatus, play, pause, setCurrentAlbumId, currentAlbumId, currentIndex, setLoading,
-    isFollowing, setFollow
   } = useContext(PlayerContext);
   const { isChange, setChange } = useContext(LoginContext);
   const [tracks, setTracks] = useState([]);
+  const [isFollowing, setFollow] = useState();
   const [status, setStatus] = useState(false);
   const [clickedId, setClickedId] = useState(false);
   const [playCount, setPlayCount] = useState(0);
@@ -31,6 +31,7 @@ const DisplayArtist = () => {
       try {
         const data = await artistService.getArtistById(id); // Gọi API lấy dữ liệu album
         setArtist(data); // Lưu dữ liệu vào state albums
+        console.log(data);
         const track = await artistService.getAllTrackByArtistId(id);
         setTracks(track);
 
@@ -40,15 +41,18 @@ const DisplayArtist = () => {
     };
 
     fetchArtist(); // Gọi hàm lấy dữ liệu
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     const fetchFollow = async () => {
       try {
         const libId = JSON.parse(localStorage.getItem('libId'));
         const isFollow = await artistService.getFollowArtist(libId, id);
+        console.log(isFollow)
         if (isFollow) {
           setFollow(true);
+        } else {
+          setFollow(false);
         }
       } catch(error) {
         console.error(error.message); // Lưu lỗi nếu xảy ra
@@ -56,7 +60,7 @@ const DisplayArtist = () => {
       }
     }
     fetchFollow();
-  }, [isFollowing]);
+  }, [id]);
   useEffect(() => {
     const fetchPlayStatus = async () => {
       try {
@@ -102,11 +106,14 @@ const DisplayArtist = () => {
     try {
       setLoading(true);
       const libId = JSON.parse(localStorage.getItem('libId'));
+      const userId = JSON.parse(localStorage.getItem('userId'));
       const respone = await artistService.followArtist(libId, id);
-      if (respone) {
+      const respone1 = await artistService.follow(userId, id);
+
+      if (respone && respone1) {
         setLoading(false);
         setChange(!isChange);
-        setFollow(!isFollowing);
+        setFollow(true);
       }
     } catch (error) {
       setLoading(false);
@@ -116,10 +123,12 @@ const DisplayArtist = () => {
 
   const handleUnfollowAritst = async () => {
     try {
+      const userId = JSON.parse(localStorage.getItem('userId'));
       const libId = JSON.parse(localStorage.getItem('libId'));
       const result = await artistService.unfollowArtist(id, libId);
+      const result2 = await artistService.unfollow(userId, id);
       setLoading(true);
-      if (result === 200) {
+      if (result === 200 && result2) {
         console.log("Unfollow successful!");
         setLoading(false);
         setChange(!isChange);

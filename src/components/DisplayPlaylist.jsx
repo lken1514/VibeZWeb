@@ -68,7 +68,7 @@ const DisplayPlaylist = () => {
       }
     }
     getPlaylist();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (clickedId && tracks.length > 0 && playCount < 2 && currentIndex >= 0 && tracks[currentIndex]) {

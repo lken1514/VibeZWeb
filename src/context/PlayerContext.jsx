@@ -26,6 +26,7 @@ const PlayerContextProvider = (props) => {
   const incrementTrackCount = (trackId) => {
     
   };
+  const [isLyrics, setLyrics] = useState(false);
 
   const [time, setTime] = useState({
     currentTime: { second: 0, minute: 0 },
@@ -309,7 +310,9 @@ const PlayerContextProvider = (props) => {
     QueueTrack,
     result,
     setResult,
-    playQueue
+    playQueue,
+    isLyrics,
+    setLyrics
   };
 
   return (

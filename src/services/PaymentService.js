@@ -8,6 +8,7 @@ const API_Get_Paid = "https://oauth.casso.vn/v2/transactions";
 const MY_BANK = {
     BANK_ID: "ACB",
     ACCOUNT_NO: "27824127",
+
 }
 // Hàm tạo URL QR Code
 const generateQRCode = (courseID, coursePrice) => {
