@@ -40,7 +40,8 @@ import NewPassword from './components/ForgotPassword/NewPass';
 import Verification from './components/ForgotPassword/Verification';
 import SyncSong from './components/SyncSong';
 import IdentitySong from './components/IdentitySong'
-import StudentVerify from './components/StudentVerify/StudentVerify'; 
+import StudentVerify from './components/StudentVerify/StudentVerify';
+import AdminStatistics from './components/AdminDashboard/AdminStatistics';
 function App() {
   const router = createBrowserRouter([
     {
@@ -51,14 +52,13 @@ function App() {
           path: '/',
           element: <Display />,
           children: [
-
             { path: '/', element: <DisplayHome /> },
             { path: 'album/:id', element: <DisplayAlbum /> },
             { path: 'playlist/:id', element: <DisplayPlaylist /> },
             { path: 'artist/:id', element: <DisplayArtist /> },
             { path: 'user/:id', element: <DisplayProfile /> },
             { path: 'search', element: <DisplaySearch /> },
-            { path: '/lyrics', element: <SyncSong />,}
+            { path: '/lyrics', element: <SyncSong />, }
           ],
         },
       ],
@@ -88,8 +88,8 @@ function App() {
       element: <PurchasePage />,
     },
     {
-      path: '/profile/artist-profile-claim', 
-      element: <ArtistProfileClaim />, 
+      path: '/profile/artist-profile-claim',
+      element: <ArtistProfileClaim />,
     },
     {
       path: '/profile/artist-profile-claim/verify',
@@ -127,6 +127,11 @@ function App() {
           path: 'artistApproval',
           element: <ArtistApprovalDisplay />,
         },
+        {
+          path: 'statistics',
+          element: <AdminStatistics />,
+        },
+
       ],
     },
     {
@@ -139,15 +144,15 @@ function App() {
         { path: 'profile', element: <ArtistProfile /> },
         {
           path: 'music/album/:id',
-          element: <AlbumDetail />, 
+          element: <AlbumDetail />,
         },
         {
-          path: 'music/album/:id/edit', 
-          element: <EditAlbum />, 
+          path: 'music/album/:id/edit',
+          element: <EditAlbum />,
         },
         {
           path: 'music/album/:id/create-track',
-          element: <CreateTrack />, 
+          element: <CreateTrack />,
         },
         {
           path: 'music/album/:albumId/edit-track/:trackId',

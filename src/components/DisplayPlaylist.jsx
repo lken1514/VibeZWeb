@@ -18,6 +18,7 @@ import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer
 const DisplayPlaylist = () => {
 
   const { id } = useParams()
+  
   const { playWithId, setSongsData, setCurrentIndex, setPlayStatus,
     playStatus, play, pause, setCurrentAlbumId, currentAlbumId, currentIndex, QueueTrack, setQueue, setLoading} = useContext(PlayerContext);
   const [playlistData, setPlaylist] = useState([]);

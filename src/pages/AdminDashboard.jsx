@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarAdmin from '../components/SidebarAdmin';
+import SidebarAdmin from '../components/AdminDashboard/SidebarAdmin';
 import AdminHeader from '../components/AdminHeader';
 import AdminDisplayHome from '../components/AdminDisplayHome';
 import Navbar from '../components/Navbar2';

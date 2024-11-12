@@ -4,23 +4,24 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import PlaylistItem from './PlaylistItem';
 import { useParams } from 'react-router-dom';
 import ArtistItem from './ArtistItem';
-// import { extractColors } from 'extract-colors';
-import { getUserProfile } from '../services/profileService'; 
+import { extractColors } from 'extract-colors';
+import { getUserProfile } from '../services/profileService';
+import unknown_ava from '../assets/unknown-ava.jpg';
 
 function DisplayProfile() {
-    const { userId } = useParams();
+    const { id } = useParams();
 
     const [firstHex, setFirstHex] = useState('#000000');
     const [profileData, setProfileData] = useState(null);
     const [pageData, setPageData] = useState(null);
     const [showMenu, setShowMenu] = useState(false);
 
-    console.log("User ID from URL:", userId); 
+    console.log("User ID from URL:", id);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { fetchedProfileData, fetchedPageData } = await getUserProfile(userId);
+                const { fetchedProfileData, fetchedPageData } = await getUserProfile(id);
                 setProfileData(fetchedProfileData);
                 setPageData(fetchedPageData);
 
@@ -51,7 +52,24 @@ function DisplayProfile() {
                 className="flex space-x-4 items-center w-full h-72 rounded-lg p-8"
                 style={{ backgroundImage: `linear-gradient(to top, ${firstHex} 10%, #000000 90%)` }}
             >
-                <img src={profileData.img} alt="Profile" className="rounded-full w-56 h-56" />
+                {profileData.img ? (
+                    <img
+                        src={profileData.img}
+                        alt="Profile"
+                        className="rounded-full w-56 h-56"
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = unknown_ava;
+                        }}
+                    />
+                ) : (
+                    <img
+                        src={unknown_ava}
+                        alt="Profile"
+                        className="rounded-full w-56 h-56"
+                    />
+                )}
+
                 <div className='ml-8'>
                     <p className="text-sm">Profile</p>
                     <h2 className="text-8xl font-bold mb-4">{profileData.name}</h2>
@@ -115,7 +133,7 @@ function DisplayProfile() {
                 </div>
                 <div className='flex'>
                     {pageData.playlists.map((playlist) => (
-                        <PlaylistItem key={playlist.id} image={playlist.img} name={playlist.name} createBy={profileData.name} />
+                        <PlaylistItem key={playlist.id} id={playlist.id} image={playlist.img} name={playlist.name} createBy={profileData.name} />
                     ))}
                 </div>
             </section>
