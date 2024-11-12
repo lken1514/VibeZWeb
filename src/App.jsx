@@ -40,7 +40,7 @@ import NewPassword from './components/ForgotPassword/NewPass';
 import Verification from './components/ForgotPassword/Verification';
 import SyncSong from './components/SyncSong';
 import IdentitySong from './components/IdentitySong'
-
+import StudentVerify from './components/StudentVerify/StudentVerify'; 
 function App() {
   const router = createBrowserRouter([
     {
@@ -51,16 +51,14 @@ function App() {
           path: '/',
           element: <Display />,
           children: [
+
             { path: '/', element: <DisplayHome /> },
             { path: 'album/:id', element: <DisplayAlbum /> },
             { path: 'playlist/:id', element: <DisplayPlaylist /> },
             { path: 'artist/:id', element: <DisplayArtist /> },
             { path: 'user/:id', element: <DisplayProfile /> },
-            { path: 'search', element: <DisplaySearch /> }
-            {
-              path: '/lyrics',
-              element: <SyncSong />,
-            }
+            { path: 'search', element: <DisplaySearch /> },
+            { path: '/lyrics', element: <SyncSong />,}
           ],
         },
       ],
@@ -156,6 +154,10 @@ function App() {
           element: <EditTrack />,
         }
       ],
+    },
+    {
+      path: '/student-verify',
+      element: <StudentVerify />,
     },
     {
       path: '/Forgot',

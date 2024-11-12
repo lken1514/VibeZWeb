@@ -24,7 +24,6 @@ function ArtistVerificationRequestForm() {
     hour: '',
     minute: '',
     second: '',
-    songImg: null
   });
 
   const [message, setMessage] = useState('');

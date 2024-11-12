@@ -4,7 +4,7 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import PlaylistItem from './PlaylistItem';
 import { useParams } from 'react-router-dom';
 import ArtistItem from './ArtistItem';
-import { extractColors } from 'extract-colors';
+// import { extractColors } from 'extract-colors';
 import { getUserProfile } from '../services/profileService'; 
 
 function DisplayProfile() {

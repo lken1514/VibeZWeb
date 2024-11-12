@@ -5,8 +5,7 @@ import { LoginContext } from '../context/LoginContext';
 
 function ProfileEdit() {
   const [email, setEmail] = useState('');
-import React, { useState } from 'react';
-import Navbar from './Navbar2';
+
 
 function ProfileEdit() {
   const [gender, setGender] = useState('male');
@@ -148,6 +147,7 @@ function ProfileEdit() {
       </div>
     </div>
   );
+}
 }
 
 export default ProfileEdit;
