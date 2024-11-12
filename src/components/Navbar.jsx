@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PlayerContext } from '../context/PlayerContext'; // Import PlayerContext
@@ -10,6 +10,7 @@ import { LoginContext } from '../context/LoginContext';
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import searchService from '../services/searchService';
+import IdentitySong from './IdentitySong';
 
 
 
@@ -21,29 +22,36 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const userid = JSON.parse(localStorage.getItem('userId'));
+  console.log('userid:' + userid);
+  const handleCaption = (caption) => {
+    setSearchTerm(caption);
+  };
 
   const debouncedSearch = useCallback(
     _.debounce(async (term) => {
       if (!term) return;
       try {
         const data = await searchService.search(term);
-        setResult(data); // Gọi onSearch để cập nhật `results` trong RootLayout
+        setResult(data);
       } catch (error) {
         console.error("Error during search:", error);
       }
-    }, 300),
-    [setResult]
+    }, 100),
+    []
   );
 
   const handleSearch = (e) => {
-    const term = e.target.value;
-    setSearchTerm(term);
-    debouncedSearch(term); // Gọi debounce khi nhập liệu
+    setSearchTerm(e.target.value);
   };
 
+  useEffect(() => {
+    debouncedSearch(searchTerm);
+  }, [searchTerm, debouncedSearch]);
   const handleToggleList = () => {
     setIsListVisible(!isListVisible);
   };
+
   const handleLogOut = () => {
     logout();
     window.location.reload();
@@ -56,7 +64,7 @@ const Navbar = () => {
           <a className='text-[30px] text-white font-semibold ml-4'>VibeZ</a>
         </div>
         <div className='absolute inset-0 flex justify-center items-center '>
-          <div className='w-[40%] h-[100%]  flex justify-center items-center'>
+          <div className='w-[45%] h-[100%]  flex justify-center items-center'>
             <form className='relative flex w-[100%] h-[100%] items-center justify-center' action="">
               <div className='mr-[2%] text-white cursor-pointer text-[20px] hover:text-[25px]' onClick={() => navigate('/')}>
                 <FontAwesomeIcon icon={faHouse} />
@@ -65,13 +73,19 @@ const Navbar = () => {
                 <img className='w-[50%]' src={assets.search_icon} alt="" />
               </div>
               <div className='w-7/12 h-[55%]'>
-                <input className='w-[100%] h-full rounded-[100px] bg-[#2A2A2A] text-[14px] text-white pl-[14%] py-[2%]'
+                <input className='w-[95%] h-full rounded-[100px] bg-[#2A2A2A] text-[14px] text-white pl-[14%] py-[2%]'
                   type="search"
                   placeholder='What do you want to play?'
                   autoComplete='on'
                   value={searchTerm}
                   onFocus={() => navigate('search')}
                   onChange={handleSearch} />
+              </div>
+              <div >
+                <div onClick={() => navigate('/search')}>
+                  <IdentitySong onCaptionDetect={handleCaption} />
+                </div>
+
               </div>
             </form>
           </div>
@@ -95,6 +109,7 @@ const Navbar = () => {
                   <a >Account</a>
                 </li>
                 <li className='p-3 hover:bg-[#3E3E3E] cursor-pointer text-[16px]'
+                  onClick={() => navigate(`/user/${userid}`)}
                 >
                   <a href="">Profile</a>
                 </li>

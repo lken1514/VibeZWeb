@@ -10,6 +10,8 @@ import { ClipLoader } from 'react-spinners';
 import SongInfo from '../components/SongInfo';
 import { LoginContext } from '../context/LoginContext';
 
+import artistService from '../services/artistService';
+import { data } from 'autoprefixer';
 function RootLayout() {
   const { isListVisible } = useListVisibility();
   const { audioRef, track, isLoading } = useContext(PlayerContext);
@@ -17,6 +19,40 @@ function RootLayout() {
 
   const [queueWidth, setQueueWidth] = useState(300); // Đặt độ rộng ban đầu cho Queue
   const [isResizing, setIsResizing] = useState(false); // Để kiểm soát khi người dùng đang kéo
+  const [artist, setArtist] = useState();
+  const [isFollow, setFollow] = useState(false);
+  useEffect(() => {
+    const fetchArtist = async () => {
+      try {
+        if (track) {
+          const data = await artistService.getArtistById(track.artistId);
+          setArtist(data);
+          console.log(data);
+        }
+
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    fetchArtist();
+  }, [track]);
+
+  useEffect(() => {
+    const fetchFollow = async () => {
+      try {
+        const libId = JSON.parse(localStorage.getItem('libId'));
+        const isFollow = await artistService.getFollowArtist(libId, track.artistId);
+        console.log(isFollow)
+        if (isFollow) {
+          setFollow(true);
+        }
+      } catch (error) {
+        console.error(error.message); // Lưu lỗi nếu xảy ra
+        setFollow(false);
+      }
+    }
+    fetchFollow();
+  }, [track]);
 
   // Hàm xử lý bắt đầu kéo
   const handleMouseDown = () => {
@@ -60,7 +96,7 @@ function RootLayout() {
       <div className={`flex gap-1 ${track ? 'h-[83%]' : 'h-full'}`}>
         <Sidebar />
         <Outlet />
-        {isListVisible && (
+        {isListVisible && !Info &&  (
           <div className='relative flex-shrink-0 h-full' style={{ width: `${queueWidth}px`, maxWidth: '25%', minWidth: '20%' }}>
             <div
               className={`absolute top-0 left-0 w-1 h-full bg-gray-950 ${isResizing ? 'cursor-grabbing' : '!cursor-grab'}`}
@@ -71,7 +107,7 @@ function RootLayout() {
         )}
         {Info && (
           <div className='w-[20%] bg-[#121212] '>
-            <SongInfo />
+            <SongInfo artist={artist} track={track} isFollow={isFollow} setFollow={setFollow} />
           </div>
         )}
       </div>

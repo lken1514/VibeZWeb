@@ -51,15 +51,25 @@ const PurchasePage = () => {
   const [qrCodeUrl, setQrCodeUrl] = useState('');
   const [timer, setTimer] = useState(300);
   const [isCheckingPayment, setIsCheckingPayment] = useState(false);
-  const location = useLocation();
-  const myData = location.state || {};
-  const price = myData.planPrice?.split(" ")[0] || '';
+  // const location = useLocation();
+  // const myData = location.state || {};
+  // const price = myData.planPrice?.split(" ")[0] || '';
+  const [myData, setMyData] = useState({});
   const navigate = useNavigate();
   const [method, setMethod] = useState('');
   const { isLoading, setLoading } = useContext(PlayerContext);
   const intervalRef = useRef(null);
   const [randomName, setRandomName] = useState(generateRandomName());
+  useEffect(() => {
+    // Lấy `myData` từ `localStorage`
+    const storedData = localStorage.getItem('myData');
+    if (storedData) {
+      setMyData(JSON.parse(storedData));
+    }
+  }, []);
 
+  const price = myData.planPrice?.split(" ")[0] || '';
+  console.log("Received myData in StudentVerify:", myData);
   // Hàm thực hiện thanh toán
   const pay = async () => {
     try {

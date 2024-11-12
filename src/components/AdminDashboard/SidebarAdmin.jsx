@@ -14,6 +14,7 @@ function SidebarAdmin() {
         { name: 'Artist', path: '/admin/artist' },
         { name: 'Ban', path: '/admin/ban' },
         { name: 'Approval', path: '/admin/approval' },
+        { name: 'Artist Approval', path: '/admin/artistApproval'},
     ];
 
     return (

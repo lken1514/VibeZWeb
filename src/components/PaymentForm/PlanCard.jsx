@@ -3,10 +3,20 @@ import { useNavigate } from 'react-router-dom';
 
 function PlanCard({ planName, planPrice, description, features, buttonText }) {
   const navigate = useNavigate();
-  const handleNavigate = (packId ,name ,price, total) => {
-    const myData = {packId: packId, planName: name ,planPrice: price, total: total }; // Dữ liệu cần đính kèm
-    navigate('/purchase', { state: myData }); // Điều hướng đến trang tiếp theo và đính kèm dữ liệu trong state
-  };
+
+  const handleNavigate = (packId, name, price, total) => {
+    const myData = { packId: packId, planName: name ,planPrice: price, total: total };
+    
+    // Lưu `myData` vào `localStorage`
+    localStorage.setItem('myData', JSON.stringify(myData));
+    
+    
+    if (name === 'Student') {
+      navigate('/student-verify');
+    } else {
+      navigate('/purchase');
+    }
+  }
   return (
     <div className="rounded-lg bg-[#242424] p-6 h-[600px] flex flex-col justify-between ">
       <div className="flex flex-wrap flex-col">

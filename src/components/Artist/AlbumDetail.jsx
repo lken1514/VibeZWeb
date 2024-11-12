@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"; 
+import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
 import { assets } from "../../assets/assets";
 import albumService from "../../services/albumService";
 import trackService from "../../services/trackService";
 import artistService from "../../services/artistService";
-import { FiEdit, FiTrash, FiPlusCircle } from "react-icons/fi"; 
+import { FiEdit, FiTrash, FiPlusCircle } from "react-icons/fi"; // Using react-icons for edit, delete, and add icons
 
 const AlbumDetail = () => {
   const { id } = useParams();
@@ -43,13 +43,13 @@ const AlbumDetail = () => {
   };
 
   const handleEditTrackClick = (trackId) => {
-    navigate(`/artistdashboard/music/album/${id}/edit-track/${trackId}`); 
+    navigate(`/artistdashboard/music/album/${id}/edit-track/${trackId}`); // Navigate with trackId
   };
 
   const handleDeleteTrack = async (trackId) => {
     try {
       await trackService.deleteTrack(trackId); 
-      setTracks(tracks.filter(track => track.trackId !== trackId)); 
+      setTracks(tracks.filter(track => track.trackId !== trackId)); // Update UI by removing the deleted track
       alert("Track deleted successfully!");
     } catch (error) {
       console.error("Error deleting track", error);

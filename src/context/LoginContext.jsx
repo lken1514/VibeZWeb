@@ -39,7 +39,6 @@ const LoginContextProvider = (props) => {
             console.log(response.user);
             setUserInfo(response.user);
             setUser(response.user.userName.charAt(0).toUpperCase());
-            localStorage.setItem('user', JSON.stringify(response.user));
             localStorage.setItem('jwtToken', response.token);
         } catch (error) {
             console.error("Login failed:", error.message);

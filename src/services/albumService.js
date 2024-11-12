@@ -18,18 +18,6 @@ const getAllAlbums = async () => {
 };
 
 // Xuất các service
-const getAlbumsByArtistId = async (artistId) => {
-  try {
-    const response = await axios.get(`${API_URL}/${artistId}/all`);
-    return response.data;
-  }catch (error) {
-    console.error("Error fetching albums:", error.message || error);
-    throw new Error(
-      "Failed to fetch albums: " + 
-      (error.response?.data?.message || error.message)
-    );
-  }
-};
 
 const getAlbumsById = async (id) => {
   try {
@@ -44,28 +32,31 @@ const getAlbumsById = async (id) => {
   }
 };
 
-// Function to create a new album -----------------------------
 const createAlbum = async (formData) => {
-    try {
-        const response = await axios.post(`${API_URL}/CreateAlbum`, formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-        return response.data;
-    } catch (error) {
-        console.error("Error creating album:", error.message || error);
-        throw new Error(
-            "Failed to create album: " + 
-            (error.response?.data?.message || error.message)
-        );
-    }
+  try {
+      const response = await axios.post(`${API_URL}/CreateAlbum`, formData, {
+          headers: {
+              'Content-Type': 'multipart/form-data',
+          },
+      });
+      return response.data;
+  } catch (error) {
+      console.error("Error creating album:", error.message || error);
+      throw new Error(
+          "Failed to create album: " + 
+          (error.response?.data?.message || error.message)
+      );
+  }
 };
+const updateAlbum = async (id, name, yy, mm, dd, image, nation) => {
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('yy', yy);
+  formData.append('mm', mm);
+  formData.append('dd', dd);
+  formData.append('image', image);
+  formData.append('nation', nation);
 
-
-
-// Function to update an existing album
-const updateAlbum = async (id, formData) => {
   try {
     const response = await axios.put(`${API_URL}/${id}`, formData, {
       headers: {
@@ -81,8 +72,6 @@ const updateAlbum = async (id, formData) => {
     );
   }
 };
-
-// Function to delete an album by ID
 const deleteAlbum = async (id) => {
   try {
     await axios.delete(`${API_URL}/${id}`);
@@ -95,7 +84,6 @@ const deleteAlbum = async (id) => {
     );
   }
 };
-
 // Xuất các service
 
-export default { getAlbumsByArtistId, getAllAlbums, getAlbumsById, createAlbum, updateAlbum, deleteAlbum, };
+export default { getAllAlbums, getAlbumsById, createAlbum, updateAlbum, deleteAlbum, };

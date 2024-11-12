@@ -1,18 +1,39 @@
 import React, { useState } from 'react';
-// import userService from '../services/userService';  
+import axios from 'axios';
+import artistDashboardService from '../../services/artistDashboardService';
+import artistService from '../../services/artistService';
+import { ClipLoader } from 'react-spinners';
+import { NutIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 
 function ArtistVerificationRequestForm() {
-  const [artistName, setArtistName] = useState('');
-  const [email, setEmail] = useState('');
-  const [reason, setReason] = useState('');
-  const [audioFile, setAudioFile] = useState(null);  
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const [isLoading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    artistName: '',
+    email: '',
+    reason: '',
+    audioFile: null,
+    imgFile: null,
+    imgBackground: null,
+    songImg: null,
+    lyrics: null,
+    lyricLRC: null,
+    genre: '',
+    hour: '',
+    minute: '',
+    second: '',
+  });
 
-  const handleAudioChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setAudioFile(file);
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { id, value, files } = e.target;
+    if (files) {
+      setFormData((prevData) => ({ ...prevData, [id]: files[0] }));
+    } else {
+      setFormData((prevData) => ({ ...prevData, [id]: value }));
     }
   };
 
@@ -20,31 +41,53 @@ function ArtistVerificationRequestForm() {
     e.preventDefault();
     setLoading(true);
 
-    // Form data to be sent to backend
-    const formData = new FormData();
-    formData.append('artistName', artistName);
-    formData.append('email', email);
-    formData.append('reason', reason);
-    formData.append('audioFile', audioFile);  // Append audio file
+
+    const userId = JSON.parse(localStorage.getItem('userId')); // hoặc giá trị userId khác
 
     try {
-      const response = await userService.verifyArtistTrack(formData);
-      if (response.data.isVerified) {
-        setMessage("Your track has been successfully verified. You are now a verified artist.");
-      } else {
-        setMessage("Verification failed. Original content could not be confirmed.");
-      }
-      setArtistName('');
-      setEmail('');
-      setReason('');
-      setAudioFile(null);
+      const formDataObj = new FormData();
+      formDataObj.append('artistName', formData.artistName);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('userId', userId);
+      formDataObj.append('image', formData.imgFile);
+      formDataObj.append('imgBackground', formData.imgBackground);
+      formDataObj.append('lyrics', formData.lyrics);
+      formDataObj.append('lyricLRC', formData.lyricLRC);
+      formDataObj.append('song', formData.audioFile);
+      formDataObj.append('genre', formData.genre);
+      formDataObj.append('minute', parseInt(formData.minute, 10));
+      formDataObj.append('second', parseInt(formData.second, 10));
+      formDataObj.append('songImg', formData.songImg);
+      formDataObj.forEach((value, key) => {
+        console.log(`${key}:`, value);
+      });
+      const response = await artistDashboardService.addArtistPending(formDataObj);
+
+      console.log("Response:", response);
+      setMessage("Artist pending added successfully.");
+      // Reset form if successful
+      setFormData({
+        artistName: '',
+        email: '',
+        audioFile: null,
+        imgFile: null,
+        imgBackground: null,
+        lyrics: null,
+        lyricLRC: null,
+        genre: '',
+        hour: '',
+        minute: '',
+        second: '',
+        songImg: null
+      });
+      navigate('/');
     } catch (error) {
       setMessage("An error occurred. Please try again later.");
+      console.error("Error adding artist pending:", error.message || error);
     } finally {
       setLoading(false);
     }
   };
-
   return (
     <div className="bg-gray-800 text-white min-h-screen flex flex-col justify-center items-center p-6">
       <header className="text-center mb-6">
@@ -69,33 +112,31 @@ function ArtistVerificationRequestForm() {
             <input
               type="text"
               id="artistName"
-              value={artistName}
-              onChange={(e) => setArtistName(e.target.value)}
+              value={formData.artistName}
+              onChange={handleChange}
               className="w-full px-4 py-2 bg-[#2A2A2A] border border-gray-600 text-white rounded-md"
               required
             />
           </div>
-
+          <div className="mb-4">
+            <label htmlFor="genre" className="block text-gray-300">Genre</label>
+            <input
+              type="text"
+              id="genre"
+              value={formData.genre}
+              onChange={handleChange}
+              className="w-full px-4 py-2 bg-[#2A2A2A] border border-gray-600 text-white rounded-md"
+              required
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-300">Email</label>
             <input
               type="email"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={handleChange}
               className="w-full px-4 py-2 bg-[#2A2A2A] border border-gray-600 text-white rounded-md"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="reason" className="block text-gray-300">Reason for Verification</label>
-            <textarea
-              id="reason"
-              value={reason}
-              onChange={(e) => setReason(e.target.value)}
-              className="w-full px-4 py-2 bg-[#2A2A2A] border border-gray-600 text-white rounded-md"
-              rows="4"
               required
             />
           </div>
@@ -105,19 +146,104 @@ function ArtistVerificationRequestForm() {
             <input
               type="file"
               id="audioFile"
-              onChange={handleAudioChange}
+              onChange={handleChange}
               className="w-full text-white"
               accept="audio/*"
               required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="songImg" className="block text-gray-300">Upload Song Image</label>
+            <input
+              type="file"
+              id="songImg"
+              onChange={handleChange}
+              className="w-full text-white"
+              accept="image/*"
+              required
+            />
+          </div>
+
+          {/* Minute and Second inputs */}
+          <div className="mb-4">
+            <label htmlFor="minute" className="block text-gray-300">Minute</label>
+            <input
+              type="number"
+              id="minute"
+              value={formData.minute}
+              onChange={handleChange}
+              className="w-full px-4 py-2 bg-[#2A2A2A] border border-gray-600 text-white rounded-md"
+              required
+              min="0"
+              max="59"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="second" className="block text-gray-300">Second</label>
+            <input
+              type="number"
+              id="second"
+              value={formData.second}
+              onChange={handleChange}
+              className="w-full px-4 py-2 bg-[#2A2A2A] border border-gray-600 text-white rounded-md"
+              required
+              min="0"
+              max="59"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="imgFile" className="block text-gray-300">Upload Artist Image</label>
+            <input
+              type="file"
+              id="imgFile"
+              onChange={handleChange}
+              className="w-full text-white"
+              accept="image/*"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="imgBackground" className="block text-gray-300">Upload Background Image</label>
+            <input
+              type="file"
+              id="imgBackground"
+              onChange={handleChange}
+              className="w-full text-white"
+              accept="image/*"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="lyrics" className="block text-gray-300">Upload Lyrics (Text)</label>
+            <input
+              type="file"
+              id="lyrics"
+              onChange={handleChange}
+              className="w-full text-white"
+              accept=".txt"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="lyricLRC" className="block text-gray-300">Upload Lyric LRC File</label>
+            <input
+              type="file"
+              id="lyricLRC"
+              onChange={handleChange}
+              className="w-full text-white"
+              accept=".lrc"
             />
           </div>
 
           <button
             type="submit"
             className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-500 transition-all mb-4"
-            disabled={loading}
+            disabled={isLoading}
           >
-            {loading ? 'Submitting...' : 'Request Verification'}
+            {isLoading ? 'Submitting...' : 'Request Verification'}
           </button>
         </form>
 
@@ -125,6 +251,11 @@ function ArtistVerificationRequestForm() {
           Once reviewed, you will receive an email confirmation if your profile is verified.
         </p>
       </div>
+      {isLoading && (
+        <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
+          <ClipLoader color="#ffffff" size={60} />
+        </div>
+      )}
     </div>
   );
 }
