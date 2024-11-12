@@ -17,9 +17,9 @@ namespace VibeZOData.Controllers
     public class UPackageController : ControllerBase
     {
         private readonly IU_PackageRepository _userPackageRepository;
-        private readonly IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;//New
         private readonly ILogger<UPackageController> _logger;
-        private readonly INotificationService _notificationService;
+        private readonly INotificationService _notificationService;//New
         private readonly IMapper _mapper; // Khai báo IMapper
 
         public UPackageController(IU_PackageRepository userPackageRepository, ILogger<UPackageController> logger, IMapper mapper, IUserRepository userRepository, INotificationService notificationService)

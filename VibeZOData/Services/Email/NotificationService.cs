@@ -25,7 +25,7 @@ namespace VibeZOData.Services.Email
             string emailSubject = subject;
             await _emailSender.SendNoticeEmail(user.Email, emailSubject, content);
         }
-
+        //New
         public async Task SendSignupSuccessEmailAsync(string email, string username)
         {
             await _emailSender.SendSignupSuccessEmailAsync(email, username);

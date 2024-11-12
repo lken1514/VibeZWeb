@@ -15,7 +15,7 @@ namespace VibeZOData.Controllers
 {
     [Route("odata")]
     [ApiController]
-    public class AuthenticateController(IUserRepository _userRepository, IConfiguration _config, IEmailSender _emailSender, IPasswordResetService _passwordResetService, INotificationService _notificationService) : ControllerBase
+    public class AuthenticateController(IUserRepository _userRepository, IConfiguration _config, IEmailSender _emailSender, IPasswordResetService _passwordResetService, INotificationService _notificationService) : ControllerBase //New
     {
         [AllowAnonymous]
         [HttpPost]

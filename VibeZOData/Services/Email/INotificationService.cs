@@ -1,6 +1,6 @@
 ﻿namespace VibeZOData.Services.Email
 {
-    public interface INotificationService
+    public interface INotificationService//New
     {
         Task SendNotificationAsync(Guid userId, string subject, string trackTitle);
         Task SendSignupSuccessEmailAsync(string email, string username);

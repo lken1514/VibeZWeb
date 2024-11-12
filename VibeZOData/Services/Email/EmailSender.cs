@@ -29,7 +29,7 @@ namespace VibeZOData.Services.Email
             await smtp.SendAsync(email);
             await smtp.DisconnectAsync(true);
         }
-
+        //New
         //Thong bao khi payment thanh cong
         public async Task SendPaymentSuccessEmailAsync(string toEmail, string userName, double amount)
         {
