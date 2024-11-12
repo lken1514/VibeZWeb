@@ -25,5 +25,25 @@ namespace VibeZOData.Services.Email
             string emailSubject = subject;
             await _emailSender.SendNoticeEmail(user.Email, emailSubject, content);
         }
+
+        public async Task SendSignupSuccessEmailAsync(string email, string username)
+        {
+            await _emailSender.SendSignupSuccessEmailAsync(email, username);
+        }
+
+        public async Task SendGoogleLoginSuccessEmailAsync(string email, string username)
+        {
+            await _emailSender.SendGoogleLoginSuccessEmailAsync(email, username);
+        }
+
+        public async Task SendArtistApprovalEmailAsync(string email, string userName)
+        {
+            await _emailSender.SendArtistApprovalEmailAsync(email, userName);
+        }
+
+        public async Task SendPaymentSuccessEmailAsync(string email, string userName, double amount)
+        {
+            await _emailSender.SendPaymentSuccessEmailAsync(email, userName, amount);
+        }
     }
 }

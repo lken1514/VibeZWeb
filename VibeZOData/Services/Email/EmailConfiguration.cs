@@ -8,7 +8,7 @@
         public int Port { get; set; } = 587;
         public bool UseSsl { get; set; } = true;
         public string Username { get; set; } = "kienlhtde180570@fpt.edu.vn";
-        public string Password { get; set; } = "";
+        public string Password { get; set; } = "faym zqey hefm oeqc";
     }
 
 }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BusinessObjects;
+using Repositories.Repository;
 
 namespace VibeZOData.Controllers
 {
@@ -13,11 +14,13 @@ namespace VibeZOData.Controllers
     public class PaymentController : ControllerBase
     {
         private readonly IPaymentRepository _paymentRepository;
+        private readonly IU_PackageRepository _uPackageRepository;
         private readonly ILogger<PaymentController> _logger; // Thêm ILogger vào controller
 
-        public PaymentController(IPaymentRepository paymentRepository, ILogger<PaymentController> logger)
+        public PaymentController(IPaymentRepository paymentRepository,IU_PackageRepository u_PackageRepository, ILogger<PaymentController> logger)
         {
             _paymentRepository = paymentRepository;
+            _uPackageRepository = u_PackageRepository;
             _logger = logger; // Khởi tạo logger
         }
 
@@ -27,6 +30,18 @@ namespace VibeZOData.Controllers
             _logger.LogInformation("Fetching all payments."); // Log thông tin
             var payments = await _paymentRepository.GetAllPayments();
             return Ok(payments);
+        }
+
+        [HttpGet("userpackages/{userId}")]
+        public async Task<ActionResult<IEnumerable<User_package>>> GetUserPackagesByUserId(Guid userId)
+        {
+            var userPackages = await _uPackageRepository.GetPackageByUserId(userId);
+            if (userPackages == null || !userPackages.Any())
+            {
+                _logger.LogWarning($"No user packages found for User ID: {userId}"); 
+                return NotFound($"No user packages found for User ID {userId}");
+            }
+            return Ok(userPackages);
         }
 
         [HttpGet("{id}")]

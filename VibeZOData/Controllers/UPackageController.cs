@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using AutoMapper; // Thêm using cho AutoMapper
 using BusinessObjects;
 using VibeZDTO;
+using Repositories.IRepository;
+using VibeZOData.Services.Email;
 
 namespace VibeZOData.Controllers
 {
@@ -15,14 +17,18 @@ namespace VibeZOData.Controllers
     public class UPackageController : ControllerBase
     {
         private readonly IU_PackageRepository _userPackageRepository;
+        private readonly IUserRepository _userRepository;
         private readonly ILogger<UPackageController> _logger;
+        private readonly INotificationService _notificationService;
         private readonly IMapper _mapper; // Khai báo IMapper
 
-        public UPackageController(IU_PackageRepository userPackageRepository, ILogger<UPackageController> logger, IMapper mapper)
+        public UPackageController(IU_PackageRepository userPackageRepository, ILogger<UPackageController> logger, IMapper mapper, IUserRepository userRepository, INotificationService notificationService)
         {
             _userPackageRepository = userPackageRepository;
             _logger = logger;
             _mapper = mapper; // Khởi tạo IMapper
+            _userRepository = userRepository;
+            _notificationService = notificationService;
         }
 
         [HttpGet("all")]
@@ -97,6 +103,13 @@ namespace VibeZOData.Controllers
 
             await _userPackageRepository.AddUserPackage(uPackage);
             _logger.LogInformation($"User package created successfully with User ID: {userId} and Package ID: {packId}"); // Log thông tin
+
+            var user = await _userRepository.GetUserById(userId); // Assuming this method retrieves user details
+            if (user != null)
+            {
+                await _notificationService.SendPaymentSuccessEmailAsync(user.Email, user.UserName, (double)total);
+                _logger.LogInformation($"Payment success email sent to user with ID: {userId}");
+            }
             return Ok(new { message = "User package created successfully" });
         }
 

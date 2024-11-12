@@ -15,7 +15,7 @@ namespace VibeZOData.Controllers
 {
     [Route("odata")]
     [ApiController]
-    public class AuthenticateController(IUserRepository _userRepository, IConfiguration _config, IEmailSender _emailSender, IPasswordResetService _passwordResetService) : ControllerBase
+    public class AuthenticateController(IUserRepository _userRepository, IConfiguration _config, IEmailSender _emailSender, IPasswordResetService _passwordResetService, INotificationService _notificationService) : ControllerBase
     {
         [AllowAnonymous]
         [HttpPost]
@@ -79,7 +79,7 @@ namespace VibeZOData.Controllers
                 };
 
             var token = GenerateJwtToken(claims);
-
+            await _notificationService.SendGoogleLoginSuccessEmailAsync(user.Email, user.UserName);//Gui thong bao
             return Ok(new { Token = token, User = user });
         }
 
@@ -125,7 +125,7 @@ namespace VibeZOData.Controllers
                 Password = model.Password!
             };
             await _userRepository.AddUser(user);
-
+            await _notificationService.SendSignupSuccessEmailAsync(user.Email, user.UserName);//Gui thong bao
             return Ok("Inserted Successfully");
         }
 
@@ -175,5 +175,22 @@ namespace VibeZOData.Controllers
 
             return Ok(new { message = "Password reset successfully" });
         }
+
+        [HttpPost("sendmail-approve")]
+        public async Task<IActionResult> ApproveArtist([FromBody] ArtistPending request)
+        {
+            
+            var user = await _userRepository.FindByEmailAsync(request.Email);
+
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found" });
+            }
+            // Send email notification
+            await _notificationService.SendArtistApprovalEmailAsync(user.Email, user.UserName);
+
+            return Ok(new { message = "Artist approved and notified successfully" });
+        }
+
     }
 }

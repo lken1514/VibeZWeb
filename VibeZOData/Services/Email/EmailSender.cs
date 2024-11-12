@@ -30,6 +30,82 @@ namespace VibeZOData.Services.Email
             await smtp.DisconnectAsync(true);
         }
 
+        //Thong bao khi payment thanh cong
+        public async Task SendPaymentSuccessEmailAsync(string toEmail, string userName, double amount)
+        {
+            string subject = "Payment Successful";
+            string emailTemplate = GeneratePaymentSuccessTemplate(userName, amount);
+
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailConfig.FromName, _emailConfig.From));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = subject;
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = emailTemplate };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync(_emailConfig.SmtpServer, 587, MailKit.Security.SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailConfig.Username, _emailConfig.Password);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+
+        //Thong bao khi Approve Artist
+        public async Task SendArtistApprovalEmailAsync(string toEmail, string userName)
+        {
+            string subject = "Artist Approval Successful";
+            string emailTemplate = GenerateArtistApprovalTemplate(userName);
+
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailConfig.FromName, _emailConfig.From));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = subject;
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = emailTemplate };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync(_emailConfig.SmtpServer, 587, MailKit.Security.SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailConfig.Username, _emailConfig.Password);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+
+        //Thong bao khi sign-up thanh congs
+        public async Task SendSignupSuccessEmailAsync(string toEmail, string userName)
+        {
+            string subject = "Welcome to VibeZ!";
+            string emailTemplate = GenerateSignUpSuccessTemplate(userName);
+
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailConfig.FromName, _emailConfig.From));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = subject;
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = emailTemplate };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync(_emailConfig.SmtpServer, 587, MailKit.Security.SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailConfig.Username, _emailConfig.Password);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+
+        //Notification when login google
+        public async Task SendGoogleLoginSuccessEmailAsync(string toEmail, string userName)
+        {
+            string subject = "Welcome to VibeZ!";
+            string emailTemplate = GenerateGoogleLoginSuccessTemplate(userName);
+
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_emailConfig.FromName, _emailConfig.From));
+            email.To.Add(MailboxAddress.Parse(toEmail));
+            email.Subject = subject;
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = emailTemplate };
+
+            using var smtp = new SmtpClient();
+            await smtp.ConnectAsync(_emailConfig.SmtpServer, 587, MailKit.Security.SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_emailConfig.Username, _emailConfig.Password);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+        }
+
         //Thong bao cho follower khi artist up nhac moi
         public async Task SendNoticeEmail(string toEmail, string subject, string content)
         {
@@ -45,6 +121,7 @@ namespace VibeZOData.Services.Email
             await smtp.SendAsync(email);
             await smtp.DisconnectAsync(true);
         }
+
 
         private string GenerateEmailTemplate(string email, string subject, string otpCode)
         {
@@ -96,5 +173,153 @@ namespace VibeZOData.Services.Email
 ", email, subject, otpCode);
             return result;
         }
+        private string GeneratePaymentSuccessTemplate(string email, double amount)
+        {
+            return $@"
+        <!DOCTYPE html>
+        <html lang=""en"">
+        <head>
+            <meta charset=""UTF-8"">
+            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+            <title>Payment Successful - VibeZ</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }}
+                .container {{ max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }}
+                .header {{ background-color: #0078D4; padding: 15px; color: #fff; text-align: center; }}
+                .header h1 {{ margin: 0; }}
+                .content {{ padding: 20px; line-height: 1.6; }}
+                .button {{ display: inline-block; padding: 10px 15px; margin-top: 10px; background-color: #0078D4; color: #fff; border-radius: 5px; text-decoration: none; }}
+                .footer {{ text-align: center; font-size: 12px; color: #666; padding: 15px; }}
+            </style>
+        </head>
+        <body>
+            <div class=""container"">
+                <div class=""header"">
+                    <h1>Payment Successful</h1>
+                </div>
+                <div class=""content"">
+                    <p>Dear {email},</p>
+                    <p>Thank you for your payment of <strong>${amount}</strong>. Your transaction was successful, and your account has been updated accordingly.</p>
+                    <p>We appreciate your business and look forward to serving you with more music on VibeZ!</p>
+                    <p>For any questions, feel free to reach out to our support team.</p>
+                </div>
+                <div class=""footer"">
+                    <p>&copy; 2023 VibeZ. All rights reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+        }
+
+        private string GenerateGoogleLoginSuccessTemplate(string userName)
+        {
+            return $@"
+        <!DOCTYPE html>
+        <html lang=""en"">
+        <head>
+            <meta charset=""UTF-8"">
+            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+            <title>Welcome to VibeZ - Google Login</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }}
+                .container {{ max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }}
+                .header {{ background-color: #0078D4; padding: 15px; color: #fff; text-align: center; }}
+                .header h1 {{ margin: 0; }}
+                .content {{ padding: 20px; line-height: 1.6; }}
+                .footer {{ text-align: center; font-size: 12px; color: #666; padding: 15px; }}
+            </style>
+        </head>
+        <body>
+            <div class=""container"">
+                <div class=""header"">
+                    <h1>Welcome to VibeZ!</h1>
+                </div>
+                <div class=""content"">
+                    <p>Hello {userName},</p>
+                    <p>We’re excited to have you join us! Your account has been created successfully, and you’re all set to explore the world of music on VibeZ.</p>
+                    <p>Explore music, create playlists, and enjoy personalized content tailored just for you.</p>
+                </div>
+                <div class=""footer"">
+                    <p>&copy; 2023 VibeZ. All rights reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+        }
+
+        private string GenerateArtistApprovalTemplate(string userName)
+        {
+            return $@"
+        <!DOCTYPE html>
+        <html lang=""en"">
+        <head>
+            <meta charset=""UTF-8"">
+            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+            <title>Artist Approval - VibeZ</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }}
+                .container {{ max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }}
+                .header {{ background-color: #0078D4; padding: 15px; color: #fff; text-align: center; }}
+                .header h1 {{ margin: 0; }}
+                .content {{ padding: 20px; line-height: 1.6; }}
+                .button {{ display: inline-block; padding: 10px 15px; margin-top: 10px; background-color: #0078D4; color: #fff; border-radius: 5px; text-decoration: none; }}
+                .footer {{ text-align: center; font-size: 12px; color: #666; padding: 15px; }}
+            </style>
+        </head>
+        <body>
+            <div class=""container"">
+                <div class=""header"">
+                    <h1>Welcome, Verified Artist!</h1>
+                </div>
+                <div class=""content"">
+                    <p>Hello {userName},</p>
+                    <p>Congratulations! Your artist application has been reviewed and approved. You’re now officially a verified artist on VibeZ.</p>
+                    <p>Get ready to share your music with the world. Head over to your account to start uploading your tracks and engaging with your fans.</p>
+                </div>
+                <div class=""footer"">
+                    <p>&copy; 2023 VibeZ. All rights reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+        }
+
+        private string GenerateSignUpSuccessTemplate(string userName)
+        {
+            return $@"
+        <!DOCTYPE html>
+        <html lang=""en"">
+        <head>
+            <meta charset=""UTF-8"">
+            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+            <title>Welcome to VibeZ</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }}
+                .container {{ max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }}
+                .header {{ background-color: #0078D4; padding: 15px; color: #fff; text-align: center; }}
+                .header h1 {{ margin: 0; }}
+                .content {{ padding: 20px; line-height: 1.6; }}
+                .button {{ display: inline-block; padding: 10px 15px; margin-top: 10px; background-color: #0078D4; color: #fff; border-radius: 5px; text-decoration: none; }}
+                .footer {{ text-align: center; font-size: 12px; color: #666; padding: 15px; }}
+            </style>
+        </head>
+        <body>
+            <div class=""container"">
+                <div class=""header"">
+                    <h1>Welcome to VibeZ!</h1>
+                </div>
+                <div class=""content"">
+                    <p>Hello {userName},</p>
+                    <p>We’re excited to have you join us! Your account has been created successfully, and you’re all set to explore the world of music on VibeZ.</p>
+                    <p>Log in to access your personalized music feed and enjoy your favorite tracks anytime, anywhere.</p>
+                </div>
+                <div class=""footer"">
+                    <p>&copy; 2023 VibeZ. All rights reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+        }
+
     }
 }

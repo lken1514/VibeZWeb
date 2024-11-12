@@ -1,0 +1,224 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VibeZWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\services\\email\\emailconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\services\\email\\emailconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\services\\email\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\services\\email\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\services\\email\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\services\\email\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\services\\email\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\services\\email\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\services\\email\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\services\\email\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}|Repository\\Repositories.csproj|d:\\vibezweb\\repository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}|Repository\\Repositories.csproj|solutionrelative:repository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|d:\\vibezweb\\vibezodata\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5A69B3-9B3E-4631-AE6B-2498F6815B09}|VibeZOData\\VibeZOData.csproj|solutionrelative:vibezodata\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39840720-07A6-4C71-ACD9-38473498915E}|DataAccess\\DataAccess.csproj|d:\\vibezweb\\dataaccess\\user_packagedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39840720-07A6-4C71-ACD9-38473498915E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\user_packagedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CFB12A6-394C-4D54-B1E5-752B70541A74}|BusinessObjects\\BusinessObjects.csproj|d:\\vibezweb\\businessobjects\\user_package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CFB12A6-394C-4D54-B1E5-752B70541A74}|BusinessObjects\\BusinessObjects.csproj|solutionrelative:businessobjects\\user_package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}|Repository\\Repositories.csproj|d:\\vibezweb\\repository\\irepository\\iu_packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94A91F21-C5E9-44F5-B8A9-527F9D8A0337}|Repository\\Repositories.csproj|solutionrelative:repository\\irepository\\iu_packagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailConfiguration.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\EmailConfiguration.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Services\\Email\\EmailConfiguration.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\EmailConfiguration.cs",
+              "RelativeToolTip": "VibeZOData\\Services\\Email\\EmailConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T16:26:49.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEmailSender.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\IEmailSender.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Services\\Email\\IEmailSender.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\IEmailSender.cs",
+              "RelativeToolTip": "VibeZOData\\Services\\Email\\IEmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T16:18:13.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\NotificationService.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Services\\Email\\NotificationService.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\NotificationService.cs",
+              "RelativeToolTip": "VibeZOData\\Services\\Email\\NotificationService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T16:02:19.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\INotificationService.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Services\\Email\\INotificationService.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\INotificationService.cs",
+              "RelativeToolTip": "VibeZOData\\Services\\Email\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:06:39.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\EmailSender.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Services\\Email\\EmailSender.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Services\\Email\\EmailSender.cs",
+              "RelativeToolTip": "VibeZOData\\Services\\Email\\EmailSender.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAQwFcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:53:57.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Program.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Program.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Program.cs",
+              "RelativeToolTip": "VibeZOData\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACcAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:37:07.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\AuthenticateController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\AuthenticateController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\AuthenticateController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAQwIYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:42:56.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\Repository\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repository\\UserRepository.cs",
+              "ToolTip": "D:\\VibeZWeb\\Repository\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "Repository\\Repository\\UserRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:13:49.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\VibeZOData\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "VibeZOData\\Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\VibeZWeb\\VibeZOData\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "VibeZOData\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:49:52.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IU_PackageRepository.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\Repository\\IRepository\\IU_PackageRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\IRepository\\IU_PackageRepository.cs",
+              "ToolTip": "D:\\VibeZWeb\\Repository\\IRepository\\IU_PackageRepository.cs",
+              "RelativeToolTip": "Repository\\IRepository\\IU_PackageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:31:22.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User_packageDAO.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\DataAccess\\User_packageDAO.cs",
+              "RelativeDocumentMoniker": "DataAccess\\User_packageDAO.cs",
+              "ToolTip": "D:\\VibeZWeb\\DataAccess\\User_packageDAO.cs",
+              "RelativeToolTip": "DataAccess\\User_packageDAO.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:28:32.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User_package.cs",
+              "DocumentMoniker": "D:\\VibeZWeb\\BusinessObjects\\User_package.cs",
+              "RelativeDocumentMoniker": "BusinessObjects\\User_package.cs",
+              "ToolTip": "D:\\VibeZWeb\\BusinessObjects\\User_package.cs",
+              "RelativeToolTip": "BusinessObjects\\User_package.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:20:24.088Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

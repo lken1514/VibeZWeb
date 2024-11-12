@@ -48,7 +48,7 @@ namespace VibeZOData
             builder.Services.AddScoped<IArtistDashboarRepository,ArtistDashboardRepository>();
             builder.Services.AddScoped<IFollowRepository, FollowRepository>();
             builder.Services.AddScoped<IArtistPendingRepository, ArtistPendingRepository>();
-
+            builder.Services.AddTransient<INotificationService, NotificationService>();
 
 
 

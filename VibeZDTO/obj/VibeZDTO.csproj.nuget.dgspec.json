@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\VibeZDTO.csproj": {}
+    "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj": {}
   },
   "projects": {
-    "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\obj\\",
+        "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj",
+        "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
+        "outputPath": "D:\\VibeZWeb\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,25 +95,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\VibeZDTO.csproj": {
+    "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\VibeZDTO.csproj",
+        "projectUniqueName": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj",
         "projectName": "VibeZDTO",
-        "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\VibeZDTO.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\VibeZDTO\\obj\\",
+        "projectPath": "D:\\VibeZWeb\\VibeZDTO\\VibeZDTO.csproj",
+        "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
+        "outputPath": "D:\\VibeZWeb\\VibeZDTO\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -132,8 +124,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "D:\\FptUniversity\\ChuyenNganh5\\SWP\\VibeZ-Backend\\VibeZ\\BusinessObjects\\BusinessObjects.csproj"
+              "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "D:\\VibeZWeb\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -168,7 +160,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

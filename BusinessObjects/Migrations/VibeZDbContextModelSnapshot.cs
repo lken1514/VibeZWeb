@@ -35,7 +35,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly>("DateOfRelease")
                         .HasColumnType("date");
@@ -74,7 +74,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -322,7 +322,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -349,7 +349,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -372,7 +372,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -395,7 +395,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -524,7 +524,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -578,7 +578,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -669,7 +669,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly>("UpdateDate")
                         .HasColumnType("date");
@@ -691,7 +691,7 @@ namespace BusinessObjects.Migrations
                     b.Property<DateOnly>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateOnly(2024, 11, 9));
+                        .HasDefaultValue(new DateOnly(2024, 11, 12));
 
                     b.Property<DateOnly?>("DOB")
                         .HasColumnType("date");
